@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Bag — Drunken Glass</title>
+<meta name="description" content="Your Drunken Glass bag — free shipping on every order, and 5% extra off when you pay online.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Drunken Glass">
+<meta property="og:title" content="Your Bag — Drunken Glass">
+<meta property="og:description" content="Your Drunken Glass bag — free shipping on every order, and 5% extra off when you pay online.">
+<meta name="theme-color" content="#2765fa">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#f2f1f0;--ink:#000;--blue:#2765fa;--berry:#ef426f;--yellow:#eaef29;--white:#fff;--line:rgba(0,0,0,.14);--muted:rgba(0,0,0,.56);--ok:#0F3D33;--gutter:clamp(20px,5vw,64px)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:'Montserrat',system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding-inline:var(--gutter)}
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif}
+  .kick{font-family:'Space Grotesk',sans-serif;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500}
+  a{color:inherit;text-decoration:none}
+  .streak{position:relative;display:inline-block}
+  .streak::after{content:"";position:absolute;right:-.62em;top:.06em;width:.5em;height:.5em;background:var(--blue);border-radius:50%;box-shadow:.34em .18em 0 -.16em rgba(0,0,0,.55),.62em .32em 0 -.24em rgba(0,0,0,.25)}
+  .announce{background:var(--ink);color:var(--paper);display:flex;flex-wrap:wrap;gap:6px 26px;justify-content:center;padding:9px 16px;text-align:center}
+  .announce span{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:600}
+  .announce span::before{content:"✦";color:var(--blue);margin-right:7px}
+  .announce b{color:var(--yellow)}
+  nav{position:sticky;top:0;z-index:30;background:rgba(242,241,240,.92);backdrop-filter:blur(9px);border-bottom:2px solid var(--ink)}
+  .nav-in{display:flex;justify-content:space-between;align-items:center;padding-block:15px;gap:16px}
+  .brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.3rem}
+  .nav-links{display:flex;gap:20px;align-items:center;list-style:none;font-size:.82rem;font-weight:600}
+  .nav-links a:hover{color:var(--blue)}
+  .nav-links .trade{background:var(--blue);color:#fff;padding:9px 14px;border-radius:2px;font-family:'Space Grotesk',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
+
+  header{padding-block:clamp(32px,5vw,54px) 8px}
+  header .kick{color:var(--blue)}
+  header h1{font-weight:700;font-size:clamp(2rem,6vw,3.2rem);line-height:1;letter-spacing:-.02em;text-transform:uppercase;margin-top:12px}
+
+  .cartgrid{display:grid;grid-template-columns:1.4fr .6fr;gap:28px;padding-block:26px 60px;align-items:start}
+  @media(max-width:900px){.cartgrid{grid-template-columns:1fr}}
+
+  .lines{border:2px solid var(--ink);border-radius:4px;background:var(--white);overflow:hidden}
+  .line{display:grid;grid-template-columns:76px 1fr auto;gap:14px;padding:16px;border-top:1px solid var(--line);align-items:center}
+  .line:first-child{border-top:0}
+  .line .thumb{border:2px solid var(--ink);border-radius:3px;background:var(--paper);display:grid;place-items:center;aspect-ratio:1/1}
+  .line .thumb svg{width:70%;height:auto}
+  .cl{stroke:var(--ink);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .fl{stroke:rgba(0,0,0,.4);stroke-width:2;stroke-dasharray:4 3;fill:none}
+  .line .nm{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1rem;text-transform:uppercase}
+  .line .mt{font-family:'Space Grotesk',sans-serif;font-size:.68rem;font-weight:600;color:var(--muted);letter-spacing:.03em;margin-top:1px}
+  .line .disc{font-family:'Space Grotesk',sans-serif;font-size:.62rem;font-weight:700;text-transform:uppercase;color:var(--berry);margin-top:4px}
+  .line .ctl{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+  .stepper{display:inline-flex;align-items:center;border:2px solid var(--ink);border-radius:2px;overflow:hidden}
+  .stepper button{width:30px;height:30px;border:0;background:var(--paper);font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;cursor:pointer;line-height:1;color:var(--ink)}
+  .stepper button:hover{background:var(--blue);color:#fff}
+  .stepper .qv{min-width:34px;text-align:center;font-family:'Space Grotesk',sans-serif;font-weight:700}
+  .line .amt{font-family:'Space Grotesk',sans-serif;font-weight:700}
+  .line .rm{background:none;border:0;cursor:pointer;font-family:'Space Grotesk',sans-serif;font-size:.6rem;font-weight:700;text-transform:uppercase;color:var(--berry);text-decoration:underline;padding:0}
+
+  .empty{border:2px dashed var(--ink);border-radius:4px;background:var(--white);padding:52px 24px;text-align:center}
+  .empty h2{font-size:1.4rem;text-transform:uppercase;margin-bottom:8px}
+  .empty p{color:var(--muted);font-weight:500;margin-bottom:18px}
+
+  .summary{border:2px solid var(--ink);border-radius:4px;background:var(--white);padding:22px;position:sticky;top:88px}
+  @media(max-width:900px){.summary{position:static}}
+  .summary h2{font-size:1.1rem;text-transform:uppercase;margin-bottom:14px}
+  .srow{display:flex;justify-content:space-between;gap:12px;font-family:'Space Grotesk',sans-serif;font-size:.88rem;font-weight:600;padding:8px 0;border-bottom:1px solid var(--line)}
+  .srow.free{color:var(--ok)}
+  .srow.save{color:var(--berry)}
+  .srow.tot{border-bottom:0;font-size:1.15rem;font-weight:700;padding-top:14px}
+  .paytoggle{margin:14px 0;border:2px solid var(--ink);border-radius:3px;overflow:hidden;display:flex}
+  .paytoggle button{flex:1;border:0;background:var(--paper);cursor:pointer;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;padding:11px 8px;color:var(--ink)}
+  .paytoggle button[aria-pressed="true"]{background:var(--blue);color:#fff}
+  .paynote{font-family:'Space Grotesk',sans-serif;font-size:.64rem;font-weight:600;color:var(--muted);margin-bottom:14px;line-height:1.5}
+  .paynote b{color:var(--blue)}
+  .btn{cursor:pointer;display:block;width:100%;text-align:center;border:2px solid var(--ink);background:var(--ink);color:var(--paper);font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;padding:15px 20px;border-radius:2px;transition:background .2s,color .2s,transform .06s}
+  .btn:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+  .btn:active{transform:translateY(1px)}
+  .btn:disabled{opacity:.4;cursor:not-allowed}
+  .btn.ghost{background:transparent;color:var(--ink);margin-top:8px}
+  .btn.ghost:hover{background:var(--ink);color:var(--paper)}
+  .gknote{font-family:'Space Grotesk',sans-serif;font-size:.6rem;color:var(--muted);text-align:center;margin-top:10px;line-height:1.6}
+  .assure{margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+  .assure div{font-family:'Space Grotesk',sans-serif;font-size:.68rem;font-weight:600;color:var(--muted);padding:4px 0}
+  .assure div::before{content:"✦";color:var(--blue);margin-right:7px}
+
+  .nudgebar{margin-top:14px;border:2px solid var(--blue);border-radius:3px;background:rgba(39,101,250,.06);padding:12px 14px;font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:700;color:var(--ink)}
+  .nudgebar span{color:var(--blue)}
+
+  .xsell{padding-block:clamp(40px,6vw,64px);border-top:2px solid var(--ink);background:var(--white)}
+  .xsell h2{font-size:clamp(1.4rem,3.4vw,2rem);text-transform:uppercase;margin-bottom:20px}
+  .xs{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  @media(max-width:820px){.xs{grid-template-columns:1fr 1fr}}
+  .xcard{border:2px solid var(--ink);border-radius:3px;background:var(--paper);padding:14px;text-align:center;transition:transform .12s,box-shadow .12s}
+  .xcard:hover{transform:translateY(-3px);box-shadow:6px 6px 0 var(--ink)}
+  .xcard svg{width:100%;height:88px;margin-bottom:6px}
+  .xcard .pn{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.86rem;text-transform:uppercase}
+  .xcard .pp{font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:.76rem;color:var(--blue)}
+  .xcard button{margin-top:8px;width:100%;cursor:pointer;background:var(--ink);color:var(--paper);border:2px solid var(--ink);border-radius:2px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;padding:8px}
+  .xcard button:hover{background:var(--blue);border-color:var(--blue)}
+
+  footer{background:var(--ink);color:rgba(242,241,240,.7);padding-block:38px 46px;border-top:2px solid var(--ink)}
+  .foot-in{display:flex;flex-wrap:wrap;gap:22px;justify-content:space-between}
+  footer .brand{color:var(--paper)}
+  footer .fl2{font-family:'Space Grotesk',sans-serif;font-size:.68rem;letter-spacing:.04em;line-height:2}
+  footer .fl2 a{color:rgba(242,241,240,.7)}
+  footer .fl2 a:hover{color:var(--paper)}
+  footer .dot{color:var(--blue)}
+
+  .navtoggle{display:none;background:none;border:2px solid var(--ink);border-radius:2px;width:42px;height:36px;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:4px;padding:0}
+  .navtoggle span{display:block;width:18px;height:2px;background:var(--ink);transition:transform .2s}
+  .navtoggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+  .navtoggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .navtoggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+  .mobmenu{display:none;position:sticky;top:57px;z-index:29;background:var(--paper);border-bottom:2px solid var(--ink)}
+  .mobmenu.on{display:block}
+  .mobmenu a{display:block;padding:13px var(--gutter);border-top:1px solid var(--line);font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em}
+  .mobmenu a:first-child{border-top:0}
+  @media(max-width:820px){.navtoggle{display:flex}.nav-links li.hideSm{display:none}}
+</style>
+</head>
+<body>
+
+<div class="announce">
+  <span>Free shipping on <b>all orders</b></span>
+  <span>Pay online — skip COD charges &amp; take <b>5% extra off</b></span>
+</div>
+
+<nav>
+  <div class="wrap nav-in">
+    <a href="drunken-glass-comet.html" class="brand streak">Drunken Glass</a>
+    <ul class="nav-links">
+      <li class="hideSm"><a href="drunken-glass-category.html">Shop</a></li>
+      <li class="hideSm"><a href="drunken-glass-gifting.html">Gifting</a></li>
+      <li class="hideSm"><a href="drunken-glass-about.html">About</a></li>
+    </ul>
+    <button class="navtoggle" id="navtoggle" aria-label="Menu" aria-expanded="false" aria-controls="mobmenu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobmenu" id="mobmenu">
+  <a href="drunken-glass-comet.html">Home</a>
+  <a href="drunken-glass-category.html">Shop</a>
+  <a href="drunken-glass-gifting.html">Corporate Gifting</a>
+  <a href="drunken-glass-about.html">Our Story</a>
+  <a href="drunken-glass-cart.html">Cart</a>
+  <a href="drunken-glass-track.html">Track Order</a>
+  <a href="drunken-glass-contact.html">Contact</a>
+  <a href="drunken-glass-policies.html">Policies</a>
+</div>
+
+<header>
+  <div class="wrap">
+    <p class="kick">Your bag</p>
+    <h1>Almost poured.</h1>
+  </div>
+</header>
+
+<div class="wrap cartgrid">
+  <div>
+    <div id="cartArea"></div>
+    <a class="btn ghost" href="drunken-glass-category.html" style="margin-top:14px">Continue shopping</a>
+  </div>
+
+  <aside class="summary">
+    <h2>Order summary</h2>
+    <div id="sumRows"></div>
+
+    <div class="paytoggle" role="group" aria-label="Payment method">
+      <button id="payPrepaid" aria-pressed="true">Pay online</button>
+      <button id="payCod" aria-pressed="false">Cash on delivery</button>
+    </div>
+    <p class="paynote" id="payNote"><b>Paying online saves you 5%</b> and skips the COD handling charge.</p>
+
+    <button class="btn" id="checkoutBtn">Checkout</button>
+    <p class="gknote">Secure checkout powered by <b>GoKwik</b><br>UPI · Cards · Netbanking · Wallets · COD</p>
+
+    <div class="nudgebar" id="nudge" style="display:none"></div>
+
+    <div class="assure">
+      <div>Free shipping across India</div>
+      <div>Dispatches in 2–3 working days</div>
+      <div>Broken on arrival? Replaced free</div>
+    </div>
+  </aside>
+</div>
+
+<section class="xsell">
+  <div class="wrap">
+    <h2>Completes the table</h2>
+    <div class="xs" id="xs"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <div>
+      <div class="brand streak" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.4rem">Drunken Glass</div>
+      <p class="fl2" style="margin-top:10px">Made at our furnace <span class="dot">✦</span> sold direct</p>
+    </div>
+    <div class="fl2">
+      <a href="drunken-glass-contact.html">Contact us</a><br>
+      <a href="drunken-glass-track.html">Track your order</a><br>
+      <a href="drunken-glass-policies.html#shipping">Shipping policy</a><br>
+      <a href="drunken-glass-policies.html#returns">Returns &amp; replacement</a>
+    </div>
+    <div class="fl2">
+      <a href="drunken-glass-policies.html#privacy">Privacy policy</a><br>
+      <a href="drunken-glass-policies.html#terms">Terms &amp; conditions</a><br>
+      <a href="drunken-glass-gifting.html">Corporate gifting</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* DEMO CART — in production this reads the real cart from your backend/Shopify,
+   and the totals below must be recomputed server-side before payment. */
+const G={
+  wine:'<path class="cl" d="M18,8 Q18,44 35,50 Q52,44 52,8"/><path class="fl" d="M22,26 Q35,32 48,26"/><path class="cl" d="M35,50 L35,86"/><path class="cl" d="M24,90 L46,90"/>',
+  cocktail:'<path class="cl" d="M16,20 L35,48 L54,20 Z"/><path class="fl" d="M24,30 L46,30"/><path class="cl" d="M35,48 L35,86"/><path class="cl" d="M24,90 L46,90"/>',
+  whisky:'<path class="cl" d="M20,26 L23,88 L47,88 L50,26 Z"/><path class="fl" d="M22,50 L48,50"/>',
+  tumbler:'<path class="cl" d="M24,18 L27,90 L43,90 L46,18 Z"/><path class="fl" d="M25,44 L45,44"/>',
+  decanter:'<path class="cl" d="M31,10 L31,26 Q18,40 18,64 Q18,88 35,88 Q52,88 52,64 Q52,40 39,26 L39,10 Z"/><path class="fl" d="M21,60 Q35,54 49,60"/><path class="cl" d="M28,10 L42,10"/>',
+  candle:'<path class="cl" d="M24,40 L24,84 L46,84 L46,40 Z"/><path class="cl" d="M24,40 Q35,34 46,40"/><path class="cl" d="M35,40 L35,30"/>'
+};
+let CART=[
+  {id:'aria', name:'Aria', cat:'Wine · Crystal', g:G.wine, price:1190, qty:4},
+  {id:'rocks',name:'Rocks',cat:'Whisky · Crystal',g:G.whisky,price:990, qty:2}
+];
+const SUGGEST=[
+  {id:'coupe',   name:'Coupe',    cat:'Cocktail', g:G.cocktail, price:1090},
+  {id:'high',    name:'Highball', cat:'Tumbler',  g:G.tumbler,  price:740},
+  {id:'classic', name:'Classic',  cat:'Decanter', g:G.decanter, price:2490},
+  {id:'jar',     name:'Jar',      cat:'Candle',   g:G.candle,   price:890}
+];
+let prepaid=true;
+const $=id=>document.getElementById(id);
+const inr=n=>'₹'+Math.round(n).toLocaleString('en-IN');
+function discount(q){return q>=12?.25:q>=8?.20:q>=6?.15:q>=4?.10:q>=2?.05:0;}
+const totalQty=()=>CART.reduce((s,l)=>s+l.qty,0);
+
+function renderCart(){
+  const area=$('cartArea');
+  if(!CART.length){
+    area.innerHTML='<div class="empty"><h2>Your bag is empty</h2><p>Nothing poured yet — the collection is waiting.</p><a class="btn" href="drunken-glass-category.html" style="max-width:260px;margin:0 auto">Shop the collection</a></div>';
+    renderSummary(); return;
+  }
+  let html='<div class="lines">';
+  CART.forEach(l=>{
+    const d=discount(l.qty), unit=l.price*(1-d);
+    html+=`<div class="line">
+      <div class="thumb"><svg viewBox="0 0 70 100" aria-hidden="true">${l.g}</svg></div>
+      <div>
+        <div class="nm">${l.name}</div>
+        <div class="mt">${l.cat} · ${inr(unit)} each</div>
+        ${d>0?`<div class="disc">${Math.round(d*100)}% set discount applied</div>`:''}
+      </div>
+      <div class="ctl">
+        <div class="stepper"><button type="button" data-m="${l.id}" aria-label="Fewer ${l.name}">−</button><span class="qv">${l.qty}</span><button type="button" data-p="${l.id}" aria-label="More ${l.name}">+</button></div>
+        <div class="amt">${inr(unit*l.qty)}</div>
+        <button class="rm" data-r="${l.id}">Remove</button>
+      </div>
+    </div>`;
+  });
+  html+='</div>';
+  area.innerHTML=html;
+  renderSummary();
+}
+$('cartArea').addEventListener('click',e=>{
+  const p=e.target.getAttribute('data-p'), m=e.target.getAttribute('data-m'), r=e.target.getAttribute('data-r');
+  const id=p||m||r; if(!id) return;
+  const l=CART.find(x=>x.id===id); if(!l) return;
+  if(p) l.qty++;
+  else if(m) l.qty=Math.max(0,l.qty-1);
+  else l.qty=0;
+  CART=CART.filter(x=>x.qty>0);
+  renderCart();
+});
+
+function renderSummary(){
+  let sub=0, listTotal=0;
+  CART.forEach(l=>{
+    const d=discount(l.qty);
+    sub+=l.price*(1-d)*l.qty;
+    listTotal+=l.price*l.qty;
+  });
+  const setSaving=listTotal-sub;
+  const prepaidSaving=prepaid?sub*0.05:0;
+  const grand=sub-prepaidSaving;
+  let rows=`<div class="srow"><span>Subtotal (${totalQty()} ${totalQty()===1?'glass':'glasses'})</span><span>${inr(listTotal)}</span></div>`;
+  if(setSaving>0) rows+=`<div class="srow save"><span>Set discount</span><span>− ${inr(setSaving)}</span></div>`;
+  rows+=`<div class="srow free"><span>Shipping</span><span>Free</span></div>`;
+  if(prepaid) rows+=`<div class="srow save"><span>Prepaid discount (5%)</span><span>− ${inr(prepaidSaving)}</span></div>`;
+  else rows+=`<div class="srow"><span>COD handling</span><span>Charged at checkout</span></div>`;
+  rows+=`<div class="srow tot"><span>Total</span><span>${inr(grand)}</span></div>`;
+  $('sumRows').innerHTML=rows;
+  $('checkoutBtn').disabled = CART.length===0;
+
+  // next-tier nudge
+  const q=totalQty(), steps=[2,4,6,8,12];
+  const next=steps.find(s=>s>q);
+  const nb=$('nudge');
+  if(CART.length && next){
+    nb.style.display='block';
+    nb.innerHTML=`Add <span>${next-q}</span> more ${next-q===1?'glass':'glasses'} for <span>${Math.round(discount(next)*100)}% off</span> the set.`;
+  } else if(CART.length){
+    nb.style.display='block';
+    nb.innerHTML='★ Best set price applied — 25% off.';
+  } else nb.style.display='none';
+}
+
+$('payPrepaid').addEventListener('click',()=>{
+  prepaid=true;
+  $('payPrepaid').setAttribute('aria-pressed','true');
+  $('payCod').setAttribute('aria-pressed','false');
+  $('payNote').innerHTML='<b>Paying online saves you 5%</b> and skips the COD handling charge.';
+  renderSummary();
+});
+$('payCod').addEventListener('click',()=>{
+  prepaid=false;
+  $('payPrepaid').setAttribute('aria-pressed','false');
+  $('payCod').setAttribute('aria-pressed','true');
+  $('payNote').innerHTML='Switch to <b>Pay online</b> to save 5% and skip the COD handling charge.';
+  renderSummary();
+});
+
+/* GOKWIK HANDOFF
+   In production, replace this with the GoKwik checkout call. GoKwik is a checkout
+   layer, not a payment aggregator — payments settle through the licensed aggregator
+   (e.g. Razorpay) connected behind it. Always build the GoKwik cart payload from
+   SERVER-computed prices, never from the numbers rendered on this page. */
+$('checkoutBtn').addEventListener('click',function(){
+  if(this.disabled) return;
+  const payload={
+    items:CART.map(l=>({sku:l.id,name:l.name,qty:l.qty,unit_price:Math.round(l.price*(1-discount(l.qty)))})),
+    payment_preference: prepaid ? 'prepaid' : 'cod'
+  };
+  console.log('GoKwik checkout payload (demo):',payload);
+  const b=this, w=b.textContent;
+  b.textContent='Opening GoKwik checkout…';
+  setTimeout(()=>{b.textContent=w;},1800);
+});
+
+/* cross-sell */
+$('xs').innerHTML=SUGGEST.map(s=>
+  `<div class="xcard"><svg viewBox="0 0 70 100" aria-hidden="true">${s.g}</svg><div class="pn">${s.name}</div><div class="pp">${inr(s.price)}</div><button data-add="${s.id}">Add to bag</button></div>`
+).join('');
+$('xs').addEventListener('click',e=>{
+  const id=e.target.getAttribute('data-add'); if(!id) return;
+  const s=SUGGEST.find(x=>x.id===id);
+  const ex=CART.find(x=>x.id===id);
+  if(ex) ex.qty++; else CART.push({id:s.id,name:s.name,cat:s.cat+' · Drunken Glass',g:s.g,price:s.price,qty:1});
+  renderCart();
+  const b=e.target, w=b.textContent; b.textContent='Added ✦'; setTimeout(()=>b.textContent=w,1200);
+});
+
+(function(){
+  var t=$('navtoggle'), m=$('mobmenu');
+  t.addEventListener('click',function(){
+    var open=m.classList.toggle('on');
+    t.setAttribute('aria-expanded',open?'true':'false');
+  });
+})();
+
+renderCart();
+</script>
+</body>
+</html>

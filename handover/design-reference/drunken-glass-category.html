@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shop the Collection — Drunken Glass</title>
+<meta name="description" content="Shop wine, cocktail, whisky, coffee, tumblers, decanters and candle jars — factory-direct glassware in mixed colours. Free shipping, 5% off prepaid.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Drunken Glass">
+<meta property="og:title" content="Shop the Collection — Drunken Glass">
+<meta property="og:description" content="Shop wine, cocktail, whisky, coffee, tumblers, decanters and candle jars — factory-direct glassware in mixed colours. Free shipping, 5% off prepaid.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#2765fa">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f2f1f0; --ink:#000000; --blue:#2765fa; --berry:#ef426f; --yellow:#eaef29;
+    --white:#ffffff; --line:rgba(0,0,0,.14); --muted:rgba(0,0,0,.56); --ok:#0F3D33;
+    --pace:cubic-bezier(.16,.84,.3,1); --gutter:clamp(20px,5vw,64px);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:'Montserrat',system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1240px;margin:0 auto;padding-inline:var(--gutter)}
+  h1,h2,h3,.grotesk{font-family:'Space Grotesk',sans-serif}
+  .kick{font-family:'Space Grotesk',sans-serif;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500}
+  a{color:inherit;text-decoration:none}
+  .streak{position:relative;display:inline-block}
+  .streak::after{content:"";position:absolute;right:-.62em;top:.06em;width:.5em;height:.5em;background:var(--blue);border-radius:50%;box-shadow:.34em .18em 0 -.16em rgba(0,0,0,.55),.62em .32em 0 -.24em rgba(0,0,0,.25)}
+
+  .announce{background:var(--ink);color:var(--paper);display:flex;flex-wrap:wrap;gap:6px 26px;justify-content:center;align-items:center;padding:9px 16px;text-align:center;border-bottom:2px solid var(--ink)}
+  .announce span{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.03em}
+  .announce span::before{content:"✦";color:var(--blue);margin-right:7px}
+  .announce b{color:var(--yellow)}
+
+  nav{position:sticky;top:0;z-index:30;background:rgba(242,241,240,.92);backdrop-filter:blur(9px);border-bottom:2px solid var(--ink)}
+  .nav-in{display:flex;justify-content:space-between;align-items:center;padding-block:15px;gap:16px}
+  .brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.3rem}
+  .nav-links{display:flex;gap:20px;align-items:center;list-style:none;font-size:.82rem;font-weight:600}
+  .nav-links a:hover{color:var(--blue)}
+  .nav-links .bag{background:var(--blue);color:#fff;padding:9px 14px;border-radius:2px;font-family:'Space Grotesk',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
+  @media(max-width:640px){.nav-links li.hideSm{display:none}}
+
+  header{padding-block:clamp(34px,6vw,58px) 6px}
+  header .kick{color:var(--blue)}
+  header h1{font-weight:700;font-size:clamp(2rem,6vw,3.4rem);line-height:1;letter-spacing:-.02em;text-transform:uppercase;margin:12px 0 8px}
+  header p{color:var(--muted);font-weight:500;max-width:52ch}
+
+  /* category pills */
+  .cats{display:flex;gap:10px;overflow-x:auto;padding:22px 0 6px;scroll-snap-type:x mandatory;position:sticky;top:57px;background:var(--paper);z-index:20}
+  .catpill{flex:0 0 auto;scroll-snap-align:start;cursor:pointer;border:2px solid var(--ink);background:var(--white);border-radius:2px;padding:10px 16px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;transition:background .15s,color .15s}
+  .catpill:hover{background:var(--paper)}
+  .catpill.active{background:var(--ink);color:var(--paper)}
+
+  /* filter bar */
+  .fbar{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;padding:14px 0 4px}
+  .fbar .count{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+  .fbar .sort{display:flex;align-items:center;gap:8px}
+  .fbar label{font-family:'Space Grotesk',sans-serif;font-size:.62rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .fbar select{border:2px solid var(--ink);border-radius:2px;background:var(--white);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.8rem;padding:8px 10px}
+  .fbar select:focus{outline:3px solid var(--blue);outline-offset:1px}
+
+  /* product grid */
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding-block:16px 44px}
+  @media(max-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:760px){.grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:460px){.grid{grid-template-columns:1fr}}
+  .pcard{position:relative;display:block;background:var(--white);border:2px solid var(--ink);border-radius:4px;padding:18px;transition:transform .12s,box-shadow .12s}
+  .pcard:hover{transform:translateY(-3px);box-shadow:6px 6px 0 var(--ink)}
+  .tag{position:absolute;top:12px;left:12px;font-family:'Space Grotesk',sans-serif;font-size:.55rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 8px;border:1.6px solid var(--ink)}
+  .tag.best{background:var(--yellow);color:var(--ink)}
+  .tag.new{background:var(--blue);color:#fff;border-color:var(--blue)}
+  .pg{width:100%;height:120px;display:block;margin:4px 0 8px}
+  .pg .cl{stroke:var(--ink);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .pg .fl{stroke:rgba(0,0,0,.4);stroke-width:2;stroke-dasharray:4 3;fill:none}
+  .dots{display:flex;gap:6px;justify-content:center;margin-bottom:8px}
+  .dots i{width:13px;height:13px;border-radius:50%;background:var(--c);border:1.6px solid var(--ink)}
+  .pname{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;text-transform:uppercase;text-align:center}
+  .pmeta{font-family:'Space Grotesk',sans-serif;font-size:.62rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:6px}
+  .pprice{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:var(--blue);text-align:center}
+  .ppre{font-family:'Space Grotesk',sans-serif;font-size:.6rem;font-weight:600;color:var(--muted);text-align:center;margin-top:1px}
+  .add{margin-top:12px;cursor:pointer;width:100%;background:var(--ink);color:var(--paper);border:2px solid var(--ink);border-radius:2px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;padding:10px;transition:background .2s,color .2s}
+  .add:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+
+  /* trust badges */
+  .badgeband{background:var(--white);border-block:2px solid var(--ink)}
+  .badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:24px 0}
+  .badge{display:flex;align-items:center;gap:9px;border:2px solid var(--ink);border-radius:3px;background:var(--white);padding:10px 14px}
+  .badge svg{width:22px;height:22px;stroke:var(--ink);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+  .badge span{font-family:'Space Grotesk',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;white-space:nowrap}
+  .badge.hot{border-color:var(--blue)}.badge.hot svg{stroke:var(--blue)}.badge.hot span{color:var(--blue)}
+
+  section{padding-block:clamp(46px,7vw,84px)}
+  .story{background:var(--ink);color:var(--paper);text-align:center;border-top:2px solid var(--ink)}
+  .story .in{max-width:66ch;margin:0 auto}
+  .story .kick{color:var(--blue)}
+  .story h2{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(1.7rem,4.5vw,2.9rem);line-height:1.04;text-transform:uppercase;letter-spacing:-.01em;margin:14px 0 20px}
+  .story p{color:rgba(242,241,240,.82);font-weight:500;font-size:1.05rem;margin-bottom:14px}
+  .story .big{font-family:'Space Grotesk',sans-serif;color:var(--white);font-weight:700}
+  .story .sig{font-family:'Space Grotesk',sans-serif;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-top:22px}
+
+  footer{background:var(--ink);color:rgba(242,241,240,.7);padding:34px 0;border-top:2px solid var(--ink);text-align:center;font-family:'Space Grotesk',sans-serif;font-size:.68rem;letter-spacing:.04em}
+
+  /* mobile navigation */
+  .navtoggle{display:none;background:none;border:2px solid var(--ink);border-radius:2px;width:42px;height:36px;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:4px;padding:0}
+  .navtoggle span{display:block;width:18px;height:2px;background:var(--ink);transition:transform .2s}
+  .navtoggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+  .navtoggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .navtoggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+  .mobmenu{display:none;position:sticky;top:57px;z-index:29;background:var(--paper);border-bottom:2px solid var(--ink)}
+  .mobmenu.on{display:block}
+  .mobmenu a{display:block;padding:13px var(--gutter);border-top:1px solid var(--line);font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink);text-decoration:none}
+  .mobmenu a:first-child{border-top:0}
+  .mobmenu a:hover,.mobmenu a:focus{color:var(--blue)}
+  @media(max-width:820px){
+    .navtoggle{display:flex}
+    .nav-links li.hideSm{display:none}
+    .nav-r a.nl{display:none}
+    .nav-r .signed.hideSm{display:none}
+  }
+
+  .fl2x{font-family:"Space Grotesk",sans-serif;font-size:.68rem;letter-spacing:.04em;line-height:2}
+  .fl2x a{color:rgba(242,241,240,.7);text-decoration:none}
+  .fl2x a:hover{color:var(--paper)}
+
+  .bigfoot{background:var(--ink);color:rgba(242,241,240,.7);padding-block:38px 46px;border-top:2px solid var(--ink);text-align:left}
+  .bigfoot .in{max-width:1240px;margin:0 auto;padding-inline:var(--gutter);display:flex;flex-wrap:wrap;gap:22px;justify-content:space-between}
+  .bigfoot .bb{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1.4rem;color:var(--paper);position:relative;display:inline-block}
+  .bigfoot .bb::after{content:"";position:absolute;right:-.62em;top:.06em;width:.5em;height:.5em;background:var(--blue);border-radius:50%;box-shadow:.34em .18em 0 -.16em rgba(242,241,240,.5),.62em .32em 0 -.24em rgba(242,241,240,.25)}
+  .bigfoot .fl2x{font-family:"Space Grotesk",sans-serif;font-size:.68rem;letter-spacing:.04em;line-height:2}
+  .bigfoot .fl2x a{color:rgba(242,241,240,.7);text-decoration:none}
+  .bigfoot .fl2x a:hover{color:var(--paper)}
+  .bigfoot .dot{color:var(--blue)}
+</style>
+</head>
+<body>
+
+<div class="announce">
+  <span>Free shipping on <b>all orders</b></span>
+  <span>Pay online — skip COD charges &amp; take <b>5% extra off</b></span>
+</div>
+
+<nav>
+  <div class="wrap nav-in">
+    <a href="drunken-glass-comet.html" class="brand streak">Drunken Glass</a>
+    <ul class="nav-links">
+      <li class="hideSm"><a href="drunken-glass-gifting.html">Gifting</a></li>
+      <li class="hideSm"><a href="drunken-glass-about.html">About</a></li>
+      <li><a href="drunken-glass-cart.html" class="bag" id="bagBtn">Bag (0)</a></li>
+    </ul>
+    <button class="navtoggle" id="navtoggle" aria-label="Menu" aria-expanded="false" aria-controls="mobmenu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobmenu" id="mobmenu">
+  <a href="drunken-glass-comet.html">Home</a>
+  <a href="drunken-glass-category.html">Shop</a>
+  <a href="drunken-glass-gifting.html">Corporate Gifting</a>
+  <a href="drunken-glass-about.html">Our Story</a>
+  <a href="drunken-glass-cart.html">Cart</a>
+  <a href="drunken-glass-track.html">Track Order</a>
+  <a href="drunken-glass-contact.html">Contact</a>
+  <a href="drunken-glass-policies.html">Policies</a>
+</div>
+
+<header>
+  <div class="wrap">
+    <p class="kick">Shop the collection</p>
+    <h1 id="catTitle">Wine &amp; Champagne</h1>
+    <p id="catBlurb">Hand-cut lead-free crystal, drawn to a fill line. Available in mixed colours as shown.</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="cats" id="cats"></div>
+  <div class="fbar">
+    <span class="count" id="count">0 designs</span>
+    <div class="sort">
+      <label for="sort">Sort</label>
+      <select id="sort">
+        <option value="featured">Featured</option>
+        <option value="low">Price · low to high</option>
+        <option value="high">Price · high to low</option>
+      </select>
+    </div>
+  </div>
+  <div class="grid" id="grid"></div>
+</div>
+
+<!-- TRUST BADGES -->
+<div class="badgeband">
+  <div class="wrap badges">
+    <div class="badge"><svg viewBox="0 0 24 24"><path d="M1 5h12v10H1z"/><path d="M13 8h4l4 4v3h-8z"/><circle cx="6" cy="18" r="1.7"/><circle cx="17" cy="18" r="1.7"/></svg><span>Free shipping</span></div>
+    <div class="badge hot"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 9h20"/></svg><span>Prepaid · 5% extra off</span></div>
+    <div class="badge"><svg viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V5z"/><path d="M9 12l2 2 4-4"/></svg><span>Free breakage replacement</span></div>
+    <div class="badge"><svg viewBox="0 0 24 24"><path d="M12 3s6 6 6 11a6 6 0 0 1-12 0c0-5 6-11 6-11z"/></svg><span>Lead-free glass</span></div>
+    <div class="badge"><svg viewBox="0 0 24 24"><path d="M12 3c1 3 4 4 4 8a4 4 0 0 1-8 0c0-2 1-3 2-4 0 2 1 2 2 2 0-2-2-3-2-6z"/></svg><span>Factory-direct</span></div>
+    <div class="badge"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span>Secure checkout</span></div>
+  </div>
+</div>
+
+<!-- STORY -->
+<section class="story">
+  <div class="wrap in">
+    <p class="kick">The two brothers</p>
+    <h2>The world drank from our glass.<br>It never knew our name.</h2>
+    <p>For fifteen years, two brothers — <span class="big">Amit and Rahul Gupta</span> — have shaped glass at one furnace, and shipped it to tables the world over. Every cut was ours. The label was always someone else's.</p>
+    <p class="sig">Amit &amp; Rahul Gupta ✦ exported to the world ✦ finally poured at home</p>
+  </div>
+</section>
+
+<footer class="bigfoot">
+  <div class="in">
+    <div>
+      <div class="bb">Drunken Glass</div>
+      <p class="fl2x" style="margin-top:10px">Made at our furnace <span class="dot">&#10022;</span> sold direct<br>Amit &amp; Rahul Gupta</p>
+    </div>
+    <div class="fl2x">
+      <a href="drunken-glass-category.html">Shop</a><br>
+      <a href="drunken-glass-gifting.html">Corporate gifting</a><br>
+      <a href="drunken-glass-about.html">Our story</a>
+    </div>
+    <div class="fl2x">
+      <a href="drunken-glass-contact.html">Contact us</a><br>
+      <a href="drunken-glass-track.html">Track your order</a><br>
+      <a href="drunken-glass-policies.html#shipping">Shipping policy</a><br>
+      <a href="drunken-glass-policies.html#returns">Returns &amp; replacement</a>
+    </div>
+    <div class="fl2x">
+      <a href="drunken-glass-policies.html#privacy">Privacy policy</a><br>
+      <a href="drunken-glass-policies.html#terms">Terms &amp; conditions</a><br>
+      <a href="drunken-glass-cart.html">Your bag</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const $ = id => document.getElementById(id);
+const inr = n => '₹'+Math.round(n).toLocaleString('en-IN');
+const DOTS = '<div class="dots"><i style="--c:#ffffff"></i><i style="--c:#6b7b78"></i><i style="--c:#b4661c"></i><i style="--c:#2765fa"></i><i style="--c:#3f7d5a"></i></div>';
+
+const G={
+  wine:'<path class="cl" d="M18,8 Q18,44 35,50 Q52,44 52,8"/><path class="fl" d="M22,26 Q35,32 48,26"/><path class="cl" d="M35,50 L35,86"/><path class="cl" d="M24,90 L46,90"/>',
+  cocktail:'<path class="cl" d="M16,20 L35,48 L54,20 Z"/><path class="fl" d="M24,30 L46,30"/><path class="cl" d="M35,48 L35,86"/><path class="cl" d="M24,90 L46,90"/>',
+  whisky:'<path class="cl" d="M20,26 L23,88 L47,88 L50,26 Z"/><path class="fl" d="M22,50 L48,50"/>',
+  coffee:'<path class="cl" d="M22,34 L22,82 Q22,88 34,88 Q46,88 46,82 L46,34"/><path class="cl" d="M22,34 Q34,28 46,34"/><path class="fl" d="M24,50 Q34,45 44,50"/><path class="cl" d="M46,44 Q60,46 58,62 Q56,72 46,72"/>',
+  tumbler:'<path class="cl" d="M24,18 L27,90 L43,90 L46,18 Z"/><path class="fl" d="M25,44 L45,44"/>',
+  decanter:'<path class="cl" d="M31,10 L31,26 Q18,40 18,64 Q18,88 35,88 Q52,88 52,64 Q52,40 39,26 L39,10 Z"/><path class="fl" d="M21,60 Q35,54 49,60"/><path class="cl" d="M28,10 L42,10"/>',
+  candle:'<path class="cl" d="M24,40 L24,84 L46,84 L46,40 Z"/><path class="cl" d="M24,40 Q35,34 46,40"/><path class="cl" d="M35,40 L35,30"/><path class="fl" d="M31,24 Q35,16 39,24 Q35,30 31,24 Z"/>'
+};
+const CATS=[
+  {key:'wine',label:'Wine & Champagne',blurb:'Hand-cut lead-free crystal, drawn to a fill line. Available in mixed colours as shown.',mat:'Crystal',glyph:G.wine,items:[
+    {name:'Aria',price:1190,tag:'best'},{name:'Facet',price:1290},{name:'Ripple',price:1240,tag:'new'},{name:'Ember',price:1340},{name:'Monsoon',price:1290},{name:'Aurora',price:1490}]},
+  {key:'cocktail',label:'Cocktail',blurb:'Coupes, martinis and more — crystal, cut for the bar cart.',mat:'Crystal',glyph:G.cocktail,items:[
+    {name:'Coupe',price:1090,tag:'best'},{name:'Martini',price:1150},{name:'Nick & Nora',price:1190},{name:'Margarita',price:1090}]},
+  {key:'whisky',label:'Whisky',blurb:'Heavy-based crystal rocks glasses that sit right in the hand.',mat:'Crystal',glyph:G.whisky,items:[
+    {name:'Rocks',price:990,tag:'best'},{name:'Neat',price:960},{name:'Old Fashioned',price:1090},{name:'Cut',price:1040}]},
+  {key:'coffee',label:'Coffee & Tea',blurb:'Double-walled borosilicate — heat-clean, keeps its cool on the outside.',mat:'Borosilicate',glyph:G.coffee,items:[
+    {name:'Latte',price:690,tag:'best'},{name:'Cortado',price:640},{name:'Cappuccino',price:720},{name:'Irish',price:760,tag:'new'}]},
+  {key:'tumbler',label:'Tumblers',blurb:'The borosilicate workhorse — dishwasher-proof, hard to chip.',mat:'Borosilicate',glyph:G.tumbler,items:[
+    {name:'Highball',price:740,tag:'best'},{name:'Double Old',price:690},{name:'Cooler',price:790},{name:'Tall',price:820}]},
+  {key:'decanter',label:'Decanters',blurb:'Crystal decanters that let wine and spirits open up.',mat:'Crystal',glyph:G.decanter,items:[
+    {name:'Classic',price:2490,tag:'best'},{name:'Globe',price:3190},{name:'Ship',price:2890},{name:'Slim',price:2290}]},
+  {key:'candle',label:'Candle Jars',blurb:'Refillable glass jars and stands — the glow that closes the night.',mat:'Glass',glyph:G.candle,items:[
+    {name:'Jar',price:890,tag:'best'},{name:'Tall',price:990},{name:'Votive',price:640},{name:'Stand',price:1190}]}
+];
+
+let currentCat=CATS[0].key, bag=0;
+
+function renderCats(){
+  const box=$('cats');
+  CATS.forEach(c=>{
+    const p=document.createElement('div'); p.className='catpill'+(c.key===currentCat?' active':''); p.dataset.k=c.key; p.textContent=c.label;
+    p.addEventListener('click',()=>selectCat(c.key));
+    box.appendChild(p);
+  });
+}
+function selectCat(key){
+  currentCat=key;
+  document.querySelectorAll('.catpill').forEach(p=>p.classList.toggle('active',p.dataset.k===key));
+  const cat=CATS.find(c=>c.key===key);
+  $('catTitle').innerHTML=cat.label;
+  $('catBlurb').textContent=cat.blurb;
+  renderGrid();
+}
+function renderGrid(){
+  const cat=CATS.find(c=>c.key===currentCat);
+  let items=cat.items.slice();
+  const s=$('sort').value;
+  if(s==='low') items.sort((a,b)=>a.price-b.price);
+  else if(s==='high') items.sort((a,b)=>b.price-a.price);
+  $('count').textContent=items.length+' designs';
+  const grid=$('grid'); grid.innerHTML='';
+  items.forEach(it=>{
+    const card=document.createElement('a'); card.className='pcard'; card.href='drunken-glass-pdp.html';
+    const tag = it.tag==='best'?'<span class="tag best">Bestseller</span>' : it.tag==='new'?'<span class="tag new">New</span>' : '';
+    card.innerHTML = tag +
+      `<svg viewBox="0 0 70 100" class="pg">${cat.glyph}</svg>`+ DOTS +
+      `<div class="pname">${it.name}</div>`+
+      `<div class="pmeta">${cat.label.split(' ')[0]} · ${cat.mat}</div>`+
+      `<div class="pprice">${inr(it.price)}</div>`+
+      `<div class="ppre">Pay online ${inr(it.price*0.95)}</div>`+
+      `<button class="add" data-add>Add to bag</button>`;
+    grid.appendChild(card);
+  });
+}
+$('grid').addEventListener('click',e=>{
+  const b=e.target.closest('[data-add]'); if(!b) return;
+  e.preventDefault();
+  bag++; $('bagBtn').textContent='Bag ('+bag+')';
+  const w=b.textContent; b.textContent='Added ✦'; setTimeout(()=>b.textContent=w,1200);
+});
+$('sort').addEventListener('change',renderGrid);
+
+renderCats();
+selectCat(currentCat);
+</script>
+
+<script>
+(function(){
+  var t=document.getElementById("navtoggle"), m=document.getElementById("mobmenu");
+  if(!t||!m) return;
+  t.addEventListener("click",function(){
+    var open=m.classList.toggle("on");
+    t.setAttribute("aria-expanded",open?"true":"false");
+  });
+})();
+</script>
+</body>
+</html>

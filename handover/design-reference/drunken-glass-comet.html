@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drunken Glass — we make the glass, you skip the middleman</title>
+<meta name="description" content="Drunken Glass — hand-cut lead-free crystal and borosilicate glassware, made at our own furnace in India and sold direct. Free shipping, wholesale for trade.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Drunken Glass">
+<meta property="og:title" content="Drunken Glass — we make the glass, you skip the middleman">
+<meta property="og:description" content="Drunken Glass — hand-cut lead-free crystal and borosilicate glassware, made at our own furnace in India and sold direct. Free shipping, wholesale for trade.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#2765fa">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Comet brand kit */
+    --paper:#f2f1f0;      /* Light Grey */
+    --ink:#000000;        /* Black */
+    --blue:#2765fa;       /* Blue */
+    --berry:#ef426f;      /* Berry */
+    --yellow:#eaef29;     /* Yellow */
+    --white:#ffffff;
+    --line:rgba(0,0,0,.14);
+    --muted:rgba(0,0,0,.56);
+    --pace:cubic-bezier(.16,.84,.3,1);
+    --gutter:clamp(20px,5vw,64px);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:'Montserrat',system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1240px;margin:0 auto;padding-inline:var(--gutter)}
+  h1,h2,h3,.grotesk{font-family:'Space Grotesk',sans-serif}
+  .kick{font-family:'Space Grotesk',sans-serif;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500}
+  a{color:inherit;text-decoration:none}
+
+  /* comet streak (signature) */
+  .streak{position:relative;display:inline-block}
+  .streak::after{content:"";position:absolute;right:-.62em;top:.06em;width:.5em;height:.5em;background:var(--blue);border-radius:50%;box-shadow:.34em .18em 0 -.16em rgba(0,0,0,.55),.62em .32em 0 -.24em rgba(0,0,0,.25)}
+
+  /* marquee */
+  .ticker{background:var(--ink);color:var(--paper);overflow:hidden;white-space:nowrap}
+  .ticker .run{display:inline-block;padding-block:9px;animation:slide 22s linear infinite}
+  .ticker span{font-family:'Space Grotesk',sans-serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;padding-inline:22px}
+  .ticker .dot{color:var(--blue)}
+  @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:30;background:rgba(242,241,240,.9);backdrop-filter:blur(9px);border-bottom:2px solid var(--ink)}
+  .nav-in{display:flex;justify-content:space-between;align-items:center;padding-block:15px;gap:16px}
+  .brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.3rem;letter-spacing:-.01em}
+  .nav-links{display:flex;gap:22px;align-items:center;list-style:none;font-size:.82rem;font-weight:600}
+  .nav-links a:hover{color:var(--blue)}
+  .nav-links .trade{background:var(--blue);color:var(--white);padding:9px 15px;border-radius:2px;font-family:'Space Grotesk',sans-serif;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
+  .nav-links .trade:hover{background:var(--ink);color:var(--white)}
+  @media(max-width:760px){.nav-links li.hideSm{display:none}}
+
+  /* hero */
+  .hero{position:relative;overflow:hidden;padding-block:clamp(52px,9vw,104px) clamp(44px,6vw,80px)}
+  .hero .kick{color:var(--blue)}
+  .hero h1{font-weight:700;font-size:clamp(2.7rem,9vw,6rem);line-height:.98;letter-spacing:-.02em;margin:16px 0 22px;text-transform:uppercase}
+  .hero h1 .berry{color:var(--berry)}
+  .hero .lede{max-width:54ch;font-size:1.1rem;font-weight:500}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  .btn{cursor:pointer;display:inline-block;border:2px solid var(--ink);background:var(--ink);color:var(--paper);font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;padding:14px 24px;border-radius:2px;transition:transform .06s,background .2s,color .2s}
+  .btn:hover{background:var(--blue);border-color:var(--blue);color:var(--white)}
+  .btn:active{transform:translateY(1px)}
+  .btn.ghost{background:transparent;color:var(--ink)}
+  .btn.ghost:hover{background:var(--ink);color:var(--paper)}
+  .comet-arc{position:absolute;right:-6%;top:8%;width:min(46vw,520px);height:min(46vw,520px);border-radius:50%;background:radial-gradient(circle at 40% 40%,rgba(39,101,250,.16),transparent 62%);pointer-events:none}
+  .comet-arc::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px dashed rgba(0,0,0,.18);transform:scale(.62)}
+  .comet-arc.spin{animation:drift 1.4s var(--pace)}
+  @keyframes drift{from{opacity:0;transform:translate(30px,-20px)}to{opacity:1;transform:none}}
+
+  /* section base */
+  section{padding-block:clamp(52px,7vw,92px)}
+  .head{max-width:60ch;margin-bottom:40px}
+  .head h2{font-weight:700;font-size:clamp(2rem,5.5vw,3.4rem);line-height:1;letter-spacing:-.02em;text-transform:uppercase;margin:10px 0 12px}
+  .head p{color:var(--muted);font-weight:500;font-size:1.04rem}
+
+  /* trust */
+  .trust{background:var(--blue);color:var(--white);border-block:2px solid var(--ink)}
+  .trust-in{display:grid;grid-template-columns:repeat(4,1fr)}
+  @media(max-width:760px){.trust-in{grid-template-columns:1fr 1fr}}
+  .trust .cell{padding:22px 20px;border-left:1px solid rgba(255,255,255,.28)}
+  .trust .cell:first-child{border-left:0}
+  @media(max-width:760px){.trust .cell:nth-child(odd){border-left:0}.trust .cell:nth-child(n+3){border-top:1px solid rgba(255,255,255,.28)}}
+  .trust .k{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.8rem;line-height:1}
+  .trust .v{font-size:.72rem;font-weight:600;letter-spacing:.04em;margin-top:6px;color:rgba(255,255,255,.86)}
+
+  /* factory */
+  .factory{background:var(--ink);color:var(--paper)}
+  .factory .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
+  @media(max-width:860px){.factory .grid{grid-template-columns:1fr;gap:30px}}
+  .factory .kick{color:var(--blue)}
+  .factory h2{font-weight:700;font-size:clamp(2rem,5.5vw,3.4rem);line-height:1;letter-spacing:-.02em;text-transform:uppercase;margin:12px 0 20px}
+  .factory p{color:rgba(242,241,240,.82);font-weight:500;margin-bottom:14px;max-width:52ch}
+  .factory .b{color:var(--white);font-weight:700}
+  .fstats{border:2px solid rgba(242,241,240,.24);border-radius:3px;overflow:hidden}
+  .fstats .row{display:flex;justify-content:space-between;align-items:baseline;padding:18px 20px;border-top:1px solid rgba(242,241,240,.16)}
+  .fstats .row:first-child{border-top:0}
+  .fstats .n{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.8rem;color:var(--white)}
+  .fstats .lab{font-size:.68rem;font-weight:600;letter-spacing:.03em;color:rgba(242,241,240,.6);max-width:22ch;text-align:right}
+
+  /* categories */
+  .cats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  @media(max-width:960px){.cats{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.cats{grid-template-columns:1fr 1fr}}
+  .cat{display:block;color:inherit;text-decoration:none;background:var(--white);border:2px solid var(--ink);border-radius:3px;padding:18px 16px 16px;text-align:center;transition:transform .12s,box-shadow .12s;position:relative}
+  .cat:hover{transform:translateY(-3px);box-shadow:6px 6px 0 var(--ink)}
+  .cat svg{width:100%;height:96px;margin-bottom:10px}
+  .cat .cl{stroke:var(--ink);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .cat .fl{stroke:rgba(0,0,0,.42);stroke-width:2;stroke-dasharray:4 3;fill:none}
+  .cat h3{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.98rem;text-transform:uppercase;letter-spacing:.01em}
+  .cat p{font-size:.72rem;color:var(--muted);font-weight:500;margin-top:2px}
+  .cat.big{grid-column:span 1}
+  .cat .flag{position:absolute;top:10px;right:10px;background:var(--yellow);font-family:'Space Grotesk',sans-serif;font-size:.54rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 6px;border:1.5px solid var(--ink)}
+
+  /* material split */
+  .mats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:760px){.mats{grid-template-columns:1fr}}
+  .mat{border:2px solid var(--ink);border-radius:3px;padding:clamp(22px,3vw,32px)}
+  .mat.crystal{background:var(--white)}
+  .mat.boro{background:var(--ink);color:var(--paper)}
+  .mat .tag{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;display:inline-block;padding:5px 9px;border:1.5px solid currentColor;border-radius:2px;margin-bottom:14px}
+  .mat h3{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.7rem;text-transform:uppercase;letter-spacing:-.01em;margin-bottom:8px}
+  .mat p{font-weight:500;font-size:.95rem;max-width:42ch}
+  .mat.crystal p{color:var(--muted)}
+  .mat .aud{font-family:'Space Grotesk',sans-serif;font-size:.64rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-top:18px;padding-top:14px;border-top:1.5px solid currentColor;opacity:.85}
+
+  /* shop preview */
+  .shop{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  @media(max-width:960px){.shop{grid-template-columns:repeat(2,1fr)}}
+  .card{background:var(--white);border:2px solid var(--ink);border-radius:3px;padding:16px;text-align:center}
+  .card svg{width:100%;height:120px;margin-bottom:8px}
+  .card .cl{stroke:var(--ink);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .card .fl{stroke:rgba(0,0,0,.42);stroke-width:2;stroke-dasharray:4 3;fill:none}
+  .card .pn{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1rem;text-transform:uppercase}
+  .card .pp{font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:.84rem;color:var(--blue);margin-top:2px}
+  .card .add{margin-top:10px;cursor:pointer;background:var(--ink);color:var(--paper);border:2px solid var(--ink);border-radius:2px;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;padding:9px;width:100%;transition:background .2s,color .2s}
+  .card .add:hover{background:var(--blue);border-color:var(--blue);color:var(--white)}
+
+  /* trade */
+  .trade{background:var(--white);border-block:2px solid var(--ink)}
+  .trade .grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+  @media(max-width:860px){.trade .grid{grid-template-columns:1fr}}
+  .trade .kick{color:var(--blue)}
+  .trade h2{font-weight:700;font-size:clamp(1.9rem,5vw,3rem);line-height:1;letter-spacing:-.02em;text-transform:uppercase;margin:10px 0 14px}
+  .trade .lede{color:var(--muted);font-weight:500;max-width:46ch}
+  .gatebox{border:2px solid var(--ink);border-radius:3px;padding:26px;background:var(--paper)}
+  label{display:block;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  input{width:100%;background:var(--white);border:2px solid var(--ink);border-radius:2px;font-family:'Montserrat',sans-serif;font-size:.95rem;padding:11px 12px;margin-bottom:12px}
+  input:focus{outline:3px solid var(--blue);outline-offset:1px}
+  .hint{font-family:'Space Grotesk',sans-serif;font-size:.64rem;color:var(--muted);min-height:1em;margin:-4px 0 12px}
+  .hint.bad{color:var(--ink);font-weight:600}
+  .demo{font-family:'Space Grotesk',sans-serif;font-size:.66rem;color:var(--muted);margin-top:12px}
+  .price-reveal{display:none}.price-reveal.on{display:block}
+  table{width:100%;border-collapse:collapse;font-size:.9rem}
+  th,td{text-align:left;padding:11px 8px;border-bottom:1px solid var(--line)}
+  th{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  td.p{font-family:'Space Grotesk',sans-serif;font-weight:500;color:var(--blue)}
+  .ph-note{font-family:'Space Grotesk',sans-serif;font-size:.62rem;color:var(--muted);margin-top:14px;line-height:1.5}
+
+  /* announcement bar */
+  .announce{background:var(--ink);color:var(--paper);display:flex;flex-wrap:wrap;gap:6px 26px;justify-content:center;align-items:center;padding:9px 16px;text-align:center;border-bottom:2px solid var(--ink)}
+  .announce span{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.03em}
+  .announce span::before{content:"✦";color:var(--blue);margin-right:7px}
+  .announce b{color:var(--yellow)}
+
+  /* trust badges */
+  .badgeband{background:var(--white);border-block:2px solid var(--ink)}
+  .badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:26px 0}
+  .badge{display:flex;align-items:center;gap:9px;border:2px solid var(--ink);border-radius:3px;background:var(--white);padding:10px 14px}
+  .badge svg{width:22px;height:22px;stroke:var(--ink);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+  .badge span{font-family:'Space Grotesk',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;white-space:nowrap}
+  .badge.hot{border-color:var(--blue)}.badge.hot svg{stroke:var(--blue)}.badge.hot span{color:var(--blue)}
+
+  /* replacement policy */
+  .policy .grid{display:grid;grid-template-columns:1fr 1.1fr;gap:36px;align-items:start}
+  @media(max-width:820px){.policy .grid{grid-template-columns:1fr;gap:24px}}
+  .policy .promise{background:var(--ink);color:var(--paper);border-radius:4px;padding:26px}
+  .policy .promise h3{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.5rem;text-transform:uppercase;line-height:1.06;margin-bottom:10px}
+  .policy .promise p{color:rgba(242,241,240,.82);font-weight:500;font-size:.95rem}
+  .steps{list-style:none;counter-reset:s}
+  .steps li{counter-increment:s;position:relative;padding:14px 0 14px 46px;border-bottom:1px solid var(--line)}
+  .steps li:last-child{border-bottom:0}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:12px;width:30px;height:30px;display:grid;place-items:center;background:var(--blue);color:var(--white);font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.88rem;border-radius:50%}
+  .steps h4{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.92rem;text-transform:uppercase;margin-bottom:2px}
+  .steps p{font-size:.86rem;color:var(--muted);font-weight:500}
+  .fine{margin-top:18px;font-size:.8rem;color:var(--muted);font-weight:500;line-height:1.8}
+  .fine b{color:var(--ink);font-weight:700}
+
+  /* brand story */
+  .story{background:var(--ink);color:var(--paper);text-align:center;border-top:2px solid var(--ink)}
+  .story .in{max-width:66ch;margin:0 auto}
+  .story .kick{color:var(--blue)}
+  .story h2{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(1.7rem,4.5vw,2.9rem);line-height:1.04;text-transform:uppercase;letter-spacing:-.01em;margin:14px 0 20px}
+  .story p{color:rgba(242,241,240,.82);font-weight:500;font-size:1.05rem;margin-bottom:14px}
+  .story .big{font-family:'Space Grotesk',sans-serif;color:var(--white);font-weight:700}
+  .story .sig{font-family:'Space Grotesk',sans-serif;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-top:22px}
+
+  footer{background:var(--ink);color:rgba(242,241,240,.72);padding-block:46px 58px}
+  .foot-in{display:flex;flex-wrap:wrap;gap:22px;justify-content:space-between}
+  footer .brand{color:var(--paper)}
+  footer .fmono{font-family:'Space Grotesk',sans-serif;font-size:.68rem;letter-spacing:.04em;line-height:1.9}
+  footer .fmono .dot{color:var(--blue)}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--pace),transform .7s var(--pace)}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-duration:.001ms!important;animation:none!important}.reveal{opacity:1;transform:none}.ticker .run{animation:none}}
+
+  /* mobile navigation */
+  .navtoggle{display:none;background:none;border:2px solid var(--ink);border-radius:2px;width:42px;height:36px;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:4px;padding:0}
+  .navtoggle span{display:block;width:18px;height:2px;background:var(--ink);transition:transform .2s}
+  .navtoggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+  .navtoggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .navtoggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+  .mobmenu{display:none;position:sticky;top:57px;z-index:29;background:var(--paper);border-bottom:2px solid var(--ink)}
+  .mobmenu.on{display:block}
+  .mobmenu a{display:block;padding:13px var(--gutter);border-top:1px solid var(--line);font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink);text-decoration:none}
+  .mobmenu a:first-child{border-top:0}
+  .mobmenu a:hover,.mobmenu a:focus{color:var(--blue)}
+  @media(max-width:820px){
+    .navtoggle{display:flex}
+    .nav-links li.hideSm{display:none}
+    .nav-r a.nl{display:none}
+    .nav-r .signed.hideSm{display:none}
+  }
+
+  .fl2x{font-family:"Space Grotesk",sans-serif;font-size:.68rem;letter-spacing:.04em;line-height:2}
+  .fl2x a{color:rgba(242,241,240,.7);text-decoration:none}
+  .fl2x a:hover{color:var(--paper)}
+</style>
+</head>
+<body>
+
+<div class="announce">
+  <span>Free shipping on <b>all orders</b></span>
+  <span>Pay online — skip COD charges &amp; take <b>5% extra off</b></span>
+</div>
+
+<div class="ticker" aria-hidden="true">
+  <div class="run">
+    <span>Made at our furnace <span class="dot">✦</span> Sold direct <span class="dot">✦</span> 15 years of borosilicate <span class="dot">✦</span> Never watered down <span class="dot">✦</span> Home &amp; trade <span class="dot">✦</span> Made at our furnace <span class="dot">✦</span> Sold direct <span class="dot">✦</span> 15 years of borosilicate <span class="dot">✦</span> Never watered down <span class="dot">✦</span> Home &amp; trade <span class="dot">✦</span> </span>
+  </div>
+</div>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand streak">Drunken Glass</div>
+    <ul class="nav-links">
+      <li class="hideSm"><a href="drunken-glass-category.html">Shop</a></li>
+      <li class="hideSm"><a href="drunken-glass-gifting.html">Gifting</a></li>
+      <li class="hideSm"><a href="drunken-glass-about.html">About</a></li>
+    </ul>
+    <button class="navtoggle" id="navtoggle" aria-label="Menu" aria-expanded="false" aria-controls="mobmenu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobmenu" id="mobmenu">
+  <a href="drunken-glass-comet.html">Home</a>
+  <a href="drunken-glass-category.html">Shop</a>
+  <a href="drunken-glass-gifting.html">Corporate Gifting</a>
+  <a href="drunken-glass-about.html">Our Story</a>
+  <a href="drunken-glass-cart.html">Cart</a>
+  <a href="drunken-glass-track.html">Track Order</a>
+  <a href="drunken-glass-contact.html">Contact</a>
+  <a href="drunken-glass-policies.html">Policies</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="comet-arc" id="arc" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="kick">Homegrown · our own furnace · direct from the factory</p>
+    <h1>We make the glass.<br>You skip the <span class="berry">middleman</span>.</h1>
+    <p class="lede">Fifteen years shaping borosilicate — the tough, heat-clean glass of labs and kitchens. Now cut into a designer crystal line, and shipped straight from our furnace. Fair prices for the home. Real supply for the trade. Never watered down.</p>
+    <div class="cta-row">
+      <a class="btn" href="drunken-glass-category.html">Shop the collection</a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div class="trust">
+  <div class="wrap trust-in">
+    <div class="cell"><div class="k">15 YRS</div><div class="v">At our own furnace</div></div>
+    <div class="cell"><div class="k">100+</div><div class="v">Designs, hand-cut</div></div>
+    <div class="cell"><div class="k">7</div><div class="v">Categories, one factory</div></div>
+    <div class="cell"><div class="k">2</div><div class="v">Brothers · Amit &amp; Rahul</div></div>
+  </div>
+</div>
+
+<!-- FACTORY -->
+<section class="factory" id="factory">
+  <div class="wrap">
+    <div class="grid">
+      <div class="reveal">
+        <p class="kick">From the furnace</p>
+        <h2>We don't buy glass.<br>We make it.</h2>
+        <p>For fifteen years our furnace has drawn <span class="b">borosilicate</span> — the glass with so little thermal expansion it goes freezer-to-oven without a crack and shrugs off a thousand dishwasher cycles. The glass labs and kitchens trust.</p>
+        <p>That same mastery is now hand-cut into our <span class="b">crystal line</span>, and everything ships straight off our floor. No distributor stands between our furnace and your table.</p>
+        <p>For a home, direct means a fair price and glass we stand behind. For a restaurant, it means real capacity — the same hundred glasses, run after run.</p>
+      </div>
+      <div class="fstats reveal">
+        <div class="row"><span class="n">3.3</span><span class="lab">×10⁻⁶/K expansion — why it won't crack on heat</span></div>
+        <div class="row"><span class="n">Lead-free</span><span class="lab">Borosilicate carries no lead, by nature</span></div>
+        <div class="row"><span class="n">Direct</span><span class="lab">Furnace → you · no reseller markup</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section id="cats">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="kick" style="color:var(--blue)">The collection</p>
+      <h2>Seven ways to pour.</h2>
+      <p>From the first glass of wine to the candle that closes the night — all made by us, all direct.</p>
+    </div>
+    <div class="cats">
+
+      <a class="cat reveal" href="drunken-glass-category.html">
+        <svg viewBox="0 0 70 100" aria-hidden="true"><path class="cl" d="M18,8 Q18,44 35,50 Q52,44 52,8"/><path class="fl" d="M22,26 Q35,32 48,26"/><path class="cl" d="M35,50 L35,86"/><path class="cl" d="M24,90 L46,90"/></svg>
+        <h3>Wine &amp; Champagne</h3><p>Stemware, drawn to the line</p>
+      </a>
+
+      <a class="cat reveal" href="drunken-glass-category.html">
+        <svg viewBox="0 0 70 100" aria-hidden="true"><path class="cl" d="M16,20 L35,48 L54,20 Z"/><path class="fl" d="M24,30 L46,30"/><path class="cl" d="M35,48 L35,86"/><path class="cl" d="M24,90 L46,90"/></svg>
+        <h3>Cocktail</h3><p>Martini, coupe &amp; more</p>
+      </a>
+
+      <a class="cat reveal" href="drunken-glass-category.html">
+        <svg viewBox="0 0 70 100" aria-hidden="true"><path class="cl" d="M20,26 L23,88 L47,88 L50,26 Z"/><path class="fl" d="M22,50 L48,50"/></svg>
+        <h3>Whisky</h3><p>Heavy-based rocks glasses</p>
+      </a>
+
+      <a class="cat reveal" href="drunken-glass-category.html">
+        <svg viewBox="0 0 70 100" aria-hidden="true"><path class="cl" d="M22,34 L22,82 Q22,88 34,88 Q46,88 46,82 L46,34"/><path class="cl" d="M22,34 Q34,28 46,34"/><path class="fl" d="M24,50 Q34,45 44,50"/><path class="cl" d="M46,44 Q60,46 58,62 Q56,72 46,72"/></svg>
+        <h3>Coffee &amp; Tea</h3><p>Glass cups, double-walled</p>
+      </a>
+
+      <a class="cat reveal" href="drunken-glass-category.html">
+        <svg viewBox="0 0 70 100" aria-hidden="true"><path class="cl" d="M24,16 L27,86 L43,86 L46,16 Z"/><path class="fl" d="M25,40 L45,40"/></svg>
+        <h3>Tumblers</h3><p>The everyday workhorse</p>
+      </a>
+
+      <a class="cat reveal" href="drunken-glass-category.html">
+        <svg viewBox="0 0 70 100" aria-hidden="true"><path class="cl" d="M31,10 L31,26 Q18,40 18,64 Q18,88 35,88 Q52,88 52,64 Q52,40 39,26 L39,10 Z"/><path class="fl" d="M21,60 Q35,54 49,60"/><path class="cl" d="M28,10 L42,10"/></svg>
+        <h3>Decanters</h3><p>For wine &amp; spirits, aerated</p>
+      </a>
+
+      <a class="cat reveal" href="drunken-glass-category.html">
+        <svg viewBox="0 0 70 100" aria-hidden="true"><path class="cl" d="M22,40 L22,84 L48,84 L48,40 Z"/><path class="cl" d="M22,40 Q35,34 48,40"/><path class="cl" d="M35,40 L35,30"/><path class="fl" d="M31,24 Q35,16 39,24 Q35,30 31,24 Z"/></svg>
+        <h3>Candle Jars</h3><p>Jars &amp; stands, refillable</p>
+      </a>
+
+      <a class="cat reveal" href="drunken-glass-category.html" style="display:grid;place-content:center;background:var(--yellow)">
+        <h3 style="font-size:1.1rem">+ Themed<br>Drops</h3><p style="color:var(--ink)">Limited runs, never restocked</p>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- MATERIALS -->
+<section id="materials">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="kick" style="color:var(--blue)">Two glasses, one furnace</p>
+      <h2>The crystal you show off.<br>The borosilicate you rely on.</h2>
+    </div>
+    <div class="mats">
+      <div class="mat crystal reveal">
+        <span class="tag">The Crystal Line</span>
+        <h3>Hand-cut crystal</h3>
+        <p>Lead-free crystal, each shape drawn to its fill line. The glass you set out when it matters — priced openly, shipped direct.</p>
+        <div class="aud">You see prices · buy now · to your door</div>
+      </div>
+      <div class="mat boro reveal">
+        <span class="tag">The Borosilicate Range</span>
+        <h3>Built for volume</h3>
+        <p>Heat-clean, dishwasher-proof, hard to chip. The everyday glass at home — and the glass restaurants order by the hundred.</p>
+        <div class="aud">Home: buy now · Trade: pricing on login</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BADGES -->
+<div class="badgeband">
+  <div class="wrap badges">
+    <div class="badge"><svg viewBox="0 0 24 24"><path d="M1 5h12v10H1z"/><path d="M13 8h4l4 4v3h-8z"/><circle cx="6" cy="18" r="1.7"/><circle cx="17" cy="18" r="1.7"/></svg><span>Free shipping</span></div>
+    <div class="badge hot"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 9h20"/></svg><span>Prepaid · 5% extra off</span></div>
+    <div class="badge"><svg viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V5z"/><path d="M9 12l2 2 4-4"/></svg><span>Free breakage replacement</span></div>
+    <div class="badge"><svg viewBox="0 0 24 24"><path d="M12 3s6 6 6 11a6 6 0 0 1-12 0c0-5 6-11 6-11z"/></svg><span>Lead-free glass</span></div>
+    <div class="badge"><svg viewBox="0 0 24 24"><path d="M12 3c1 3 4 4 4 8a4 4 0 0 1-8 0c0-2 1-3 2-4 0 2 1 2 2 2 0-2-2-3-2-6z"/></svg><span>Factory-direct</span></div>
+    <div class="badge"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span>Secure checkout</span></div>
+  </div>
+</div>
+
+<!-- TRADE -->
+<section class="trade" id="trade">
+  <div class="wrap">
+    <div class="grid">
+      <div class="reveal">
+        <p class="kick">For the trade</p>
+        <h2>Wholesale sits<br>behind the login.</h2>
+        <p class="lede">Restaurants, cafés, bars, hotels and resellers buy direct at trade rates. Apply once — we verify your GSTIN against the government record — and your pricing shows every time you sign in.</p>
+        <div class="cta-row"><a class="btn" href="#" id="applyLink">Apply for a trade account</a></div>
+      </div>
+      <div class="gatebox reveal">
+        <div id="gateForm">
+          <label for="tEmail">Work email</label>
+          <input id="tEmail" type="email" placeholder="orders@yourbusiness.com">
+          <label for="tCode">Access code</label>
+          <input id="tCode" type="text" placeholder="From your approval email">
+          <div class="hint" id="tHint"></div>
+          <button class="btn" style="width:100%" id="tSignin">Sign in to see pricing</button>
+          <p class="demo">Demo code: <strong>DG-DEMO</strong></p>
+        </div>
+        <div class="price-reveal" id="tReveal">
+          <table>
+            <thead><tr><th>Glass</th><th>Retail</th><th>50+</th><th>200+</th></tr></thead>
+            <tbody id="tRows"></tbody>
+          </table>
+          <p class="ph-note">⚠ Illustrative placeholders. In production these are served by your backend only after it confirms the account is approved — never written into the page.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND STORY -->
+<section class="story">
+  <div class="wrap in">
+    <p class="kick">The two brothers</p>
+    <h2>The world drank from our glass.<br>It never knew our name.</h2>
+    <p>For fifteen years, two brothers — <span class="big">Amit and Rahul Gupta</span> — have shaped glass at one furnace, and shipped it to tables the world over, to people who never learned who made it. Every cut was ours. The label was always someone else's.</p>
+    <p>Drunken Glass is us, at last, with our name on the glass — selling to our own country, direct from our own floor. No middleman. No borrowed label. <span class="big">Just the makers, and you.</span></p>
+    <p class="sig">Amit &amp; Rahul Gupta ✦ exported to the world ✦ finally poured at home</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <div>
+      <div class="brand streak" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.4rem">Drunken Glass</div>
+      <p class="fmono" style="margin-top:10px">Made at our furnace <span class="dot">✦</span> sold direct</p>
+    </div>
+    <div class="fmono">
+      Fifteen years of borosilicate<br>
+      Hand-cut lead-free crystal<br>
+      Wine · cocktail · whisky · coffee<br>
+      Tumblers · decanters · candles
+    </div>
+    <div class="fl2x">
+      <a href="drunken-glass-contact.html">Contact us</a><br>
+      <a href="drunken-glass-track.html">Track your order</a><br>
+      <a href="drunken-glass-policies.html#shipping">Shipping policy</a><br>
+      <a href="drunken-glass-policies.html#returns">Returns &amp; replacement</a>
+    </div>
+    <div class="fl2x">
+      <a href="drunken-glass-policies.html#privacy">Privacy policy</a><br>
+      <a href="drunken-glass-policies.html#terms">Terms &amp; conditions</a><br>
+      <a href="drunken-glass-gifting.html">Corporate gifting</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* PROTOTYPE: trade reveal is a client-side simulation. In production, prices come
+   from the server only after it confirms the account is approved. Never ship real
+   wholesale numbers in this file. */
+const PRODUCTS = [
+  {name:'Wine (crystal)', retail:'₹1,190', t50:'₹840', t200:'₹720'},
+  {name:'Cocktail',       retail:'₹1,090', t50:'₹770', t200:'₹660'},
+  {name:'Whisky',         retail:'₹990',   t50:'₹700', t200:'₹600'},
+  {name:'Tumbler (boro)', retail:'₹740',   t50:'₹520', t200:'₹440'},
+];
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const $ = id => document.getElementById(id);
+
+requestAnimationFrame(()=> $('arc').classList.add('spin'));
+
+const io = new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+document.addEventListener('click',e=>{
+  const b=e.target.closest('[data-add]'); if(!b)return;
+  const w=b.textContent; b.textContent='Added ✦'; setTimeout(()=>b.textContent=w,1300);
+});
+
+$('tSignin').addEventListener('click',()=>{
+  const email=$('tEmail').value.trim(), code=$('tCode').value.trim().toUpperCase(), h=$('tHint');
+  if(!EMAIL_RE.test(email)){h.textContent='Enter the email your account was approved under.';h.className='hint bad';return;}
+  /* PRODUCTION: replace with a server request that verifies approval and returns pricing. */
+  if(code!=='DG-DEMO'){h.textContent="That code doesn't match. Check your approval email.";h.className='hint bad';return;}
+  $('tRows').innerHTML = PRODUCTS.map(p=>`<tr><td>${p.name}</td><td class="p">${p.retail}</td><td class="p">${p.t50}</td><td class="p">${p.t200}</td></tr>`).join('');
+  $('gateForm').style.display='none'; $('tReveal').classList.add('on');
+});
+
+$('applyLink').addEventListener('click',e=>{e.preventDefault();alert('Links to the full trade application, where the GSTIN and company details are captured.');});
+</script>
+
+<script>
+(function(){
+  var t=document.getElementById("navtoggle"), m=document.getElementById("mobmenu");
+  if(!t||!m) return;
+  t.addEventListener("click",function(){
+    var open=m.classList.toggle("on");
+    t.setAttribute("aria-expanded",open?"true":"false");
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Track Your Order — Drunken Glass</title>
+<meta name="description" content="Track your Drunken Glass order with your order ID and email or phone number.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Drunken Glass">
+<meta property="og:title" content="Track Your Order — Drunken Glass">
+<meta property="og:description" content="Track your Drunken Glass order with your order ID.">
+<meta name="theme-color" content="#2765fa">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#f2f1f0;--ink:#000;--blue:#2765fa;--berry:#ef426f;--yellow:#eaef29;--white:#fff;--line:rgba(0,0,0,.14);--muted:rgba(0,0,0,.56);--ok:#0F3D33;--gutter:clamp(20px,5vw,64px)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:'Montserrat',system-ui,sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding-inline:var(--gutter)}
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif}
+  .kick{font-family:'Space Grotesk',sans-serif;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500}
+  a{color:inherit;text-decoration:none}
+  .streak{position:relative;display:inline-block}
+  .streak::after{content:"";position:absolute;right:-.62em;top:.06em;width:.5em;height:.5em;background:var(--blue);border-radius:50%;box-shadow:.34em .18em 0 -.16em rgba(0,0,0,.55),.62em .32em 0 -.24em rgba(0,0,0,.25)}
+  .announce{background:var(--ink);color:var(--paper);display:flex;flex-wrap:wrap;gap:6px 26px;justify-content:center;padding:9px 16px;text-align:center}
+  .announce span{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:600}
+  .announce span::before{content:"\2726";color:var(--blue);margin-right:7px}
+  .announce b{color:var(--yellow)}
+  nav{position:sticky;top:0;z-index:30;background:rgba(242,241,240,.92);backdrop-filter:blur(9px);border-bottom:2px solid var(--ink)}
+  .nav-in{display:flex;justify-content:space-between;align-items:center;padding-block:15px;gap:16px}
+  .brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.3rem}
+  .nav-links{display:flex;gap:20px;align-items:center;list-style:none;font-size:.82rem;font-weight:600}
+  .nav-links a:hover{color:var(--blue)}
+  .nav-links .trade{background:var(--blue);color:#fff;padding:9px 14px;border-radius:2px;font-family:'Space Grotesk',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
+  .navtoggle{display:none;background:none;border:2px solid var(--ink);border-radius:2px;width:42px;height:36px;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:4px;padding:0}
+  .navtoggle span{display:block;width:18px;height:2px;background:var(--ink)}
+  .mobmenu{display:none;position:sticky;top:57px;z-index:29;background:var(--paper);border-bottom:2px solid var(--ink)}
+  .mobmenu.on{display:block}
+  .mobmenu a{display:block;padding:13px var(--gutter);border-top:1px solid var(--line);font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em}
+  .mobmenu a:first-child{border-top:0}
+  @media(max-width:820px){.navtoggle{display:flex}.nav-links li.hideSm{display:none}}
+  header{padding-block:clamp(40px,6vw,72px) 8px}
+  header .kick{color:var(--blue)}
+  header h1{font-weight:700;font-size:clamp(2.1rem,6.5vw,3.4rem);line-height:1;letter-spacing:-.02em;text-transform:uppercase;margin:12px 0 10px}
+  header p{color:var(--muted);font-weight:500;max-width:52ch}
+  .tgrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:26px;padding-block:26px 60px;align-items:start}
+  @media(max-width:900px){.tgrid{grid-template-columns:1fr}}
+  .card{border:2px solid var(--ink);border-radius:4px;background:var(--white);padding:24px}
+  .card h2{font-size:1.1rem;text-transform:uppercase;margin-bottom:14px}
+  .field{margin-bottom:14px}
+  label{display:block;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  input{width:100%;background:var(--paper);border:2px solid var(--ink);border-radius:2px;font-family:'Montserrat',sans-serif;font-size:.95rem;padding:11px 12px}
+  input:focus{outline:3px solid var(--blue);outline-offset:1px}
+  .hint{font-family:'Space Grotesk',sans-serif;font-size:.62rem;color:var(--berry);min-height:1em;margin-top:4px}
+  .btn{cursor:pointer;display:block;width:100%;text-align:center;border:2px solid var(--ink);background:var(--ink);color:var(--paper);font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;padding:14px 20px;border-radius:2px}
+  .btn:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+  .demo{font-family:'Space Grotesk',sans-serif;font-size:.64rem;color:var(--muted);margin-top:10px;text-align:center}
+  .result{display:none}
+  .result.on{display:block}
+  .rhead{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;align-items:baseline;margin-bottom:16px}
+  .rhead .oid{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem}
+  .rhead .st{font-family:'Space Grotesk',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:2px solid var(--blue);color:var(--blue);border-radius:2px;padding:5px 10px}
+  .steps{list-style:none;counter-reset:s;margin-top:6px}
+  .steps li{counter-increment:s;position:relative;padding:14px 0 14px 46px;border-bottom:1px solid var(--line)}
+  .steps li:last-child{border-bottom:0}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:12px;width:30px;height:30px;display:grid;place-items:center;background:var(--paper);border:2px solid var(--ink);color:var(--muted);font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.82rem;border-radius:50%}
+  .steps li.done::before{background:var(--blue);border-color:var(--blue);color:#fff;content:"\2713"}
+  .steps li.now::before{background:var(--yellow);border-color:var(--ink);color:var(--ink)}
+  .steps h4{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.9rem;text-transform:uppercase}
+  .steps p{font-size:.84rem;color:var(--muted);font-weight:500}
+  .helpbox{margin-top:20px;border:2px dashed var(--ink);border-radius:4px;padding:16px 18px;background:var(--paper)}
+  .helpbox p{font-family:'Space Grotesk',sans-serif;font-size:.8rem;font-weight:700}
+  .helpbox p span{display:block;font-family:'Montserrat',sans-serif;font-weight:500;font-size:.8rem;color:var(--muted);margin-top:2px}
+  .helpbox a{color:var(--blue);text-decoration:underline;font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:700;text-transform:uppercase;display:inline-block;margin-top:8px}
+  .todo{background:var(--yellow);border:2px solid var(--ink);border-radius:3px;padding:12px 16px;font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:700;margin-bottom:20px}
+  footer{background:var(--ink);color:rgba(242,241,240,.7);padding-block:38px 46px;border-top:2px solid var(--ink)}
+  .foot-in{display:flex;flex-wrap:wrap;gap:22px;justify-content:space-between}
+  footer .brand{color:var(--paper)}
+  footer .fl2{font-family:'Space Grotesk',sans-serif;font-size:.68rem;letter-spacing:.04em;line-height:2}
+  footer .fl2 a{color:rgba(242,241,240,.7)}
+  footer .fl2 a:hover{color:var(--paper)}
+  footer .dot{color:var(--blue)}
+</style>
+</head>
+<body>
+
+<div class="announce">
+  <span>Free shipping on <b>all orders</b></span>
+  <span>Pay online &mdash; skip COD charges &amp; take <b>5% extra off</b></span>
+</div>
+
+<nav>
+  <div class="wrap nav-in">
+    <a href="drunken-glass-comet.html" class="brand streak">Drunken Glass</a>
+    <ul class="nav-links">
+      <li class="hideSm"><a href="drunken-glass-category.html">Shop</a></li>
+      <li class="hideSm"><a href="drunken-glass-contact.html">Contact</a></li>
+      <li class="hideSm"><a href="drunken-glass-policies.html">Policies</a></li>
+    </ul>
+    <button class="navtoggle" id="navtoggle" aria-label="Menu" aria-expanded="false" aria-controls="mobmenu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobmenu" id="mobmenu">
+  <a href="drunken-glass-comet.html">Home</a>
+  <a href="drunken-glass-category.html">Shop</a>
+  <a href="drunken-glass-gifting.html">Corporate Gifting</a>
+  <a href="drunken-glass-about.html">Our Story</a>
+  <a href="drunken-glass-cart.html">Cart</a>
+  <a href="drunken-glass-track.html">Track Order</a>
+  <a href="drunken-glass-contact.html">Contact</a>
+  <a href="drunken-glass-policies.html">Policies</a>
+</div>
+
+<header>
+  <div class="wrap">
+    <p class="kick">Track order</p>
+    <h1>Where's my glass?</h1>
+    <p>Enter your order ID and the email or phone you ordered with.</p>
+  </div>
+</header>
+
+<div class="wrap tgrid">
+  <div class="card">
+    <h2>Find your order</h2>
+    <div class="field">
+      <label for="oid">Order ID</label>
+      <input id="oid" type="text" placeholder="DG-123456">
+      <div class="hint" id="hOid"></div>
+    </div>
+    <div class="field">
+      <label for="ct">Email or phone</label>
+      <input id="ct" type="text" placeholder="you@example.com or 10-digit phone">
+      <div class="hint" id="hCt"></div>
+    </div>
+    <button class="btn" id="trackBtn">Track order</button>
+    <p class="demo">Demo: enter any ID starting <strong>DG-</strong></p>
+  </div>
+
+  <div class="card">
+    <div class="todo">&#9888; Demo only. In production this queries your order system and your courier's tracking API.</div>
+    <div id="placeholder">
+      <h2>Your order status</h2>
+      <p style="color:var(--muted);font-weight:500">Enter your details on the left and we'll show where your order is, from our furnace to your door.</p>
+      <div class="helpbox">
+        <p>Something arrived broken?<span>Film your unboxing and tell us within 48 hours &mdash; we replace it free.</span>
+        <a href="drunken-glass-policies.html#returns">Read the replacement policy &rarr;</a></p>
+      </div>
+    </div>
+
+    <div class="result" id="result">
+      <div class="rhead">
+        <span class="oid" id="rOid">DG-123456</span>
+        <span class="st">In transit</span>
+      </div>
+      <ol class="steps">
+        <li class="done"><h4>Order confirmed</h4><p>Payment received and your order is logged with us.</p></li>
+        <li class="done"><h4>Packed at our furnace</h4><p>Each piece wrapped and boxed for transit.</p></li>
+        <li class="now"><h4>In transit</h4><p>Handed to our courier partner. Tracking ID: <strong>[COURIER-AWB]</strong></p></li>
+        <li><h4>Out for delivery</h4><p>Arriving with you soon.</p></li>
+        <li><h4>Delivered</h4><p>Remember to film the unboxing &mdash; it's what covers you for free replacement.</p></li>
+      </ol>
+      <div class="helpbox">
+        <p>Expected delivery: <span>[DATE RANGE] &mdash; we'll SMS you when it's out for delivery.</span>
+        <a href="drunken-glass-contact.html">Need help with this order &rarr;</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot-in">
+    <div>
+      <div class="brand streak" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.4rem">Drunken Glass</div>
+      <p class="fl2" style="margin-top:10px">Made at our furnace <span class="dot">&#10022;</span> sold direct</p>
+    </div>
+    <div class="fl2">
+      <a href="drunken-glass-contact.html">Contact us</a><br>
+      <a href="drunken-glass-track.html">Track your order</a><br>
+      <a href="drunken-glass-policies.html#shipping">Shipping policy</a><br>
+      <a href="drunken-glass-policies.html#returns">Returns &amp; replacement</a>
+    </div>
+    <div class="fl2">
+      <a href="drunken-glass-policies.html#privacy">Privacy policy</a><br>
+      <a href="drunken-glass-policies.html#terms">Terms &amp; conditions</a><br>
+      <a href="drunken-glass-gifting.html">Corporate gifting</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+var $=function(id){return document.getElementById(id);};
+$('trackBtn').addEventListener('click',function(){
+  var oid=$('oid').value.trim().toUpperCase(), ct=$('ct').value.trim();
+  $('hOid').textContent=''; $('hCt').textContent='';
+  if(oid.indexOf('DG-')!==0){ $('hOid').textContent='Order IDs start with DG- (check your confirmation email).'; return; }
+  if(!ct){ $('hCt').textContent='Enter the email or phone you ordered with.'; return; }
+  $('rOid').textContent=oid;
+  $('placeholder').style.display='none';
+  $('result').classList.add('on');
+});
+(function(){
+  var t=$('navtoggle'), m=$('mobmenu');
+  t.addEventListener('click',function(){
+    var open=m.classList.toggle('on');
+    t.setAttribute('aria-expanded',open?'true':'false');
+  });
+})();
+</script>
+</body>
+</html>

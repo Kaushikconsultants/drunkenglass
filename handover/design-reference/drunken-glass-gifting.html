@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Corporate Gifting — Drunken Glass</title>
+<meta name="description" content="Corporate gifting in hand-cut glass — logo engraving, custom packaging and bulk quotes, delivered at scale across India.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Drunken Glass">
+<meta property="og:title" content="Corporate Gifting — Drunken Glass">
+<meta property="og:description" content="Corporate gifting in hand-cut glass — logo engraving, custom packaging and bulk quotes, delivered at scale across India.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#2765fa">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f2f1f0; --ink:#000000; --blue:#2765fa; --berry:#ef426f; --yellow:#eaef29;
+    --white:#ffffff; --line:rgba(0,0,0,.14); --muted:rgba(0,0,0,.56); --ok:#0F3D33;
+    --pace:cubic-bezier(.16,.84,.3,1); --gutter:clamp(20px,5vw,64px);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:'Montserrat',system-ui,sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding-inline:var(--gutter)}
+  h1,h2,h3,.grotesk{font-family:'Space Grotesk',sans-serif}
+  .kick{font-family:'Space Grotesk',sans-serif;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500}
+  a{color:inherit;text-decoration:none}
+  .streak{position:relative;display:inline-block}
+  .streak::after{content:"";position:absolute;right:-.62em;top:.06em;width:.5em;height:.5em;background:var(--blue);border-radius:50%;box-shadow:.34em .18em 0 -.16em rgba(0,0,0,.55),.62em .32em 0 -.24em rgba(0,0,0,.25)}
+
+  .announce{background:var(--ink);color:var(--paper);display:flex;flex-wrap:wrap;gap:6px 26px;justify-content:center;align-items:center;padding:9px 16px;text-align:center;border-bottom:2px solid var(--ink)}
+  .announce span{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.03em}
+  .announce span::before{content:"✦";color:var(--blue);margin-right:7px}
+  .announce b{color:var(--yellow)}
+
+  nav{position:sticky;top:0;z-index:30;background:rgba(242,241,240,.92);backdrop-filter:blur(9px);border-bottom:2px solid var(--ink)}
+  .nav-in{display:flex;justify-content:space-between;align-items:center;padding-block:15px;gap:16px}
+  .brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.3rem}
+  .nav-links{display:flex;gap:20px;align-items:center;list-style:none;font-size:.82rem;font-weight:600}
+  .nav-links a:hover{color:var(--blue)}
+  .nav-links .cta{background:var(--blue);color:#fff;padding:9px 14px;border-radius:2px;font-family:'Space Grotesk',sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
+  @media(max-width:680px){.nav-links li.hideSm{display:none}}
+
+  header{position:relative;overflow:hidden;padding-block:clamp(52px,9vw,104px) clamp(36px,5vw,60px)}
+  header .glow{position:absolute;right:-8%;top:0;width:min(52vw,560px);height:min(52vw,560px);border-radius:50%;background:radial-gradient(circle,rgba(39,101,250,.14),transparent 62%);pointer-events:none}
+  header .in{position:relative;z-index:2}
+  header .kick{color:var(--blue)}
+  header h1{font-weight:700;font-size:clamp(2.5rem,8vw,5rem);line-height:.98;letter-spacing:-.02em;text-transform:uppercase;margin:14px 0 20px}
+  header h1 .berry{color:var(--berry)}
+  header .lede{max-width:56ch;font-weight:500;font-size:1.1rem}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+  .btn{cursor:pointer;display:inline-block;text-align:center;border:2px solid var(--ink);background:var(--ink);color:var(--paper);font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;padding:14px 24px;border-radius:2px;transition:transform .06s,background .2s,color .2s}
+  .btn:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+  .btn:active{transform:translateY(1px)}
+  .btn.ghost{background:transparent;color:var(--ink)}
+  .btn.ghost:hover{background:var(--ink);color:var(--paper)}
+
+  section{padding-block:clamp(46px,7vw,84px)}
+  .sec-head{max-width:60ch;margin-bottom:34px}
+  .sec-head h2{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(1.8rem,5vw,2.9rem);text-transform:uppercase;letter-spacing:-.02em;margin-top:10px}
+  .sec-head p{color:var(--muted);font-weight:500;margin-top:8px}
+  .alt{background:var(--white);border-block:2px solid var(--ink)}
+
+  .why{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  @media(max-width:860px){.why{grid-template-columns:1fr 1fr}}
+  .wcard{border:2px solid var(--ink);border-radius:4px;background:var(--white);padding:22px}
+  .wcard .no{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--blue);font-size:.66rem;letter-spacing:.1em}
+  .wcard h3{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;text-transform:uppercase;margin:8px 0 6px}
+  .wcard p{color:var(--muted);font-weight:500;font-size:.88rem}
+
+  .occ{display:flex;flex-wrap:wrap;gap:10px}
+  .occ .o{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border:2px solid var(--ink);border-radius:2px;padding:12px 16px;background:var(--white)}
+  .occ .o.fest{background:var(--yellow)}
+
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:s}
+  @media(max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+  .step{counter-increment:s;border:2px solid var(--ink);border-radius:4px;background:var(--white);padding:22px}
+  .step::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;background:var(--blue);color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:700;border-radius:50%;margin-bottom:12px}
+  .step h3{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1rem;text-transform:uppercase;margin-bottom:6px}
+  .step p{color:var(--muted);font-weight:500;font-size:.86rem}
+
+  .brandrow{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media(max-width:760px){.brandrow{grid-template-columns:1fr}}
+  .bcard{border:2px solid var(--ink);border-radius:4px;background:var(--white);padding:24px;text-align:center}
+  .bcard svg{width:40px;height:40px;stroke:var(--ink);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;margin-bottom:12px}
+  .bcard h3{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;text-transform:uppercase;margin-bottom:6px}
+  .bcard p{color:var(--muted);font-weight:500;font-size:.88rem}
+
+  /* policy cards */
+  .polgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media(max-width:820px){.polgrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.polgrid{grid-template-columns:1fr}}
+  .polcard{border:2px solid var(--ink);border-radius:4px;background:var(--white);padding:20px}
+  .polcard h3{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1rem;text-transform:uppercase;margin-bottom:6px}
+  .polcard p{color:var(--muted);font-weight:500;font-size:.86rem}
+  .polcard p b{color:var(--ink);font-weight:700}
+
+  /* quote form */
+  .quote{background:var(--ink);color:var(--paper);border-block:2px solid var(--ink)}
+  .quote .sec-head h2{color:var(--paper)}
+  .quote .sec-head p{color:rgba(242,241,240,.7)}
+  .qform{max-width:820px;background:var(--white);color:var(--ink);border:2px solid var(--ink);border-radius:4px;padding:clamp(22px,3.4vw,34px)}
+  .field{margin-bottom:15px}
+  .field.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:520px){.field.row{grid-template-columns:1fr}}
+  label{display:block;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  .req{color:var(--berry)}
+  input,select,textarea{width:100%;background:var(--paper);border:2px solid var(--ink);border-radius:2px;font-family:'Montserrat',sans-serif;font-size:.95rem;color:var(--ink);padding:11px 12px}
+  textarea{min-height:90px;resize:vertical}
+  input:focus,select:focus,textarea:focus{outline:3px solid var(--blue);outline-offset:1px}
+  .checks{display:flex;flex-wrap:wrap;gap:8px}
+  .chk{display:flex;align-items:center;gap:8px;border:2px solid var(--ink);border-radius:2px;padding:9px 12px;cursor:pointer;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:600;background:var(--paper);user-select:none}
+  .chk input{width:auto}
+  .chk.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+  .hint{font-family:'Space Grotesk',sans-serif;font-size:.62rem;color:var(--berry);min-height:1em;margin-top:4px}
+  .qform .btn{width:100%;margin-top:6px}
+  .thanks{display:none;text-align:center;padding-block:14px}
+  .thanks.on{display:block}
+  .thanks .tick{width:54px;height:54px;border:2px solid var(--blue);border-radius:50%;display:grid;place-items:center;margin:0 auto 16px}
+  .thanks .tick svg{width:26px;height:26px;stroke:var(--blue);fill:none;stroke-width:2}
+  .thanks h3{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.5rem;text-transform:uppercase;margin-bottom:8px}
+  .thanks p{color:var(--muted);font-weight:500;max-width:44ch;margin:0 auto}
+  .refbox{display:inline-block;margin-top:14px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.8rem;letter-spacing:.06em;background:var(--paper);border:2px solid var(--ink);border-radius:2px;padding:9px 16px}
+
+  /* faq */
+  .faq{max-width:840px}
+  .faq details{border:2px solid var(--ink);border-radius:4px;background:var(--white);margin-bottom:10px;overflow:hidden}
+  .faq summary{list-style:none;cursor:pointer;padding:15px 18px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.96rem;display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";font-size:1.3rem;color:var(--blue);line-height:1}
+  .faq details[open] summary::after{content:"–"}
+  .faq .a{padding:0 18px 15px;color:var(--muted);font-weight:500;font-size:.92rem;max-width:74ch}
+
+  footer{background:var(--ink);color:rgba(242,241,240,.7);padding:34px 0;border-top:2px solid var(--ink);text-align:center;font-family:'Space Grotesk',sans-serif;font-size:.68rem;letter-spacing:.04em}
+  footer .dot{color:var(--blue)}
+
+  /* mobile navigation */
+  .navtoggle{display:none;background:none;border:2px solid var(--ink);border-radius:2px;width:42px;height:36px;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:4px;padding:0}
+  .navtoggle span{display:block;width:18px;height:2px;background:var(--ink);transition:transform .2s}
+  .navtoggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+  .navtoggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .navtoggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+  .mobmenu{display:none;position:sticky;top:57px;z-index:29;background:var(--paper);border-bottom:2px solid var(--ink)}
+  .mobmenu.on{display:block}
+  .mobmenu a{display:block;padding:13px var(--gutter);border-top:1px solid var(--line);font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink);text-decoration:none}
+  .mobmenu a:first-child{border-top:0}
+  .mobmenu a:hover,.mobmenu a:focus{color:var(--blue)}
+  @media(max-width:820px){
+    .navtoggle{display:flex}
+    .nav-links li.hideSm{display:none}
+    .nav-r a.nl{display:none}
+    .nav-r .signed.hideSm{display:none}
+  }
+
+  .fl2x{font-family:"Space Grotesk",sans-serif;font-size:.68rem;letter-spacing:.04em;line-height:2}
+  .fl2x a{color:rgba(242,241,240,.7);text-decoration:none}
+  .fl2x a:hover{color:var(--paper)}
+
+  .bigfoot{background:var(--ink);color:rgba(242,241,240,.7);padding-block:38px 46px;border-top:2px solid var(--ink);text-align:left}
+  .bigfoot .in{max-width:1240px;margin:0 auto;padding-inline:var(--gutter);display:flex;flex-wrap:wrap;gap:22px;justify-content:space-between}
+  .bigfoot .bb{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1.4rem;color:var(--paper);position:relative;display:inline-block}
+  .bigfoot .bb::after{content:"";position:absolute;right:-.62em;top:.06em;width:.5em;height:.5em;background:var(--blue);border-radius:50%;box-shadow:.34em .18em 0 -.16em rgba(242,241,240,.5),.62em .32em 0 -.24em rgba(242,241,240,.25)}
+  .bigfoot .fl2x{font-family:"Space Grotesk",sans-serif;font-size:.68rem;letter-spacing:.04em;line-height:2}
+  .bigfoot .fl2x a{color:rgba(242,241,240,.7);text-decoration:none}
+  .bigfoot .fl2x a:hover{color:var(--paper)}
+  .bigfoot .dot{color:var(--blue)}
+</style>
+</head>
+<body>
+
+<div class="announce">
+  <span>Corporate gifting · <b>logo engraving &amp; custom packaging</b></span>
+  <span>Bulk quotes · 100% prepaid · delivered across India</span>
+</div>
+
+<nav>
+  <div class="wrap nav-in">
+    <a href="drunken-glass-comet.html" class="brand streak">Drunken Glass</a>
+    <ul class="nav-links">
+      <li class="hideSm"><a href="drunken-glass-category.html">Shop</a></li>
+      <li class="hideSm"><a href="drunken-glass-about.html">About</a></li>
+      <li><a href="#quote" class="cta">Get a quote</a></li>
+    </ul>
+    <button class="navtoggle" id="navtoggle" aria-label="Menu" aria-expanded="false" aria-controls="mobmenu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobmenu" id="mobmenu">
+  <a href="drunken-glass-comet.html">Home</a>
+  <a href="drunken-glass-category.html">Shop</a>
+  <a href="drunken-glass-gifting.html">Corporate Gifting</a>
+  <a href="drunken-glass-about.html">Our Story</a>
+  <a href="drunken-glass-cart.html">Cart</a>
+  <a href="drunken-glass-track.html">Track Order</a>
+  <a href="drunken-glass-contact.html">Contact</a>
+  <a href="drunken-glass-policies.html">Policies</a>
+</div>
+
+<header>
+  <div class="glow" aria-hidden="true"></div>
+  <div class="wrap in">
+    <p class="kick">Corporate gifting</p>
+    <h1>Gift something<br>they'll actually <span class="berry">keep</span>.</h1>
+    <p class="lede">Hand-cut glass, engraved with your logo and packed the way you want it — made at our furnace and delivered at scale. The gift that stays on the desk, not in the drawer.</p>
+    <div class="cta-row">
+      <a class="btn" href="#quote">Request a gifting quote</a>
+      <a class="btn ghost" href="#how">How it works</a>
+    </div>
+  </div>
+</header>
+
+<!-- WHY -->
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head"><p class="kick" style="color:var(--blue)">Why glass</p><h2>A gift with a shelf life longer than a calendar year.</h2></div>
+    <div class="why">
+      <div class="wcard"><div class="no">01</div><h3>Actually kept</h3><p>A good glass earns a spot in the cabinet. Your logo stays in their life, not their bin.</p></div>
+      <div class="wcard"><div class="no">02</div><h3>Your brand, cut in</h3><p>Logo engraving and custom packaging make it unmistakably yours.</p></div>
+      <div class="wcard"><div class="no">03</div><h3>Factory-direct value</h3><p>We make it, so your budget buys real glass — not a distributor's markup.</p></div>
+      <div class="wcard"><div class="no">04</div><h3>Delivered at scale</h3><p>Fifteen years of production means hundreds of identical pieces, on time.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- OCCASIONS -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><p class="kick" style="color:var(--blue)">Made for the moment</p><h2>Every reason to give.</h2></div>
+    <div class="occ">
+      <span class="o">Client gifting</span>
+      <span class="o">Employee &amp; onboarding kits</span>
+      <span class="o fest">Diwali &amp; festive</span>
+      <span class="o">Conferences &amp; events</span>
+      <span class="o">Milestones &amp; awards</span>
+      <span class="o">Wedding &amp; hospitality</span>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONALIZATION -->
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head"><p class="kick" style="color:var(--blue)">Make it yours</p><h2>Personalisation</h2></div>
+    <div class="brandrow">
+      <div class="bcard"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg><h3>Logo engraving</h3><p>Your mark laser-etched onto the glass — permanent, clean, understated.</p></div>
+      <div class="bcard"><svg viewBox="0 0 24 24"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg><h3>Custom packaging</h3><p>Branded gift boxes and inserts, built to survive the courier and impress on arrival.</p></div>
+      <div class="bcard"><svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="13" rx="1"/><path d="M4 11h16M12 7v13M9 7a2 2 0 1 1 3-2 2 2 0 1 1 3 2"/></svg><h3>Gift notes &amp; sets</h3><p>Personalised cards and curated multi-glass sets for a finished, ready-to-give package.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head"><p class="kick" style="color:var(--blue)">Simple by design</p><h2>How it works</h2></div>
+    <div class="steps">
+      <div class="step"><h3>Share your brief</h3><p>Tell us quantity, occasion, budget and deadline. Two minutes on the form below.</p></div>
+      <div class="step"><h3>We quote &amp; sample</h3><p>You get a personalised quote, and a branded sample to approve before the full run.</p></div>
+      <div class="step"><h3>Brand &amp; produce</h3><p>We engrave, pack and produce the order at our own furnace.</p></div>
+      <div class="step"><h3>We deliver</h3><p>To one address or many — dispatched and tracked to your teams or clients.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- POLICIES -->
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head"><p class="kick" style="color:var(--blue)">The terms, plainly</p><h2>Gifting policies</h2></div>
+    <div class="polgrid">
+      <div class="polcard"><h3>Minimums</h3><p>Gifting starts at <b>50 pieces</b>. Bigger runs unlock better per-piece pricing — shared in your quote.</p></div>
+      <div class="polcard"><h3>Payment</h3><p><b>100% prepaid, no COD.</b> Corporate orders are paid in full before dispatch; production begins once payment clears.</p></div>
+      <div class="polcard"><h3>Lead time</h3><p>Branded gifting runs typically ship in <b>15–20 working days</b> after sample approval.</p></div>
+      <div class="polcard"><h3>Delivery</h3><p>We deliver <b>across all of India</b> — to a single address, or split across many: office, clients or employees at home.</p></div>
+      <div class="polcard"><h3>Breakage</h3><p>Anything that arrives broken is <b>replaced free</b> with an unboxing video.</p></div>
+      <div class="polcard"><h3>Custom designs</h3><p>Own shape, colour or a bespoke piece? We'll quote it separately.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE FORM -->
+<section class="quote" id="quote">
+  <div class="wrap">
+    <div class="sec-head"><p class="kick" style="color:var(--blue)">Tell us what you need</p><h2>Request a gifting quote</h2><p>Share the essentials and our gifting desk replies within one business day.</p></div>
+    <div class="qform" id="qform">
+      <div class="thanks" id="thanks">
+        <div class="tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></div>
+        <h3>Request received</h3>
+        <p>Thank you — our gifting desk will reach out within one business day with pricing and a sample plan.</p>
+        <div class="refbox" id="qref">DG-GIFT-000000</div>
+      </div>
+      <div id="qbody">
+        <div class="field row">
+          <div><label for="co">Company <span class="req">*</span></label><input id="co" type="text" autocomplete="organization"></div>
+          <div><label for="name">Contact person <span class="req">*</span></label><input id="name" type="text" autocomplete="name"></div>
+        </div>
+        <div class="field row">
+          <div><label for="mail">Work email <span class="req">*</span></label><input id="mail" type="email" placeholder="you@company.com" autocomplete="email"><div class="hint" id="h-mail"></div></div>
+          <div><label for="ph">Phone <span class="req">*</span></label><input id="ph" type="tel" maxlength="10" inputmode="numeric" autocomplete="tel"></div>
+        </div>
+        <div class="field row">
+          <div><label for="qtyq">Approx. quantity <span class="req">*</span></label>
+            <select id="qtyq"><option value="">Select…</option><option>50–100</option><option>100–250</option><option>250–500</option><option>500–1000</option><option>1000+</option></select>
+          </div>
+          <div><label for="occ">Occasion</label>
+            <select id="occ"><option value="">Select…</option><option>Client gifting</option><option>Employee / onboarding</option><option>Diwali / festive</option><option>Conference / event</option><option>Milestone / award</option><option>Other</option></select>
+          </div>
+        </div>
+        <div class="field">
+          <label>Branding needed</label>
+          <div class="checks" id="brandChecks">
+            <label class="chk"><input type="checkbox" value="Logo engraving"> Logo engraving</label>
+            <label class="chk"><input type="checkbox" value="Custom packaging"> Custom packaging</label>
+            <label class="chk"><input type="checkbox" value="Gift note / card"> Gift note / card</label>
+          </div>
+        </div>
+        <div class="field row">
+          <div><label for="deadline">Deadline</label><input id="deadline" type="text" placeholder="e.g. before Diwali"></div>
+          <div><label for="deliver">Delivery</label><select id="deliver"><option value="">Select…</option><option>Single address</option><option>Multiple addresses</option></select></div>
+        </div>
+        <div class="field">
+          <label for="brief">Anything else</label>
+          <textarea id="brief" placeholder="Products you have in mind, budget per piece, or a design idea…"></textarea>
+        </div>
+        <button class="btn" id="qsubmit">Send my request</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><p class="kick" style="color:var(--blue)">Beyond the policies</p><h2>Gifting FAQ</h2></div>
+    <div class="faq">
+      <details open><summary>How does the sample process work?</summary><div class="a">Once we agree the design and branding, we produce one branded sample for you to approve. Nothing goes into full production until you've signed off — and the 15–20 working day lead time starts from that approval, not from your enquiry.</div></details>
+      <details><summary>What artwork do you need for engraving?</summary><div class="a">A vector file of your logo (AI, EPS, SVG or PDF) gives the cleanest engraving. If you only have a PNG or JPEG, send it anyway — we can usually redraw it, and we'll flag it if the detail is too fine to cut well at glass scale.</div></details>
+      <details><summary>Can different recipients get different glasses?</summary><div class="a">Yes. We can split a run across designs and across addresses — for example, a decanter for senior clients and tumblers for the wider team, shipped to separate locations from one order.</div></details>
+      <details><summary>What's the realistic deadline for a festive order?</summary><div class="a">Work back at least six weeks from the date you need gifts in hand: roughly a week for quote and sample approval, 15–20 working days for branded production, then delivery. For Diwali, that means starting in early autumn. Tell us your date on the form and we'll tell you honestly if it's achievable.</div></details>
+      <details><summary>Do we get a GST invoice for the order?</summary><div class="a">Yes — every corporate order is invoiced with GST against your company details, so it books cleanly as a business expense. Corporate orders are 100% prepaid, and we raise a proforma invoice your accounts team can process.</div></details>
+    </div>
+  </div>
+</section>
+
+<footer class="bigfoot">
+  <div class="in">
+    <div>
+      <div class="bb">Drunken Glass</div>
+      <p class="fl2x" style="margin-top:10px">Made at our furnace <span class="dot">&#10022;</span> sold direct<br>Amit &amp; Rahul Gupta</p>
+    </div>
+    <div class="fl2x">
+      <a href="drunken-glass-category.html">Shop</a><br>
+      <a href="drunken-glass-gifting.html">Corporate gifting</a><br>
+      <a href="drunken-glass-about.html">Our story</a>
+    </div>
+    <div class="fl2x">
+      <a href="drunken-glass-contact.html">Contact us</a><br>
+      <a href="drunken-glass-track.html">Track your order</a><br>
+      <a href="drunken-glass-policies.html#shipping">Shipping policy</a><br>
+      <a href="drunken-glass-policies.html#returns">Returns &amp; replacement</a>
+    </div>
+    <div class="fl2x">
+      <a href="drunken-glass-policies.html#privacy">Privacy policy</a><br>
+      <a href="drunken-glass-policies.html#terms">Terms &amp; conditions</a><br>
+      <a href="drunken-glass-cart.html">Your bag</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const $ = id => document.getElementById(id);
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+document.querySelectorAll('.chk').forEach(c=>{
+  const box=c.querySelector('input');
+  c.addEventListener('click',e=>{ if(e.target!==box){ box.checked=!box.checked; } c.classList.toggle('on',box.checked); });
+});
+$('mail').addEventListener('input',()=>{ $('h-mail').textContent=''; });
+$('qsubmit').addEventListener('click',()=>{
+  const need=['co','name','mail','ph','qtyq'];
+  let bad=null;
+  need.forEach(id=>{ if(!$(id).value.trim() && !bad) bad=$(id); });
+  if(!EMAIL_RE.test($('mail').value.trim())){ $('h-mail').textContent='Enter a valid work email.'; if(!bad) $('mail').focus(); }
+  if(bad){ bad.focus(); return; }
+  if(!EMAIL_RE.test($('mail').value.trim())) return;
+  $('qref').textContent='DG-GIFT-'+String(Math.floor(100000+Math.random()*900000));
+  $('qbody').style.display='none';
+  $('thanks').classList.add('on');
+  $('qform').scrollIntoView({behavior:'smooth',block:'center'});
+});
+</script>
+
+<script>
+(function(){
+  var t=document.getElementById("navtoggle"), m=document.getElementById("mobmenu");
+  if(!t||!m) return;
+  t.addEventListener("click",function(){
+    var open=m.classList.toggle("on");
+    t.setAttribute("aria-expanded",open?"true":"false");
+  });
+})();
+</script>
+</body>
+</html>
