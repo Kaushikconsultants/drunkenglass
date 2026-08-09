@@ -1,0 +1,55 @@
+<style>
+  .custom-story { background: var(--ink); color: var(--paper); text-align: center; border-top: 2px solid var(--ink); padding-block: clamp(52px, 7vw, 92px); }
+  .custom-story .in { max-width: 66ch; margin: 0 auto; padding-inline: var(--gutter); }
+  .custom-story .kick { color: var(--blue); font-family: 'Space Grotesk', sans-serif; font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; }
+  .custom-story h2 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(1.7rem, 4.5vw, 2.9rem); line-height: 1.04; text-transform: uppercase; letter-spacing: -.01em; margin: 14px 0 20px; }
+  .custom-story p { color: rgba(242, 241, 240, .82); font-weight: 500; font-size: 1.05rem; margin-bottom: 14px; }
+  .custom-story .big { font-family: 'Space Grotesk', sans-serif; color: var(--white); font-weight: 700; }
+  .custom-story .sig { font-family: 'Space Grotesk', sans-serif; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); margin-top: 22px; }
+</style>
+
+<section class="custom-story">
+  <div class="wrap in">
+    <p class="kick">{{ section.settings.kicker }}</p>
+    <h2>{{ section.settings.headline }}</h2>
+    {{ section.settings.body_html }}
+    <p class="sig">{{ section.settings.signature }}</p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Custom Brand Story",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker text",
+      "default": "The two brothers"
+    },
+    {
+      "type": "html",
+      "id": "headline",
+      "label": "Headline",
+      "default": "The world drank from our glass.<br>It never knew our name."
+    },
+    {
+      "type": "html",
+      "id": "body_html",
+      "label": "Body text (HTML allowed)",
+      "default": "<p>For fifteen years, two brothers — <span class=\"big\">Amit and Rahul Gupta</span> — have shaped glass at one furnace, and shipped it to tables the world over, to people who never learned who made it. Every cut was ours. The label was always someone else's.</p><p>Drunken Glass is us, at last, with our name on the glass — selling to our own country, direct from our own floor. No middleman. No borrowed label. <span class=\"big\">Just the makers, and you.</span></p>"
+    },
+    {
+      "type": "text",
+      "id": "signature",
+      "label": "Signature text",
+      "default": "Amit & Rahul Gupta ✦ exported to the world ✦ finally poured at home"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Brand Story"
+    }
+  ]
+}
+{% endschema %}

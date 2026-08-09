@@ -1,0 +1,75 @@
+<style>
+  .custom-ticker { background: var(--ink); color: var(--paper); overflow: hidden; white-space: nowrap; }
+  .custom-ticker .run { display: inline-block; padding-block: 9px; animation: slide 22s linear infinite; }
+  .custom-ticker span { font-family: 'Space Grotesk', sans-serif; font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 500; padding-inline: 22px; }
+  .custom-ticker .dot { color: var(--blue); }
+  @keyframes slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+</style>
+
+<div class="custom-ticker">
+  <div class="run">
+    {%- for i in (1..2) -%}
+      {%- for block in section.blocks -%}
+        <span>{{ block.settings.text }} <span class="dot">✦</span></span>
+      {%- endfor -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Custom Announcement Bar",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "Announcement",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Made at our furnace"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Announcement Bar",
+      "blocks": [
+        {
+          "type": "announcement",
+          "settings": {
+            "text": "Made at our furnace"
+          }
+        },
+        {
+          "type": "announcement",
+          "settings": {
+            "text": "Sold direct"
+          }
+        },
+        {
+          "type": "announcement",
+          "settings": {
+            "text": "15 years of borosilicate"
+          }
+        },
+        {
+          "type": "announcement",
+          "settings": {
+            "text": "Never watered down"
+          }
+        },
+        {
+          "type": "announcement",
+          "settings": {
+            "text": "Home & trade"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

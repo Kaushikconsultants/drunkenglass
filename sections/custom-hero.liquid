@@ -1,0 +1,87 @@
+<style>
+  .custom-hero { position: relative; overflow: hidden; padding-block: clamp(52px, 9vw, 104px) clamp(44px, 6vw, 80px); }
+  .custom-hero .kick { color: var(--blue); }
+  .custom-hero h1 { font-weight: 700; font-size: clamp(2.7rem, 9vw, 6rem); line-height: .98; letter-spacing: -.02em; margin: 16px 0 22px; text-transform: uppercase; }
+  .custom-hero h1 .berry { color: var(--berry); }
+  .custom-hero .lede { max-width: 54ch; font-size: 1.1rem; font-weight: 500; margin-bottom: 30px;}
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { cursor: pointer; display: inline-block; border: 2px solid var(--ink); background: var(--ink); color: var(--paper); font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: .76rem; letter-spacing: .1em; text-transform: uppercase; padding: 14px 24px; border-radius: 2px; transition: transform .06s, background .2s, color .2s; }
+  .btn:hover { background: var(--blue); border-color: var(--blue); color: var(--white); }
+  .btn:active { transform: translateY(1px); }
+  .btn.ghost { background: transparent; color: var(--ink); }
+  .btn.ghost:hover { background: var(--ink); color: var(--paper); }
+  .comet-arc { position: absolute; right: -6%; top: 8%; width: min(46vw, 520px); height: min(46vw, 520px); border-radius: 50%; background: radial-gradient(circle at 40% 40%, rgba(39, 101, 250, .16), transparent 62%); pointer-events: none; }
+  .comet-arc::before { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px dashed rgba(0, 0, 0, .18); transform: scale(.62); }
+  .comet-arc.spin { animation: drift 1.4s var(--pace); }
+  @keyframes drift { from { opacity: 0; transform: translate(30px, -20px); } to { opacity: 1; transform: none; } }
+  .wrap { max-width: 1240px; margin: 0 auto; padding-inline: var(--gutter); }
+</style>
+
+<section class="custom-hero" id="hero">
+  <div class="comet-arc spin" id="arc" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="kick">{{ section.settings.kicker }}</p>
+    <h1>{{ section.settings.headline }}</h1>
+    <p class="lede">{{ section.settings.text }}</p>
+    <div class="cta-row">
+      {%- if section.settings.button_label_1 != blank -%}
+        <a class="btn" href="{{ section.settings.button_link_1 }}">{{ section.settings.button_label_1 }}</a>
+      {%- endif -%}
+      {%- if section.settings.button_label_2 != blank -%}
+        <a class="btn ghost" href="{{ section.settings.button_link_2 }}">{{ section.settings.button_label_2 }}</a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Custom Hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker text",
+      "default": "Homegrown · our own furnace · direct from the factory"
+    },
+    {
+      "type": "html",
+      "id": "headline",
+      "label": "Headline (HTML allowed for spans)",
+      "default": "We make the glass.<br>You skip the <span class=\"berry\">middleman</span>."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Body text",
+      "default": "Fifteen years shaping borosilicate — the tough, heat-clean glass of labs and kitchens. Now cut into a designer crystal line, and shipped straight from our furnace. Fair prices for the home."
+    },
+    {
+      "type": "text",
+      "id": "button_label_1",
+      "label": "Button 1 label",
+      "default": "Shop the collection"
+    },
+    {
+      "type": "url",
+      "id": "button_link_1",
+      "label": "Button 1 link"
+    },
+    {
+      "type": "text",
+      "id": "button_label_2",
+      "label": "Button 2 label"
+    },
+    {
+      "type": "url",
+      "id": "button_link_2",
+      "label": "Button 2 link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Hero"
+    }
+  ]
+}
+{% endschema %}

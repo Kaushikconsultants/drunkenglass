@@ -1,0 +1,107 @@
+<style>
+  .custom-factory { background: var(--ink); color: var(--paper); padding-block: clamp(52px, 7vw, 92px); }
+  .custom-factory .grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 44px; align-items: center; max-width: 1240px; margin: 0 auto; padding-inline: var(--gutter); }
+  @media(max-width: 860px) { .custom-factory .grid { grid-template-columns: 1fr; gap: 30px; } }
+  .custom-factory .kick { color: var(--blue); font-family: 'Space Grotesk', sans-serif; font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; }
+  .custom-factory h2 { font-weight: 700; font-size: clamp(2rem, 5.5vw, 3.4rem); line-height: 1; letter-spacing: -.02em; text-transform: uppercase; margin: 12px 0 20px; font-family: 'Space Grotesk', sans-serif; }
+  .custom-factory p { color: rgba(242, 241, 240, .82); font-weight: 500; margin-bottom: 14px; max-width: 52ch; }
+  .custom-factory .b { color: var(--white); font-weight: 700; }
+  .fstats { border: 2px solid rgba(242, 241, 240, .24); border-radius: 3px; overflow: hidden; }
+  .fstats .row { display: flex; justify-content: space-between; align-items: baseline; padding: 18px 20px; border-top: 1px solid rgba(242, 241, 240, .16); }
+  .fstats .row:first-child { border-top: 0; }
+  .fstats .n { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.8rem; color: var(--white); }
+  .fstats .lab { font-size: .68rem; font-weight: 600; letter-spacing: .03em; color: rgba(242, 241, 240, .6); max-width: 22ch; text-align: right; }
+</style>
+
+<section class="custom-factory" id="factory">
+  <div class="grid">
+    <div class="reveal">
+      <p class="kick">{{ section.settings.kicker }}</p>
+      <h2>{{ section.settings.headline }}</h2>
+      {{ section.settings.body_html }}
+    </div>
+    <div class="fstats reveal">
+      {%- for block in section.blocks -%}
+        <div class="row">
+          <span class="n">{{ block.settings.stat_value }}</span>
+          <span class="lab">{{ block.settings.stat_label }}</span>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Custom Factory",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker text",
+      "default": "From the furnace"
+    },
+    {
+      "type": "html",
+      "id": "headline",
+      "label": "Headline",
+      "default": "We don't buy glass.<br>We make it."
+    },
+    {
+      "type": "html",
+      "id": "body_html",
+      "label": "Body text (HTML allowed)",
+      "default": "<p>For fifteen years our furnace has drawn <span class=\"b\">borosilicate</span> — the glass with so little thermal expansion it goes freezer-to-oven without a crack.</p><p>That same mastery is now hand-cut into our <span class=\"b\">crystal line</span>, and everything ships straight off our floor.</p><p>For a home, direct means a fair price and glass we stand behind. For a restaurant, it means real capacity — the same hundred glasses, run after run.</p>"
+    }
+  ],
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Stat",
+      "settings": [
+        {
+          "type": "text",
+          "id": "stat_value",
+          "label": "Value",
+          "default": "3.3"
+        },
+        {
+          "type": "text",
+          "id": "stat_label",
+          "label": "Label",
+          "default": "×10⁻⁶/K expansion"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Factory",
+      "blocks": [
+        {
+          "type": "stat",
+          "settings": {
+            "stat_value": "3.3",
+            "stat_label": "×10⁻⁶/K expansion — why it won't crack on heat"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "stat_value": "Lead-free",
+            "stat_label": "Borosilicate carries no lead, by nature"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "stat_value": "Direct",
+            "stat_label": "Furnace → you · no reseller markup"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

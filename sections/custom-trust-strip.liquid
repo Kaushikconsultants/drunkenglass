@@ -1,0 +1,86 @@
+<style>
+  .custom-trust { background: var(--blue); color: var(--white); border-block: 2px solid var(--ink); }
+  .custom-trust-in { display: grid; grid-template-columns: repeat(4, 1fr); max-width: 1240px; margin: 0 auto; padding-inline: var(--gutter); }
+  @media(max-width: 760px) { .custom-trust-in { grid-template-columns: 1fr 1fr; } }
+  .custom-trust .cell { padding: 22px 20px; border-left: 1px solid rgba(255, 255, 255, .28); }
+  .custom-trust .cell:first-child { border-left: 0; }
+  @media(max-width: 760px) {
+    .custom-trust .cell:nth-child(odd) { border-left: 0; }
+    .custom-trust .cell:nth-child(n+3) { border-top: 1px solid rgba(255, 255, 255, .28); }
+  }
+  .custom-trust .k { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.8rem; line-height: 1; }
+  .custom-trust .v { font-size: .72rem; font-weight: 600; letter-spacing: .04em; margin-top: 6px; color: rgba(255, 255, 255, .86); }
+</style>
+
+<div class="custom-trust">
+  <div class="custom-trust-in">
+    {%- for block in section.blocks -%}
+      <div class="cell">
+        <div class="k">{{ block.settings.heading }}</div>
+        <div class="v">{{ block.settings.subtext }}</div>
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Custom Trust Strip",
+  "max_blocks": 4,
+  "blocks": [
+    {
+      "type": "trust_item",
+      "name": "Trust Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "15 YRS"
+        },
+        {
+          "type": "text",
+          "id": "subtext",
+          "label": "Subtext",
+          "default": "At our own furnace"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Trust Strip",
+      "blocks": [
+        {
+          "type": "trust_item",
+          "settings": {
+            "heading": "15 YRS",
+            "subtext": "At our own furnace"
+          }
+        },
+        {
+          "type": "trust_item",
+          "settings": {
+            "heading": "100+",
+            "subtext": "Designs, hand-cut"
+          }
+        },
+        {
+          "type": "trust_item",
+          "settings": {
+            "heading": "7",
+            "subtext": "Categories, one factory"
+          }
+        },
+        {
+          "type": "trust_item",
+          "settings": {
+            "heading": "2",
+            "subtext": "Brothers · Amit & Rahul"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,191 @@
+<style>
+  .custom-cats-section { padding-block: clamp(52px, 7vw, 92px); }
+  .custom-cats-section .head { max-width: 60ch; margin-bottom: 40px; }
+  .custom-cats-section .head p.kick { font-family: 'Space Grotesk', sans-serif; font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; color: var(--blue); }
+  .custom-cats-section .head h2 { font-weight: 700; font-size: clamp(2rem, 5.5vw, 3.4rem); line-height: 1; letter-spacing: -.02em; text-transform: uppercase; margin: 10px 0 12px; font-family: 'Space Grotesk', sans-serif; }
+  .custom-cats-section .head p { color: var(--muted); font-weight: 500; font-size: 1.04rem; }
+  .cats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; max-width: 1240px; margin: 0 auto; padding-inline: var(--gutter); }
+  @media(max-width: 960px) { .cats { grid-template-columns: repeat(2, 1fr); } }
+  @media(max-width: 520px) { .cats { grid-template-columns: 1fr 1fr; } }
+  .cat { display: block; color: inherit; text-decoration: none; background: var(--white); border: 2px solid var(--ink); border-radius: 3px; padding: 18px 16px 16px; text-align: center; transition: transform .12s, box-shadow .12s; position: relative; }
+  .cat:hover { transform: translateY(-3px); box-shadow: 6px 6px 0 var(--ink); }
+  .cat svg { width: 100%; height: 96px; margin-bottom: 10px; }
+  .cat .cl { stroke: var(--ink); stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+  .cat .fl { stroke: rgba(0, 0, 0, .42); stroke-width: 2; stroke-dasharray: 4 3; fill: none; }
+  .cat-yellow { display: grid; place-content: center; background: var(--yellow); }
+  .cat-yellow h3 { font-size: 1.1rem; font-family: 'Space Grotesk', sans-serif; }
+  .cat-yellow p { color: var(--ink); }
+</style>
+
+<section class="custom-cats-section" id="cats">
+  <div class="wrap" style="max-width:1240px;margin:0 auto;padding-inline:var(--gutter)">
+    <div class="head reveal">
+      <p class="kick">{{ section.settings.kicker }}</p>
+      <h2>{{ section.settings.headline }}</h2>
+      <p>{{ section.settings.subheadline }}</p>
+    </div>
+  </div>
+  <div class="cats">
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'category' -%}
+        <a class="cat reveal" href="{{ block.settings.link }}">
+          {{ block.settings.svg_code }}
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.text }}</p>
+        </a>
+      {%- elsif block.type == 'themed_drop' -%}
+        <a class="cat cat-yellow reveal" href="{{ block.settings.link }}">
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.text }}</p>
+        </a>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Custom Categories",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker text",
+      "default": "The collection"
+    },
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline",
+      "default": "Seven ways to pour."
+    },
+    {
+      "type": "textarea",
+      "id": "subheadline",
+      "label": "Subheadline",
+      "default": "From the first glass of wine to the candle that closes the night — all made by us, all direct."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category Tile",
+      "settings": [
+        {
+          "type": "html",
+          "id": "svg_code",
+          "label": "SVG Code"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    },
+    {
+      "type": "themed_drop",
+      "name": "Themed Drop Tile",
+      "settings": [
+        {
+          "type": "html",
+          "id": "title",
+          "label": "Title (HTML allowed)",
+          "default": "+ Themed<br>Drops"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Limited runs, never restocked"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Categories",
+      "blocks": [
+        {
+          "type": "category",
+          "settings": {
+            "svg_code": "<svg viewBox=\"0 0 70 100\" aria-hidden=\"true\"><path class=\"cl\" d=\"M18,8 Q18,44 35,50 Q52,44 52,8\"/><path class=\"fl\" d=\"M22,26 Q35,32 48,26\"/><path class=\"cl\" d=\"M35,50 L35,86\"/><path class=\"cl\" d=\"M24,90 L46,90\"/></svg>",
+            "title": "Wine & Champagne",
+            "text": "Stemware, drawn to the line"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "svg_code": "<svg viewBox=\"0 0 70 100\" aria-hidden=\"true\"><path class=\"cl\" d=\"M16,20 L35,48 L54,20 Z\"/><path class=\"fl\" d=\"M24,30 L46,30\"/><path class=\"cl\" d=\"M35,48 L35,86\"/><path class=\"cl\" d=\"M24,90 L46,90\"/></svg>",
+            "title": "Cocktail",
+            "text": "Martini, coupe & more"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "svg_code": "<svg viewBox=\"0 0 70 100\" aria-hidden=\"true\"><path class=\"cl\" d=\"M20,26 L23,88 L47,88 L50,26 Z\"/><path class=\"fl\" d=\"M22,50 L48,50\"/></svg>",
+            "title": "Whisky",
+            "text": "Heavy-based rocks glasses"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "svg_code": "<svg viewBox=\"0 0 70 100\" aria-hidden=\"true\"><path class=\"cl\" d=\"M22,34 L22,82 Q22,88 34,88 Q46,88 46,82 L46,34\"/><path class=\"cl\" d=\"M22,34 Q34,28 46,34\"/><path class=\"fl\" d=\"M24,50 Q34,45 44,50\"/><path class=\"cl\" d=\"M46,44 Q60,46 58,62 Q56,72 46,72\"/></svg>",
+            "title": "Coffee & Tea",
+            "text": "Glass cups, double-walled"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "svg_code": "<svg viewBox=\"0 0 70 100\" aria-hidden=\"true\"><path class=\"cl\" d=\"M24,16 L27,86 L43,86 L46,16 Z\"/><path class=\"fl\" d=\"M25,40 L45,40\"/></svg>",
+            "title": "Tumblers",
+            "text": "The everyday workhorse"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "svg_code": "<svg viewBox=\"0 0 70 100\" aria-hidden=\"true\"><path class=\"cl\" d=\"M31,10 L31,26 Q18,40 18,64 Q18,88 35,88 Q52,88 52,64 Q52,40 39,26 L39,10 Z\"/><path class=\"fl\" d=\"M21,60 Q35,54 49,60\"/><path class=\"cl\" d=\"M28,10 L42,10\"/></svg>",
+            "title": "Decanters",
+            "text": "For wine & spirits, aerated"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "svg_code": "<svg viewBox=\"0 0 70 100\" aria-hidden=\"true\"><path class=\"cl\" d=\"M22,40 L22,84 L48,84 L48,40 Z\"/><path class=\"cl\" d=\"M22,40 Q35,34 48,40\"/><path class=\"cl\" d=\"M35,40 L35,30\"/><path class=\"fl\" d=\"M31,24 Q35,16 39,24 Q35,30 31,24 Z\"/></svg>",
+            "title": "Candle Jars",
+            "text": "Jars & stands, refillable"
+          }
+        },
+        {
+          "type": "themed_drop",
+          "settings": {
+            "title": "+ Themed<br>Drops",
+            "text": "Limited runs, never restocked"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

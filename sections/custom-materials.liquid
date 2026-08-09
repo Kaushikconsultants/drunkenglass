@@ -1,0 +1,113 @@
+<style>
+  .custom-mats-section { padding-block: clamp(52px, 7vw, 92px); }
+  .custom-mats-section .head { max-width: 60ch; margin-bottom: 40px; }
+  .custom-mats-section .kick { color: var(--blue); font-family: 'Space Grotesk', sans-serif; font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; }
+  .custom-mats-section h2 { font-weight: 700; font-size: clamp(2rem, 5.5vw, 3.4rem); line-height: 1; letter-spacing: -.02em; text-transform: uppercase; margin: 10px 0 12px; font-family: 'Space Grotesk', sans-serif; }
+  .mats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 1240px; margin: 0 auto; padding-inline: var(--gutter); }
+  @media(max-width: 760px) { .mats { grid-template-columns: 1fr; } }
+  .mat { border: 2px solid var(--ink); border-radius: 3px; padding: clamp(22px, 3vw, 32px); }
+  .mat.crystal { background: var(--white); }
+  .mat.boro { background: var(--ink); color: var(--paper); }
+  .mat .tag { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; display: inline-block; padding: 5px 9px; border: 1.5px solid currentColor; border-radius: 2px; margin-bottom: 14px; }
+  .mat h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.7rem; text-transform: uppercase; letter-spacing: -.01em; margin-bottom: 8px; }
+  .mat p { font-weight: 500; font-size: .95rem; max-width: 42ch; }
+  .mat.crystal p { color: var(--muted); }
+  .mat .aud { font-family: 'Space Grotesk', sans-serif; font-size: .64rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; margin-top: 18px; padding-top: 14px; border-top: 1.5px solid currentColor; opacity: .85; }
+</style>
+
+<section class="custom-mats-section" id="materials">
+  <div class="wrap" style="max-width: 1240px; margin: 0 auto; padding-inline: var(--gutter);">
+    <div class="head reveal">
+      <p class="kick">{{ section.settings.kicker }}</p>
+      <h2>{{ section.settings.headline }}</h2>
+    </div>
+  </div>
+  <div class="mats">
+    {%- for block in section.blocks -%}
+      <div class="mat {% if forloop.first %}crystal{% else %}boro{% endif %} reveal">
+        <span class="tag">{{ block.settings.tag }}</span>
+        <h3>{{ block.settings.title }}</h3>
+        <p>{{ block.settings.text }}</p>
+        <div class="aud">{{ block.settings.audience }}</div>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Custom Materials",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker text",
+      "default": "Two glasses, one furnace"
+    },
+    {
+      "type": "html",
+      "id": "headline",
+      "label": "Headline",
+      "default": "The crystal you show off.<br>The borosilicate you rely on."
+    }
+  ],
+  "max_blocks": 2,
+  "blocks": [
+    {
+      "type": "material",
+      "name": "Material Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tag",
+          "label": "Tag",
+          "default": "The Crystal Line"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Hand-cut crystal"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Lead-free crystal, each shape drawn to its fill line. The glass you set out when it matters — priced openly, shipped direct."
+        },
+        {
+          "type": "text",
+          "id": "audience",
+          "label": "Audience details",
+          "default": "You see prices · buy now · to your door"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Materials",
+      "blocks": [
+        {
+          "type": "material",
+          "settings": {
+            "tag": "The Crystal Line",
+            "title": "Hand-cut crystal",
+            "text": "Lead-free crystal, each shape drawn to its fill line. The glass you set out when it matters — priced openly, shipped direct.",
+            "audience": "You see prices · buy now · to your door"
+          }
+        },
+        {
+          "type": "material",
+          "settings": {
+            "tag": "The Borosilicate Range",
+            "title": "Built for volume",
+            "text": "Heat-clean, dishwasher-proof, hard to chip. The everyday glass at home — and the glass restaurants order by the hundred.",
+            "audience": "Home: buy now · Trade: pricing on login"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
