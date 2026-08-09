@@ -1,0 +1,143 @@
+<style>
+/* Cart Page Styles */
+.dg-cart-header { padding-block: clamp(38px, 6vw, 66px) 8px; }
+.dg-cart-header .kick { color: var(--blue); }
+.dg-cart-header h1 { font-weight: 700; font-size: clamp(2.1rem, 6.5vw, 3.4rem); line-height: 1; letter-spacing: -.02em; text-transform: uppercase; margin: 12px 0 10px; }
+
+.dg-cartgrid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 40px; align-items: start; padding-block: 20px 60px; }
+@media(max-width: 860px) { .dg-cartgrid { grid-template-columns: 1fr; } }
+.dg-lines { border: 2px solid var(--ink); border-radius: 4px; overflow: hidden; }
+
+/* Line items */
+.dg-brow { display: grid; grid-template-columns: minmax(0,2fr) 1fr auto 1fr; gap: 12px; align-items: center; padding: 14px 18px; border-bottom: 1px solid var(--line); background: var(--white); }
+.dg-brow:last-child { border-bottom: 0; }
+@media(max-width: 620px) { .dg-brow { grid-template-columns: 1fr auto 1fr; } .dg-bunit { display: none; } }
+.dg-bname { display: flex; align-items: center; gap: 14px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: .88rem; text-decoration: none; color: inherit; }
+.dg-bname img { width: 50px; height: 50px; object-fit: cover; border-radius: 2px; border: 1px solid var(--line); }
+.dg-bname-meta { display: flex; flex-direction: column; }
+.dg-bname-meta span { font-size: .64rem; color: var(--muted); letter-spacing: .04em; margin-top: 2px; }
+
+.dg-bunit { font-family: 'Space Grotesk', sans-serif; color: var(--muted); font-size: .8rem; }
+.dg-bline { font-family: 'Space Grotesk', sans-serif; font-weight: 600; text-align: right; }
+
+.dg-stepper { display: inline-flex; align-items: center; border: 2px solid var(--ink); border-radius: 2px; overflow: hidden; background: var(--white); }
+.dg-stepper button, .dg-stepper a { display: inline-flex; justify-content: center; align-items: center; width: 32px; height: 32px; border: 0; background: var(--paper); font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; font-weight: 700; cursor: pointer; color: var(--ink); text-decoration: none; line-height: 1; }
+.dg-stepper button:hover, .dg-stepper a:hover { background: var(--blue); color: #fff; }
+.dg-stepper input { min-width: 36px; max-width: 44px; text-align: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; border: 0; background: transparent; padding: 0; }
+
+.dg-cart-empty { text-align: center; padding: 60px 20px; border: 2px dashed var(--ink); border-radius: 4px; }
+.dg-cart-empty h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+
+/* Summary */
+.dg-summary { border: 2px solid var(--ink); border-radius: 4px; background: var(--paper); padding: 22px; }
+.dg-summary h2 { font-size: 1.15rem; font-weight: 700; text-transform: uppercase; margin-bottom: 14px; font-family: 'Space Grotesk', sans-serif; }
+.dg-srow { display: flex; justify-content: space-between; gap: 12px; font-family: 'Space Grotesk', sans-serif; font-size: .88rem; font-weight: 600; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.dg-srow.free { color: var(--ok); }
+.dg-srow.save { color: var(--berry); }
+.dg-srow.tot { border-bottom: 0; font-size: 1.15rem; font-weight: 700; padding-top: 14px; }
+
+.dg-paynote { font-family: 'Space Grotesk', sans-serif; font-size: .64rem; font-weight: 600; color: var(--muted); margin-top: 10px; margin-bottom: 14px; line-height: 1.5; }
+.dg-paynote b { color: var(--blue); }
+.dg-gknote { font-family: 'Space Grotesk', sans-serif; font-size: .6rem; color: var(--muted); text-align: center; margin-top: 10px; line-height: 1.6; }
+
+.dg-assure { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); }
+.dg-assure div { font-family: 'Space Grotesk', sans-serif; font-size: .68rem; font-weight: 600; color: var(--muted); padding: 4px 0; }
+.dg-assure div::before { content: "✦"; color: var(--blue); margin-right: 7px; }
+</style>
+
+<div class="dg-cart-header">
+  <div class="dg-wrap">
+    <p class="kick">Your bag</p>
+    <h1>{{ section.settings.headline }}</h1>
+  </div>
+</div>
+
+<div class="dg-wrap dg-cartgrid">
+  <!-- Cart Items -->
+  <div>
+    {%- if cart.item_count > 0 -%}
+      <form action="{{ routes.cart_url }}" method="post" id="cart-form">
+        <div class="dg-lines">
+          {%- for item in cart.items -%}
+            <div class="dg-brow">
+              <a href="{{ item.url }}" class="dg-bname">
+                {%- if item.image -%}
+                  <img src="{{ item.image | image_url: width: 100 }}" alt="{{ item.title | escape }}" loading="lazy" width="50" height="50">
+                {%- else -%}
+                  <div style="width:50px;height:50px;background:var(--paper);border-radius:2px"></div>
+                {%- endif -%}
+                <div class="dg-bname-meta">
+                  {{ item.product.title }}
+                  {%- unless item.product.has_only_default_variant -%}
+                    <span>{{ item.variant.title }}</span>
+                  {%- endunless -%}
+                </div>
+              </a>
+              <div class="dg-bunit">{{ item.price | money }}</div>
+              <div class="dg-stepper">
+                <a href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity={{ item.quantity | minus: 1 }}" aria-label="Decrease quantity">−</a>
+                <input type="number" name="updates[]" value="{{ item.quantity }}" min="0" aria-label="Quantity" readonly>
+                <a href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity={{ item.quantity | plus: 1 }}" aria-label="Increase quantity">+</a>
+              </div>
+              <div class="dg-bline">{{ item.final_line_price | money }}</div>
+            </div>
+          {%- endfor -%}
+        </div>
+      </form>
+    {%- else -%}
+      <div class="dg-cart-empty">
+        <h2>Your bag is empty</h2>
+        <p style="color:var(--muted);font-weight:500;margin-bottom:14px">Nothing poured yet — the collection is waiting.</p>
+        <a class="dg-btn" href="{{ routes.all_products_collection_url }}" style="max-width:260px;margin:0 auto">Shop the collection</a>
+      </div>
+    {%- endif -%}
+    
+    <a class="dg-btn ghost" href="{{ routes.all_products_collection_url }}" style="margin-top:14px;max-width:260px">Continue shopping</a>
+  </div>
+
+  <!-- Summary -->
+  <aside class="dg-summary">
+    <h2>Order summary</h2>
+    
+    <div class="dg-srow"><span>Subtotal</span><span>{{ cart.total_price | money }}</span></div>
+    
+    {%- if cart.cart_level_discount_applications.size > 0 -%}
+      {%- for discount in cart.cart_level_discount_applications -%}
+        <div class="dg-srow save"><span>{{ discount.title }}</span><span>-{{ discount.total_allocated_amount | money }}</span></div>
+      {%- endfor -%}
+    {%- endif -%}
+    
+    <div class="dg-srow free"><span>Shipping</span><span>Free</span></div>
+    <div class="dg-srow tot"><span>Total</span><span>{{ cart.total_price | money }}</span></div>
+
+    <p class="dg-paynote"><b>Paying online saves you 5%</b> and skips the COD handling charge (discount applied at next step).</p>
+
+    <form action="{{ routes.cart_url }}" method="post" id="checkout-form">
+      <button type="submit" name="checkout" class="dg-btn" style="width:100%" {% if cart.item_count == 0 %}disabled{% endif %}>
+        Checkout
+      </button>
+    </form>
+    
+    <p class="dg-gknote">Secure checkout powered by Shopify<br>UPI · Cards · Netbanking · Wallets · COD</p>
+
+    <div class="dg-assure">
+      <div>Free shipping across India</div>
+      <div>Dispatches in 2–3 working days</div>
+      <div>Broken on arrival? Replaced free</div>
+    </div>
+  </aside>
+</div>
+
+{% schema %}
+{
+  "name": "Cart Page",
+  "settings": [
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline",
+      "default": "Almost poured."
+    }
+  ]
+}
+{% endschema %}

@@ -54,9 +54,11 @@
 <!-- Category filter pills linking to collections -->
 <nav class="dg-cat-pills" aria-label="Category filter">
   {%- if section.settings.show_category_pills -%}
-    {%- for link in linklists[section.settings.category_menu].links -%}
-      <a href="{{ link.url }}" class="dg-catpill{% if link.active %} active{% endif %}">{{ link.title }}</a>
-    {%- endfor -%}
+      {%- for coll in collections -%}
+        {%- if coll.all_products_count > 0 -%}
+          <a href="{{ coll.url }}" class="dg-catpill{% if collection.handle == coll.handle %} active{% endif %}">{{ coll.title }}</a>
+        {%- endif -%}
+      {%- endfor -%}
   {%- endif -%}
 </nav>
 
