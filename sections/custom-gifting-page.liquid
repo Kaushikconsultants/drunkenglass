@@ -1,0 +1,283 @@
+<style>
+/* Gifting Page Styles */
+.dg-gift-header { position: relative; overflow: hidden; padding-block: clamp(52px, 9vw, 104px) clamp(36px, 5vw, 60px); }
+.dg-gift-header .glow { position: absolute; right: -8%; top: 0; width: min(52vw, 560px); height: min(52vw, 560px); border-radius: 50%; background: radial-gradient(circle, rgba(39,101,250,.14), transparent 62%); pointer-events: none; }
+.dg-gift-header .in { position: relative; z-index: 2; }
+.dg-gift-header .kick { color: var(--blue); }
+.dg-gift-header h1 { font-weight: 700; font-size: clamp(2.5rem, 8vw, 5rem); line-height: .98; letter-spacing: -.02em; text-transform: uppercase; margin: 14px 0 20px; }
+.dg-gift-header h1 .berry { color: var(--berry); }
+.dg-gift-header .lede { max-width: 56ch; font-weight: 500; font-size: 1.1rem; }
+.dg-cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+
+.dg-gift-section { padding-block: clamp(46px, 7vw, 84px); }
+.dg-gift-section.alt { background: var(--white); border-block: 2px solid var(--ink); }
+.dg-sec-head { max-width: 60ch; margin-bottom: 34px; }
+.dg-sec-head h2 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(1.8rem, 5vw, 2.9rem); text-transform: uppercase; letter-spacing: -.02em; margin-top: 10px; }
+.dg-sec-head p { color: var(--muted); font-weight: 500; margin-top: 8px; }
+
+/* Why glass cards */
+.dg-why { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+@media(max-width: 860px) { .dg-why { grid-template-columns: 1fr 1fr; } }
+.dg-wcard { border: 2px solid var(--ink); border-radius: 4px; background: var(--white); padding: 22px; }
+.dg-wcard .no { font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: var(--blue); font-size: .66rem; letter-spacing: .1em; }
+.dg-wcard h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.05rem; text-transform: uppercase; margin: 8px 0 6px; }
+.dg-wcard p { color: var(--muted); font-weight: 500; font-size: .88rem; }
+
+/* Occasions */
+.dg-occ { display: flex; flex-wrap: wrap; gap: 10px; }
+.dg-occ .o { font-family: 'Space Grotesk', sans-serif; font-size: .72rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; border: 2px solid var(--ink); border-radius: 2px; padding: 12px 16px; background: var(--white); }
+.dg-occ .o.fest { background: var(--yellow); }
+
+/* Steps */
+.dg-giftsteps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; counter-reset: gs; }
+@media(max-width: 860px) { .dg-giftsteps { grid-template-columns: 1fr 1fr; } }
+.dg-giftstep { counter-increment: gs; border: 2px solid var(--ink); border-radius: 4px; background: var(--white); padding: 22px; }
+.dg-giftstep::before { content: counter(gs); display: grid; place-items: center; width: 34px; height: 34px; background: var(--blue); color: #fff; font-family: 'Space Grotesk', sans-serif; font-weight: 700; border-radius: 50%; margin-bottom: 12px; }
+.dg-giftstep h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1rem; text-transform: uppercase; margin-bottom: 6px; }
+.dg-giftstep p { color: var(--muted); font-weight: 500; font-size: .86rem; }
+
+/* Branding options */
+.dg-brandrow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+@media(max-width: 760px) { .dg-brandrow { grid-template-columns: 1fr; } }
+.dg-bcard { border: 2px solid var(--ink); border-radius: 4px; background: var(--white); padding: 24px; text-align: center; }
+.dg-bcard svg { width: 40px; height: 40px; stroke: var(--ink); fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; margin-bottom: 12px; }
+.dg-bcard h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.05rem; text-transform: uppercase; margin-bottom: 6px; }
+.dg-bcard p { color: var(--muted); font-weight: 500; font-size: .88rem; }
+
+/* Policy grid */
+.dg-polgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+@media(max-width: 760px) { .dg-polgrid { grid-template-columns: 1fr 1fr; } }
+.dg-polcard { border: 2px solid var(--ink); border-radius: 4px; background: var(--paper); padding: 20px; }
+.dg-polcard h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .94rem; text-transform: uppercase; margin-bottom: 6px; }
+.dg-polcard p { color: var(--muted); font-weight: 500; font-size: .86rem; }
+.dg-polcard b { color: var(--ink); font-weight: 700; }
+
+/* Quote form */
+.dg-qform { max-width: 700px; margin: 0 auto; }
+.dg-qfield { margin-bottom: 16px; }
+.dg-qfield.row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media(max-width: 560px) { .dg-qfield.row { grid-template-columns: 1fr; } }
+.dg-qthanks { display: none; text-align: center; padding-block: 22px; }
+.dg-qthanks.on { display: block; }
+.dg-qthanks h3 { font-size: 1.4rem; text-transform: uppercase; margin: 12px 0 8px; font-family: 'Space Grotesk', sans-serif; }
+</style>
+
+<!-- Header -->
+<div class="dg-gift-header">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="dg-wrap in">
+    <p class="kick">{{ section.settings.kicker }}</p>
+    <h1>{{ section.settings.headline }}</h1>
+    <p class="lede">{{ section.settings.subtext }}</p>
+    <div class="dg-cta-row">
+      <a class="dg-btn" href="#dg-quote">{{ section.settings.cta_label }}</a>
+      <a class="dg-btn ghost" href="#dg-how">How it works</a>
+    </div>
+  </div>
+</div>
+
+<!-- Why glass -->
+<section class="dg-gift-section alt">
+  <div class="dg-wrap">
+    <div class="dg-sec-head">
+      <p class="kick" style="color:var(--blue)">Why glass</p>
+      <h2>{{ section.settings.why_headline }}</h2>
+    </div>
+    <div class="dg-why">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'why_card' -%}
+          <div class="dg-wcard">
+            <div class="no">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</div>
+            <h3>{{ block.settings.title }}</h3>
+            <p>{{ block.settings.text }}</p>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<!-- Occasions -->
+<section class="dg-gift-section">
+  <div class="dg-wrap">
+    <div class="dg-sec-head">
+      <p class="kick" style="color:var(--blue)">Made for the moment</p>
+      <h2>{{ section.settings.occ_headline }}</h2>
+    </div>
+    <div class="dg-occ">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'occasion' -%}
+          <span class="o {% if block.settings.is_featured %}fest{% endif %}">{{ block.settings.label }}</span>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<!-- Personalisation -->
+<section class="dg-gift-section alt">
+  <div class="dg-wrap">
+    <div class="dg-sec-head">
+      <p class="kick" style="color:var(--blue)">Make it yours</p>
+      <h2>Personalisation</h2>
+    </div>
+    <div class="dg-brandrow">
+      <div class="dg-bcard">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg>
+        <h3>Logo engraving</h3>
+        <p>Your mark laser-etched onto the glass — permanent, clean, understated.</p>
+      </div>
+      <div class="dg-bcard">
+        <svg viewBox="0 0 24 24"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg>
+        <h3>Custom packaging</h3>
+        <p>Branded gift boxes and inserts, built to survive the courier and impress on arrival.</p>
+      </div>
+      <div class="dg-bcard">
+        <svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="13" rx="1"/><path d="M4 11h16M12 7v13M9 7a2 2 0 1 1 3-2 2 2 0 1 1 3 2"/></svg>
+        <h3>Gift notes &amp; sets</h3>
+        <p>Personalised cards and curated multi-glass sets for a finished, ready-to-give package.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section class="dg-gift-section" id="dg-how">
+  <div class="dg-wrap">
+    <div class="dg-sec-head">
+      <p class="kick" style="color:var(--blue)">Simple by design</p>
+      <h2>How it works</h2>
+    </div>
+    <div class="dg-giftsteps">
+      <div class="dg-giftstep"><h3>Share your brief</h3><p>Tell us quantity, occasion, budget and deadline. Two minutes on the form below.</p></div>
+      <div class="dg-giftstep"><h3>We quote &amp; sample</h3><p>You get a personalised quote, and a branded sample to approve before the full run.</p></div>
+      <div class="dg-giftstep"><h3>Brand &amp; produce</h3><p>We engrave, pack and produce the order at our own furnace.</p></div>
+      <div class="dg-giftstep"><h3>We deliver</h3><p>To one address or many — dispatched and tracked to your teams or clients.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Policies -->
+<section class="dg-gift-section alt">
+  <div class="dg-wrap">
+    <div class="dg-sec-head">
+      <p class="kick" style="color:var(--blue)">The terms, plainly</p>
+      <h2>Gifting policies</h2>
+    </div>
+    <div class="dg-polgrid">
+      <div class="dg-polcard"><h3>Minimums</h3><p>Gifting starts at <b>50 pieces</b>. Bigger runs unlock better per-piece pricing.</p></div>
+      <div class="dg-polcard"><h3>Payment</h3><p><b>100% prepaid, no COD.</b> Production begins once payment clears.</p></div>
+      <div class="dg-polcard"><h3>Lead time</h3><p>Branded runs typically ship in <b>15–20 working days</b> after sample approval.</p></div>
+      <div class="dg-polcard"><h3>Delivery</h3><p>We deliver <b>across all of India</b> — to one address or many.</p></div>
+      <div class="dg-polcard"><h3>Breakage</h3><p>Anything that arrives broken is <b>replaced free</b> with an unboxing video.</p></div>
+      <div class="dg-polcard"><h3>Custom designs</h3><p>Own shape, colour or bespoke piece? We'll quote it separately.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Quote form -->
+<section class="dg-gift-section" id="dg-quote">
+  <div class="dg-wrap">
+    <div class="dg-sec-head">
+      <p class="kick" style="color:var(--blue)">Ready to gift?</p>
+      <h2>Request a gifting quote</h2>
+      <p>Fill in your brief and we'll come back with a quote and sample options within one working day.</p>
+    </div>
+    <div class="dg-qform">
+      {%- form 'contact', id: 'dg-gifting-form' -%}
+        {%- if form.posted_successfully? -%}
+          <div class="dg-qthanks on">
+            <p style="font-size:2rem">✦</p>
+            <h3>Quote request received</h3>
+            <p>We'll get back to you within one working day with your personalised quote.</p>
+          </div>
+        {%- else -%}
+          <div class="dg-qfield row">
+            <div>
+              <label class="dg-label" for="GiftForm-name">Your name *</label>
+              <input class="dg-input" id="GiftForm-name" type="text" name="contact[name]" required>
+            </div>
+            <div>
+              <label class="dg-label" for="GiftForm-company">Company name</label>
+              <input class="dg-input" id="GiftForm-company" type="text" name="contact[company]">
+            </div>
+          </div>
+          <div class="dg-qfield row">
+            <div>
+              <label class="dg-label" for="GiftForm-email">Email *</label>
+              <input class="dg-input" id="GiftForm-email" type="email" name="contact[email]" required>
+            </div>
+            <div>
+              <label class="dg-label" for="GiftForm-phone">Phone</label>
+              <input class="dg-input" id="GiftForm-phone" type="tel" name="contact[phone]">
+            </div>
+          </div>
+          <div class="dg-qfield row">
+            <div>
+              <label class="dg-label" for="GiftForm-qty">Quantity needed *</label>
+              <input class="dg-input" id="GiftForm-qty" type="number" name="contact[quantity]" min="50" placeholder="Minimum 50 pieces" required>
+            </div>
+            <div>
+              <label class="dg-label" for="GiftForm-deadline">Deadline (date)</label>
+              <input class="dg-input" id="GiftForm-deadline" type="date" name="contact[deadline]">
+            </div>
+          </div>
+          <div class="dg-qfield">
+            <label class="dg-label" for="GiftForm-body">Tell us more — occasion, branding needs, budget *</label>
+            <textarea class="dg-textarea" id="GiftForm-body" name="contact[body]" required placeholder="E.g. Diwali gifts for 200 employees, logo engraving needed, budget ~₹1,200 per piece…"></textarea>
+          </div>
+          <button type="submit" class="dg-btn" style="width:100%;text-align:center">Request a quote</button>
+        {%- endif -%}
+      {%- endform -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Corporate Gifting Page",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Corporate gifting" },
+    { "type": "html", "id": "headline", "label": "Headline", "default": "Gift something<br>they'll actually <span class=\"berry\">keep</span>." },
+    { "type": "textarea", "id": "subtext", "label": "Subtext", "default": "Hand-cut glass, engraved with your logo and packed the way you want it — made at our furnace and delivered at scale." },
+    { "type": "text", "id": "cta_label", "label": "CTA button label", "default": "Request a gifting quote" },
+    { "type": "text", "id": "why_headline", "label": "Why glass headline", "default": "A gift with a shelf life longer than a calendar year." },
+    { "type": "text", "id": "occ_headline", "label": "Occasions headline", "default": "Every reason to give." }
+  ],
+  "blocks": [
+    {
+      "type": "why_card",
+      "name": "Why Card",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "textarea", "id": "text", "label": "Text" }
+      ]
+    },
+    {
+      "type": "occasion",
+      "name": "Occasion",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label" },
+        { "type": "checkbox", "id": "is_featured", "label": "Highlight (yellow)", "default": false }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Corporate Gifting Page",
+      "blocks": [
+        { "type": "why_card", "settings": { "title": "Actually kept", "text": "A good glass earns a spot in the cabinet. Your logo stays in their life, not their bin." } },
+        { "type": "why_card", "settings": { "title": "Your brand, cut in", "text": "Logo engraving and custom packaging make it unmistakably yours." } },
+        { "type": "why_card", "settings": { "title": "Factory-direct value", "text": "We make it, so your budget buys real glass — not a distributor's markup." } },
+        { "type": "why_card", "settings": { "title": "Delivered at scale", "text": "Fifteen years of production means hundreds of identical pieces, on time." } },
+        { "type": "occasion", "settings": { "label": "Client gifting", "is_featured": false } },
+        { "type": "occasion", "settings": { "label": "Employee & onboarding kits", "is_featured": false } },
+        { "type": "occasion", "settings": { "label": "Diwali & festive", "is_featured": true } },
+        { "type": "occasion", "settings": { "label": "Conferences & events", "is_featured": false } },
+        { "type": "occasion", "settings": { "label": "Milestones & awards", "is_featured": false } },
+        { "type": "occasion", "settings": { "label": "Wedding & hospitality", "is_featured": false } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,177 @@
+<style>
+/* Contact Page Styles */
+.dg-contact-header { padding-block: clamp(38px, 6vw, 70px) 10px; }
+.dg-contact-header .kick { color: var(--blue); }
+.dg-contact-header h1 { font-weight: 700; font-size: clamp(2.1rem, 6.5vw, 3.6rem); line-height: 1; letter-spacing: -.02em; text-transform: uppercase; margin: 12px 0 12px; }
+.dg-contact-header p { color: var(--muted); font-weight: 500; max-width: 54ch; }
+
+.dg-cgrid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 28px; padding-block: 26px 60px; align-items: start; }
+@media(max-width: 900px) { .dg-cgrid { grid-template-columns: 1fr; } }
+
+.dg-ccard { border: 2px solid var(--ink); border-radius: 4px; background: var(--white); padding: 24px; }
+.dg-ccard h2 { font-size: 1.15rem; text-transform: uppercase; margin-bottom: 14px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
+.dg-cline { padding: 12px 0; border-top: 1px solid var(--line); }
+.dg-cline:first-of-type { border-top: 0; }
+.dg-cline .l { font-family: 'Space Grotesk', sans-serif; font-size: .6rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.dg-cline .v { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .95rem; margin-top: 2px; }
+.dg-cline .v a { color: var(--blue); text-decoration: underline; }
+.dg-cline .s { font-size: .82rem; color: var(--muted); font-weight: 500; margin-top: 2px; }
+
+.dg-routes { display: grid; gap: 10px; margin-top: 16px; }
+.dg-route { border: 2px solid var(--ink); border-radius: 3px; padding: 12px 14px; background: var(--paper); display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+.dg-route .t { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .82rem; }
+.dg-route .t span { display: block; font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: .76rem; color: var(--muted); }
+.dg-route a { font-family: 'Space Grotesk', sans-serif; font-size: .66rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--blue); white-space: nowrap; }
+
+.dg-cfield { margin-bottom: 14px; }
+.dg-cfield.row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media(max-width: 520px) { .dg-cfield.row { grid-template-columns: 1fr; } }
+.dg-req { color: var(--berry); }
+.dg-chint { font-family: 'Space Grotesk', sans-serif; font-size: .62rem; color: var(--berry); min-height: 1em; margin-top: 4px; }
+
+.dg-cthanks { display: none; text-align: center; padding-block: 16px; }
+.dg-cthanks.on { display: block; }
+.dg-cthanks .tick { width: 54px; height: 54px; border: 2px solid var(--blue); border-radius: 50%; display: grid; place-items: center; margin: 0 auto 16px; }
+.dg-cthanks .tick svg { width: 26px; height: 26px; stroke: var(--blue); fill: none; stroke-width: 2; }
+.dg-cthanks h3 { font-size: 1.4rem; text-transform: uppercase; margin-bottom: 8px; font-family: 'Space Grotesk', sans-serif; }
+.dg-cthanks p { color: var(--muted); font-weight: 500; max-width: 42ch; margin: 0 auto; }
+</style>
+
+<div class="dg-contact-header">
+  <div class="dg-wrap">
+    <p class="kick">{{ section.settings.kicker }}</p>
+    <h1>{{ section.settings.headline }}</h1>
+    <p>{{ section.settings.subheadline }}</p>
+  </div>
+</div>
+
+<div class="dg-wrap dg-cgrid">
+  <!-- Contact info card -->
+  <div class="dg-ccard">
+    <h2>Reach us</h2>
+    <div class="dg-cline">
+      <div class="l">Phone / WhatsApp</div>
+      <div class="v"><a href="tel:{{ section.settings.phone }}">{{ section.settings.phone }}</a></div>
+      <div class="s">{{ section.settings.hours }}</div>
+    </div>
+    <div class="dg-cline">
+      <div class="l">Customer support</div>
+      <div class="v"><a href="mailto:{{ section.settings.email_support }}">{{ section.settings.email_support }}</a></div>
+    </div>
+    <div class="dg-cline">
+      <div class="l">Corporate gifting</div>
+      <div class="v"><a href="mailto:{{ section.settings.email_gifting }}">{{ section.settings.email_gifting }}</a></div>
+    </div>
+    {%- if section.settings.address != blank -%}
+      <div class="dg-cline">
+        <div class="l">Registered address</div>
+        <div class="v" style="font-weight:600;font-size:.9rem">{{ section.settings.address }}</div>
+      </div>
+    {%- endif -%}
+    {%- if section.settings.gstin != blank -%}
+      <div class="dg-cline">
+        <div class="l">GSTIN</div>
+        <div class="v">{{ section.settings.gstin }}</div>
+      </div>
+    {%- endif -%}
+
+    <div class="dg-routes">
+      <div class="dg-route">
+        <div class="t">Corporate gifting<span>Bulk, branded, quoted</span></div>
+        <a href="{{ routes.root_url }}pages/gifting">Get a quote →</a>
+      </div>
+      <div class="dg-route">
+        <div class="t">Where's my order?<span>Track with your order ID</span></div>
+        <a href="{{ routes.root_url }}pages/track-order">Track →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact form -->
+  <div class="dg-ccard">
+    {%- form 'contact', id: 'dg-contact-form' -%}
+      <div id="dg-formBody">
+        <h2>Send us a message</h2>
+
+        {%- if form.posted_successfully? -%}
+          <div class="dg-cthanks on">
+            <div class="tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></div>
+            <h3>Message sent</h3>
+            <p>Thank you — we'll reply to your email, usually within one working day.</p>
+          </div>
+        {%- else -%}
+
+          {%- if form.errors -%}
+            <p style="color:var(--berry);font-family:'Space Grotesk',sans-serif;font-size:.84rem;margin-bottom:14px">
+              Please fix the errors below and try again.
+            </p>
+          {%- endif -%}
+
+          <div class="dg-cfield row">
+            <div>
+              <label class="dg-label" for="ContactForm-name">Your name <span class="dg-req">*</span></label>
+              <input class="dg-input" id="ContactForm-name" type="text" name="contact[name]" autocomplete="name" required>
+            </div>
+            <div>
+              <label class="dg-label" for="ContactForm-phone">Phone</label>
+              <input class="dg-input" id="ContactForm-phone" type="tel" name="contact[phone]" maxlength="10">
+            </div>
+          </div>
+
+          <div class="dg-cfield">
+            <label class="dg-label" for="ContactForm-email">Email <span class="dg-req">*</span></label>
+            <input class="dg-input" id="ContactForm-email" type="email" name="contact[email]" autocomplete="email" required
+              {%- if form.errors contains 'email' %} class="dg-input--error"{% endif %}>
+            {%- if form.errors contains 'email' -%}
+              <p class="dg-chint">{{ form.errors.translated_fields['email'] | capitalize }}</p>
+            {%- endif -%}
+          </div>
+
+          <div class="dg-cfield">
+            <label class="dg-label" for="ContactForm-topic">What's this about? <span class="dg-req">*</span></label>
+            <select class="dg-input" id="ContactForm-topic" name="contact[topic]" required>
+              <option value="">Select…</option>
+              <option>An order I've placed</option>
+              <option>A damaged or broken item</option>
+              <option>Product question</option>
+              <option>Corporate gifting</option>
+              <option>Something else</option>
+            </select>
+          </div>
+
+          <div class="dg-cfield">
+            <label class="dg-label" for="ContactForm-order">Order ID (if you have one)</label>
+            <input class="dg-input" id="ContactForm-order" type="text" name="contact[order_id]" placeholder="DG-XXXXXX">
+          </div>
+
+          <div class="dg-cfield">
+            <label class="dg-label" for="ContactForm-body">Message <span class="dg-req">*</span></label>
+            <textarea class="dg-textarea" id="ContactForm-body" name="contact[body]" required placeholder="Tell us what you need…"></textarea>
+          </div>
+
+          <button type="submit" class="dg-btn" style="width:100%;text-align:center">Send message</button>
+        {%- endif -%}
+      </div>
+    {%- endform -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Contact Page",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Contact" },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Talk to the makers." },
+    { "type": "textarea", "id": "subheadline", "label": "Subheadline", "default": "No call centre — you reach the people who run the furnace. We answer every message, usually the same working day." },
+    { "type": "text", "id": "phone", "label": "Phone number", "default": "+91 00000 00000" },
+    { "type": "text", "id": "hours", "label": "Phone hours", "default": "Mon–Sat, 10am–7pm IST" },
+    { "type": "text", "id": "email_support", "label": "Support email", "default": "hello@drunkenglass.in" },
+    { "type": "text", "id": "email_gifting", "label": "Gifting email", "default": "gifting@drunkenglass.in" },
+    { "type": "html", "id": "address", "label": "Address (HTML)" },
+    { "type": "text", "id": "gstin", "label": "GSTIN" }
+  ],
+  "presets": [
+    { "name": "Contact Page" }
+  ]
+}
+{% endschema %}

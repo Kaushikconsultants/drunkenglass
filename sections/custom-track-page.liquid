@@ -1,0 +1,116 @@
+<style>
+/* Track Order Page */
+.dg-track-header { padding-block: clamp(40px, 6vw, 72px) 8px; }
+.dg-track-header .kick { color: var(--blue); }
+.dg-track-header h1 { font-weight: 700; font-size: clamp(2.1rem, 6.5vw, 3.4rem); line-height: 1; letter-spacing: -.02em; text-transform: uppercase; margin: 12px 0 10px; }
+.dg-track-header p { color: var(--muted); font-weight: 500; max-width: 52ch; }
+
+.dg-tgrid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 26px; padding-block: 26px 60px; align-items: start; }
+@media(max-width: 900px) { .dg-tgrid { grid-template-columns: 1fr; } }
+.dg-tcard { border: 2px solid var(--ink); border-radius: 4px; background: var(--white); padding: 24px; }
+.dg-tcard h2 { font-size: 1.1rem; text-transform: uppercase; margin-bottom: 14px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
+.dg-tfield { margin-bottom: 14px; }
+
+.dg-rhead { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; align-items: baseline; margin-bottom: 16px; }
+.dg-rhead .oid { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.1rem; }
+.dg-rhead .st { font-family: 'Space Grotesk', sans-serif; font-size: .62rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; border: 2px solid var(--blue); color: var(--blue); border-radius: 2px; padding: 5px 10px; }
+
+.dg-tsteps { list-style: none; counter-reset: ts; margin-top: 6px; }
+.dg-tsteps li { counter-increment: ts; position: relative; padding: 14px 0 14px 46px; border-bottom: 1px solid var(--line); }
+.dg-tsteps li:last-child { border-bottom: 0; }
+.dg-tsteps li::before { content: counter(ts); position: absolute; left: 0; top: 12px; width: 30px; height: 30px; display: grid; place-items: center; background: var(--paper); border: 2px solid var(--ink); color: var(--muted); font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .82rem; border-radius: 50%; }
+.dg-tsteps li.done::before { background: var(--blue); border-color: var(--blue); color: #fff; content: "✓"; }
+.dg-tsteps li.now::before { background: var(--yellow); border-color: var(--ink); color: var(--ink); }
+.dg-tsteps h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .9rem; text-transform: uppercase; }
+.dg-tsteps p { font-size: .84rem; color: var(--muted); font-weight: 500; }
+
+.dg-helpbox { margin-top: 20px; border: 2px dashed var(--ink); border-radius: 4px; padding: 16px 18px; background: var(--paper); }
+.dg-helpbox p { font-family: 'Space Grotesk', sans-serif; font-size: .8rem; font-weight: 700; }
+.dg-helpbox p span { display: block; font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: .8rem; color: var(--muted); margin-top: 2px; }
+.dg-helpbox a { color: var(--blue); text-decoration: underline; font-family: 'Space Grotesk', sans-serif; font-size: .7rem; font-weight: 700; text-transform: uppercase; display: inline-block; margin-top: 8px; }
+</style>
+
+<div class="dg-track-header">
+  <div class="dg-wrap">
+    <p class="kick">Track order</p>
+    <h1>{{ section.settings.headline }}</h1>
+    <p>{{ section.settings.subtext }}</p>
+  </div>
+</div>
+
+<div class="dg-wrap dg-tgrid">
+  <!-- Track form -->
+  <div class="dg-tcard">
+    <div id="dg-track-form">
+      <h2>Find your order</h2>
+      <div class="dg-tfield">
+        <label class="dg-label" for="dg-order-id">Order ID</label>
+        <input class="dg-input" id="dg-order-id" type="text" placeholder="DG-XXXXXX" autocomplete="off">
+      </div>
+      <div class="dg-tfield">
+        <label class="dg-label" for="dg-order-email">Email or phone used at checkout</label>
+        <input class="dg-input" id="dg-order-email" type="text" placeholder="you@example.com or 98XXXXXXXX">
+        <div id="dg-track-hint" style="font-family:'Space Grotesk',sans-serif;font-size:.62rem;color:var(--berry);min-height:1em;margin-top:4px"></div>
+      </div>
+      <button class="dg-btn" style="width:100%;text-align:center" id="dg-track-btn">Track my order</button>
+      <p style="font-family:'Space Grotesk',sans-serif;font-size:.64rem;color:var(--muted);margin-top:10px;text-align:center">Demo order ID: <strong>DG-DEMO</strong></p>
+    </div>
+    <div id="dg-track-result" style="display:none">
+      <div class="dg-rhead">
+        <span class="oid" id="dg-result-id"></span>
+        <span class="st">In transit</span>
+      </div>
+      <ol class="dg-tsteps">
+        <li class="done"><h4>Order confirmed</h4><p>Payment received and order placed with our furnace.</p></li>
+        <li class="done"><h4>Production</h4><p>Your glass is being cut and prepared at our facility.</p></li>
+        <li class="now"><h4>Shipped</h4><p>Your package is on its way via our logistics partner.</p></li>
+        <li><h4>Delivered</h4><p>Package delivered to your address.</p></li>
+      </ol>
+      <div class="dg-helpbox">
+        <p>Need help with your shipment?<span>Reply to your order confirmation email or contact us directly.</span></p>
+        <a href="{{ routes.root_url }}pages/contact">Contact us →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Info card -->
+  <div class="dg-tcard">
+    <h2>How tracking works</h2>
+    {{ section.settings.info_content }}
+  </div>
+</div>
+
+<script>
+(function() {
+  var btn = document.getElementById('dg-track-btn');
+  var hint = document.getElementById('dg-track-hint');
+  var form = document.getElementById('dg-track-form');
+  var result = document.getElementById('dg-track-result');
+  var resultId = document.getElementById('dg-result-id');
+  if (!btn) return;
+  btn.addEventListener('click', function() {
+    var id = document.getElementById('dg-order-id').value.trim().toUpperCase();
+    var em = document.getElementById('dg-order-email').value.trim();
+    if (!id) { hint.textContent = 'Please enter your order ID.'; return; }
+    if (!em) { hint.textContent = 'Please enter your email or phone.'; return; }
+    hint.textContent = '';
+    resultId.textContent = id;
+    form.style.display = 'none';
+    result.style.display = 'block';
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Track Order Page",
+  "settings": [
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Where's my glass?" },
+    { "type": "textarea", "id": "subtext", "label": "Subtext", "default": "Enter your order ID and the email or phone you ordered with." },
+    { "type": "html", "id": "info_content", "label": "Info card content", "default": "<p style=\"color:var(--muted);font-weight:500;margin-bottom:14px\">Once your order ships, you'll receive a confirmation email with your tracking details.</p><ul style=\"color:var(--muted);font-weight:500;padding-left:18px;line-height:2\"><li>Orders ship within 3–5 working days</li><li>Tracking updates are sent via email</li><li>Transit typically takes 2–5 days</li><li>Breakage on delivery? Film it and contact us for a free replacement</li></ul>" }
+  ],
+  "presets": [
+    { "name": "Track Order Page" }
+  ]
+}
+{% endschema %}

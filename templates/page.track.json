@@ -1,0 +1,8 @@
+{
+  "sections": {
+    "track_page": {
+      "type": "custom-track-page"
+    }
+  },
+  "order": ["track_page"]
+}

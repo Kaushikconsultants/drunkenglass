@@ -1,0 +1,346 @@
+<style>
+/* Product page brand overrides */
+.dg-pdp-crumb { padding-block: 14px 0; font-family: 'Space Grotesk', sans-serif; font-size: .68rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.dg-pdp-crumb a:hover { color: var(--blue); }
+.dg-pdp-crumb .sep { padding-inline: 8px; }
+
+/* Main product layout */
+.dg-pdp { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; padding-block: 18px clamp(40px, 6vw, 72px); }
+@media(max-width: 820px) { .dg-pdp { grid-template-columns: 1fr; } }
+
+/* Gallery */
+.dg-pdp-gallery .stage { border: 2px solid var(--ink); border-radius: 4px; background: var(--white); position: relative; aspect-ratio: 3/4; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.dg-pdp-gallery img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.dg-pdp-gallery .flag { position: absolute; top: 14px; left: 14px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .58rem; letter-spacing: .06em; text-transform: uppercase; background: var(--yellow); border: 1.5px solid var(--ink); padding: 4px 8px; }
+.dg-pdp-thumbs { display: flex; gap: 8px; margin-top: 10px; }
+.dg-pdp-thumbs .t { border: 2px solid var(--ink); border-radius: 3px; flex: 0 0 70px; height: 70px; cursor: pointer; overflow: hidden; background: var(--white); }
+.dg-pdp-thumbs .t.active { border-color: var(--blue); }
+.dg-pdp-thumbs .t img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Buy column */
+.dg-pdp-buy .kick { color: var(--blue); }
+.dg-pdp-buy h1 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(1.7rem, 4.5vw, 2.4rem); text-transform: uppercase; letter-spacing: -.02em; line-height: 1.04; margin: 8px 0 10px; }
+.dg-rating { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.dg-rating .stars { color: #f59e0b; letter-spacing: -.02em; font-size: 1.05rem; }
+.dg-rating .rt { font-family: 'Space Grotesk', sans-serif; font-size: .7rem; font-weight: 600; color: var(--muted); }
+.dg-rating .rt a { color: var(--blue); text-decoration: underline; }
+.dg-tagline { color: var(--muted); font-weight: 500; font-size: .96rem; margin-bottom: 18px; }
+
+/* Price */
+.dg-pdp-price { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; margin-bottom: 18px; }
+.dg-pdp-price .now { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.9rem; line-height: 1; }
+.dg-pdp-price .was { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 1rem; color: var(--muted); text-decoration: line-through; }
+.dg-pdp-price .save { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .66rem; letter-spacing: .04em; text-transform: uppercase; background: var(--yellow); border: 1.5px solid var(--ink); padding: 3px 8px; }
+.dg-prepaid-note { font-family: 'Space Grotesk', sans-serif; font-size: .72rem; font-weight: 600; color: var(--blue); margin-bottom: 18px; }
+.dg-prepaid-note b { color: var(--ok); }
+
+/* Variants */
+.dg-pdp-opt { margin-bottom: 16px; }
+.dg-pdp-opt .dl { font-family: 'Space Grotesk', sans-serif; font-size: .7rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+
+/* Reassure list */
+.dg-reassure { border: 2px solid var(--ink); border-radius: 4px; background: var(--white); margin-top: 14px; overflow: hidden; }
+.dg-reassure .r { display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-top: 1px solid var(--line); }
+.dg-reassure .r:first-child { border-top: 0; }
+.dg-reassure .ic { color: var(--blue); font-size: .95rem; line-height: 1.35; flex: 0 0 auto; }
+.dg-reassure .tx { font-size: .82rem; font-weight: 600; line-height: 1.45; }
+.dg-reassure .tx span { display: block; font-weight: 500; color: var(--muted); font-size: .76rem; margin-top: 1px; }
+.dg-reassure .tx a { color: var(--blue); text-decoration: underline; }
+
+/* Product detail sections */
+.dg-pdp-section { padding-block: clamp(42px, 6vw, 72px); border-top: 2px solid var(--ink); }
+.dg-pdp-section.alt { background: var(--white); }
+.dg-pdp-sechead { margin-bottom: 26px; max-width: 62ch; }
+.dg-pdp-sechead h2 { font-weight: 700; font-size: clamp(1.6rem, 4vw, 2.4rem); text-transform: uppercase; letter-spacing: -.01em; margin-top: 8px; }
+.dg-pdp-sechead p { color: var(--muted); font-weight: 500; margin-top: 8px; font-size: .95rem; }
+
+/* Spec grid */
+.dg-spec { display: grid; grid-template-columns: repeat(4, 1fr); border: 2px solid var(--ink); border-radius: 4px; overflow: hidden; background: var(--white); }
+@media(max-width: 680px) { .dg-spec { grid-template-columns: 1fr 1fr; } }
+.dg-spec .s { padding: 18px 20px; border-left: 1px solid var(--line); }
+.dg-spec .s:first-child { border-left: 0; }
+.dg-spec .n { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.45rem; }
+.dg-spec .l { font-family: 'Space Grotesk', sans-serif; font-size: .6rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+
+/* Chips */
+.dg-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.dg-chip { font-family: 'Space Grotesk', sans-serif; font-size: .66rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; border: 2px solid var(--ink); border-radius: 2px; padding: 8px 12px; background: var(--white); }
+
+/* FAQ */
+.dg-pdp-faq { max-width: 820px; }
+.dg-pdp-faq details { border: 2px solid var(--ink); border-radius: 4px; background: var(--white); margin-bottom: 10px; overflow: hidden; }
+.dg-pdp-faq summary { list-style: none; cursor: pointer; padding: 15px 18px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .94rem; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.dg-pdp-faq summary::-webkit-details-marker { display: none; }
+.dg-pdp-faq summary::after { content: "+"; font-size: 1.3rem; color: var(--blue); line-height: 1; }
+.dg-pdp-faq details[open] summary::after { content: "–"; }
+.dg-pdp-faq .a { padding: 0 18px 15px; color: var(--muted); font-weight: 500; font-size: .9rem; max-width: 72ch; }
+
+/* Reviews */
+.dg-reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+@media(max-width: 820px) { .dg-reviews { grid-template-columns: 1fr; } }
+.dg-rcard { border: 2px solid var(--ink); border-radius: 4px; background: var(--paper); padding: 18px; }
+.dg-rcard .st { color: var(--blue); font-size: .82rem; letter-spacing: .06em; }
+.dg-rcard p { font-size: .9rem; font-weight: 500; margin: 8px 0 10px; }
+.dg-rcard .who { font-family: 'Space Grotesk', sans-serif; font-size: .68rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+</style>
+
+<!-- Breadcrumb -->
+<div class="dg-pdp-crumb">
+  <div class="dg-wrap">
+    <a href="{{ routes.root_url }}">Home</a>
+    <span class="sep">/</span>
+    {%- if collection -%}
+      <a href="{{ collection.url }}">{{ collection.title }}</a>
+      <span class="sep">/</span>
+    {%- endif -%}
+    <span>{{ product.title }}</span>
+  </div>
+</div>
+
+<!-- Main PDP layout -->
+<div class="dg-wrap dg-pdp">
+  <!-- Gallery -->
+  <div class="dg-pdp-gallery">
+    <div class="stage">
+      {%- if product.selected_or_first_available_variant.featured_media -%}
+        {%- assign featured_image = product.selected_or_first_available_variant.featured_media -%}
+      {%- else -%}
+        {%- assign featured_image = product.featured_media -%}
+      {%- endif -%}
+      {%- if product.metafields.reviews.rating_count.value != blank -%}
+        <span class="flag">Bestseller</span>
+      {%- elsif product.tags contains 'bestseller' -%}
+        <span class="flag">Bestseller</span>
+      {%- elsif product.tags contains 'new' -%}
+        <span class="flag">New</span>
+      {%- endif -%}
+      {%- if featured_image -%}
+        <img src="{{ featured_image | image_url: width: 800 }}" alt="{{ featured_image.alt | escape }}" loading="eager" width="800">
+      {%- else -%}
+        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--paper);color:var(--muted);font-family:'Space Grotesk',sans-serif;font-size:.8rem">No image</div>
+      {%- endif -%}
+    </div>
+    {%- if product.media.size > 1 -%}
+      <div class="dg-pdp-thumbs">
+        {%- for media in product.media limit: 5 -%}
+          <button class="t{% if forloop.first %} active{% endif %}" type="button" aria-label="{{ media.alt | escape }}">
+            <img src="{{ media | image_url: width: 140 }}" alt="{{ media.alt | escape }}" loading="lazy" width="140">
+          </button>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+  <!-- Buy Column -->
+  <div class="dg-pdp-buy">
+    {%- if collection -%}
+      <p class="kick">{{ collection.title }}</p>
+    {%- elsif product.type != blank -%}
+      <p class="kick">{{ product.type }}</p>
+    {%- endif -%}
+    <h1>{{ product.title }}</h1>
+
+    <div class="dg-rating">
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <span class="rt">4.8 · <a href="#dg-reviews">read reviews</a></span>
+    </div>
+
+    {%- if product.description != blank -%}
+      <p class="dg-tagline">{{ product.description | strip_html | truncate: 180 }}</p>
+    {%- endif -%}
+
+    {%- form 'product', product, id: 'dg-product-form' -%}
+      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+
+      {%- if product.variants.size > 1 -%}
+        {%- for option in product.options_with_values -%}
+          <div class="dg-pdp-opt">
+            <div class="dl">{{ option.name }}</div>
+            <select name="options[{{ option.name | escape }}]" class="dg-input" style="max-width:100%">
+              {%- for value in option.values -%}
+                <option value="{{ value | escape }}"{% if option.selected_value == value %} selected{% endif %}>
+                  {{ value }}
+                </option>
+              {%- endfor -%}
+            </select>
+          </div>
+        {%- endfor -%}
+      {%- endif -%}
+
+      <!-- Price -->
+      <div class="dg-pdp-price">
+        {%- if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price -%}
+          <span class="was">{{ product.selected_or_first_available_variant.compare_at_price | money }}</span>
+          <span class="now">{{ product.selected_or_first_available_variant.price | money }}</span>
+          <span class="save">Sale</span>
+        {%- else -%}
+          <span class="now">{{ product.selected_or_first_available_variant.price | money }}</span>
+        {%- endif -%}
+      </div>
+      <p class="dg-prepaid-note">Pay online → <b>save an additional 5%</b> (prepaid discount applied at checkout)</p>
+
+      <!-- Quantity + Add to cart -->
+      <div class="dg-pdp-opt">
+        <div class="dl">Quantity</div>
+        <input type="number" name="quantity" class="dg-input" value="1" min="1" style="max-width:80px">
+      </div>
+
+      {%- if product.selected_or_first_available_variant.available -%}
+        <button type="submit" name="add" class="dg-btn" style="width:100%;text-align:center;margin-top:6px">
+          Add to cart
+        </button>
+      {%- else -%}
+        <button type="submit" class="dg-btn" style="width:100%;text-align:center;margin-top:6px;background:var(--muted);border-color:var(--muted)" disabled>
+          Sold out
+        </button>
+      {%- endif -%}
+    {%- endform -%}
+
+    <!-- Reassure list -->
+    <div class="dg-reassure">
+      <div class="r"><span class="ic">✦</span><div class="tx">Dispatches in 2–3 working days<span>Free shipping across India, on every order.</span></div></div>
+      <div class="r"><span class="ic">✦</span><div class="tx">Arrives safe, or replaced free<span>Film your unboxing — broken on arrival means we ship a new one.</span></div></div>
+      <div class="r"><span class="ic">✦</span><div class="tx">Made at our own furnace<span>Sold direct — no distributor markup between us and your table.</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Trust badges band -->
+<div class="dg-badgeband">
+  <div class="dg-badges">
+    <div class="dg-badge"><svg viewBox="0 0 24 24"><path d="M1 5h12v10H1z"/><path d="M13 8h4l4 4v3h-8z"/><circle cx="6" cy="18" r="1.7"/><circle cx="17" cy="18" r="1.7"/></svg><span>Free shipping</span></div>
+    <div class="dg-badge hot"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 9h20"/></svg><span>Prepaid · 5% extra off</span></div>
+    <div class="dg-badge"><svg viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V5z"/><path d="M9 12l2 2 4-4"/></svg><span>Breakage replaced free</span></div>
+    <div class="dg-badge"><svg viewBox="0 0 24 24"><path d="M12 3s6 6 6 11a6 6 0 0 1-12 0c0-5 6-11 6-11z"/></svg><span>Lead-free crystal</span></div>
+    <div class="dg-badge"><svg viewBox="0 0 24 24"><path d="M12 3c1 3 4 4 4 8a4 4 0 0 1-8 0c0-2 1-3 2-4 0 2 1 2 2 2 0-2-2-3-2-6z"/></svg><span>Factory-direct</span></div>
+    <div class="dg-badge"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span>Secure checkout</span></div>
+  </div>
+</div>
+
+<!-- Product Details -->
+{%- if section.settings.show_specs -%}
+<section class="dg-pdp-section">
+  <div class="dg-wrap">
+    <div class="dg-pdp-sechead">
+      <p class="kick" style="color:var(--blue)">Drawn to the line</p>
+      <h2>The details</h2>
+    </div>
+    <div class="dg-spec">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'spec' -%}
+          <div class="s">
+            <div class="n">{{ block.settings.value }}</div>
+            <div class="l">{{ block.settings.label }}</div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+    {%- if section.settings.care_note != blank -%}
+      <div style="margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:16px;font-size:.9rem;font-weight:500;color:var(--muted)">
+        <div>{{ section.settings.made_by_note }}</div>
+        <div>{{ section.settings.care_note }}</div>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+{%- endif -%}
+
+<!-- FAQ -->
+<section class="dg-pdp-section" id="dg-faq">
+  <div class="dg-wrap">
+    <div class="dg-pdp-sechead">
+      <p class="kick" style="color:var(--blue)">Good to know</p>
+      <h2>Frequently asked</h2>
+    </div>
+    <div class="dg-pdp-faq">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'faq' -%}
+          <details>
+            <summary>{{ block.settings.question }}</summary>
+            <div class="a">{{ block.settings.answer }}</div>
+          </details>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="dg-pdp-section alt" id="dg-reviews">
+  <div class="dg-wrap">
+    <div class="dg-pdp-sechead">
+      <p class="kick" style="color:var(--blue)">From the table</p>
+      <h2>What buyers say</h2>
+    </div>
+    {%- if section.settings.reviews_note != blank -%}
+      <p style="font-family:'Space Grotesk',sans-serif;font-size:.7rem;color:var(--muted);margin-bottom:16px">{{ section.settings.reviews_note }}</p>
+    {%- endif -%}
+    <div class="dg-reviews">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'review' -%}
+          <div class="dg-rcard">
+            <div class="st" aria-hidden="true">{{ block.settings.stars }}</div>
+            <p>{{ block.settings.text }}</p>
+            <div class="who">{{ block.settings.reviewer }}</div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product Details",
+  "settings": [
+    { "type": "checkbox", "id": "show_specs", "label": "Show specifications section", "default": true },
+    { "type": "html", "id": "made_by_note", "label": "Made by note", "default": "<b>Made by us.</b> Cut by hand at our own furnace — the same floor that's drawn borosilicate for fifteen years. Ships direct, so no distributor markup sits between us and your table." },
+    { "type": "html", "id": "care_note", "label": "Care note", "default": "<b>Care.</b> Hand-wash to keep the cut edges sharp and the crystal clear: warm water, soft cloth, no abrasive pads." },
+    { "type": "text", "id": "reviews_note", "label": "Reviews disclaimer (optional)" }
+  ],
+  "blocks": [
+    {
+      "type": "spec",
+      "name": "Spec row",
+      "settings": [
+        { "type": "text", "id": "value", "label": "Value", "default": "350 ml" },
+        { "type": "text", "id": "label", "label": "Label", "default": "Full capacity" }
+      ]
+    },
+    {
+      "type": "faq",
+      "name": "FAQ item",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "Does it arrive ready to use?" },
+        { "type": "textarea", "id": "answer", "label": "Answer", "default": "Yes — rinsed and ready. We recommend a quick hand-wash before first use." }
+      ]
+    },
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        { "type": "text", "id": "stars", "label": "Stars (★)", "default": "★★★★★" },
+        { "type": "textarea", "id": "text", "label": "Review text" },
+        { "type": "text", "id": "reviewer", "label": "Reviewer name" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Details",
+      "blocks": [
+        { "type": "spec", "settings": { "value": "350 ml", "label": "Full capacity" } },
+        { "type": "spec", "settings": { "value": "150 ml", "label": "Correct pour · the fill line" } },
+        { "type": "spec", "settings": { "value": "22 cm", "label": "Height" } },
+        { "type": "spec", "settings": { "value": "Crystal", "label": "Lead-free hand-cut" } },
+        { "type": "faq", "settings": { "question": "Does it arrive ready to use?", "answer": "Yes — rinsed and ready. We recommend a quick hand-wash before first use." } },
+        { "type": "faq", "settings": { "question": "How do I claim the prepaid discount?", "answer": "Choose any online payment method (UPI, card, wallet) at checkout — the 5% is applied automatically." } },
+        { "type": "faq", "settings": { "question": "What if it arrives broken?", "answer": "Film the unboxing before you open the box further, then email us the video and your order number within 48 hours. We'll dispatch a replacement, free." } },
+        { "type": "review", "settings": { "stars": "★★★★★", "text": "Heavier and better finished than I expected at this price. The fill line is a small thing that turns out to be lovely.", "reviewer": "Verified buyer" } },
+        { "type": "review", "settings": { "stars": "★★★★★", "text": "Ordered a set of six in mixed colours. Every one arrived perfect, packed really well.", "reviewer": "Verified buyer" } },
+        { "type": "review", "settings": { "stars": "★★★★☆", "text": "Beautiful glasses. Wish more of the darker cuts were in stock.", "reviewer": "Verified buyer" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

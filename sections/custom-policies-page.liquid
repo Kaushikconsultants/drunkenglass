@@ -1,0 +1,164 @@
+<style>
+/* Policies Page */
+.dg-pol-header { padding-block: clamp(38px, 6vw, 66px) 8px; }
+.dg-pol-header .kick { color: var(--blue); }
+.dg-pol-header h1 { font-weight: 700; font-size: clamp(2.1rem, 6.5vw, 3.4rem); line-height: 1; letter-spacing: -.02em; text-transform: uppercase; margin: 12px 0 10px; }
+.dg-pol-header p { color: var(--muted); font-weight: 500; max-width: 56ch; }
+.dg-pol-updated { font-family: 'Space Grotesk', sans-serif; font-size: .66rem; font-weight: 600; color: var(--muted); margin-top: 10px; }
+
+.dg-pol-subnav { position: sticky; top: 57px; z-index: 20; background: var(--paper); border-bottom: 2px solid var(--ink); padding-block: 12px; margin-top: 20px; }
+.dg-pol-subnav .in { display: flex; gap: 8px; overflow-x: auto; max-width: 1240px; margin: 0 auto; padding-inline: var(--gutter); }
+.dg-pol-subnav a { flex: 0 0 auto; border: 2px solid var(--ink); border-radius: 2px; background: var(--white); padding: 9px 14px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .68rem; letter-spacing: .05em; text-transform: uppercase; }
+.dg-pol-subnav a:hover { background: var(--ink); color: var(--paper); }
+
+.dg-pol-section { padding-block: clamp(36px, 5vw, 58px); border-top: 2px solid var(--ink); scroll-margin-top: 120px; }
+.dg-pol-section:first-of-type { border-top: 0; }
+.dg-pol-section.alt { background: var(--white); }
+.dg-pol-section h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.5rem, 4vw, 2.2rem); text-transform: uppercase; letter-spacing: -.01em; margin-bottom: 6px; }
+.dg-pol-section .lead { color: var(--muted); font-weight: 500; margin-bottom: 20px; max-width: 62ch; }
+.dg-pol-body { max-width: 70ch; }
+.dg-pol-body h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; text-transform: uppercase; margin: 22px 0 6px; font-weight: 700; }
+.dg-pol-body p { margin-bottom: 12px; }
+.dg-pol-body ul, .dg-pol-body ol { margin: 0 0 12px 20px; }
+.dg-pol-body li { margin-bottom: 6px; }
+.dg-pol-body b { font-weight: 700; }
+.dg-pol-callout { border: 2px solid var(--ink); border-radius: 4px; background: var(--paper); padding: 16px 18px; margin: 18px 0; }
+.dg-pol-callout p { margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: .86rem; font-weight: 600; }
+</style>
+
+<div class="dg-pol-header">
+  <div class="dg-wrap">
+    <p class="kick">The fine print</p>
+    <h1>Policies</h1>
+    <p>Plain language, no traps. Shipping, replacement, privacy and terms — everything that governs an order placed with us.</p>
+    <p class="dg-pol-updated">Last updated: {{ section.settings.last_updated }}</p>
+  </div>
+</div>
+
+<div class="dg-pol-subnav">
+  <div class="in">
+    <a href="#dg-shipping">Shipping</a>
+    <a href="#dg-returns">Returns &amp; Replacement</a>
+    <a href="#dg-privacy">Privacy</a>
+    <a href="#dg-terms">Terms</a>
+  </div>
+</div>
+
+<!-- Shipping -->
+<section class="dg-pol-section" id="dg-shipping">
+  <div class="dg-wrap">
+    <h2>Shipping policy</h2>
+    <p class="lead">We ship across India, free, on every order.</p>
+    <div class="dg-pol-body">
+      <h3>Charges</h3>
+      <p><b>Shipping is free on all orders</b> within India. There are no minimum-order requirements to qualify.</p>
+      <h3>Dispatch &amp; delivery times</h3>
+      <ul>
+        <li><b>In-stock items:</b> dispatched within <b>2–3 working days</b> of order confirmation.</li>
+        <li><b>Delivery:</b> typically <b>3–7 working days</b> after dispatch, depending on your location.</li>
+        <li><b>Preorder / made-to-order items:</b> <b>15–20 working days</b>.</li>
+        <li><b>Branded corporate gifting orders:</b> <b>15–20 working days</b> after sample approval.</li>
+      </ul>
+      <p>Working days exclude Sundays and public holidays. Remote PIN codes may take longer.</p>
+      <h3>Tracking</h3>
+      <p>You'll receive tracking details by email and SMS once your order is dispatched.</p>
+      <h3>Payment methods</h3>
+      <p>We accept UPI, cards, netbanking, wallets and Cash on Delivery. <b>Paying online gets you 5% off</b> and avoids COD handling charges.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Returns -->
+<section class="dg-pol-section alt" id="dg-returns">
+  <div class="dg-wrap">
+    <h2>Returns &amp; replacement policy</h2>
+    <p class="lead">Glass travels a long way. If it doesn't survive the trip, that's on us.</p>
+    <div class="dg-pol-body">
+      <div class="dg-pol-callout"><p>✦ Anything that arrives broken is replaced free. We ask for an unboxing video — it's what lets us replace it at no cost, without an investigation.</p></div>
+      <h3>What's covered</h3>
+      <ul>
+        <li>Items that arrive <b>broken, cracked or chipped</b> in transit.</li>
+        <li>Items that arrive <b>manufacturing-defective</b>.</li>
+        <li>The <b>wrong item</b> or wrong quantity delivered.</li>
+      </ul>
+      <h3>How to claim</h3>
+      <ol>
+        <li><b>Film the unboxing.</b> One continuous video, from the sealed parcel to the glass in your hand.</li>
+        <li><b>Contact us within 48 hours</b> of delivery at <a href="mailto:hello@drunkenglass.in" style="color:var(--blue);text-decoration:underline">hello@drunkenglass.in</a> with your order ID and the video.</li>
+        <li><b>We ship a replacement.</b> Nothing to pack up, nothing to send back.</li>
+      </ol>
+      <h3>What isn't covered</h3>
+      <ul>
+        <li><b>Change of mind</b> on correctly delivered, intact goods.</li>
+        <li>Damage from use, washing, dropping or thermal shock after delivery.</li>
+        <li>Claims raised after the 48-hour window without an unboxing video.</li>
+        <li>Minor variation in colour, cut or size — every piece is hand-cut, and small differences are a feature of handmade glass.</li>
+      </ul>
+      <h3>Order cancellation</h3>
+      <p>You can cancel an order any time before dispatch. Once dispatched, the replacement policy above applies. Custom and branded gifting orders cannot be cancelled once production has begun.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Privacy -->
+<section class="dg-pol-section" id="dg-privacy">
+  <div class="dg-wrap">
+    <h2>Privacy policy</h2>
+    <p class="lead">What we collect, why, and what we never do with it.</p>
+    <div class="dg-pol-body">
+      <h3>What we collect</h3>
+      <ul>
+        <li><b>Order information:</b> name, delivery address, phone number, email.</li>
+        <li><b>Payment information:</b> handled by our payment partners. <b>We never see or store your card details.</b></li>
+        <li><b>Usage data:</b> pages viewed and basic device information, via analytics cookies.</li>
+      </ul>
+      <h3>Why we use it</h3>
+      <ul>
+        <li>To process, pack, ship and support your order.</li>
+        <li>To send order updates, and — only with your consent — marketing messages.</li>
+        <li>To meet tax, accounting and legal obligations.</li>
+      </ul>
+      <h3>Who we share it with</h3>
+      <p>Only those who need it to fulfil your order: courier partners, our checkout and payment providers. <b>We do not sell your personal data.</b></p>
+      <h3>Your rights</h3>
+      <p>Under India's Digital Personal Data Protection Act, 2023, you may request access to, correction of, or erasure of your personal data. Write to <a href="mailto:hello@drunkenglass.in" style="color:var(--blue);text-decoration:underline">hello@drunkenglass.in</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Terms -->
+<section class="dg-pol-section alt" id="dg-terms">
+  <div class="dg-wrap">
+    <h2>Terms &amp; conditions</h2>
+    <p class="lead">The agreement between you and us when you order.</p>
+    <div class="dg-pol-body">
+      <h3>Products</h3>
+      <p>Every piece is hand-cut, so <b>slight variation in colour, cut, weight and dimension is normal</b> and not a defect.</p>
+      <h3>Pricing</h3>
+      <p>All prices are in Indian Rupees and inclusive of applicable GST unless stated otherwise.</p>
+      <h3>Orders</h3>
+      <p>Your order is an offer to buy. We may decline or cancel any order and will refund any amount already paid.</p>
+      <h3>Intellectual property</h3>
+      <p>All designs, images, text and marks on this site belong to Drunken Glass and may not be copied or reused without written permission.</p>
+      <h3>Contact</h3>
+      <p>Questions about these terms: <a href="mailto:hello@drunkenglass.in" style="color:var(--blue);text-decoration:underline">hello@drunkenglass.in</a> or our <a href="{{ routes.root_url }}pages/contact" style="color:var(--blue);text-decoration:underline">contact page</a>.</p>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Policies Page",
+  "settings": [
+    {
+      "type": "text",
+      "id": "last_updated",
+      "label": "Last updated date",
+      "default": "August 2026"
+    }
+  ],
+  "presets": [
+    { "name": "Policies Page" }
+  ]
+}
+{% endschema %}

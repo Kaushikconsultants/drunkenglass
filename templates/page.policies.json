@@ -1,0 +1,8 @@
+{
+  "sections": {
+    "policies_page": {
+      "type": "custom-policies-page"
+    }
+  },
+  "order": ["policies_page"]
+}

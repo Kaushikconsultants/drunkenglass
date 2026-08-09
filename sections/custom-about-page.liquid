@@ -1,0 +1,226 @@
+<style>
+/* About Page Styles */
+.dg-about-hero { position: relative; overflow: hidden; text-align: center; padding-block: clamp(60px, 11vw, 130px) clamp(40px, 6vw, 70px); }
+.dg-about-hero .glow { position: absolute; left: 50%; top: 8%; transform: translateX(-50%); width: min(70vw, 640px); height: min(70vw, 640px); border-radius: 50%; background: radial-gradient(circle, rgba(39,101,250,.14), transparent 62%); pointer-events: none; }
+.dg-about-hero .in { position: relative; z-index: 2; }
+.dg-about-hero .kick { color: var(--blue); }
+.dg-about-hero h1 { font-weight: 700; font-size: clamp(2.4rem, 7vw, 5rem); line-height: 1.02; letter-spacing: -.02em; text-transform: uppercase; margin: 16px 0 22px; }
+.dg-about-hero h1 .berry { color: var(--berry); }
+.dg-about-hero .lede { max-width: 56ch; margin: 0 auto; font-weight: 500; font-size: 1.12rem; }
+.dg-fillmark { display: flex; align-items: center; gap: 12px; max-width: 420px; margin: 34px auto 0; }
+.dg-fillmark .l { flex: 1; border-top: 1.5px dashed var(--ink); opacity: .5; }
+.dg-fillmark span { font-family: 'Space Grotesk', sans-serif; font-size: .6rem; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+
+/* Story sections */
+.dg-about-story { padding-block: clamp(44px, 7vw, 80px); }
+.dg-about-story .kick { color: var(--blue); }
+.dg-about-story h2 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(1.7rem, 4.5vw, 2.7rem); line-height: 1.06; text-transform: uppercase; letter-spacing: -.01em; margin: 12px 0 22px; }
+.dg-about-story p { font-size: 1.08rem; margin-bottom: 18px; font-weight: 400; }
+.dg-about-story p .b { font-weight: 700; }
+.dg-about-story.alt { background: var(--white); border-block: 2px solid var(--ink); }
+.dg-narrow { max-width: 680px; margin: 0 auto; padding-inline: var(--gutter); }
+
+/* Pull quote */
+.dg-pull { background: var(--ink); color: var(--paper); text-align: center; padding-block: clamp(56px, 9vw, 110px); }
+.dg-pull q { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(1.8rem, 5vw, 3.4rem); line-height: 1.1; letter-spacing: -.01em; quotes: none; display: block; max-width: 20ch; margin: 0 auto; }
+.dg-pull .by { font-family: 'Space Grotesk', sans-serif; font-size: .66rem; letter-spacing: .16em; text-transform: uppercase; color: var(--blue); margin-top: 26px; }
+
+/* Fifteen moment */
+.dg-fifteen { text-align: center; padding-block: clamp(40px, 6vw, 70px); background: var(--yellow); border-block: 2px solid var(--ink); }
+.dg-fifteen .n { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(4rem, 16vw, 10rem); line-height: .9; letter-spacing: -.03em; }
+.dg-fifteen .t { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; margin-top: 8px; }
+
+/* Values */
+.dg-values { padding-block: clamp(44px, 7vw, 80px); }
+.dg-vgrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 30px; }
+@media(max-width: 820px) { .dg-vgrid { grid-template-columns: 1fr 1fr; } }
+.dg-vcard { border: 2px solid var(--ink); border-radius: 4px; background: var(--white); padding: 22px; }
+.dg-vcard .no { font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: var(--blue); font-size: .7rem; letter-spacing: .1em; }
+.dg-vcard h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.1rem; text-transform: uppercase; margin: 8px 0 6px; }
+.dg-vcard p { color: var(--muted); font-weight: 500; font-size: .9rem; }
+
+/* Signature */
+.dg-sign { background: var(--ink); color: var(--paper); text-align: center; padding-block: clamp(52px, 8vw, 96px); }
+.dg-sign .in { max-width: 60ch; margin: 0 auto; padding-inline: var(--gutter); }
+.dg-sign p { font-size: 1.15rem; font-weight: 500; color: rgba(242,241,240,.9); margin-bottom: 22px; }
+.dg-sign .names { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(1.6rem, 4vw, 2.4rem); text-transform: uppercase; letter-spacing: -.01em; }
+.dg-sign .role { font-family: 'Space Grotesk', sans-serif; font-size: .66rem; letter-spacing: .16em; text-transform: uppercase; color: var(--blue); margin-top: 10px; }
+.dg-sign .aside { margin-top: 34px; padding-top: 26px; border-top: 1px solid rgba(242,241,240,.2); font-size: .92rem; color: rgba(242,241,240,.7); font-weight: 500; }
+.dg-sign .aside b { color: var(--paper); font-weight: 700; }
+
+/* CTA */
+.dg-about-cta { text-align: center; padding-block: clamp(48px, 7vw, 84px); border-top: 2px solid var(--ink); }
+.dg-about-cta h2 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(1.8rem, 5vw, 3rem); text-transform: uppercase; letter-spacing: -.02em; margin-bottom: 24px; }
+.dg-btnrow { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+</style>
+
+<!-- About Hero -->
+<section class="dg-about-hero">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="dg-wrap in">
+    <p class="kick">{{ section.settings.hero_kicker }}</p>
+    <h1>{{ section.settings.hero_headline }}</h1>
+    <p class="lede">{{ section.settings.hero_subtext }}</p>
+    <div class="dg-fillmark" aria-hidden="true">
+      <span class="l"></span><span>fill to the line</span><span class="l"></span>
+    </div>
+  </div>
+</section>
+
+<!-- Chapter 1 -->
+<section class="dg-about-story alt">
+  <div class="dg-narrow">
+    <p class="kick">{{ section.settings.ch1_kicker }}</p>
+    <h2>{{ section.settings.ch1_headline }}</h2>
+    {{ section.settings.ch1_body }}
+  </div>
+</section>
+
+<!-- Pull Quote -->
+<section class="dg-pull">
+  <div class="dg-wrap">
+    <q>{{ section.settings.quote }}</q>
+    <p class="by">{{ section.settings.quote_by }}</p>
+  </div>
+</section>
+
+<!-- Chapter 2 -->
+<section class="dg-about-story">
+  <div class="dg-narrow">
+    <p class="kick">{{ section.settings.ch2_kicker }}</p>
+    <h2>{{ section.settings.ch2_headline }}</h2>
+    {{ section.settings.ch2_body }}
+  </div>
+</section>
+
+<!-- Fifteen moment -->
+<section class="dg-fifteen">
+  <div class="dg-wrap">
+    <div class="n">{{ section.settings.fifteen_number }}</div>
+    <div class="t">{{ section.settings.fifteen_text }}</div>
+  </div>
+</section>
+
+<!-- Values -->
+<section class="dg-values">
+  <div class="dg-wrap">
+    <p class="kick" style="color:var(--blue)">{{ section.settings.values_kicker }}</p>
+    <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(1.7rem,4.5vw,2.6rem);text-transform:uppercase;letter-spacing:-.01em;margin-top:10px">{{ section.settings.values_headline }}</h2>
+    <div class="dg-vgrid">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'value' -%}
+          <div class="dg-vcard">
+            <div class="no">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</div>
+            <h3>{{ block.settings.title }}</h3>
+            <p>{{ block.settings.text }}</p>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<!-- Signature -->
+<section class="dg-sign">
+  <div class="in">
+    <p>{{ section.settings.sign_body }}</p>
+    <div class="names">{{ section.settings.founders_names }}</div>
+    <div class="role">{{ section.settings.founders_role }}</div>
+    <p class="aside">{{ section.settings.sign_aside }}</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="dg-about-cta">
+  <div class="dg-wrap">
+    <h2>{{ section.settings.cta_headline }}</h2>
+    <div class="dg-btnrow">
+      {%- if section.settings.cta_label != blank -%}
+        <a class="dg-btn" href="{{ section.settings.cta_link }}">{{ section.settings.cta_label }}</a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "About Page",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Hero"
+    },
+    { "type": "text", "id": "hero_kicker", "label": "Hero kicker", "default": "Our story" },
+    { "type": "html", "id": "hero_headline", "label": "Hero headline", "default": "We made the glass<br>the world raised —<br>and no one knew<br>our <span class=\"berry\">name</span>." },
+    { "type": "textarea", "id": "hero_subtext", "label": "Hero subtext", "default": "Drunken Glass is two brothers, one furnace, and fifteen years of making the glass other people put their name on. This is why we finally put ours." },
+    {
+      "type": "header",
+      "content": "Chapter 1"
+    },
+    { "type": "text", "id": "ch1_kicker", "label": "Chapter 1 kicker", "default": "Chapter one" },
+    { "type": "text", "id": "ch1_headline", "label": "Chapter 1 headline", "default": "It began with heat." },
+    { "type": "html", "id": "ch1_body", "label": "Chapter 1 body HTML", "default": "<p>Fifteen years ago, two brothers stood in front of a furnace and decided to learn the hardest glass there is.</p><p><span class=\"b\">Borosilicate</span> — the glass that takes boiling and freezing without a flinch, the kind labs and kitchens stake their work on.</p><p>Our glass went out by the crate — to restaurants, hotels and homes in countries we'll likely never visit. And every single piece left our floor wearing <span class=\"b\">someone else's name</span>.</p>" },
+    {
+      "type": "header",
+      "content": "Pull Quote"
+    },
+    { "type": "text", "id": "quote", "label": "Quote", "default": "For fifteen years, our best work wore a stranger's label." },
+    { "type": "text", "id": "quote_by", "label": "Quote attribution", "default": "Amit & Rahul Gupta" },
+    {
+      "type": "header",
+      "content": "Chapter 2"
+    },
+    { "type": "text", "id": "ch2_kicker", "label": "Chapter 2 kicker", "default": "Chapter two" },
+    { "type": "text", "id": "ch2_headline", "label": "Chapter 2 headline", "default": "Why we finally signed our name." },
+    { "type": "html", "id": "ch2_body", "label": "Chapter 2 body HTML", "default": "<p>We didn't want to keep pouring our craft into other people's brands. We wanted our own name on the base of the glass.</p><p>So we lit the same furnace for ourselves. We drew a fill line on every glass and we sell it the way it should be sold: straight from our floor to your table, with <span class=\"b\">no distributor, no markup, no one standing in between</span>.</p>" },
+    {
+      "type": "header",
+      "content": "Fifteen Moment"
+    },
+    { "type": "text", "id": "fifteen_number", "label": "Number", "default": "15" },
+    { "type": "text", "id": "fifteen_text", "label": "Text below number", "default": "Years at the furnace — and only getting started" },
+    {
+      "type": "header",
+      "content": "Values"
+    },
+    { "type": "text", "id": "values_kicker", "label": "Values kicker", "default": "What we hold to" },
+    { "type": "text", "id": "values_headline", "label": "Values headline", "default": "Four promises, no fine print." },
+    {
+      "type": "header",
+      "content": "Signature"
+    },
+    { "type": "textarea", "id": "sign_body", "label": "Signature body text", "default": "We spent fifteen years making glass the world raised without knowing us. It's finally ours to hand you — with our name on the base, and our care in every cut." },
+    { "type": "text", "id": "founders_names", "label": "Founders names", "default": "Amit & Rahul Gupta" },
+    { "type": "text", "id": "founders_role", "label": "Founders role", "default": "Brothers · makers · founders of Drunken Glass" },
+    { "type": "textarea", "id": "sign_aside", "label": "Aside note", "default": "About the name — the glasses that matter are the ones people raise: clinked at a table, filled to the line, a little merry." },
+    {
+      "type": "header",
+      "content": "CTA"
+    },
+    { "type": "text", "id": "cta_headline", "label": "CTA headline", "default": "Meet the glass." },
+    { "type": "text", "id": "cta_label", "label": "CTA button label", "default": "Shop the collection" },
+    { "type": "url", "id": "cta_link", "label": "CTA button link" }
+  ],
+  "blocks": [
+    {
+      "type": "value",
+      "name": "Value",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Made by us" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "Every piece, drawn at our own furnace — not bought and rebranded." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Page",
+      "blocks": [
+        { "type": "value", "settings": { "title": "Made by us", "text": "Every piece, drawn at our own furnace — not bought and rebranded." } },
+        { "type": "value", "settings": { "title": "Sold direct", "text": "Straight from our floor to your table. No middleman in the way." } },
+        { "type": "value", "settings": { "title": "Replaced if it breaks", "text": "Arrives broken in transit? Film the unboxing and we send a new one, free." } },
+        { "type": "value", "settings": { "title": "Fair by design", "text": "Direct means honest prices — you pay for the glass, not the chain." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

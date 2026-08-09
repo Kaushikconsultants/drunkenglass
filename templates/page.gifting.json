@@ -1,0 +1,8 @@
+{
+  "sections": {
+    "gifting_page": {
+      "type": "custom-gifting-page"
+    }
+  },
+  "order": ["gifting_page"]
+}

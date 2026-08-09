@@ -1,23 +1,39 @@
-<style type="text/css">
-  .template-404 .title + * {
-    margin-top: 1rem;
-  }
-
-  @media screen and (min-width: 750px) {
-    .template-404 .title + * {
-      margin-top: 2rem;
-    }
-  }
+<style>
+.dg-404 { text-align: center; padding-block: clamp(80px, 14vw, 160px) clamp(60px, 9vw, 120px); }
+.dg-404 .num { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(6rem, 20vw, 13rem); line-height: 1; letter-spacing: -.04em; color: var(--blue); display: block; }
+.dg-404 h1 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(1.6rem, 4vw, 2.4rem); text-transform: uppercase; letter-spacing: -.01em; margin: 16px 0 16px; }
+.dg-404 p { color: var(--muted); font-weight: 500; max-width: 44ch; margin: 0 auto 28px; }
+.dg-404-links { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
 </style>
 
-<div class="template-404 page-width page-margin center">
-  <p>
-    {{ 'templates.404.subtext' | t }}
-  </p>
-  <h1 class="title">
-    {{ 'templates.404.title' | t }}
-  </h1>
-  <a href="{{ routes.all_products_collection_url }}" class="button">
-    {{ 'general.continue_shopping' | t }}
-  </a>
+<div class="dg-404">
+  <div class="dg-wrap">
+    <span class="num" aria-hidden="true">404</span>
+    <h1>{{ section.settings.headline }}</h1>
+    <p>{{ section.settings.subtext }}</p>
+    <div class="dg-404-links">
+      <a href="{{ routes.root_url }}" class="dg-btn">Back to home</a>
+      <a href="{{ routes.collections_url }}" class="dg-btn ghost">Shop all</a>
+    </div>
+  </div>
 </div>
+
+{% schema %}
+{
+  "name": "404 Page",
+  "settings": [
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline",
+      "default": "Page not found."
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "The page you're looking for has moved, or never existed. Let's get you back to the glass."
+    }
+  ]
+}
+{% endschema %}
