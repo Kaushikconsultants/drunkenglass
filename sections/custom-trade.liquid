@@ -1,0 +1,143 @@
+<style>
+  .custom-trade { background: var(--white); border-block: 2px solid var(--ink); padding-block: clamp(52px, 7vw, 92px); }
+  .custom-trade .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: start; max-width: 1240px; margin: 0 auto; padding-inline: var(--gutter); }
+  @media(max-width: 860px) { .custom-trade .grid { grid-template-columns: 1fr; } }
+  .custom-trade .kick { color: var(--blue); font-family: 'Space Grotesk', sans-serif; font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; }
+  .custom-trade h2 { font-weight: 700; font-size: clamp(1.9rem, 5vw, 3rem); line-height: 1; letter-spacing: -.02em; text-transform: uppercase; margin: 10px 0 14px; font-family: 'Space Grotesk', sans-serif; }
+  .custom-trade .lede { color: var(--muted); font-weight: 500; max-width: 46ch; margin-bottom: 30px; font-size: 1.05rem; }
+  .custom-trade .gatebox { border: 2px solid var(--ink); border-radius: 3px; padding: 26px; background: var(--paper); }
+  .custom-trade label { display: block; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: .62rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  .custom-trade input { width: 100%; background: var(--white); border: 2px solid var(--ink); border-radius: 2px; font-family: 'Montserrat', sans-serif; font-size: .95rem; padding: 11px 12px; margin-bottom: 12px; }
+  .custom-trade input:focus { outline: 3px solid var(--blue); outline-offset: 1px; }
+  .custom-trade .hint { font-family: 'Space Grotesk', sans-serif; font-size: .64rem; color: var(--muted); min-height: 1em; margin: -4px 0 12px; }
+  .custom-trade .hint.bad { color: var(--ink); font-weight: 600; }
+  .custom-trade .demo { font-family: 'Space Grotesk', sans-serif; font-size: .66rem; color: var(--muted); margin-top: 12px; }
+  .custom-trade .price-reveal { display: none; }
+  .custom-trade .price-reveal.on { display: block; }
+  .custom-trade table { width: 100%; border-collapse: collapse; font-size: .9rem; margin-top: 14px; }
+  .custom-trade th, .custom-trade td { text-align: left; padding: 11px 8px; border-bottom: 1px solid var(--line); }
+  .custom-trade th { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: .6rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .custom-trade td.p { font-family: 'Space Grotesk', sans-serif; font-weight: 500; color: var(--blue); }
+  .custom-trade .ph-note { font-family: 'Space Grotesk', sans-serif; font-size: .62rem; color: var(--muted); margin-top: 14px; line-height: 1.5; }
+</style>
+
+<section class="custom-trade" id="trade">
+  <div class="wrap" style="max-width: 1240px; margin: 0 auto;">
+    <div class="grid">
+      <div class="reveal">
+        <p class="kick">{{ section.settings.kicker }}</p>
+        <h2>{{ section.settings.headline }}</h2>
+        <p class="lede">{{ section.settings.text }}</p>
+        <div class="cta-row">
+          <a class="dg-btn" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
+        </div>
+      </div>
+      <div class="gatebox reveal">
+        <div id="gateForm">
+          <label for="tEmail">Work email</label>
+          <input id="tEmail" type="email" placeholder="orders@yourbusiness.com">
+          <label for="tCode">Access code</label>
+          <input id="tCode" type="text" placeholder="From your approval email">
+          <div class="hint" id="tHint"></div>
+          <button class="dg-btn" style="width:100%" id="tSignin">Sign in to see pricing</button>
+          <p class="demo">Demo code: <strong>DG-DEMO</strong></p>
+        </div>
+        <div class="price-reveal" id="tReveal">
+          <table>
+            <thead><tr><th>Glass</th><th>Retail</th><th>50+</th><th>200+</th></tr></thead>
+            <tbody id="tRows"></tbody>
+          </table>
+          <p class="ph-note">⚠ Illustrative placeholders. In production these are served by your backend only after it confirms the account is approved — never written into the page.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('tSignin');
+    const email = document.getElementById('tEmail');
+    const code = document.getElementById('tCode');
+    const hint = document.getElementById('tHint');
+    const form = document.getElementById('gateForm');
+    const reveal = document.getElementById('tReveal');
+    const tbody = document.getElementById('tRows');
+
+    if (btn) {
+      btn.addEventListener('click', () => {
+        if (!email.value.includes('@')) {
+          hint.textContent = 'Please enter a valid email.';
+          hint.className = 'hint bad';
+          return;
+        }
+        if (code.value !== 'DG-DEMO') {
+          hint.textContent = 'Invalid access code.';
+          hint.className = 'hint bad';
+          return;
+        }
+        
+        form.style.display = 'none';
+        reveal.className = 'price-reveal on';
+        
+        const demoData = [
+          { name: 'Wine / Crystal', r: 1190, b50: 820, b200: 710 },
+          { name: 'Rocks / Crystal', r: 990, b50: 680, b200: 590 },
+          { name: 'Tumbler / Boro', r: 740, b50: 420, b200: 360 }
+        ];
+        
+        tbody.innerHTML = demoData.map(d => `
+          <tr>
+            <td>${d.name}</td>
+            <td>₹${d.r}</td>
+            <td class="p">₹${d.b50}</td>
+            <td class="p">₹${d.b200}</td>
+          </tr>
+        `).join('');
+      });
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Custom Trade",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker text",
+      "default": "For the trade"
+    },
+    {
+      "type": "html",
+      "id": "headline",
+      "label": "Headline",
+      "default": "Wholesale sits<br>behind the login."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Body text",
+      "default": "Restaurants, cafés, bars, hotels and resellers buy direct at trade rates. Apply once — we verify your GSTIN against the government record — and your pricing shows every time you sign in."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Apply for a trade account"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link",
+      "default": "shopify:\/\/pages\/contact"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Trade"
+    }
+  ]
+}
+{% endschema %}

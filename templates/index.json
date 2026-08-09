@@ -1,7 +1,10 @@
 {
   "sections": {
     "hero": {
-      "type": "custom-hero"
+      "type": "custom-hero",
+      "settings": {
+        "button_link_1": "shopify://collections/all"
+      }
     },
     "trust_strip": {
       "type": "custom-trust-strip",
@@ -43,7 +46,35 @@
       ]
     },
     "factory": {
-      "type": "custom-factory"
+      "type": "custom-factory",
+      "blocks": {
+        "stat_1": {
+          "type": "stat",
+          "settings": {
+            "stat_value": "3.3",
+            "stat_label": "×10⁻⁶/K expansion — why it won't crack on heat"
+          }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": {
+            "stat_value": "Lead-free",
+            "stat_label": "Borosilicate carries no lead, by nature"
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "stat_value": "Direct",
+            "stat_label": "Furnace → you · no reseller markup"
+          }
+        }
+      },
+      "block_order": [
+        "stat_1",
+        "stat_2",
+        "stat_3"
+      ]
     },
     "categories": {
       "type": "custom-categories",
@@ -53,7 +84,8 @@
           "settings": {
             "svg_code": "<svg viewBox=\"0 0 70 100\" aria-hidden=\"true\"><path class=\"cl\" d=\"M18,8 Q18,44 35,50 Q52,44 52,8\"/><path class=\"fl\" d=\"M22,26 Q35,32 48,26\"/><path class=\"cl\" d=\"M35,50 L35,86\"/><path class=\"cl\" d=\"M24,90 L46,90\"/></svg>",
             "title": "Wine & Champagne",
-            "text": "Stemware, drawn to the line"
+            "text": "Stemware, drawn to the line",
+            "link": "shopify://collections/all"
           }
         },
         "cat_2": {
@@ -61,7 +93,8 @@
           "settings": {
             "svg_code": "<svg viewBox=\"0 0 70 100\" aria-hidden=\"true\"><path class=\"cl\" d=\"M16,20 L35,48 L54,20 Z\"/><path class=\"fl\" d=\"M24,30 L46,30\"/><path class=\"cl\" d=\"M35,48 L35,86\"/><path class=\"cl\" d=\"M24,90 L46,90\"/></svg>",
             "title": "Cocktail",
-            "text": "Martini, coupe & more"
+            "text": "Martini, coupe & more",
+            "link": "shopify://collections/all"
           }
         },
         "cat_3": {
@@ -69,7 +102,8 @@
           "settings": {
             "svg_code": "<svg viewBox=\"0 0 70 100\" aria-hidden=\"true\"><path class=\"cl\" d=\"M20,26 L23,88 L47,88 L50,26 Z\"/><path class=\"fl\" d=\"M22,50 L48,50\"/></svg>",
             "title": "Whisky",
-            "text": "Heavy-based rocks glasses"
+            "text": "Heavy-based rocks glasses",
+            "link": "shopify://collections/all"
           }
         },
         "cat_4": {
@@ -77,7 +111,8 @@
           "settings": {
             "svg_code": "<svg viewBox=\"0 0 70 100\" aria-hidden=\"true\"><path class=\"cl\" d=\"M22,34 L22,82 Q22,88 34,88 Q46,88 46,82 L46,34\"/><path class=\"cl\" d=\"M22,34 Q34,28 46,34\"/><path class=\"fl\" d=\"M24,50 Q34,45 44,50\"/><path class=\"cl\" d=\"M46,44 Q60,46 58,62 Q56,72 46,72\"/></svg>",
             "title": "Coffee & Tea",
-            "text": "Glass cups, double-walled"
+            "text": "Glass cups, double-walled",
+            "link": "shopify://collections/all"
           }
         },
         "cat_5": {
@@ -85,7 +120,8 @@
           "settings": {
             "svg_code": "<svg viewBox=\"0 0 70 100\" aria-hidden=\"true\"><path class=\"cl\" d=\"M24,16 L27,86 L43,86 L46,16 Z\"/><path class=\"fl\" d=\"M25,40 L45,40\"/></svg>",
             "title": "Tumblers",
-            "text": "The everyday workhorse"
+            "text": "The everyday workhorse",
+            "link": "shopify://collections/all"
           }
         },
         "cat_6": {
@@ -93,7 +129,8 @@
           "settings": {
             "svg_code": "<svg viewBox=\"0 0 70 100\" aria-hidden=\"true\"><path class=\"cl\" d=\"M31,10 L31,26 Q18,40 18,64 Q18,88 35,88 Q52,88 52,64 Q52,40 39,26 L39,10 Z\"/><path class=\"fl\" d=\"M21,60 Q35,54 49,60\"/><path class=\"cl\" d=\"M28,10 L42,10\"/></svg>",
             "title": "Decanters",
-            "text": "For wine & spirits, aerated"
+            "text": "For wine & spirits, aerated",
+            "link": "shopify://collections/all"
           }
         },
         "cat_7": {
@@ -101,14 +138,16 @@
           "settings": {
             "svg_code": "<svg viewBox=\"0 0 70 100\" aria-hidden=\"true\"><path class=\"cl\" d=\"M22,40 L22,84 L48,84 L48,40 Z\"/><path class=\"cl\" d=\"M22,40 Q35,34 48,40\"/><path class=\"cl\" d=\"M35,40 L35,30\"/><path class=\"fl\" d=\"M31,24 Q35,16 39,24 Q35,30 31,24 Z\"/></svg>",
             "title": "Candle Jars",
-            "text": "Jars & stands, refillable"
+            "text": "Jars & stands, refillable",
+            "link": "shopify://collections/all"
           }
         },
         "cat_8": {
           "type": "themed_drop",
           "settings": {
             "title": "+ Themed<br>Drops",
-            "text": "Limited runs, never restocked"
+            "text": "Limited runs, never restocked",
+            "link": "shopify://collections/all"
           }
         }
       },
@@ -211,6 +250,9 @@
         "badge_6"
       ]
     },
+    "trade": {
+      "type": "custom-trade"
+    },
     "brand_story": {
       "type": "custom-brand-story"
     }
@@ -222,6 +264,7 @@
     "categories",
     "materials",
     "badges",
+    "trade",
     "brand_story"
   ]
 }
