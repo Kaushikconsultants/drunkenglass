@@ -1,0 +1,89 @@
+{
+  "announcement_bar": "free US shipping on orders over $75 ✦ first order? use SIPSIP10 for 10% off",
+  "main_menu": [
+    {
+      "title": "shop all",
+      "url": "/collections/all"
+    },
+    {
+      "title": "collections",
+      "type": "mega menu",
+      "children": [
+        "fruit club",
+        "heart eyes",
+        "golden hour",
+        "wobble",
+        "chai club",
+        "after hours",
+        "y2k bloom",
+        "see all"
+      ]
+    },
+    {
+      "title": "build a set",
+      "url": "/pages/build-a-set"
+    },
+    {
+      "title": "gifting",
+      "url": "/pages/gifting"
+    },
+    {
+      "title": "our story",
+      "url": "/pages/our-story"
+    }
+  ],
+  "mega_menu_right": {
+    "shop by type": [
+      "tumblers",
+      "coffee cups",
+      "teacups",
+      "cocktail glasses",
+      "sets",
+      "extras",
+      "build a set"
+    ],
+    "promo tile": "which glass are you? → /pages/quiz"
+  },
+  "footer": {
+    "shop": [
+      "tumblers",
+      "coffee cups",
+      "teacups",
+      "cocktail glasses",
+      "sets",
+      "extras",
+      "build a set"
+    ],
+    "help": [
+      "track my order",
+      "faq",
+      "shipping",
+      "returns and breakage",
+      "contact us"
+    ],
+    "brand": [
+      "our story",
+      "gifting",
+      "gift cards",
+      "bulk and corporate",
+      "sip club",
+      "which glass are you?"
+    ],
+    "account": [
+      "sign in / my account",
+      "wishlist",
+      "privacy",
+      "terms",
+      "accessibility",
+      "do not sell or share my personal information"
+    ]
+  },
+  "vibe_chips_home": [
+    "slow mornings",
+    "desk flex",
+    "date night",
+    "hosting season",
+    "gift-ready",
+    "under $30"
+  ]
+}

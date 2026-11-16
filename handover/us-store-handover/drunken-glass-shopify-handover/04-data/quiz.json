@@ -1,0 +1,129 @@
+{
+  "title": "which glass are you?",
+  "scoring": "add the points of each chosen answer per product handle; highest total wins; ties go to the first product reached",
+  "questions": [
+    {
+      "question": "what’s in your glass at 4pm?",
+      "options": [
+        {
+          "label": "a chai latte, obviously",
+          "sub": "extra cinnamon, extra gossip",
+          "points": {
+            "cutting-chai-set": 3,
+            "chai-pe-charcha": 2,
+            "heart-eyes-mug": 1
+          }
+        },
+        {
+          "label": "iced coffee, extra ice",
+          "sub": "the oat milk is non-negotiable",
+          "points": {
+            "cherry-bomb": 2,
+            "the-wobble": 2,
+            "daisy-days": 1,
+            "golden-hour-tumbler": 1
+          }
+        },
+        {
+          "label": "a mocktail with a tiny umbrella",
+          "sub": "it’s 5pm somewhere",
+          "points": {
+            "crush-coupe": 2,
+            "blue-moon-coupe": 2,
+            "after-hours-rocks": 1
+          }
+        },
+        {
+          "label": "matcha, or anything green",
+          "sub": "your gut health is thriving",
+          "points": {
+            "golden-hour-tumbler": 2,
+            "lemon-drop": 2,
+            "daisy-days": 1
+          }
+        }
+      ]
+    },
+    {
+      "question": "pick a saturday plan",
+      "options": [
+        {
+          "label": "brunch with the besties",
+          "sub": "photos first, food later",
+          "points": {
+            "strawberry-fields": 3,
+            "crush-coupe": 1,
+            "sunset-can": 1
+          }
+        },
+        {
+          "label": "bed rot and a comfort show",
+          "sub": "episode 4, watched for the 9th time",
+          "points": {
+            "cloud-nine-mug": 3,
+            "heart-eyes-mug": 2,
+            "chai-pe-charcha": 1
+          }
+        },
+        {
+          "label": "house party, you’re on aux",
+          "sub": "the playlist runs 3 hours",
+          "points": {
+            "the-wobble": 2,
+            "checkmate": 2,
+            "bubble-pop": 2,
+            "pour-decisions-set": 2
+          }
+        },
+        {
+          "label": "sunset walk, phone on dnd",
+          "sub": "golden hour is your love language",
+          "points": {
+            "golden-hour-tumbler": 3,
+            "sunset-can": 2
+          }
+        }
+      ]
+    },
+    {
+      "question": "your aesthetic in one word",
+      "options": [
+        {
+          "label": "soft",
+          "sub": "pink, bows, hearts, repeat",
+          "points": {
+            "heart-eyes-mug": 2,
+            "strawberry-fields": 2,
+            "crush-coupe": 1
+          }
+        },
+        {
+          "label": "loud",
+          "sub": "more color is more better",
+          "points": {
+            "the-wobble": 2,
+            "bubble-pop": 2,
+            "checkmate": 1,
+            "cherry-bomb": 1
+          }
+        },
+        {
+          "label": "earthy",
+          "sub": "warm tones and cosy corners",
+          "points": {
+            "golden-hour-tumbler": 3,
+            "cutting-chai-set": 1
+          }
+        },
+        {
+          "label": "moody",
+          "sub": "black, stars, late nights",
+          "points": {
+            "after-hours-rocks": 3,
+            "blue-moon-coupe": 2
+          }
+        }
+      ]
+    }
+  ]
+}

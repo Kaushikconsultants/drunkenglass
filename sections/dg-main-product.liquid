@@ -1,0 +1,359 @@
+<section class="wrap sec" id="dg-main-product" style="padding-top:16px">
+  <!-- Breadcrumbs -->
+  <nav class="crumbs" aria-label="breadcrumbs" style="margin-bottom:16px;font:500 13px var(--f-head);color:var(--muted)">
+    <a href="/collections/all" style="text-decoration:none">shop</a>
+    <span style="margin:0 6px">/</span>
+    <a href="/collections/{{ product.collections.first.handle | default: 'all' }}" style="text-decoration:none">{{ product.collections.first.title | default: 'glasses' }}</a>
+    <span style="margin:0 6px">/</span>
+    <span style="color:var(--ink)">{{ product.title | downcase }}</span>
+  </nav>
+
+  <div class="pdp-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(24px,5vw,56px);align-items:start">
+    <!-- Left: Gallery -->
+    <div class="gallery" id="dgGallery">
+      <div class="g-main" style="background:#ffe1e8;border:2px solid var(--ink);border-radius:var(--r);box-shadow:var(--sh);aspect-ratio:1;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative">
+        <span class="badge b-pink" style="position:absolute;top:16px;left:16px">hero design</span>
+        <img id="dgMainImg" src="{{ 'cherry-bomb--blush.png' | asset_url }}" alt="{{ product.title }}" width="380" height="480" style="max-height:85%;object-fit:contain">
+      </div>
+      <!-- Thumbnails -->
+      <div style="display:flex;gap:12px;margin-top:16px">
+        <button class="g-thumb" type="button" style="border:2px solid var(--ink);border-radius:var(--r);padding:4px;background:#ffe1e8;width:72px;height:72px;cursor:pointer" data-img="{{ 'cherry-bomb--blush.png' | asset_url }}" data-bg="#ffe1e8">
+          <img src="{{ 'cherry-bomb--blush.png' | asset_url }}" alt="blush thumb" width="60" height="60" style="object-fit:contain">
+        </button>
+        <button class="g-thumb" type="button" style="border:2px solid var(--rule);border-radius:var(--r);padding:4px;background:#f2f1f0;width:72px;height:72px;cursor:pointer" data-img="{{ 'cherry-bomb--clear-cherry.png' | asset_url }}" data-bg="#f2f1f0">
+          <img src="{{ 'cherry-bomb--clear-cherry.png' | asset_url }}" alt="clear cherry thumb" width="60" height="60" style="object-fit:contain">
+        </button>
+      </div>
+    </div>
+
+    <!-- Right: Buy Column -->
+    <div class="pdp-info" style="display:flex;flex-direction:column;gap:20px">
+      <div>
+        <a class="pdp-col chip" href="/collections/fruit-club" style="height:28px;padding:0 12px;font-size:12px;margin-bottom:8px">fruit club collection</a>
+        <h1 class="pdp-name" style="font:700 clamp(32px,4vw,48px)/1.05 var(--f-head);margin:8px 0">{{ product.title | default: 'cherry bomb tumbler' | downcase }}</h1>
+        <p class="pdp-line" style="color:var(--muted);font-size:16px">strawberries & cherries for your everyday iced coffee.</p>
+      </div>
+
+      <!-- Care at a glance pills -->
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <span class="chip" style="height:32px;font-size:12px">🔥 hot + cold safe</span>
+        <span class="chip" style="height:32px;font-size:12px">🫧 dishwasher safe</span>
+        <span class="chip" style="height:32px;font-size:12px">⚡ microwave safe</span>
+      </div>
+
+      <!-- Price Box -->
+      <div>
+        <div class="pdp-price" style="display:flex;align-items:baseline;gap:12px">
+          <span class="price" id="dgPriceMain" style="font-size:36px;font-weight:700">$36</span>
+          <span class="per" id="dgPricePer" style="color:var(--muted);font-size:15px;display:none">$33 per glass</span>
+          <span class="off badge b-pink" id="dgPriceSave" style="position:static;display:none">you save $6</span>
+        </div>
+        <p class="tax" style="margin-top:4px;font-size:13px;color:var(--muted)">sales tax calculated at checkout</p>
+      </div>
+
+      <!-- Color Swatches -->
+      <div>
+        <p class="lbl" style="font:700 14px var(--f-head);margin-bottom:8px">color: <span id="dgCwName">blush</span></p>
+        <div class="sw lg" role="group" aria-label="choose color" style="display:flex;gap:10px">
+          <button class="swb on" type="button" style="--c:#ef426f;width:34px;height:34px;border-radius:50%;border:2px solid var(--ink);background:#ef426f" data-color="blush" data-img="{{ 'cherry-bomb--blush.png' | asset_url }}" data-bg="#ffe1e8" aria-label="blush" aria-pressed="true"></button>
+          <button class="swb" type="button" style="--c:#ffffff;width:34px;height:34px;border-radius:50%;border:2px solid var(--rule);background:#ffffff" data-color="clear cherry" data-img="{{ 'cherry-bomb--clear-cherry.png' | asset_url }}" data-bg="#f2f1f0" aria-label="clear cherry" aria-pressed="false"></button>
+        </div>
+      </div>
+
+      <!-- Pack Selector (2x2 Radio Cards) -->
+      <div>
+        <p class="lbl" style="font:700 14px var(--f-head);margin-bottom:8px">how many?</p>
+        <div class="packs" role="radiogroup" aria-label="how many glasses" style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px">
+          <label class="pack-card on" style="border:2px solid var(--ink);border-radius:var(--r);background:var(--lime-t);padding:14px;cursor:pointer;display:block">
+            <input type="radio" name="pack" value="single" checked style="display:none">
+            <b style="display:block;font-size:15px">single (1)</b>
+            <span class="mono" style="font-size:14px">$36</span>
+          </label>
+          <label class="pack-card" style="border:2px solid var(--rule);border-radius:var(--r);background:#fff;padding:14px;cursor:pointer;display:block">
+            <input type="radio" name="pack" value="pair" style="display:none">
+            <div style="display:flex;justify-content:space-between">
+              <b style="font-size:15px">pair (2)</b>
+              <span class="off badge b-pink" style="position:static;font-size:10px">save 8%</span>
+            </div>
+            <span class="mono" style="font-size:14px">$66</span>
+          </label>
+          <label class="pack-card" style="border:2px solid var(--rule);border-radius:var(--r);background:#fff;padding:14px;cursor:pointer;display:block">
+            <input type="radio" name="pack" value="set4" style="display:none">
+            <div style="display:flex;justify-content:space-between">
+              <b style="font-size:15px">set of 4</b>
+              <span class="off badge b-pink" style="position:static;font-size:10px">save 15%</span>
+            </div>
+            <span class="mono" style="font-size:14px">$122</span>
+            <small style="display:block;color:var(--muted);font-size:11px">made for hosting</small>
+          </label>
+          <label class="pack-card" style="border:2px solid var(--rule);border-radius:var(--r);background:#fff;padding:14px;cursor:pointer;display:block">
+            <input type="radio" name="pack" value="every" style="display:none">
+            <div style="display:flex;justify-content:space-between">
+              <b style="font-size:15px">one of each</b>
+              <span class="off badge b-pink" style="position:static;font-size:10px">save 8%</span>
+            </div>
+            <span class="mono" style="font-size:14px">$66</span>
+            <small style="display:block;color:var(--muted);font-size:11px">both colors</small>
+          </label>
+        </div>
+      </div>
+
+      <!-- Finish It Off Addons -->
+      <div style="background:var(--cloud);border:2px solid var(--ink);border-radius:var(--r);padding:16px">
+        <b style="font:700 14px var(--f-head);display:block;margin-bottom:12px">finish it off <span style="font-weight:400;color:var(--muted);font-size:12px">(optional)</span></b>
+        
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <!-- Addon 1 -->
+          <div style="display:flex;align-items:center;justify-content:space-between;background:#fff;border:1.5px solid var(--ink);border-radius:var(--r);padding:10px">
+            <div style="display:flex;align-items:center;gap:10px">
+              <img src="{{ 'bamboo-lid.png' | asset_url }}" alt="bamboo lid" width="40" height="40">
+              <div>
+                <b style="font-size:13px;display:block">bamboo lid + glass straw</b>
+                <span class="price" style="font-size:13px">+$8</span>
+              </div>
+            </div>
+            <button class="btn btn-lime sm dg-addon-btn" type="button" data-addon="lid" data-price="8" style="min-height:32px;padding:0 12px;font-size:13px">+ add</button>
+          </div>
+
+          <!-- Addon 2 -->
+          <div style="display:flex;align-items:center;justify-content:space-between;background:#fff;border:1.5px solid var(--ink);border-radius:var(--r);padding:10px">
+            <div style="display:flex;align-items:center;gap:10px">
+              <img src="{{ 'coaster-set.png' | asset_url }}" alt="coaster set" width="40" height="40">
+              <div>
+                <b style="font-size:13px;display:block">silicone coaster set (4)</b>
+                <span class="price" style="font-size:13px">+$16</span>
+              </div>
+            </div>
+            <button class="btn btn-lime sm dg-addon-btn" type="button" data-addon="coaster" data-price="16" style="min-height:32px;padding:0 12px;font-size:13px">+ add</button>
+          </div>
+
+          <!-- Gift Box Row -->
+          <div style="display:flex;align-items:center;justify-content:space-between;background:#fff;border:1.5px solid var(--ink);border-radius:var(--r);padding:10px">
+            <div>
+              <b style="font-size:13px;display:block">gift box + handwritten note</b>
+              <span class="price" style="font-size:13px">+$9</span>
+            </div>
+            <button class="btn btn-lime sm dg-addon-btn" type="button" data-addon="giftbox" data-price="9" style="min-height:32px;padding:0 12px;font-size:13px">+ add</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add to Bag CTA Row -->
+      <div style="display:flex;gap:12px;align-items:center">
+        <button class="btn btn-blue full" id="dgBuyBtn" type="button" style="min-height:56px;font-size:18px">
+          <span>add to bag</span>
+          <span class="mono" id="dgBuyTotal" style="margin-left:12px">$36</span>
+        </button>
+        <button class="heart" type="button" style="width:56px;height:56px;border:2px solid var(--ink);border-radius:var(--r);display:flex;align-items:center;justify-content:center;background:#fff" aria-label="save to wishlist">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
+        </button>
+      </div>
+
+      <!-- Express Checkout -->
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px">
+        <button class="btn btn-ink" type="button" style="min-height:46px;font-size:14px">buy with <b>shop pay</b></button>
+        <button class="btn" type="button" style="min-height:46px;font-size:14px;background:#000;color:#fff">buy with <b>apple pay</b></button>
+      </div>
+
+      <!-- Free shipping meter inside PDP -->
+      <div style="background:var(--cloud);border:2px solid var(--ink);border-radius:var(--r);padding:14px">
+        <div style="display:flex;justify-content:space-between;font-size:13px;font-weight:700;margin-bottom:6px">
+          <span id="dgPdpMeterText">add $39 more for free US shipping</span>
+          <span class="mono">$75</span>
+        </div>
+        <div style="height:6px;background:#fff;border:1px solid var(--ink);border-radius:999px;overflow:hidden">
+          <div id="dgPdpMeterBar" style="height:100%;width:48%;background:var(--blue);transition:width .3s ease"></div>
+        </div>
+      </div>
+
+      <!-- ZIP Delivery Estimate -->
+      <div style="border:2px solid var(--ink);border-radius:var(--r);padding:16px;background:#fff">
+        <p class="lbl" style="font:700 14px var(--f-head);margin-bottom:8px">estimated delivery</p>
+        <form id="dgZipForm" style="display:flex;gap:8px">
+          <input type="text" id="dgZipInput" placeholder="enter 5-digit zip" maxlength="5" pattern="[0-9]{5}" style="flex:1;border:2px solid var(--ink);border-radius:var(--r);padding:0 12px;min-height:42px;font:500 14px var(--f-mono)">
+          <button class="btn btn-ink sm" type="submit" style="min-height:42px">check</button>
+        </form>
+        <p id="dgZipResult" style="font-size:13px;color:var(--muted);margin-top:8px">standard US delivery in 5–8 business days · 30-day free returns</p>
+      </div>
+
+      <!-- Trust Row -->
+      <ul style="display:flex;gap:16px;font-size:13px;font-weight:700;flex-wrap:wrap">
+        <li>✦ free breakage replacement</li>
+        <li>✦ 30-day returns</li>
+        <li>✦ safe borosilicate glass</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const priceMain = document.getElementById('dgPriceMain');
+  const pricePer = document.getElementById('dgPricePer');
+  const priceSave = document.getElementById('dgPriceSave');
+  const buyTotal = document.getElementById('dgBuyTotal');
+  const cwName = document.getElementById('dgCwName');
+  const mainImg = document.getElementById('dgMainImg');
+  const mainStage = document.querySelector('.g-main');
+  const meterText = document.getElementById('dgPdpMeterText');
+  const meterBar = document.getElementById('dgPdpMeterBar');
+  const addedDrawer = document.getElementById('dgAddedDrawer');
+  const scrim = document.getElementById('dgScrim');
+
+  let basePrice = 36;
+  let packQty = 1;
+  let packCost = 36;
+  let addonCost = 0;
+
+  const packData = {
+    single: { q: 1, cost: 36, save: 0, per: 36 },
+    pair: { q: 2, cost: 66, save: 6, per: 33 },
+    set4: { q: 4, cost: 122, save: 22, per: 30.5 },
+    every: { q: 2, cost: 66, save: 6, per: 33 }
+  };
+
+  function updateTotals() {
+    const total = packCost + addonCost;
+    if (buyTotal) buyTotal.textContent = '$' + total;
+    if (priceMain) priceMain.textContent = '$' + packCost;
+
+    if (packQty > 1) {
+      if (pricePer) {
+        pricePer.style.display = 'inline';
+        pricePer.textContent = '$' + (packCost / packQty).toFixed(2).replace('.00','') + ' per glass';
+      }
+      if (priceSave) {
+        const saving = (basePrice * packQty) - packCost;
+        if (saving > 0) {
+          priceSave.style.display = 'inline';
+          priceSave.textContent = 'you save $' + saving;
+        } else {
+          priceSave.style.display = 'none';
+        }
+      }
+    } else {
+      if (pricePer) pricePer.style.display = 'none';
+      if (priceSave) priceSave.style.display = 'none';
+    }
+
+    // Update free shipping meter
+    if (meterText && meterBar) {
+      const remaining = 75 - total;
+      if (remaining <= 0) {
+        meterText.textContent = 'free US shipping unlocked! 🎉';
+        meterBar.style.width = '100%';
+      } else {
+        meterText.textContent = 'add $' + remaining + ' more for free US shipping';
+        meterBar.style.width = Math.min(100, (total / 75) * 100) + '%';
+      }
+    }
+  }
+
+  // Pack selector radios
+  document.querySelectorAll('input[name="pack"]').forEach(function(radio) {
+    radio.addEventListener('change', function() {
+      document.querySelectorAll('.pack-card').forEach(c => {
+        c.classList.remove('on');
+        c.style.background = '#fff';
+        c.style.borderColor = 'var(--rule)';
+      });
+      const card = radio.closest('.pack-card');
+      card.classList.add('on');
+      card.style.background = 'var(--lime-t)';
+      card.style.borderColor = 'var(--ink)';
+
+      const val = radio.value;
+      const d = packData[val];
+      packQty = d.q;
+      packCost = d.cost;
+      updateTotals();
+    });
+  });
+
+  // Addon toggles
+  document.querySelectorAll('.dg-addon-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const price = parseFloat(btn.dataset.price || 0);
+      const active = btn.classList.toggle('active');
+      if (active) {
+        btn.textContent = '✓ added';
+        btn.style.background = 'var(--ink)';
+        btn.style.color = '#fff';
+        addonCost += price;
+      } else {
+        btn.textContent = '+ add';
+        btn.style.background = 'var(--lime)';
+        btn.style.color = 'var(--ink)';
+        addonCost -= price;
+      }
+      updateTotals();
+    });
+  });
+
+  // Color Swatches
+  document.querySelectorAll('.swb').forEach(function(swb) {
+    swb.addEventListener('click', function() {
+      document.querySelectorAll('.swb').forEach(b => {
+        b.classList.remove('on');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      swb.classList.add('on');
+      swb.setAttribute('aria-pressed', 'true');
+
+      if (cwName && swb.dataset.color) cwName.textContent = swb.dataset.color;
+      if (mainImg && swb.dataset.img) mainImg.src = swb.dataset.img;
+      if (mainStage && swb.dataset.bg) mainStage.style.background = swb.dataset.bg;
+    });
+  });
+
+  // Thumbnails
+  document.querySelectorAll('.g-thumb').forEach(function(thumb) {
+    thumb.addEventListener('click', function() {
+      document.querySelectorAll('.g-thumb').forEach(t => t.style.borderColor = 'var(--rule)');
+      thumb.style.borderColor = 'var(--ink)';
+      if (mainImg && thumb.dataset.img) mainImg.src = thumb.dataset.img;
+      if (mainStage && thumb.dataset.bg) mainStage.style.background = thumb.dataset.bg;
+    });
+  });
+
+  // Add to bag button
+  const buyBtn = document.getElementById('dgBuyBtn');
+  if (buyBtn) {
+    buyBtn.addEventListener('click', function() {
+      if (addedDrawer) addedDrawer.classList.add('open');
+      if (scrim) scrim.classList.add('open');
+    });
+  }
+
+  // ZIP Code Estimator
+  const zipForm = document.getElementById('dgZipForm');
+  const zipInput = document.getElementById('dgZipInput');
+  const zipResult = document.getElementById('dgZipResult');
+  if (zipForm && zipInput && zipResult) {
+    zipForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const val = zipInput.value.trim();
+      if (/^\d{5}$/.test(val)) {
+        const d1 = new Date(); d1.setDate(d1.getDate() + 5);
+        const d2 = new Date(); d2.setDate(d2.getDate() + 8);
+        const opts = { month: 'short', day: 'numeric' };
+        zipResult.innerHTML = `estimated delivery to <b>${val}</b>: <b>${d1.toLocaleDateString('en-US', opts)} – ${d2.toLocaleDateString('en-US', opts)}</b>. free returns within 30 days.`;
+      } else {
+        zipResult.textContent = 'please enter a valid 5-digit US zip code.';
+      }
+    });
+  }
+});
+</script>
+
+{% schema %}
+{
+  "name": "DG Main Product",
+  "settings": [],
+  "presets": [
+    {
+      "name": "DG Main Product"
+    }
+  ]
+}
+{% endschema %}

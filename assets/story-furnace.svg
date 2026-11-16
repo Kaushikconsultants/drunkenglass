@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" aria-hidden="true"><defs><radialGradient id="fgl"><stop offset="0" stop-color="#fffbd0"/><stop offset=".5" stop-color="#eaef29"/><stop offset="1" stop-color="#f4a83a"/></radialGradient></defs>
+  <rect width="500" height="400" fill="#ef426f"/><circle cx="170" cy="280" r="170" fill="#f4a83a" fill-opacity=".35"/>
+  <path d="M40 400V210a130 130 0 0 1 260 0V400Z" fill="#0a0a0a"/>
+  <path d="M96 400V262a74 74 0 0 1 148 0V400Z" fill="url(#fgl)" stroke="#0a0a0a" stroke-width="4"/>
+  <line x1="222" y1="318" x2="492" y2="250" stroke="#0a0a0a" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="214" cy="320" r="32" fill="#f4a83a" stroke="#0a0a0a" stroke-width="4"/><circle cx="204" cy="310" r="8" fill="#fffbd0"/>
+  <text x="474" y="96" text-anchor="end" font-family="Space Mono, monospace" font-weight="700" font-size="54" fill="#ffffff">~2,900°F</text>
+  <text x="474" y="130" text-anchor="end" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="18" fill="#0a0a0a">furnace temperature</text>
+  <path d="M330 190c1.5 11 5.5 15 17 17-11.5 2-15.5 6-17 17-1.5-11-5.5-15-17-17 11.5-2 15.5-6 17-17z" fill="#eaef29" stroke="#0a0a0a" stroke-width="2.5"/>
+  <path d="M410 300c1 7 3.5 9.5 11 11-7.5 1-10 3.5-11 11-1-7.5-3.5-10-11-11 7.5-1.5 10-4 11-11z" fill="#fff" stroke="#0a0a0a" stroke-width="2"/></svg>

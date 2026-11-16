@@ -1,0 +1,62 @@
+[
+  {
+    "tab": "host",
+    "title": "for the host",
+    "intro": "friendsgiving, dinner parties and housewarmings. bring something better than a candle.",
+    "products": [
+      "pour-decisions-set",
+      "golden-hour-tumbler",
+      "crush-coupe",
+      "coaster-set",
+      "after-hours-rocks",
+      "checkmate"
+    ]
+  },
+  {
+    "tab": "bestie",
+    "title": "for the bestie",
+    "intro": "loud colors, cute shapes, zero chance they already own it.",
+    "products": [
+      "strawberry-fields",
+      "daisy-days",
+      "the-wobble",
+      "cherry-bomb",
+      "bubble-pop",
+      "heart-eyes-mug"
+    ]
+  },
+  {
+    "tab": "couple",
+    "title": "for the couple",
+    "intro": "anniversaries, engagements and “just because”.",
+    "products": [
+      "date-night-duo",
+      "crush-coupe",
+      "heart-eyes-mug",
+      "blue-moon-coupe"
+    ]
+  },
+  {
+    "tab": "parents",
+    "title": "for mom and dad",
+    "intro": "pretty, practical and actually used every morning.",
+    "products": [
+      "cutting-chai-set",
+      "chai-pe-charcha",
+      "golden-hour-tumbler",
+      "cloud-nine-mug"
+    ]
+  },
+  {
+    "tab": "office",
+    "title": "for the office",
+    "intro": "secret santa and white elephant picks under $35, plus bulk orders for the whole team.",
+    "products": [
+      "cherry-bomb",
+      "daisy-days",
+      "lemon-drop",
+      "cloud-nine-mug",
+      "glass-straws"
+    ]
+  }
+]

@@ -1,0 +1,98 @@
+<footer class="ftr" id="dg-footer">
+  <div class="wrap">
+    <!-- Giant Two-Color Wordmark -->
+    <div class="ftr-wordmark" style="margin-bottom:48px;border-bottom:2px solid var(--ink);padding-bottom:32px">
+      <span class="d" style="font:400 clamp(42px,9vw,110px)/0.9 var(--f-display);color:var(--blue)">drunken</span>
+      <span class="g" style="font:400 clamp(42px,9vw,110px)/0.9 var(--f-display);color:var(--berry);margin-left:12px">glass</span>
+    </div>
+
+    <!-- 5 Columns -->
+    <div class="ftr-cols" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:36px;margin-bottom:48px">
+      <!-- Col 1: Shop -->
+      <div>
+        <h4 style="font:700 16px var(--f-head);margin-bottom:14px;text-transform:lowercase">shop</h4>
+        <ul style="display:flex;flex-direction:column;gap:10px;font-size:15px">
+          <li><a href="/collections/all">all glasses</a></li>
+          <li><a href="/collections/tumblers">tumblers</a></li>
+          <li><a href="/collections/coffee-cups">coffee cups</a></li>
+          <li><a href="/collections/teacups">teacups</a></li>
+          <li><a href="/collections/cocktail-glasses">cocktail glasses</a></li>
+          <li><a href="/pages/build-a-set">build a set ($99)</a></li>
+          <li><a href="/products/digital-gift-card">digital gift cards</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 2: Collections -->
+      <div>
+        <h4 style="font:700 16px var(--f-head);margin-bottom:14px;text-transform:lowercase">collections</h4>
+        <ul style="display:flex;flex-direction:column;gap:10px;font-size:15px">
+          <li><a href="/collections/fruit-club">fruit club</a></li>
+          <li><a href="/collections/heart-eyes">heart eyes</a></li>
+          <li><a href="/collections/golden-hour">golden hour</a></li>
+          <li><a href="/collections/the-wobble">the wobble</a></li>
+          <li><a href="/collections/chai-club">chai club</a></li>
+          <li><a href="/collections/after-hours">after hours</a></li>
+          <li><a href="/collections/y2k-bloom">y2k bloom</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: About -->
+      <div>
+        <h4 style="font:700 16px var(--f-head);margin-bottom:14px;text-transform:lowercase">about</h4>
+        <ul style="display:flex;flex-direction:column;gap:10px;font-size:15px">
+          <li><a href="/pages/our-story">our story</a></li>
+          <li><a href="/pages/our-story#craft">the furnace process</a></li>
+          <li><a href="/pages/quiz">glassware style quiz</a></li>
+          <li><a href="/pages/gifting">gifting hub</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Help -->
+      <div>
+        <h4 style="font:700 16px var(--f-head);margin-bottom:14px;text-transform:lowercase">help</h4>
+        <ul style="display:flex;flex-direction:column;gap:10px;font-size:15px">
+          <li><a href="/pages/track-order">track order</a></li>
+          <li><a href="/pages/help">faq & care guide</a></li>
+          <li><a href="/policies/shipping-policy">shipping & returns</a></li>
+          <li><a href="/pages/help#breakage">breakage replacement</a></li>
+          <li><a href="/pages/help#contact">contact us</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 5: Policies -->
+      <div>
+        <h4 style="font:700 16px var(--f-head);margin-bottom:14px;text-transform:lowercase">legal</h4>
+        <ul style="display:flex;flex-direction:column;gap:10px;font-size:15px">
+          <li><a href="/policies/privacy-policy">privacy policy</a></li>
+          <li><a href="/policies/terms-of-service">terms of service</a></li>
+          <li><a href="/policies/refund-policy">refund policy</a></li>
+          <li><a href="/policies/privacy-policy#do-not-sell">do not sell my info</a></li>
+          <li><a href="/pages/accessibility">accessibility statement</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar: Payments & Copyright -->
+    <div style="border-top:2px solid var(--ink);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--muted)">
+      <p>© {{ 'now' | date: '%Y' }} drunken glass. all rights reserved. prices in USD.</p>
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+        <span class="chip" style="height:28px;padding:0 10px;font-size:11px">Shop Pay</span>
+        <span class="chip" style="height:28px;padding:0 10px;font-size:11px">Apple Pay</span>
+        <span class="chip" style="height:28px;padding:0 10px;font-size:11px">Google Pay</span>
+        <span class="chip" style="height:28px;padding:0 10px;font-size:11px">PayPal</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "DG Footer",
+  "settings": [],
+  "presets": [
+    {
+      "name": "DG Footer"
+    }
+  ]
+}
+{% endschema %}

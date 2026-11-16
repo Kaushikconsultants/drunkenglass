@@ -1,8 +1,11 @@
 {
   "sections": {
-    "track_page": {
-      "type": "custom-track-page"
+    "track_order": {
+      "type": "dg-track-page",
+      "settings": {}
     }
   },
-  "order": ["track_page"]
+  "order": [
+    "track_order"
+  ]
 }

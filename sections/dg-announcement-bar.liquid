@@ -1,0 +1,24 @@
+<div class="ann" id="dg-announcement">
+  <span class="ann-msg">
+    {{ section.settings.message | default: 'free US shipping on orders over $75 ✦ first order? use <b>SIPSIP10</b> for 10% off' }}
+  </span>
+</div>
+
+{% schema %}
+{
+  "name": "DG Announcement Bar",
+  "settings": [
+    {
+      "type": "html",
+      "id": "message",
+      "label": "Announcement HTML Text",
+      "default": "free US shipping on orders over $75 ✦ first order? use <b>SIPSIP10</b> for 10% off"
+    }
+  ],
+  "presets": [
+    {
+      "name": "DG Announcement Bar"
+    }
+  ]
+}
+{% endschema %}

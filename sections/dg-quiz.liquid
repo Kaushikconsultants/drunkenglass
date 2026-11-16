@@ -1,0 +1,200 @@
+<section class="sec wrap" id="dg-quiz">
+  <div class="quiz" id="quizBox">
+    <div class="quiz-l">
+      <h2 class="h2">{{ section.settings.heading | default: 'which glass are you?' }}</h2>
+      <p class="sub">{{ section.settings.subheading | default: '3 questions. one perfect glass. zero commitment issues.' }}</p>
+      
+      <div class="quiz-progress" style="margin-top:20px;height:6px;background:var(--rule);border-radius:3px;overflow:hidden;max-width:320px">
+        <div id="quizProgressBar" style="height:100%;width:33%;background:var(--blue);transition:width .25s ease"></div>
+      </div>
+    </div>
+
+    <div class="quiz-r" id="quizContent">
+      <!-- Step 1 -->
+      <div class="quiz-step" data-step="1">
+        <p class="quiz-q" style="font:700 20px var(--f-head);margin-bottom:16px">1. what’s in your glass at 4pm?</p>
+        <div class="quiz-opts" style="display:grid;gap:12px">
+          <button class="quiz-opt btn" type="button" data-scores='{"cutting-chai-set":3,"chai-pe-charcha":2,"heart-eyes-mug":1}'>
+            <span>a chai latte, obviously</span>
+            <small style="display:block;opacity:.7;font-weight:400">extra cinnamon, extra gossip</small>
+          </button>
+          <button class="quiz-opt btn" type="button" data-scores='{"cherry-bomb":2,"the-wobble":2,"daisy-days":1}'>
+            <span>iced coffee, extra ice</span>
+            <small style="display:block;opacity:.7;font-weight:400">the oat milk is non-negotiable</small>
+          </button>
+          <button class="quiz-opt btn" type="button" data-scores='{"crush-coupe":2,"blue-moon-coupe":2,"after-hours-rocks":1}'>
+            <span>a mocktail with a tiny umbrella</span>
+            <small style="display:block;opacity:.7;font-weight:400">it’s 5pm somewhere</small>
+          </button>
+          <button class="quiz-opt btn" type="button" data-scores='{"lemon-drop":3,"cloud-nine-mug":2}'>
+            <span>matcha, or anything green</span>
+            <small style="display:block;opacity:.7;font-weight:400">your gut health is thriving</small>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="quiz-step" data-step="2" style="display:none">
+        <p class="quiz-q" style="font:700 20px var(--f-head);margin-bottom:16px">2. pick a saturday plan</p>
+        <div class="quiz-opts" style="display:grid;gap:12px">
+          <button class="quiz-opt btn" type="button" data-scores='{"heart-eyes-mug":3,"cloud-nine-mug":2}'>
+            <span>farmer's market & flowers</span>
+            <small style="display:block;opacity:.7;font-weight:400">tote bag full of sourdough</small>
+          </button>
+          <button class="quiz-opt btn" type="button" data-scores='{"blue-moon-coupe":3,"crush-coupe":2}'>
+            <span>dinner party that goes till 2am</span>
+            <small style="display:block;opacity:.7;font-weight:400">candlelight and natural wine</small>
+          </button>
+          <button class="quiz-opt btn" type="button" data-scores='{"the-wobble":3,"cherry-bomb":2}'>
+            <span>browsing a vintage record store</span>
+            <small style="display:block;opacity:.7;font-weight:400">dopamine dressing in full effect</small>
+          </button>
+          <button class="quiz-opt btn" type="button" data-scores='{"cutting-chai-set":3,"chai-pe-charcha":2}'>
+            <span>couch, book, phone on do-not-disturb</span>
+            <small style="display:block;opacity:.7;font-weight:400">unreachable in the best way</small>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="quiz-step" data-step="3" style="display:none">
+        <p class="quiz-q" style="font:700 20px var(--f-head);margin-bottom:16px">3. your aesthetic in one word</p>
+        <div class="quiz-opts" style="display:grid;gap:12px">
+          <button class="quiz-opt btn" type="button" data-scores='{"cherry-bomb":3,"daisy-days":2}'>
+            <span>playful & nostalgic</span>
+            <small style="display:block;opacity:.7;font-weight:400">y2k bubbles & primary brights</small>
+          </button>
+          <button class="quiz-opt btn" type="button" data-scores='{"the-wobble":3,"lemon-drop":2}'>
+            <span>architectural & wavy</span>
+            <small style="display:block;opacity:.7;font-weight:400">clean lines with an unexpected twist</small>
+          </button>
+          <button class="quiz-opt btn" type="button" data-scores='{"heart-eyes-mug":3,"cloud-nine-mug":2}'>
+            <span>soft romantic</span>
+            <small style="display:block;opacity:.7;font-weight:400">pastels, curves and sweet treats</small>
+          </button>
+          <button class="quiz-opt btn" type="button" data-scores='{"blue-moon-coupe":3,"after-hours-rocks":2}'>
+            <span>moody & minimal</span>
+            <small style="display:block;opacity:.7;font-weight:400">smoked tones and high drama</small>
+          </button>
+        </div>
+      </div>
+
+      <!-- Result Card -->
+      <div class="quiz-res" id="quizResultCard" style="display:none">
+        <div class="pcard" style="background:#fff;border:2px solid var(--ink);border-radius:var(--r);box-shadow:var(--sh);padding:20px;text-align:center">
+          <span class="badge b-lime" style="position:static;display:inline-block;margin-bottom:12px">your soulmate glass</span>
+          <img id="resImg" src="{{ 'cherry-bomb--blush.png' | asset_url }}" alt="result glass" width="200" height="240" style="margin:0 auto 16px;display:block">
+          <h3 id="resTitle" style="font:700 24px var(--f-head);margin-bottom:6px">cherry bomb tumbler</h3>
+          <p id="resSub" style="color:var(--muted);font-size:14px;margin-bottom:16px">for sweet sips and dopamine mornings.</p>
+          <div class="prow" style="justify-content:center;margin-bottom:20px">
+            <span class="price" id="resPrice" style="font-size:24px">$36</span>
+          </div>
+          <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+            <a class="btn btn-blue" id="resLink" href="/products/cherry-bomb">see details</a>
+            <button class="btn btn-lime" id="resRetake" type="button">retake quiz</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const box = document.getElementById('quizBox');
+  if (!box) return;
+
+  const bar = document.getElementById('quizProgressBar');
+  const steps = box.querySelectorAll('.quiz-step');
+  const resCard = document.getElementById('quizResultCard');
+  const resImg = document.getElementById('resImg');
+  const resTitle = document.getElementById('resTitle');
+  const resSub = document.getElementById('resSub');
+  const resPrice = document.getElementById('resPrice');
+  const resLink = document.getElementById('resLink');
+  const resRetake = document.getElementById('resRetake');
+
+  let currentStep = 1;
+  const scores = {};
+
+  const productData = {
+    'cherry-bomb': { title: 'cherry bomb tumbler', price: '$36', sub: 'strawberries & cherries for your everyday iced coffee.', img: '{{ "cherry-bomb--blush.png" | asset_url }}', url: '/products/cherry-bomb' },
+    'the-wobble': { title: 'the wobble tumbler', price: '$36', sub: 'wavy curves and electric color for restless hands.', img: '{{ "the-wobble--electric-blue.png" | asset_url }}', url: '/products/the-wobble' },
+    'heart-eyes-mug': { title: 'heart eyes mug', price: '$34', sub: 'for hot matcha and slow romantic mornings.', img: '{{ "heart-eyes-mug--berry-crush.png" | asset_url }}', url: '/products/heart-eyes-mug' },
+    'blue-moon-coupe': { title: 'blue moon coupe', price: '$38', sub: 'midnight glass for cocktails that look expensive.', img: '{{ "blue-moon-coupe--blue-moon.png" | asset_url }}', url: '/products/blue-moon-coupe' },
+    'cutting-chai-set': { title: 'cutting chai pair', price: '$26', sub: 'authentic hand-cut borosilicate chai glasses.', img: '{{ "cutting-chai-set--clear.png" | asset_url }}', url: '/products/cutting-chai-set' },
+    'lemon-drop': { title: 'lemon drop tumbler', price: '$34', sub: 'bright citrus vibes that look like golden hour.', img: '{{ "lemon-drop--sunny.png" | asset_url }}', url: '/products/lemon-drop' }
+  };
+
+  box.querySelectorAll('.quiz-opt').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const stepScores = JSON.parse(btn.dataset.scores || '{}');
+      for (const [handle, pts] of Object.entries(stepScores)) {
+        scores[handle] = (scores[handle] || 0) + pts;
+      }
+
+      currentStep++;
+      if (currentStep <= 3) {
+        steps.forEach(s => s.style.display = (s.dataset.step == currentStep) ? 'block' : 'none');
+        bar.style.width = (currentStep === 2 ? '66%' : '100%');
+      } else {
+        // Show result
+        steps.forEach(s => s.style.display = 'none');
+        bar.style.width = '100%';
+        resCard.style.display = 'block';
+
+        let topHandle = 'cherry-bomb';
+        let topScore = -1;
+        for (const [handle, score] of Object.entries(scores)) {
+          if (score > topScore && productData[handle]) {
+            topScore = score;
+            topHandle = handle;
+          }
+        }
+
+        const win = productData[topHandle];
+        resImg.src = win.img;
+        resTitle.textContent = win.title;
+        resSub.textContent = win.sub;
+        resPrice.textContent = win.price;
+        resLink.href = win.url;
+      }
+    });
+  });
+
+  if (resRetake) {
+    resRetake.addEventListener('click', function() {
+      currentStep = 1;
+      for (const k of Object.keys(scores)) delete scores[k];
+      resCard.style.display = 'none';
+      steps.forEach(s => s.style.display = (s.dataset.step == 1) ? 'block' : 'none');
+      bar.style.width = '33%';
+    });
+  }
+});
+</script>
+
+{% schema %}
+{
+  "name": "DG Glassware Quiz",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "which glass are you?"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "3 questions. one perfect glass. zero commitment issues."
+    }
+  ],
+  "presets": [
+    {
+      "name": "DG Glassware Quiz"
+    }
+  ]
+}
+{% endschema %}

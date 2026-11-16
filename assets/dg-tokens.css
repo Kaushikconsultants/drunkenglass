@@ -1,0 +1,66 @@
+/* Drunken Glass design tokens (US store)
+   Paste into the theme's base CSS. Every component in the prototype is built from these. */
+:root {
+  /* brand colors */
+  --dg-blue:   #2765fa;  /* primary actions, links, focus ring, meter fill */
+  --dg-berry:  #ef426f;  /* savings pills, badges, sale and alert accents */
+  --dg-lime:   #eaef29;  /* highlight: marquee, quick-add, selected states */
+  --dg-cloud:  #f2f1f0;  /* soft section and panel background */
+  --dg-ink:    #0a0a0a;  /* text, 2px outlines, hard shadows */
+  --dg-paper:  #ffffff;  /* page background */
+
+  /* tints (card and tile backgrounds) */
+  --dg-pink-tint: #ffe1e8;
+  --dg-sky-tint:  #dfe8ff;
+  --dg-lime-tint: #f8fac4;
+
+  /* text */
+  --dg-text:   #0a0a0a;
+  --dg-muted:  #57534e;  /* secondary text; passes WCAG AA on white and cloud */
+  --dg-error:  #c4153f;
+  --dg-rule:   #d6d2cc;  /* unselected option borders */
+  --dg-hair:   #e6e2dc;  /* row dividers */
+
+  /* type */
+  --dg-font-display: "Shrikhand", "Cooper Black", Georgia, serif;   /* h1/h2, wordmark, marquee */
+  --dg-font-head:    "Space Grotesk", system-ui, sans-serif;        /* product names, buttons, labels */
+  --dg-font-body:    "Montserrat", system-ui, sans-serif;           /* paragraphs, inputs */
+  --dg-font-mono:    "Space Mono", ui-monospace, monospace;         /* prices, counts, codes */
+
+  --dg-h1: clamp(46px, 7.1vw, 104px);     /* hero, Shrikhand 400, line-height .98 */
+  --dg-h2: clamp(34px, 4.8vw, 62px);      /* section titles, Shrikhand 400, line-height 1 */
+  --dg-h2-small: clamp(30px, 3.6vw, 46px);
+  --dg-product-title: clamp(32px, 3.8vw, 50px); /* Space Grotesk 700, letter-spacing -0.025em */
+  --dg-body: 16px;                        /* Montserrat 500, line-height 1.55 */
+  --dg-small: 13px;
+  --dg-price-lg: 30px;                    /* Space Mono 700 */
+
+  /* shape */
+  --dg-radius: 6px;       /* cards, buttons, inputs */
+  --dg-radius-lg: 10px;   /* big panels: quiz, hero lens, bundle box */
+  --dg-pill: 999px;       /* chips, badges, icon buttons */
+  --dg-border: 2px solid var(--dg-ink);
+  --dg-shadow: 6px 6px 0 var(--dg-ink);         /* hover lift on cards and buttons */
+  --dg-shadow-lg: 10px 10px 0 var(--dg-ink);    /* hero lens, quiz, build-a-set band */
+  --dg-shadow-sm: 4px 4px 0 var(--dg-ink);      /* selected pack card */
+
+  /* layout */
+  --dg-max: 1320px;
+  --dg-gutter: clamp(16px, 4vw, 40px);
+  --dg-section-y: clamp(40px, 6vw, 80px);
+
+  /* motion */
+  --dg-ease-pop: cubic-bezier(.3, 1.6, .5, 1);
+  --dg-ease-drawer: cubic-bezier(.2, .8, .2, 1);
+  --dg-hover: 150ms ease;
+}
+
+/* breakpoints used by the prototype:
+   1180px  hamburger header
+    960px  columns stack, filters become a drawer
+    760px  product sticky bar, 2-column grids
+    420px  single-column tiles */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+}

@@ -1,0 +1,272 @@
+<section class="sec" style="background:var(--cloud);border-block:2px solid var(--ink)" id="dg-product-rail">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2 class="h2">{{ section.settings.heading | default: 'fresh out the furnace' }}</h2>
+        <p class="sub">{{ section.settings.subheading | default: 'tap a color dot to try it on. yes, like a filter.' }}</p>
+      </div>
+      <div class="tabs" role="tablist" id="dgRailTabs">
+        <button class="tab on" role="tab" aria-selected="true" data-tab="new">new in</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="hero">hero designs</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="under30">under $30</button>
+      </div>
+    </div>
+
+    <!-- Tab 1: New in -->
+    <div class="rail active" id="rail-new" role="tabpanel">
+      <!-- Card 1: Cherry Bomb -->
+      <article class="pcard" data-handle="cherry-bomb">
+        <a class="pmedia" href="/products/cherry-bomb" style="--bg:#ffe1e8" tabindex="-1">
+          <span class="badge b-pink">new</span>
+          <img class="pcard-img" src="{{ 'cherry-bomb--blush.png' | asset_url }}" alt="cherry bomb tumbler" width="220" height="280" loading="lazy">
+        </a>
+        <button class="heart" type="button" aria-label="save to wishlist" data-wishlist="cherry-bomb">
+          <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
+        </button>
+        <div class="pinfo">
+          <a class="pname" href="/products/cherry-bomb">cherry bomb tumbler</a>
+          <span class="pmeta">in blush</span>
+          <div class="prow"><span class="price">$36</span></div>
+          <div class="pfoot">
+            <div class="sw" role="group" aria-label="colors">
+              <button class="swb on" style="--c:#ef426f" data-color="blush" data-img="{{ 'cherry-bomb--blush.png' | asset_url }}" data-bg="#ffe1e8" aria-label="blush" aria-pressed="true"></button>
+              <button class="swb" style="--c:#ffffff" data-color="clear cherry" data-img="{{ 'cherry-bomb--clear-cherry.png' | asset_url }}" data-bg="#f2f1f0" aria-label="clear cherry" aria-pressed="false"></button>
+            </div>
+            <button class="qadd" type="button" data-add="cherry-bomb">add to bag</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2: The Wobble -->
+      <article class="pcard" data-handle="the-wobble">
+        <a class="pmedia" href="/products/the-wobble" style="--bg:#dfe8ff" tabindex="-1">
+          <span class="badge b-lime">hero design</span>
+          <img class="pcard-img" src="{{ 'the-wobble--electric-blue.png' | asset_url }}" alt="the wobble tumbler" width="220" height="280" loading="lazy">
+        </a>
+        <button class="heart" type="button" aria-label="save to wishlist" data-wishlist="the-wobble">
+          <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
+        </button>
+        <div class="pinfo">
+          <a class="pname" href="/products/the-wobble">the wobble tumbler</a>
+          <span class="pmeta">in electric blue</span>
+          <div class="prow"><span class="price">$36</span></div>
+          <div class="pfoot">
+            <div class="sw" role="group" aria-label="colors">
+              <button class="swb on" style="--c:#2765fa" data-color="electric blue" data-img="{{ 'the-wobble--electric-blue.png' | asset_url }}" data-bg="#dfe8ff" aria-label="electric blue" aria-pressed="true"></button>
+              <button class="swb" style="--c:#ffffff" data-color="clear" data-img="{{ 'the-wobble--clear.png' | asset_url }}" data-bg="#f2f1f0" aria-label="clear" aria-pressed="false"></button>
+              <button class="swb" style="--c:#eaef29" data-color="lime soda" data-img="{{ 'the-wobble--lime-soda.png' | asset_url }}" data-bg="#f8fac4" aria-label="lime soda" aria-pressed="false"></button>
+              <button class="swb" style="--c:#ef426f" data-color="berry" data-img="{{ 'the-wobble--berry.png' | asset_url }}" data-bg="#ffe1e8" aria-label="berry" aria-pressed="false"></button>
+            </div>
+            <button class="qadd" type="button" data-add="the-wobble">add to bag</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3: Cloud Nine Mug -->
+      <article class="pcard" data-handle="cloud-nine-mug">
+        <a class="pmedia" href="/products/cloud-nine-mug" style="--bg:#dfe8ff" tabindex="-1">
+          <span class="badge b-pink">new</span>
+          <img class="pcard-img" src="{{ 'cloud-nine-mug--sky.png' | asset_url }}" alt="cloud nine mug" width="220" height="280" loading="lazy">
+        </a>
+        <button class="heart" type="button" aria-label="save to wishlist" data-wishlist="cloud-nine-mug">
+          <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
+        </button>
+        <div class="pinfo">
+          <a class="pname" href="/products/cloud-nine-mug">cloud nine mug</a>
+          <span class="pmeta">in sky</span>
+          <div class="prow"><span class="price">$32</span></div>
+          <div class="pfoot">
+            <div class="sw" role="group" aria-label="colors">
+              <button class="swb on" style="--c:#2765fa" data-color="sky" data-img="{{ 'cloud-nine-mug--sky.png' | asset_url }}" data-bg="#dfe8ff" aria-label="sky" aria-pressed="true"></button>
+              <button class="swb" style="--c:#ef426f" data-color="pink sky" data-img="{{ 'cloud-nine-mug--pink-sky.png' | asset_url }}" data-bg="#ffe1e8" aria-label="pink sky" aria-pressed="false"></button>
+            </div>
+            <button class="qadd" type="button" data-add="cloud-nine-mug">add to bag</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4: Blue Moon Coupe -->
+      <article class="pcard" data-handle="blue-moon-coupe">
+        <a class="pmedia" href="/products/blue-moon-coupe" style="--bg:#dfe8ff" tabindex="-1">
+          <span class="badge b-blue">staff pick</span>
+          <img class="pcard-img" src="{{ 'blue-moon-coupe--blue-moon.png' | asset_url }}" alt="blue moon coupe" width="220" height="280" loading="lazy">
+        </a>
+        <button class="heart" type="button" aria-label="save to wishlist" data-wishlist="blue-moon-coupe">
+          <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
+        </button>
+        <div class="pinfo">
+          <a class="pname" href="/products/blue-moon-coupe">blue moon coupe</a>
+          <span class="pmeta">in blue moon</span>
+          <div class="prow"><span class="price">$38</span></div>
+          <div class="pfoot">
+            <div class="sw" role="group" aria-label="colors">
+              <button class="swb on" style="--c:#2765fa" data-color="blue moon" data-img="{{ 'blue-moon-coupe--blue-moon.png' | asset_url }}" data-bg="#dfe8ff" aria-label="blue moon" aria-pressed="true"></button>
+              <button class="swb" style="--c:#0a0a0a" data-color="midnight" data-img="{{ 'blue-moon-coupe--midnight.png' | asset_url }}" data-bg="#f2f1f0" aria-label="midnight" aria-pressed="false"></button>
+            </div>
+            <button class="qadd" type="button" data-add="blue-moon-coupe">add to bag</button>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Tab 2: Hero designs -->
+    <div class="rail" id="rail-hero" role="tabpanel" style="display:none">
+      <!-- Card: Heart Eyes Mug -->
+      <article class="pcard" data-handle="heart-eyes-mug">
+        <a class="pmedia" href="/products/heart-eyes-mug" style="--bg:#ffe1e8" tabindex="-1">
+          <span class="badge b-pink">hero design</span>
+          <img class="pcard-img" src="{{ 'heart-eyes-mug--berry-crush.png' | asset_url }}" alt="heart eyes mug" width="220" height="280" loading="lazy">
+        </a>
+        <button class="heart" type="button" aria-label="save to wishlist" data-wishlist="heart-eyes-mug">
+          <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
+        </button>
+        <div class="pinfo">
+          <a class="pname" href="/products/heart-eyes-mug">heart eyes mug</a>
+          <span class="pmeta">in berry crush</span>
+          <div class="prow"><span class="price">$34</span></div>
+          <div class="pfoot">
+            <button class="qadd full" type="button" data-add="heart-eyes-mug">add to bag</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card: Lemon Drop Tumbler -->
+      <article class="pcard" data-handle="lemon-drop">
+        <a class="pmedia" href="/products/lemon-drop" style="--bg:#f8fac4" tabindex="-1">
+          <span class="badge b-lime">hero design</span>
+          <img class="pcard-img" src="{{ 'lemon-drop--sunny.png' | asset_url }}" alt="lemon drop tumbler" width="220" height="280" loading="lazy">
+        </a>
+        <button class="heart" type="button" aria-label="save to wishlist" data-wishlist="lemon-drop">
+          <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
+        </button>
+        <div class="pinfo">
+          <a class="pname" href="/products/lemon-drop">lemon drop tumbler</a>
+          <span class="pmeta">in sunny</span>
+          <div class="prow"><span class="price">$34</span></div>
+          <div class="pfoot">
+            <button class="qadd full" type="button" data-add="lemon-drop">add to bag</button>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Tab 3: Under $30 -->
+    <div class="rail" id="rail-under30" role="tabpanel" style="display:none">
+      <!-- Card: Cutting Chai Set -->
+      <article class="pcard" data-handle="cutting-chai-set">
+        <a class="pmedia" href="/products/cutting-chai-set" style="--bg:#f2f1f0" tabindex="-1">
+          <span class="badge b-lime">under $30</span>
+          <img class="pcard-img" src="{{ 'cutting-chai-set--clear.png' | asset_url }}" alt="cutting chai set" width="220" height="280" loading="lazy">
+        </a>
+        <button class="heart" type="button" aria-label="save to wishlist" data-wishlist="cutting-chai-set">
+          <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
+        </button>
+        <div class="pinfo">
+          <a class="pname" href="/products/cutting-chai-set">cutting chai pair</a>
+          <span class="pmeta">in clear</span>
+          <div class="prow"><span class="price">$26</span></div>
+          <div class="pfoot">
+            <button class="qadd full" type="button" data-add="cutting-chai-set">add to bag</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card: Coaster Set -->
+      <article class="pcard" data-handle="coaster-set">
+        <a class="pmedia" href="/products/coaster-set" style="--bg:#ffe1e8" tabindex="-1">
+          <span class="badge b-pink">essential</span>
+          <img class="pcard-img" src="{{ 'coaster-set.png' | asset_url }}" alt="coaster set" width="220" height="280" loading="lazy">
+        </a>
+        <button class="heart" type="button" aria-label="save to wishlist" data-wishlist="coaster-set">
+          <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
+        </button>
+        <div class="pinfo">
+          <a class="pname" href="/products/coaster-set">silicone coaster set (4)</a>
+          <span class="pmeta">in multi</span>
+          <div class="prow"><span class="price">$16</span></div>
+          <div class="pfoot">
+            <button class="qadd full" type="button" data-add="coaster-set">add to bag</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tabs = document.querySelectorAll('#dgRailTabs .tab');
+  const rails = {
+    new: document.getElementById('rail-new'),
+    hero: document.getElementById('rail-hero'),
+    under30: document.getElementById('rail-under30')
+  };
+
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      tabs.forEach(t => {
+        t.classList.remove('on');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('on');
+      tab.setAttribute('aria-selected', 'true');
+
+      const target = tab.dataset.tab;
+      Object.keys(rails).forEach(k => {
+        if (rails[k]) {
+          rails[k].style.display = (k === target) ? 'grid' : 'none';
+        }
+      });
+    });
+  });
+
+  // Swatch switcher logic
+  document.querySelectorAll('.swb').forEach(function(swb) {
+    swb.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const parentCard = swb.closest('.pcard');
+      if (!parentCard) return;
+
+      parentCard.querySelectorAll('.swb').forEach(b => {
+        b.classList.remove('on');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      swb.classList.add('on');
+      swb.setAttribute('aria-pressed', 'true');
+
+      const img = parentCard.querySelector('.pcard-img');
+      const media = parentCard.querySelector('.pmedia');
+      const meta = parentCard.querySelector('.pmeta');
+
+      if (img && swb.dataset.img) img.src = swb.dataset.img;
+      if (media && swb.dataset.bg) media.style.setProperty('--bg', swb.dataset.bg);
+      if (meta && swb.dataset.color) meta.textContent = 'in ' + swb.dataset.color;
+    });
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "DG Product Rail",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "fresh out the furnace"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "tap a color dot to try it on. yes, like a filter."
+    }
+  ],
+  "presets": [
+    {
+      "name": "DG Product Rail"
+    }
+  ]
+}
+{% endschema %}

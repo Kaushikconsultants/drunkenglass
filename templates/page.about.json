@@ -1,10 +1,11 @@
 {
   "sections": {
-    "about_page": {
-      "type": "custom-about-page"
+    "our_story": {
+      "type": "dg-our-story",
+      "settings": {}
     }
   },
   "order": [
-    "about_page"
+    "our_story"
   ]
 }

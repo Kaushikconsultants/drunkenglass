@@ -1,14 +1,19 @@
 {
   "sections": {
-    "pdp_features": {
-      "type": "custom-pdp-features"
+    "main_product": {
+      "type": "dg-main-product",
+      "settings": {}
     },
-    "brand_story": {
-      "type": "custom-brand-story"
+    "story_rows": {
+      "type": "dg-story-rows",
+      "settings": {
+        "heading": "from furnace to your shelf",
+        "subheading": "how a drunken glass gets made. no shortcuts, no thin fragile glass."
+      }
     }
   },
   "order": [
-    "pdp_features",
-    "brand_story"
+    "main_product",
+    "story_rows"
   ]
 }

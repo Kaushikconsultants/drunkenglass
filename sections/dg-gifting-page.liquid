@@ -1,0 +1,120 @@
+<section class="wrap sec" id="dg-gifting-page" style="padding-top:16px">
+  <header class="page-head" style="margin-bottom:28px">
+    <span class="badge b-pink" style="display:inline-block;margin-bottom:8px">curated gift shop</span>
+    <h1 class="h2">gifting, sorted</h1>
+    <p class="sub">whether it’s a housewarming dinner, a birthday for your bestie, or corporate gifting for the team.</p>
+  </header>
+
+  <!-- Recipient Tabs -->
+  <div class="tabs" role="tablist" id="dgGiftTabs" style="margin-bottom:28px;overflow-x:auto;padding-bottom:8px">
+    <button class="tab on" type="button" data-tab="host">for the host</button>
+    <button class="tab" type="button" data-tab="bestie">for the bestie</button>
+    <button class="tab" type="button" data-tab="couple">for the couple</button>
+    <button class="tab" type="button" data-tab="parents">for mom & dad</button>
+    <button class="tab" type="button" data-tab="office">office & corporate</button>
+  </div>
+
+  <!-- Persona Tab: Host -->
+  <div class="gift-tab-content active" id="tab-host">
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px;margin-bottom:32px">
+      <!-- Item 1: The Wobble -->
+      <article class="pcard">
+        <a class="pmedia" href="/products/the-wobble" style="--bg:#dfe8ff">
+          <span class="badge b-lime">dinner favorite</span>
+          <img src="{{ 'the-wobble--electric-blue.png' | asset_url }}" alt="the wobble" width="220" height="280">
+        </a>
+        <div class="pinfo">
+          <b class="pname">the wobble tumbler</b>
+          <span class="price">$36</span>
+          <button class="qadd" type="button" data-add="the-wobble">add to bag</button>
+        </div>
+      </article>
+
+      <!-- Item 2: Blue Moon Coupe -->
+      <article class="pcard">
+        <a class="pmedia" href="/products/blue-moon-coupe" style="--bg:#dfe8ff">
+          <span class="badge b-blue">cocktail night</span>
+          <img src="{{ 'blue-moon-coupe--blue-moon.png' | asset_url }}" alt="blue moon coupe" width="220" height="280">
+        </a>
+        <div class="pinfo">
+          <b class="pname">blue moon coupe</b>
+          <span class="price">$38</span>
+          <button class="qadd" type="button" data-add="blue-moon-coupe">add to bag</button>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- Persona Tab: Office / Corporate Form -->
+  <div class="gift-tab-content" id="tab-office" style="display:none">
+    <div style="max-width:640px;margin:0 auto;background:#fff;border:2px solid var(--ink);border-radius:var(--r);box-shadow:var(--sh);padding:clamp(24px,5vw,40px)">
+      <span class="badge b-lime" style="position:static;display:inline-block;margin-bottom:8px">bulk & corporate</span>
+      <h3 style="font:700 24px var(--f-head);margin-bottom:8px">corporate gifting inquiry</h3>
+      <p style="color:var(--muted);font-size:14px;margin-bottom:20px">custom colorways, custom branding, and direct shipping to employee or client desks across the US.</p>
+
+      <form id="dgCorpForm" style="display:flex;flex-direction:column;gap:14px">
+        <div>
+          <label style="font:700 13px var(--f-head);display:block;margin-bottom:4px">your name *</label>
+          <input type="text" required style="width:100%;border:2px solid var(--ink);border-radius:var(--r);padding:10px 14px;font-size:14px">
+        </div>
+        <div>
+          <label style="font:700 13px var(--f-head);display:block;margin-bottom:4px">company name *</label>
+          <input type="text" required style="width:100%;border:2px solid var(--ink);border-radius:var(--r);padding:10px 14px;font-size:14px">
+        </div>
+        <div>
+          <label style="font:700 13px var(--f-head);display:block;margin-bottom:4px">work email *</label>
+          <input type="email" required style="width:100%;border:2px solid var(--ink);border-radius:var(--r);padding:10px 14px;font-size:14px">
+        </div>
+        <div>
+          <label style="font:700 13px var(--f-head);display:block;margin-bottom:4px">estimated quantity *</label>
+          <select style="width:100%;border:2px solid var(--ink);border-radius:var(--r);padding:10px 14px;font-size:14px;background:#fff">
+            <option>25–50 pieces</option>
+            <option>51–150 pieces</option>
+            <option>151–500 pieces</option>
+            <option>500+ pieces</option>
+          </select>
+        </div>
+        <div>
+          <label style="font:700 13px var(--f-head);display:block;margin-bottom:4px">timeline / details</label>
+          <textarea style="width:100%;height:80px;border:2px solid var(--ink);border-radius:var(--r);padding:10px 14px;font-size:14px;resize:none" placeholder="event date, delivery address, or questions"></textarea>
+        </div>
+        <button class="btn btn-ink" type="submit" style="min-height:48px;font-size:15px">send inquiry</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tabs = document.querySelectorAll('#dgGiftTabs .tab');
+  const hostTab = document.getElementById('tab-host');
+  const officeTab = document.getElementById('tab-office');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      tabs.forEach(t => t.classList.remove('on'));
+      tab.classList.add('on');
+
+      if (tab.dataset.tab === 'office') {
+        if (hostTab) hostTab.style.display = 'none';
+        if (officeTab) officeTab.style.display = 'block';
+      } else {
+        if (hostTab) hostTab.style.display = 'block';
+        if (officeTab) officeTab.style.display = 'none';
+      }
+    });
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "DG Gifting Hub",
+  "settings": [],
+  "presets": [
+    {
+      "name": "DG Gifting Hub"
+    }
+  ]
+}
+{% endschema %}

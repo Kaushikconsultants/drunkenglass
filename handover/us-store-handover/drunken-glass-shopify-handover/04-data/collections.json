@@ -1,0 +1,199 @@
+{
+  "drop_collections": [
+    {
+      "handle": "fruit-club",
+      "title": "fruit club",
+      "description": "strawberries, cherries, lemons. your 5-a-day, sorted.",
+      "tile_background": "#ef426f",
+      "tile_text_color": "#fff",
+      "menu_tint": "#ffe1e8",
+      "rule": "product tag is equal to collection:fruit-club",
+      "products": [
+        "strawberry-fields",
+        "cherry-bomb",
+        "lemon-drop",
+        "pour-decisions-set"
+      ]
+    },
+    {
+      "handle": "heart-eyes",
+      "title": "heart eyes",
+      "description": "for hopeless romantics and situationship survivors.",
+      "tile_background": "#ffe1e8",
+      "tile_text_color": "#0a0a0a",
+      "menu_tint": "#ffe1e8",
+      "rule": "product tag is equal to collection:heart-eyes",
+      "products": [
+        "heart-eyes-mug",
+        "crush-coupe",
+        "date-night-duo"
+      ]
+    },
+    {
+      "handle": "golden-hour",
+      "title": "golden hour",
+      "description": "gradients that look like 6:47pm feels.",
+      "tile_background": "#eaef29",
+      "tile_text_color": "#0a0a0a",
+      "menu_tint": "#f8fac4",
+      "rule": "product tag is equal to collection:golden-hour",
+      "products": [
+        "golden-hour-tumbler",
+        "sunset-can"
+      ]
+    },
+    {
+      "handle": "wobble",
+      "title": "wobble",
+      "description": "wavy glasses that look a little tipsy. on purpose.",
+      "tile_background": "#2765fa",
+      "tile_text_color": "#fff",
+      "menu_tint": "#dfe8ff",
+      "rule": "product tag is equal to collection:wobble",
+      "products": [
+        "the-wobble",
+        "wobble-mug"
+      ]
+    },
+    {
+      "handle": "chai-club",
+      "title": "chai club",
+      "description": "cutting chai, but make it collectible.",
+      "tile_background": "#f2f1f0",
+      "tile_text_color": "#0a0a0a",
+      "menu_tint": "#f2f1f0",
+      "rule": "product tag is equal to collection:chai-club",
+      "products": [
+        "cutting-chai-set",
+        "chai-pe-charcha"
+      ]
+    },
+    {
+      "handle": "after-hours",
+      "title": "after hours",
+      "description": "midnight blues and starry coupes.",
+      "tile_background": "#0a0a0a",
+      "tile_text_color": "#fff",
+      "menu_tint": "#dfe8ff",
+      "rule": "product tag is equal to collection:after-hours",
+      "products": [
+        "blue-moon-coupe",
+        "after-hours-rocks"
+      ]
+    },
+    {
+      "handle": "y2k-bloom",
+      "title": "y2k bloom",
+      "description": "daisies, checks and clouds. 2003 called, we picked up.",
+      "tile_background": "#dfe8ff",
+      "tile_text_color": "#0a0a0a",
+      "menu_tint": "#f8fac4",
+      "rule": "product tag is equal to collection:y2k-bloom",
+      "products": [
+        "cloud-nine-mug",
+        "daisy-days",
+        "checkmate",
+        "bubble-pop"
+      ]
+    }
+  ],
+  "type_collections": [
+    {
+      "handle": "tumblers",
+      "title": "tumblers",
+      "description": "iced coffee, cold brew, lemonade",
+      "tile_background": "#f8fac4",
+      "rule": "product type is equal to Tumblers",
+      "tile_product": "golden-hour-tumbler"
+    },
+    {
+      "handle": "coffee-cups",
+      "title": "coffee cups",
+      "description": "for the 9am call you joined on mute",
+      "tile_background": "#ffe1e8",
+      "rule": "product type is equal to Coffee Cups",
+      "tile_product": "heart-eyes-mug"
+    },
+    {
+      "handle": "teacups",
+      "title": "teacups",
+      "description": "chai, matcha and slow mornings",
+      "tile_background": "#f2f1f0",
+      "rule": "product type is equal to Teacups",
+      "tile_product": "cutting-chai-set"
+    },
+    {
+      "handle": "cocktail",
+      "title": "cocktail glasses",
+      "description": "mocktails count. we don’t judge",
+      "tile_background": "#dfe8ff",
+      "rule": "product type is equal to Cocktail Glasses",
+      "tile_product": "crush-coupe"
+    },
+    {
+      "handle": "sets",
+      "title": "sets",
+      "description": "pairs and party packs",
+      "tile_background": "#eaef29",
+      "rule": "product type is equal to Sets",
+      "tile_product": "pour-decisions-set"
+    },
+    {
+      "handle": "extras",
+      "title": "extras",
+      "description": "straws, lids, coasters and brushes",
+      "tile_background": "#f2f1f0",
+      "rule": "product type is equal to Extras",
+      "tile_product": "glass-straws"
+    }
+  ],
+  "vibe_collections": [
+    {
+      "handle": "vibe-chai",
+      "title": "slow mornings",
+      "rule": "product tag is equal to vibe:chai"
+    },
+    {
+      "handle": "vibe-wfh",
+      "title": "desk flex",
+      "rule": "product tag is equal to vibe:wfh"
+    },
+    {
+      "handle": "vibe-date",
+      "title": "date night",
+      "rule": "product tag is equal to vibe:date"
+    },
+    {
+      "handle": "vibe-party",
+      "title": "hosting season",
+      "rule": "product tag is equal to vibe:party"
+    },
+    {
+      "handle": "vibe-gift",
+      "title": "gift-ready",
+      "rule": "product tag is equal to vibe:gift"
+    },
+    {
+      "handle": "vibe-under30",
+      "title": "under $30",
+      "rule": "product price is less than 30"
+    }
+  ],
+  "utility_collections": [
+    {
+      "handle": "build-a-set",
+      "title": "build a set",
+      "rule": "product tag is equal to build-a-set"
+    },
+    {
+      "handle": "new",
+      "title": "new in",
+      "rule": "product tag is equal to new"
+    },
+    {
+      "handle": "extras",
+      "title": "extras",
+      "rule": "product type is equal to Extras AND product tag is not equal to hidden"
+    }
+  ]
+}

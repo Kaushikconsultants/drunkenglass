@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="lens-svg" viewBox="0 0 600 600" role="img" aria-label="a clear can glass with a drink and a straw on a striped background; the stripes and the straw bend through the drink like real glass">
+  <defs>
+    <pattern id="hs" width="60" height="600" patternUnits="userSpaceOnUse"><rect width="30" height="600" fill="#eaef29"/></pattern>
+    <clipPath id="hGlass"><path d="M64 64 Q64 54 74 52 L126 52 Q136 54 136 64 L142 78 L142 224 Q142 236 130 236 L70 236 Q58 236 58 224 L58 78 Z" transform="translate(90 58) scale(2.1)"/></clipPath>
+    <clipPath id="hLiq"><path id="liqClipPath" d="M100 330Q150 322 200 330T300 330T400 330T500 330L500 640L100 640Z"/></clipPath>
+    <linearGradient id="hShade" gradientUnits="userSpaceOnUse" x1="212" x2="388"><stop offset="0" stop-color="#0a0a0a" stop-opacity=".38"/><stop offset=".2" stop-color="#0a0a0a" stop-opacity="0"/><stop offset=".8" stop-color="#0a0a0a" stop-opacity="0"/><stop offset="1" stop-color="#0a0a0a" stop-opacity=".32"/></linearGradient>
+    <g id="hStraw"><line x1="380" y1="24" x2="290" y2="520" stroke="#0a0a0a" stroke-width="32" stroke-linecap="round"/><line x1="380" y1="24" x2="290" y2="520" stroke="#ffffff" stroke-width="23" stroke-linecap="round"/><line x1="380" y1="24" x2="290" y2="520" stroke="#ef426f" stroke-width="23" stroke-dasharray="20 16"/></g>
+  </defs>
+  <rect width="600" height="600" fill="#2765fa"/>
+  <rect x="-60" width="720" height="600" fill="url(#hs)"/>
+  <ellipse cx="300" cy="566" rx="128" ry="14" fill="#0a0a0a" fill-opacity=".3"/>
+  <g id="tilt">
+    <use href="#hStraw"/>
+    <g clip-path="url(#hGlass)">
+      <g id="refTop"><rect x="-400" width="1400" height="600" fill="#2765fa"/><rect x="-400" width="1400" height="600" fill="url(#hs)"/></g>
+      <rect width="600" height="600" fill="#ffffff" fill-opacity=".14"/>
+      <use href="#hStraw"/>
+      <g clip-path="url(#hLiq)">
+        <g id="refLiq"><rect x="-400" width="1400" height="600" fill="#2765fa"/><rect x="-400" width="1400" height="600" fill="url(#hs)"/></g>
+        <rect width="600" height="600" fill="#ef426f" fill-opacity=".3"/>
+        <g id="strawLiq"><use href="#hStraw"/></g>
+        <rect x="236" y="372" width="54" height="54" rx="10" transform="rotate(-16 263 399)" fill="#ffffff" fill-opacity=".55" stroke="#0a0a0a" stroke-width="4"/>
+        <rect x="312" y="420" width="48" height="48" rx="10" transform="rotate(12 336 444)" fill="#ffffff" fill-opacity=".5" stroke="#0a0a0a" stroke-width="4"/>
+      </g>
+      <path id="surfLine" d="M150 330Q200 321 250 330T350 330T450 330" stroke="#0a0a0a" stroke-width="4" fill="none"/>
+      <rect width="600" height="600" fill="url(#hShade)"/>
+      <rect x="232" y="200" width="17" height="300" rx="8.5" fill="#ffffff" fill-opacity=".75"/>
+      <rect x="259" y="214" width="6" height="170" rx="3" fill="#ffffff" fill-opacity=".55"/>
+    </g>
+    <path d="M64 64 Q64 54 74 52 L126 52 Q136 54 136 64 L142 78 L142 224 Q142 236 130 236 L70 236 Q58 236 58 224 L58 78 Z" transform="translate(90 58) scale(2.1)" fill="none" stroke="#0a0a0a" stroke-width="2.3" stroke-linejoin="round"/>
+    <ellipse cx="300" cy="168" rx="56" ry="7" fill="#ffffff" fill-opacity=".35" stroke="#0a0a0a" stroke-width="4.5"/>
+  </g>
+</svg>

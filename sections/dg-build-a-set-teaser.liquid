@@ -1,0 +1,55 @@
+<section class="sec wrap" id="dg-build-a-set-teaser">
+  <div class="set-banner" style="background:#eaef29;border:2px solid var(--ink);border-radius:var(--r);box-shadow:var(--sh);padding:clamp(24px,5vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;align-items:center">
+    <div>
+      <span class="badge b-pink" style="margin-bottom:12px;display:inline-block">bundle & save</span>
+      <h2 class="h2" style="margin-bottom:12px">{{ section.settings.heading | default: 'build a set: any 4 for $99' }}</h2>
+      <p class="sub" style="color:var(--ink);margin-bottom:24px">{{ section.settings.subheading | default: 'mix and match your four favorite glasses and save up to $45. we’ll pack them together in our signature gift box.' }}</p>
+      <a class="btn btn-ink" href="/pages/build-a-set">start building your set</a>
+    </div>
+
+    <!-- 4 Slot Visual Preview -->
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px">
+      <div style="background:#fff;border:2px dashed var(--ink);border-radius:var(--r);aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px;text-align:center">
+        <img src="{{ 'cherry-bomb--blush.png' | asset_url }}" alt="slot 1" width="70" height="90" style="margin-bottom:6px">
+        <span class="mono" style="font-size:12px;font-weight:700">glass 1</span>
+      </div>
+      <div style="background:#fff;border:2px dashed var(--ink);border-radius:var(--r);aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px;text-align:center">
+        <img src="{{ 'the-wobble--electric-blue.png' | asset_url }}" alt="slot 2" width="70" height="90" style="margin-bottom:6px">
+        <span class="mono" style="font-size:12px;font-weight:700">glass 2</span>
+      </div>
+      <div style="background:#fff;border:2px dashed var(--ink);border-radius:var(--r);aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px;text-align:center">
+        <img src="{{ 'lemon-drop--sunny.png' | asset_url }}" alt="slot 3" width="70" height="90" style="margin-bottom:6px">
+        <span class="mono" style="font-size:12px;font-weight:700">glass 3</span>
+      </div>
+      <div style="background:#fff;border:2px dashed var(--ink);border-radius:var(--r);aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px;text-align:center">
+        <span style="font:400 32px var(--f-display);color:var(--blue)">+</span>
+        <span class="mono" style="font-size:12px;font-weight:700">glass 4</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "DG Build A Set Teaser",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "build a set: any 4 for $99"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "mix and match your four favorite glasses and save up to $45. we’ll pack them together in our signature gift box."
+    }
+  ],
+  "presets": [
+    {
+      "name": "DG Build A Set Teaser"
+    }
+  ]
+}
+{% endschema %}

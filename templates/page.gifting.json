@@ -1,8 +1,11 @@
 {
   "sections": {
-    "gifting_page": {
-      "type": "custom-gifting-page"
+    "gifting_hub": {
+      "type": "dg-gifting-page",
+      "settings": {}
     }
   },
-  "order": ["gifting_page"]
+  "order": [
+    "gifting_hub"
+  ]
 }

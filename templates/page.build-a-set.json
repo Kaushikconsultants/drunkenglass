@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "build_a_set": {
+      "type": "dg-build-a-set",
+      "settings": {}
+    }
+  },
+  "order": [
+    "build_a_set"
+  ]
+}

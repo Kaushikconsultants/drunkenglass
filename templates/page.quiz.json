@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "quiz": {
+      "type": "dg-quiz",
+      "settings": {
+        "heading": "which glass are you?",
+        "subheading": "3 questions. one perfect glass. zero commitment issues."
+      }
+    }
+  },
+  "order": [
+    "quiz"
+  ]
+}

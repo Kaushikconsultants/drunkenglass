@@ -1,0 +1,16 @@
+owner,name,namespace.key,type,used for,filterable in Search & Discovery
+product,Capacity (ml),custom.capacity_ml,number_integer,specs (show as fl oz + ml),no
+product,Height (cm),custom.height_cm,number_decimal,specs (show as inches),no
+product,Pieces in box,custom.pieces,number_integer,"specs ""in the box""",no
+product,Shape,custom.shape,single_line_text_field,which add-ons fit; analytics,no
+product,Drop collection,custom.drop_collection,single_line_text_field,collection pill on product page,yes
+product,Material,custom.material,single_line_text_field,specs,no
+product,Country of origin,custom.country_of_origin,single_line_text_field,specs (required for imports),no
+product,Dishwasher safe,custom.dishwasher_safe,boolean,"care pills + specs; blank = ""test pending""",yes
+product,Microwave safe,custom.microwave_safe,boolean,"care pills + specs; blank = ""test pending""",yes
+product,Hot and cold safe,custom.hot_cold_safe,boolean,care pill,no
+product,Add-on note,custom.addon_note,single_line_text_field,"one-line note in ""finish it off"" rows",no
+product,Badge,custom.badge,single_line_text_field,"card sticker (new, hero design, staff pick, gift pick)",no
+product,Pair price (optional),custom.price_pair,money,only if you want whole-dollar pack prices instead of % tiers,no
+product,Set of 4 price (optional),custom.price_set4,money,same as above,no
+product,Story image (optional),custom.story_image,file_reference,"lifestyle image in ""about this glass""",no

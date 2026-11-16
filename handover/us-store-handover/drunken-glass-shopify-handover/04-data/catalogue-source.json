@@ -1,0 +1,1690 @@
+{
+  "P": [
+    {
+      "id": "strawberry-fields",
+      "name": "strawberry fields tumbler",
+      "cat": "tumblers",
+      "col": "fruit-club",
+      "shape": "strawberry",
+      "price": 36,
+      "ml": 450,
+      "h": 14,
+      "badge": "hero design",
+      "vibes": [
+        "wfh",
+        "gift",
+        "party"
+      ],
+      "line": "a whole strawberry you can drink out of. seeds included, calories not.",
+      "cw": [
+        {
+          "n": "berry bae",
+          "t": "#ef426f",
+          "a": 0.55,
+          "pat": "seeds",
+          "pc": "#eaef29",
+          "bg": "#ffe1e8"
+        },
+        {
+          "n": "cream soda",
+          "t": "#ffb3c6",
+          "a": 0.6,
+          "pat": "seeds",
+          "pc": "#ffffff",
+          "bg": "#f2f1f0"
+        }
+      ],
+      "fams": [
+        "berry"
+      ],
+      "packs": [
+        {
+          "k": "single",
+          "n": "single",
+          "q": 1,
+          "total": 36
+        },
+        {
+          "k": "pair",
+          "n": "pair",
+          "q": 2,
+          "total": 66
+        },
+        {
+          "k": "set4",
+          "n": "set of 4",
+          "q": 4,
+          "total": 122
+        },
+        {
+          "k": "every",
+          "n": "every color",
+          "q": 2,
+          "total": 66
+        }
+      ]
+    },
+    {
+      "id": "cherry-bomb",
+      "name": "cherry bomb can glass",
+      "cat": "tumblers",
+      "col": "fruit-club",
+      "shape": "can",
+      "price": 28,
+      "ml": 500,
+      "h": 13,
+      "badge": "new",
+      "isNew": true,
+      "vibes": [
+        "party",
+        "date"
+      ],
+      "line": "the can-shaped glass your iced latte has been manifesting.",
+      "cw": [
+        {
+          "n": "clear cherry",
+          "t": "#ffffff",
+          "a": 0.35,
+          "pat": "cherries",
+          "pc": "#ef426f",
+          "bg": "#ffe1e8"
+        },
+        {
+          "n": "blush",
+          "t": "#ffb3c6",
+          "a": 0.5,
+          "pat": "cherries",
+          "pc": "#ef426f",
+          "bg": "#f2f1f0"
+        }
+      ],
+      "fams": [
+        "berry"
+      ],
+      "packs": [
+        {
+          "k": "single",
+          "n": "single",
+          "q": 1,
+          "total": 28
+        },
+        {
+          "k": "pair",
+          "n": "pair",
+          "q": 2,
+          "total": 52
+        },
+        {
+          "k": "set4",
+          "n": "set of 4",
+          "q": 4,
+          "total": 95
+        },
+        {
+          "k": "every",
+          "n": "every color",
+          "q": 2,
+          "total": 52
+        }
+      ]
+    },
+    {
+      "id": "lemon-drop",
+      "name": "lemon drop can glass",
+      "cat": "tumblers",
+      "col": "fruit-club",
+      "shape": "can",
+      "price": 28,
+      "ml": 500,
+      "h": 13,
+      "vibes": [
+        "wfh",
+        "party"
+      ],
+      "line": "lemonade, but it has a personality now.",
+      "cw": [
+        {
+          "n": "sunny",
+          "t": "#eaef29",
+          "a": 0.4,
+          "pat": "lemons",
+          "pc": "#eaef29",
+          "bg": "#f8fac4"
+        },
+        {
+          "n": "clear zest",
+          "t": "#ffffff",
+          "a": 0.35,
+          "pat": "lemons",
+          "pc": "#eaef29",
+          "bg": "#dfe8ff"
+        }
+      ],
+      "fams": [
+        "sunny"
+      ],
+      "packs": [
+        {
+          "k": "single",
+          "n": "single",
+          "q": 1,
+          "total": 28
+        },
+        {
+          "k": "pair",
+          "n": "pair",
+          "q": 2,
+          "total": 52
+        },
+        {
+          "k": "set4",
+          "n": "set of 4",
+          "q": 4,
+          "total": 95
+        },
+        {
+          "k": "every",
+          "n": "every color",
+          "q": 2,
+          "total": 52
+        }
+      ]
+    },
+    {
+      "id": "heart-eyes-mug",
+      "name": "heart eyes mug",
+      "cat": "coffee-cups",
+      "col": "heart-eyes",
+      "shape": "heart",
+      "price": 34,
+      "ml": 350,
+      "h": 11,
+      "badge": "gift pick",
+      "vibes": [
+        "date",
+        "gift",
+        "chai"
+      ],
+      "line": "a heart-shaped mug for people who say “i’m fine” and mean it this time.",
+      "cw": [
+        {
+          "n": "bubblegum",
+          "t": "#ffb3c6",
+          "a": 0.65,
+          "bg": "#ffe1e8"
+        },
+        {
+          "n": "berry crush",
+          "t": "#ef426f",
+          "a": 0.55,
+          "bg": "#f2f1f0"
+        },
+        {
+          "n": "clear crush",
+          "t": "#ffffff",
+          "a": 0.35,
+          "pat": "hearts",
+          "pc": "#ef426f",
+          "bg": "#dfe8ff"
+        }
+      ],
+      "fams": [
+        "berry"
+      ],
+      "packs": [
+        {
+          "k": "single",
+          "n": "single",
+          "q": 1,
+          "total": 34
+        },
+        {
+          "k": "pair",
+          "n": "pair",
+          "q": 2,
+          "total": 63
+        },
+        {
+          "k": "set4",
+          "n": "set of 4",
+          "q": 4,
+          "total": 116
+        },
+        {
+          "k": "every",
+          "n": "every color",
+          "q": 3,
+          "total": 90
+        }
+      ]
+    },
+    {
+      "id": "crush-coupe",
+      "name": "crush coupe",
+      "cat": "cocktail",
+      "col": "heart-eyes",
+      "shape": "coupe",
+      "price": 38,
+      "ml": 220,
+      "h": 15,
+      "badge": "new",
+      "isNew": true,
+      "vibes": [
+        "date",
+        "party"
+      ],
+      "line": "tiny hearts, big main-character energy. built for mocktails and long toasts.",
+      "cw": [
+        {
+          "n": "pink hearts",
+          "t": "#ffffff",
+          "a": 0.4,
+          "pat": "hearts",
+          "pc": "#ff8fab",
+          "bg": "#ffe1e8"
+        },
+        {
+          "n": "berry hearts",
+          "t": "#ffffff",
+          "a": 0.4,
+          "pat": "hearts",
+          "pc": "#ef426f",
+          "bg": "#f8fac4"
+        }
+      ],
+      "fams": [
+        "berry"
+      ],
+      "packs": [
+        {
+          "k": "single",
+          "n": "single",
+          "q": 1,
+          "total": 38
+        },
+        {
+          "k": "pair",
+          "n": "pair",
+          "q": 2,
+          "total": 70
+        },
+        {
+          "k": "set4",
+          "n": "set of 4",
+          "q": 4,
+          "total": 129
+        },
+        {
+          "k": "every",
+          "n": "every color",
+          "q": 2,
+          "total": 70
+        }
+      ]
+    },
+    {
+      "id": "golden-hour-tumbler",
+      "name": "golden hour tumbler",
+      "cat": "tumblers",
+      "col": "golden-hour",
+      "shape": "tumbler",
+      "price": 42,
+      "ml": 400,
+      "h": 13,
+      "badge": "hero design",
+      "vibes": [
+        "wfh",
+        "gift",
+        "date"
+      ],
+      "line": "three layers of color melted into one glass: green at the base, amber in the middle, clear at the top.",
+      "cw": [
+        {
+          "n": "golden hour",
+          "grad": [
+            "#ffffff",
+            "#f4a83a",
+            "#2fbf71"
+          ],
+          "a": 0.75,
+          "bg": "#f8fac4"
+        },
+        {
+          "n": "blue hour",
+          "grad": [
+            "#ffffff",
+            "#ef426f",
+            "#2765fa"
+          ],
+          "a": 0.7,
+          "bg": "#dfe8ff"
+        }
+      ],
+      "fams": [
+        "sunny",
+        "berry"
+      ],
+      "packs": [
+        {
+          "k": "single",
+          "n": "single",
+          "q": 1,
+          "total": 42
+        },
+        {
+          "k": "pair",
+          "n": "pair",
+          "q": 2,
+          "total": 77
+        },
+        {
+          "k": "set4",
+          "n": "set of 4",
+          "q": 4,
+          "total": 143
+        },
+        {
+          "k": "every",
+          "n": "every color",
+          "q": 2,
+          "total": 77
+        }
+      ]
+    },
+    {
+      "id": "sunset-can",
+      "name": "sunset can glass",
+      "cat": "tumblers",
+      "col": "golden-hour",
+      "shape": "can",
+      "price": 30,
+      "ml": 500,
+      "h": 13,
+      "vibes": [
+        "party",
+        "date"
+      ],
+      "line": "a 6pm sky you can pour cold brew into.",
+      "cw": [
+        {
+          "n": "sunset",
+          "grad": [
+            "#eaef29",
+            "#f4a83a",
+            "#ef426f"
+          ],
+          "a": 0.7,
+          "bg": "#ffe1e8"
+        },
+        {
+          "n": "dusk",
+          "grad": [
+            "#ffb3c6",
+            "#ef426f",
+            "#2765fa"
+          ],
+          "a": 0.7,
+          "bg": "#dfe8ff"
+        }
+      ],
+      "fams": [
+        "sunny",
+        "berry"
+      ],
+      "packs": [
+        {
+          "k": "single",
+          "n": "single",
+          "q": 1,
+          "total": 30
+        },
+        {
+          "k": "pair",
+          "n": "pair",
+          "q": 2,
+          "total": 55
+        },
+        {
+          "k": "set4",
+          "n": "set of 4",
+          "q": 4,
+          "total": 102
+        },
+        {
+          "k": "every",
+          "n": "every color",
+          "q": 2,
+          "total": 55
+        }
+      ]
+    },
+    {
+      "id": "the-wobble",
+      "name": "the wobble tumbler",
+      "cat": "tumblers",
+      "col": "wobble",
+      "shape": "wavy",
+      "price": 36,
+      "ml": 380,
+      "h": 14,
+      "badge": "staff pick",
+      "vibes": [
+        "wfh",
+        "party",
+        "gift"
+      ],
+      "line": "our most drunken-looking glass. the wobble is on purpose. the spills are on you.",
+      "cw": [
+        {
+          "n": "electric blue",
+          "t": "#2765fa",
+          "a": 0.55,
+          "bg": "#dfe8ff"
+        },
+        {
+          "n": "berry",
+          "t": "#ef426f",
+          "a": 0.55,
+          "bg": "#ffe1e8"
+        },
+        {
+          "n": "lime soda",
+          "t": "#eaef29",
+          "a": 0.6,
+          "bg": "#f2f1f0"
+        },
+        {
+          "n": "clear",
+          "t": "#ffffff",
+          "a": 0.35,
+          "bg": "#f8fac4"
+        }
+      ],
+      "fams": [
+        "blue",
+        "berry",
+        "sunny",
+        "clear"
+      ],
+      "packs": [
+        {
+          "k": "single",
+          "n": "single",
+          "q": 1,
+          "total": 36
+        },
+        {
+          "k": "pair",
+          "n": "pair",
+          "q": 2,
+          "total": 66
+        },
+        {
+          "k": "set4",
+          "n": "set of 4",
+          "q": 4,
+          "total": 122
+        },
+        {
+          "k": "every",
+          "n": "every color",
+          "q": 4,
+          "total": 122
+        }
+      ]
+    },
+    {
+      "id": "wobble-mug",
+      "name": "wobble mug",
+      "cat": "coffee-cups",
+      "col": "wobble",
+      "shape": "mug",
+      "price": 32,
+      "ml": 330,
+      "h": 10,
+      "vibes": [
+        "wfh",
+        "chai"
+      ],
+      "line": "wavy lines for the days your brain is also wavy.",
+      "cw": [
+        {
+          "n": "blue wave",
+          "t": "#ffffff",
+          "a": 0.35,
+          "pat": "waves",
+          "pc": "#2765fa",
+          "bg": "#dfe8ff"
+        },
+        {
+          "n": "berry wave",
+          "t": "#ffffff",
+          "a": 0.35,
+          "pat": "waves",
+          "pc": "#ef426f",
+          "bg": "#ffe1e8"
+        }
+      ],
+      "fams": [
+        "blue",
+        "berry"
+      ],
+      "packs": [
+        {
+          "k": "single",
+          "n": "single",
+          "q": 1,
+          "total": 32
+        },
+        {
+          "k": "pair",
+          "n": "pair",
+          "q": 2,
+          "total": 59
+        },
+        {
+          "k": "set4",
+          "n": "set of 4",
+          "q": 4,
+          "total": 109
+        },
+        {
+          "k": "every",
+          "n": "every color",
+          "q": 2,
+          "total": 59
+        }
+      ]
+    },
+    {
+      "id": "cutting-chai-set",
+      "name": "street chai glasses, set of 2",
+      "cat": "teacups",
+      "col": "chai-club",
+      "shape": "chai",
+      "multi": 2,
+      "price": 24,
+      "ml": 120,
+      "h": 8,
+      "badge": "staff pick",
+      "vibes": [
+        "chai",
+        "gift"
+      ],
+      "line": "the little glass from india’s roadside chai stalls, remade in borosilicate so it takes boiling chai without drama.",
+      "cw": [
+        {
+          "n": "clear",
+          "t": "#ffffff",
+          "a": 0.35,
+          "bg": "#f2f1f0"
+        },
+        {
+          "n": "amber",
+          "t": "#f4a83a",
+          "a": 0.45,
+          "bg": "#f8fac4"
+        }
+      ],
+      "fams": [
+        "clear",
+        "sunny"
+      ],
+      "packs": null
+    },
+    {
+      "id": "chai-pe-charcha",
+      "name": "chai break cup",
+      "cat": "teacups",
+      "col": "chai-club",
+      "shape": "mug",
+      "price": 26,
+      "ml": 200,
+      "h": 9,
+      "vibes": [
+        "chai",
+        "wfh"
+      ],
+      "line": "for long chai breaks and even longer gossip.",
+      "cw": [
+        {
+          "n": "berry polka",
+          "t": "#ffffff",
+          "a": 0.35,
+          "pat": "dots",
+          "pc": "#ef426f",
+          "bg": "#ffe1e8"
+        },
+        {
+          "n": "blue polka",
+          "t": "#ffffff",
+          "a": 0.35,
+          "pat": "dots",
+          "pc": "#2765fa",
+          "bg": "#dfe8ff"
+        }
+      ],
+      "fams": [
+        "berry",
+        "blue"
+      ],
+      "packs": [
+        {
+          "k": "single",
+          "n": "single",
+          "q": 1,
+          "total": 26
+        },
+        {
+          "k": "pair",
+          "n": "pair",
+          "q": 2,
+          "total": 48
+        },
+        {
+          "k": "set4",
+          "n": "set of 4",
+          "q": 4,
+          "total": 88
+        },
+        {
+          "k": "every",
+          "n": "every color",
+          "q": 2,
+          "total": 48
+        }
+      ]
+    },
+    {
+      "id": "cloud-nine-mug",
+      "name": "cloud nine mug",
+      "cat": "coffee-cups",
+      "col": "y2k-bloom",
+      "shape": "mug",
+      "price": 32,
+      "ml": 330,
+      "h": 10,
+      "badge": "new",
+      "isNew": true,
+      "vibes": [
+        "wfh",
+        "chai",
+        "gift"
+      ],
+      "line": "puffy clouds on a sky-blue mug. mondays, handled.",
+      "cw": [
+        {
+          "n": "sky",
+          "t": "#2765fa",
+          "a": 0.35,
+          "pat": "clouds",
+          "bg": "#dfe8ff"
+        },
+        {
+          "n": "pink sky",
+          "t": "#ef426f",
+          "a": 0.3,
+          "pat": "clouds",
+          "bg": "#ffe1e8"
+        }
+      ],
+      "fams": [
+        "blue",
+        "berry"
+      ],
+      "packs": [
+        {
+          "k": "single",
+          "n": "single",
+          "q": 1,
+          "total": 32
+        },
+        {
+          "k": "pair",
+          "n": "pair",
+          "q": 2,
+          "total": 59
+        },
+        {
+          "k": "set4",
+          "n": "set of 4",
+          "q": 4,
+          "total": 109
+        },
+        {
+          "k": "every",
+          "n": "every color",
+          "q": 2,
+          "total": 59
+        }
+      ]
+    },
+    {
+      "id": "daisy-days",
+      "name": "daisy days can glass",
+      "cat": "tumblers",
+      "col": "y2k-bloom",
+      "shape": "can",
+      "price": 28,
+      "ml": 500,
+      "h": 13,
+      "badge": "new",
+      "isNew": true,
+      "vibes": [
+        "wfh",
+        "gift"
+      ],
+      "line": "flower power for your desk. no watering required.",
+      "cw": [
+        {
+          "n": "lime daisy",
+          "t": "#eaef29",
+          "a": 0.4,
+          "pat": "daisies",
+          "bg": "#f8fac4"
+        },
+        {
+          "n": "blue daisy",
+          "t": "#2765fa",
+          "a": 0.35,
+          "pat": "daisies",
+          "bg": "#dfe8ff"
+        }
+      ],
+      "fams": [
+        "sunny",
+        "blue"
+      ],
+      "packs": [
+        {
+          "k": "single",
+          "n": "single",
+          "q": 1,
+          "total": 28
+        },
+        {
+          "k": "pair",
+          "n": "pair",
+          "q": 2,
+          "total": 52
+        },
+        {
+          "k": "set4",
+          "n": "set of 4",
+          "q": 4,
+          "total": 95
+        },
+        {
+          "k": "every",
+          "n": "every color",
+          "q": 2,
+          "total": 52
+        }
+      ]
+    },
+    {
+      "id": "checkmate",
+      "name": "checkmate tumbler",
+      "cat": "tumblers",
+      "col": "y2k-bloom",
+      "shape": "tumbler",
+      "price": 34,
+      "ml": 400,
+      "h": 13,
+      "vibes": [
+        "party",
+        "wfh"
+      ],
+      "line": "checkerboard, but make it see-through.",
+      "cw": [
+        {
+          "n": "blue check",
+          "t": "#ffffff",
+          "a": 0.3,
+          "pat": "checker",
+          "pc": "#2765fa",
+          "bg": "#dfe8ff"
+        },
+        {
+          "n": "berry check",
+          "t": "#ffffff",
+          "a": 0.3,
+          "pat": "checker",
+          "pc": "#ef426f",
+          "bg": "#ffe1e8"
+        },
+        {
+          "n": "lime check",
+          "t": "#ffffff",
+          "a": 0.3,
+          "pat": "checker",
+          "pc": "#eaef29",
+          "bg": "#f2f1f0"
+        }
+      ],
+      "fams": [
+        "blue",
+        "berry",
+        "sunny"
+      ],
+      "packs": [
+        {
+          "k": "single",
+          "n": "single",
+          "q": 1,
+          "total": 34
+        },
+        {
+          "k": "pair",
+          "n": "pair",
+          "q": 2,
+          "total": 63
+        },
+        {
+          "k": "set4",
+          "n": "set of 4",
+          "q": 4,
+          "total": 116
+        },
+        {
+          "k": "every",
+          "n": "every color",
+          "q": 3,
+          "total": 90
+        }
+      ]
+    },
+    {
+      "id": "bubble-pop",
+      "name": "bubble pop glass",
+      "cat": "tumblers",
+      "col": "y2k-bloom",
+      "shape": "bubble",
+      "price": 30,
+      "ml": 420,
+      "h": 12,
+      "vibes": [
+        "party"
+      ],
+      "line": "round, bouncy, polka-dotted. bubble tea’s dream house.",
+      "cw": [
+        {
+          "n": "pink pop",
+          "t": "#ffb3c6",
+          "a": 0.45,
+          "pat": "dots",
+          "pc": "#ffffff",
+          "bg": "#ffe1e8"
+        },
+        {
+          "n": "blue pop",
+          "t": "#2765fa",
+          "a": 0.4,
+          "pat": "dots",
+          "pc": "#ffffff",
+          "bg": "#dfe8ff"
+        }
+      ],
+      "fams": [
+        "berry",
+        "blue"
+      ],
+      "packs": [
+        {
+          "k": "single",
+          "n": "single",
+          "q": 1,
+          "total": 30
+        },
+        {
+          "k": "pair",
+          "n": "pair",
+          "q": 2,
+          "total": 55
+        },
+        {
+          "k": "set4",
+          "n": "set of 4",
+          "q": 4,
+          "total": 102
+        },
+        {
+          "k": "every",
+          "n": "every color",
+          "q": 2,
+          "total": 55
+        }
+      ]
+    },
+    {
+      "id": "blue-moon-coupe",
+      "name": "blue moon coupe",
+      "cat": "cocktail",
+      "col": "after-hours",
+      "shape": "coupe",
+      "price": 38,
+      "ml": 220,
+      "h": 15,
+      "vibes": [
+        "date",
+        "party"
+      ],
+      "line": "once in a blue moon you deserve a fancy glass. that moon is tonight.",
+      "cw": [
+        {
+          "n": "blue moon",
+          "t": "#2765fa",
+          "a": 0.5,
+          "pat": "stars",
+          "pc": "#eaef29",
+          "bg": "#dfe8ff"
+        },
+        {
+          "n": "midnight",
+          "t": "#0a0a0a",
+          "a": 0.55,
+          "pat": "stars",
+          "pc": "#eaef29",
+          "bg": "#f2f1f0"
+        }
+      ],
+      "fams": [
+        "blue",
+        "midnight"
+      ],
+      "packs": [
+        {
+          "k": "single",
+          "n": "single",
+          "q": 1,
+          "total": 38
+        },
+        {
+          "k": "pair",
+          "n": "pair",
+          "q": 2,
+          "total": 70
+        },
+        {
+          "k": "set4",
+          "n": "set of 4",
+          "q": 4,
+          "total": 129
+        },
+        {
+          "k": "every",
+          "n": "every color",
+          "q": 2,
+          "total": 70
+        }
+      ]
+    },
+    {
+      "id": "after-hours-rocks",
+      "name": "after hours rocks glass",
+      "cat": "cocktail",
+      "col": "after-hours",
+      "shape": "rocks",
+      "price": 36,
+      "ml": 300,
+      "h": 9,
+      "badge": "new",
+      "isNew": true,
+      "vibes": [
+        "party",
+        "date"
+      ],
+      "line": "heavy base, starry night. for mocktails, whiskey or just ice and vibes.",
+      "cw": [
+        {
+          "n": "midnight",
+          "t": "#0a0a0a",
+          "a": 0.5,
+          "pat": "stars",
+          "pc": "#eaef29",
+          "bg": "#dfe8ff"
+        },
+        {
+          "n": "smoke",
+          "t": "#6b6b6b",
+          "a": 0.4,
+          "pat": "stars",
+          "pc": "#ffffff",
+          "bg": "#f2f1f0"
+        }
+      ],
+      "fams": [
+        "midnight"
+      ],
+      "packs": [
+        {
+          "k": "single",
+          "n": "single",
+          "q": 1,
+          "total": 36
+        },
+        {
+          "k": "pair",
+          "n": "pair",
+          "q": 2,
+          "total": 66
+        },
+        {
+          "k": "set4",
+          "n": "set of 4",
+          "q": 4,
+          "total": 122
+        },
+        {
+          "k": "every",
+          "n": "every color",
+          "q": 2,
+          "total": 66
+        }
+      ]
+    },
+    {
+      "id": "pour-decisions-set",
+      "name": "pour decisions party set of 4",
+      "cat": "sets",
+      "col": "fruit-club",
+      "set": [
+        [
+          "can",
+          "cherry-bomb",
+          0
+        ],
+        [
+          "can",
+          "lemon-drop",
+          0
+        ],
+        [
+          "can",
+          "daisy-days",
+          1
+        ],
+        [
+          "can",
+          "sunset-can",
+          0
+        ]
+      ],
+      "price": 104,
+      "ml": 500,
+      "h": 13,
+      "badge": "gift pick",
+      "vibes": [
+        "party",
+        "gift"
+      ],
+      "line": "four can glasses, four moods. the group chat will fight over who gets which.",
+      "cw": [
+        {
+          "n": "mixed",
+          "bg": "#f8fac4",
+          "sw": "conic-gradient(#ef426f 0 25%,#eaef29 0 50%,#2765fa 0 75%,#f4a83a 0)"
+        }
+      ],
+      "fams": [
+        "berry",
+        "sunny",
+        "blue"
+      ],
+      "packs": null
+    },
+    {
+      "id": "date-night-duo",
+      "name": "date night duo",
+      "cat": "sets",
+      "col": "heart-eyes",
+      "set": [
+        [
+          "coupe",
+          "crush-coupe",
+          0
+        ],
+        [
+          "coupe",
+          "crush-coupe",
+          1
+        ]
+      ],
+      "price": 68,
+      "ml": 220,
+      "h": 15,
+      "vibes": [
+        "date",
+        "gift"
+      ],
+      "line": "two crush coupes for two people who should probably just text back.",
+      "cw": [
+        {
+          "n": "pink + berry",
+          "bg": "#ffe1e8",
+          "sw": "linear-gradient(90deg,#ff8fab 50%,#ef426f 50%)"
+        }
+      ],
+      "fams": [
+        "berry"
+      ],
+      "packs": null
+    },
+    {
+      "id": "glass-straws",
+      "name": "glass straws, set of 4",
+      "cat": "extras",
+      "acc": "straws",
+      "price": 12,
+      "vibes": [
+        "gift"
+      ],
+      "mat": "borosilicate glass",
+      "short": "four tints + cleaning brush",
+      "line": "reusable borosilicate straws in four tints, with a little cleaning brush.",
+      "fits": [
+        "can",
+        "tumbler",
+        "wavy",
+        "bubble",
+        "strawberry"
+      ],
+      "cw": [
+        {
+          "n": "four tints",
+          "bg": "#dfe8ff",
+          "sw": "conic-gradient(#ef426f 0 25%,#eaef29 0 50%,#2765fa 0 75%,#ffffff 0)"
+        }
+      ],
+      "fams": [],
+      "packs": null
+    },
+    {
+      "id": "bamboo-lid",
+      "name": "bamboo lid",
+      "cat": "extras",
+      "acc": "lid",
+      "price": 8,
+      "vibes": [],
+      "mat": "bamboo with a silicone seal",
+      "short": "fits can glasses, straw hole",
+      "line": "fits our can glasses, with a hole for your straw. keeps dust and bugs out of your iced coffee.",
+      "fits": [
+        "can"
+      ],
+      "cw": [
+        {
+          "n": "natural bamboo",
+          "bg": "#f8fac4",
+          "sw": "#e7bf86"
+        }
+      ],
+      "fams": [],
+      "packs": null
+    },
+    {
+      "id": "coaster-set",
+      "name": "cork coasters, set of 4",
+      "cat": "extras",
+      "acc": "coasters",
+      "price": 18,
+      "vibes": [
+        "gift",
+        "party"
+      ],
+      "mat": "cork",
+      "short": "four brand colors",
+      "line": "cork coasters printed in our four brand colors. saves the table, finishes the shelf.",
+      "fits": "all",
+      "cw": [
+        {
+          "n": "brand colors",
+          "bg": "#ffe1e8",
+          "sw": "conic-gradient(#ef426f 0 25%,#eaef29 0 50%,#2765fa 0 75%,#0a0a0a 0)"
+        }
+      ],
+      "fams": [],
+      "packs": null
+    },
+    {
+      "id": "glass-brush",
+      "name": "tall glass brush",
+      "cat": "extras",
+      "acc": "brush",
+      "price": 6,
+      "vibes": [],
+      "mat": "wood handle, soft bristles",
+      "short": "reaches the bottom, no scratches",
+      "line": "soft bristles that reach the bottom of tall glasses without scratching.",
+      "fits": [
+        "can",
+        "tumbler",
+        "wavy",
+        "bubble",
+        "strawberry",
+        "mug",
+        "heart"
+      ],
+      "cw": [
+        {
+          "n": "natural",
+          "bg": "#f2f1f0",
+          "sw": "#c99b5b"
+        }
+      ],
+      "fams": [],
+      "packs": null
+    }
+  ],
+  "CATS": [
+    {
+      "id": "tumblers",
+      "name": "tumblers",
+      "blurb": "iced coffee, cold brew, lemonade",
+      "rep": "golden-hour-tumbler",
+      "bg": "#f8fac4"
+    },
+    {
+      "id": "coffee-cups",
+      "name": "coffee cups",
+      "blurb": "for the 9am call you joined on mute",
+      "rep": "heart-eyes-mug",
+      "bg": "#ffe1e8"
+    },
+    {
+      "id": "teacups",
+      "name": "teacups",
+      "blurb": "chai, matcha and slow mornings",
+      "rep": "cutting-chai-set",
+      "bg": "#f2f1f0"
+    },
+    {
+      "id": "cocktail",
+      "name": "cocktail glasses",
+      "blurb": "mocktails count. we don’t judge",
+      "rep": "crush-coupe",
+      "bg": "#dfe8ff"
+    },
+    {
+      "id": "sets",
+      "name": "sets",
+      "blurb": "pairs and party packs",
+      "rep": "pour-decisions-set",
+      "bg": "#eaef29"
+    },
+    {
+      "id": "extras",
+      "name": "extras",
+      "blurb": "straws, lids, coasters and brushes",
+      "rep": "glass-straws",
+      "bg": "#f2f1f0"
+    }
+  ],
+  "COLS": [
+    {
+      "id": "fruit-club",
+      "name": "fruit club",
+      "line": "strawberries, cherries, lemons. your 5-a-day, sorted.",
+      "bg": "#ef426f",
+      "fg": "#fff",
+      "tint": "#ffe1e8"
+    },
+    {
+      "id": "heart-eyes",
+      "name": "heart eyes",
+      "line": "for hopeless romantics and situationship survivors.",
+      "bg": "#ffe1e8",
+      "fg": "#0a0a0a",
+      "tint": "#ffe1e8"
+    },
+    {
+      "id": "golden-hour",
+      "name": "golden hour",
+      "line": "gradients that look like 6:47pm feels.",
+      "bg": "#eaef29",
+      "fg": "#0a0a0a",
+      "tint": "#f8fac4"
+    },
+    {
+      "id": "wobble",
+      "name": "wobble",
+      "line": "wavy glasses that look a little tipsy. on purpose.",
+      "bg": "#2765fa",
+      "fg": "#fff",
+      "tint": "#dfe8ff"
+    },
+    {
+      "id": "chai-club",
+      "name": "chai club",
+      "line": "cutting chai, but make it collectible.",
+      "bg": "#f2f1f0",
+      "fg": "#0a0a0a",
+      "tint": "#f2f1f0"
+    },
+    {
+      "id": "after-hours",
+      "name": "after hours",
+      "line": "midnight blues and starry coupes.",
+      "bg": "#0a0a0a",
+      "fg": "#fff",
+      "tint": "#dfe8ff"
+    },
+    {
+      "id": "y2k-bloom",
+      "name": "y2k bloom",
+      "line": "daisies, checks and clouds. 2003 called, we picked up.",
+      "bg": "#dfe8ff",
+      "fg": "#0a0a0a",
+      "tint": "#f8fac4"
+    }
+  ],
+  "VIBES": [
+    {
+      "id": "chai",
+      "name": "slow mornings"
+    },
+    {
+      "id": "wfh",
+      "name": "desk flex"
+    },
+    {
+      "id": "date",
+      "name": "date night"
+    },
+    {
+      "id": "party",
+      "name": "hosting season"
+    },
+    {
+      "id": "gift",
+      "name": "gift-ready"
+    },
+    {
+      "id": "under30",
+      "name": "under $30"
+    }
+  ],
+  "QZ": [
+    {
+      "q": "what’s in your glass at 4pm?",
+      "o": [
+        [
+          "a chai latte, obviously",
+          "extra cinnamon, extra gossip",
+          {
+            "cutting-chai-set": 3,
+            "chai-pe-charcha": 2,
+            "heart-eyes-mug": 1
+          }
+        ],
+        [
+          "iced coffee, extra ice",
+          "the oat milk is non-negotiable",
+          {
+            "cherry-bomb": 2,
+            "the-wobble": 2,
+            "daisy-days": 1,
+            "golden-hour-tumbler": 1
+          }
+        ],
+        [
+          "a mocktail with a tiny umbrella",
+          "it’s 5pm somewhere",
+          {
+            "crush-coupe": 2,
+            "blue-moon-coupe": 2,
+            "after-hours-rocks": 1
+          }
+        ],
+        [
+          "matcha, or anything green",
+          "your gut health is thriving",
+          {
+            "golden-hour-tumbler": 2,
+            "lemon-drop": 2,
+            "daisy-days": 1
+          }
+        ]
+      ]
+    },
+    {
+      "q": "pick a saturday plan",
+      "o": [
+        [
+          "brunch with the besties",
+          "photos first, food later",
+          {
+            "strawberry-fields": 3,
+            "crush-coupe": 1,
+            "sunset-can": 1
+          }
+        ],
+        [
+          "bed rot and a comfort show",
+          "episode 4, watched for the 9th time",
+          {
+            "cloud-nine-mug": 3,
+            "heart-eyes-mug": 2,
+            "chai-pe-charcha": 1
+          }
+        ],
+        [
+          "house party, you’re on aux",
+          "the playlist runs 3 hours",
+          {
+            "the-wobble": 2,
+            "checkmate": 2,
+            "bubble-pop": 2,
+            "pour-decisions-set": 2
+          }
+        ],
+        [
+          "sunset walk, phone on dnd",
+          "golden hour is your love language",
+          {
+            "golden-hour-tumbler": 3,
+            "sunset-can": 2
+          }
+        ]
+      ]
+    },
+    {
+      "q": "your aesthetic in one word",
+      "o": [
+        [
+          "soft",
+          "pink, bows, hearts, repeat",
+          {
+            "heart-eyes-mug": 2,
+            "strawberry-fields": 2,
+            "crush-coupe": 1
+          }
+        ],
+        [
+          "loud",
+          "more color is more better",
+          {
+            "the-wobble": 2,
+            "bubble-pop": 2,
+            "checkmate": 1,
+            "cherry-bomb": 1
+          }
+        ],
+        [
+          "earthy",
+          "warm tones and cosy corners",
+          {
+            "golden-hour-tumbler": 3,
+            "cutting-chai-set": 1
+          }
+        ],
+        [
+          "moody",
+          "black, stars, late nights",
+          {
+            "after-hours-rocks": 3,
+            "blue-moon-coupe": 2
+          }
+        ]
+      ]
+    }
+  ],
+  "GIFT": {
+    "host": {
+      "t": "for the host",
+      "s": "friendsgiving, dinner parties and housewarmings. bring something better than a candle.",
+      "ids": [
+        "pour-decisions-set",
+        "golden-hour-tumbler",
+        "crush-coupe",
+        "coaster-set",
+        "after-hours-rocks",
+        "checkmate"
+      ]
+    },
+    "bestie": {
+      "t": "for the bestie",
+      "s": "loud colors, cute shapes, zero chance they already own it.",
+      "ids": [
+        "strawberry-fields",
+        "daisy-days",
+        "the-wobble",
+        "cherry-bomb",
+        "bubble-pop",
+        "heart-eyes-mug"
+      ]
+    },
+    "couple": {
+      "t": "for the couple",
+      "s": "anniversaries, engagements and “just because”.",
+      "ids": [
+        "date-night-duo",
+        "crush-coupe",
+        "heart-eyes-mug",
+        "blue-moon-coupe"
+      ]
+    },
+    "parents": {
+      "t": "for mom and dad",
+      "s": "pretty, practical and actually used every morning.",
+      "ids": [
+        "cutting-chai-set",
+        "chai-pe-charcha",
+        "golden-hour-tumbler",
+        "cloud-nine-mug"
+      ]
+    },
+    "office": {
+      "t": "for the office",
+      "s": "secret santa and white elephant picks under $35, plus bulk orders for the whole team.",
+      "ids": [
+        "cherry-bomb",
+        "daisy-days",
+        "lemon-drop",
+        "cloud-nine-mug",
+        "glass-straws"
+      ]
+    }
+  },
+  "FAQ": [
+    [
+      "how long does shipping take?",
+      "orders ship within 1 to 2 business days. every product page shows a delivery estimate for your zip code, and tracking lands in your inbox the moment it ships."
+    ],
+    [
+      "how much is shipping?",
+      "free on US orders over $75. below that it’s a flat $6.95."
+    ],
+    [
+      "what if my glass arrives broken?",
+      "email us a photo within 7 days of delivery and we’ll send a free replacement. no forms, no fuss."
+    ],
+    [
+      "can i pour hot coffee or tea?",
+      "yes. borosilicate handles sudden temperature changes much better than regular glass, so hot coffee and iced drinks are both fine. keep it away from direct flame and stovetops."
+    ],
+    [
+      "is it dishwasher and microwave safe?",
+      "every product page shows whether that design is dishwasher and microwave safe. printed and colored designs keep their colors longest with a gentle hand wash."
+    ],
+    [
+      "do you sell gift cards?",
+      "yes. digital gift cards from $25 to $150, delivered by email right away or on a date you pick."
+    ],
+    [
+      "what’s your return policy?",
+      "unused glasses in their original packaging can be returned within 30 days of delivery."
+    ],
+    [
+      "how can i pay?",
+      "all major cards, apple pay, google pay, shop pay, paypal and pay-in-4 at checkout."
+    ],
+    [
+      "do you do bulk or corporate gifting?",
+      "yes, from 25 pieces. custom colors, logo printing and gift boxes are possible. use the form on the gifting page."
+    ]
+  ],
+  "POL": {
+    "shipping": [
+      "shipping",
+      [
+        "orders ship within 1 to 2 business days.",
+        "free US shipping on orders over $75. below that, a flat $6.95.",
+        "delivery estimates are shown on product pages, at checkout and in your confirmation email.",
+        "we currently ship within the US."
+      ]
+    ],
+    "returns": [
+      "returns and breakage",
+      [
+        "arrived broken? email us a photo within 7 days of delivery and we’ll send a free replacement.",
+        "changed your mind? unused glasses in their original packaging can be returned within 30 days.",
+        "refunds go back to your original payment method within 5 to 10 business days of the return reaching us."
+      ]
+    ],
+    "privacy": [
+      "privacy",
+      [
+        "we collect only what we need to fulfill your order and support you: name, email, phone and address.",
+        "we don’t sell your personal information. california residents can request access to or deletion of their data and opt out of sharing for targeted ads.",
+        "payment details are handled by our payment partners, not stored by us."
+      ]
+    ],
+    "terms": [
+      "terms",
+      [
+        "prices are in US dollars and exclude sales tax, which is calculated at checkout.",
+        "digital gift cards can be used on anything in the store.",
+        "colors may vary slightly from screen to glass.",
+        "one discount code per order unless stated."
+      ]
+    ],
+    "access": [
+      "accessibility",
+      [
+        "we’re working to meet WCAG 2.1 AA across the store.",
+        "having trouble using the site? email us and we’ll help you complete your order."
+      ]
+    ]
+  },
+  "PACKS": [
+    [
+      "single",
+      "single",
+      1,
+      0
+    ],
+    [
+      "pair",
+      "pair",
+      2,
+      0.08
+    ],
+    [
+      "set4",
+      "set of 4",
+      4,
+      0.15
+    ]
+  ]
+}
