@@ -1,17 +1,21 @@
 <footer class="ftr" id="dg-footer">
   <div class="wrap">
-    <!-- Giant Two-Color Wordmark -->
-    <div class="ftr-wordmark" style="margin-bottom:48px;border-bottom:2px solid var(--ink);padding-bottom:32px">
-      <span class="d" style="font:400 clamp(42px,9vw,110px)/0.9 var(--f-display);color:var(--blue)">drunken</span>
-      <span class="g" style="font:400 clamp(42px,9vw,110px)/0.9 var(--f-display);color:var(--berry);margin-left:12px">glass</span>
+    <!-- Brand Wordmark Header -->
+    <div class="ftr-head">
+      <div class="ftr-wordmark">
+        <span class="d">drunken</span>
+        <span class="g">glass</span>
+        <svg class="ftr-sparkle" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 1c1 7 4 10 11 11-7 1-10 4-11 11-1-7-4-10-11-11 7-1 10-4 11-11z"/></svg>
+      </div>
+      <p class="ftr-tagline">Bold borosilicate glassware made to turn heads. Handcrafted in India, enjoyed worldwide.</p>
     </div>
 
-    <!-- 5 Columns -->
-    <div class="ftr-cols" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:36px;margin-bottom:48px">
+    <!-- 5 Columns Grid (2-column balanced grid on mobile, 5 columns on desktop) -->
+    <div class="ftr-cols">
       <!-- Col 1: Shop -->
-      <div>
-        <h4 style="font:700 16px var(--f-head);margin-bottom:14px">Shop</h4>
-        <ul style="display:flex;flex-direction:column;gap:10px;font-size:15px">
+      <div class="ftr-col">
+        <h4>Shop</h4>
+        <ul>
           <li><a href="/collections/all">All Glasses</a></li>
           <li><a href="/collections/tumblers">Tumblers</a></li>
           <li><a href="/collections/mugs">Mugs</a></li>
@@ -23,9 +27,9 @@
       </div>
 
       <!-- Col 2: Collections -->
-      <div>
-        <h4 style="font:700 16px var(--f-head);margin-bottom:14px">Collections</h4>
-        <ul style="display:flex;flex-direction:column;gap:10px;font-size:15px">
+      <div class="ftr-col">
+        <h4>Collections</h4>
+        <ul>
           <li><a href="/collections/fruit-club">Fruit Club</a></li>
           <li><a href="/collections/heart-eyes">Heart Eyes</a></li>
           <li><a href="/collections/golden-hour">Golden Hour</a></li>
@@ -37,49 +41,49 @@
       </div>
 
       <!-- Col 3: About -->
-      <div>
-        <h4 style="font:700 16px var(--f-head);margin-bottom:14px">About</h4>
-        <ul style="display:flex;flex-direction:column;gap:10px;font-size:15px">
+      <div class="ftr-col">
+        <h4>About</h4>
+        <ul>
           <li><a href="/pages/our-story">Our Story</a></li>
           <li><a href="/pages/our-story#craft">The Furnace Process</a></li>
-          <li><a href="/pages/quiz">Glassware Style Quiz</a></li>
+          <li><a href="/pages/quiz">Style Quiz</a></li>
           <li><a href="/pages/gifting">Gifting Hub</a></li>
         </ul>
       </div>
 
       <!-- Col 4: Help -->
-      <div>
-        <h4 style="font:700 16px var(--f-head);margin-bottom:14px">Help</h4>
-        <ul style="display:flex;flex-direction:column;gap:10px;font-size:15px">
+      <div class="ftr-col">
+        <h4>Help</h4>
+        <ul>
           <li><a href="/pages/track-order">Track Order</a></li>
-          <li><a href="/pages/help">FAQ & Care Guide</a></li>
+          <li><a href="/pages/help">FAQ & Care</a></li>
           <li><a href="/policies/shipping-policy">Shipping & Returns</a></li>
-          <li><a href="/pages/help#breakage">Breakage Replacement</a></li>
+          <li><a href="/pages/help#breakage">Breakage Care</a></li>
           <li><a href="/pages/help#contact">Contact Us</a></li>
         </ul>
       </div>
 
-      <!-- Col 5: Policies -->
-      <div>
-        <h4 style="font:700 16px var(--f-head);margin-bottom:14px">Legal</h4>
-        <ul style="display:flex;flex-direction:column;gap:10px;font-size:15px">
+      <!-- Col 5: Legal -->
+      <div class="ftr-col ftr-col-wide">
+        <h4>Legal</h4>
+        <ul>
           <li><a href="/policies/privacy-policy">Privacy Policy</a></li>
           <li><a href="/policies/terms-of-service">Terms of Service</a></li>
           <li><a href="/policies/refund-policy">Refund Policy</a></li>
           <li><a href="/policies/privacy-policy#do-not-sell">Do Not Sell My Info</a></li>
-          <li><a href="/pages/accessibility">Accessibility Statement</a></li>
+          <li><a href="/pages/accessibility">Accessibility</a></li>
         </ul>
       </div>
     </div>
 
     <!-- Bottom Bar: Payments & Copyright -->
-    <div style="border-top:2px solid var(--ink);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--muted)">
-      <p>© {{ 'now' | date: '%Y' }} Drunken Glass. All rights reserved. Prices in USD.</p>
-      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-        <span class="chip" style="height:28px;padding:0 10px;font-size:11px">Shop Pay</span>
-        <span class="chip" style="height:28px;padding:0 10px;font-size:11px">Apple Pay</span>
-        <span class="chip" style="height:28px;padding:0 10px;font-size:11px">Google Pay</span>
-        <span class="chip" style="height:28px;padding:0 10px;font-size:11px">PayPal</span>
+    <div class="ftr-bot">
+      <p class="ftr-copy">© {{ 'now' | date: '%Y' }} Drunken Glass. All Rights Reserved. Prices in USD.</p>
+      <div class="ftr-chips">
+        <span class="chip sm">Shop Pay</span>
+        <span class="chip sm">Apple Pay</span>
+        <span class="chip sm">Google Pay</span>
+        <span class="chip sm">PayPal</span>
       </div>
     </div>
   </div>

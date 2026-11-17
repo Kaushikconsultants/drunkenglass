@@ -1,42 +1,41 @@
 <section class="wrap sec" id="dg-collection" style="padding-top:16px">
   <!-- Page Header -->
   <header class="page-head" style="margin-bottom:24px">
-    <h1 class="h2" id="dgShopTitle">{{ collection.title | default: 'shop all glasses' | downcase }}</h1>
-    <p class="sub" id="dgShopSub">{{ collection.description | default: 'every glass we make, in every color we make it. tap the dots to switch colors.' }}</p>
+    <h1 class="h2" id="dgShopTitle">{{ collection.title | default: 'Shop All Glasses' }}</h1>
+    <p class="sub" id="dgShopSub">{{ collection.description | default: 'Every glass we make, in every color we make it. Tap the dots to switch colors.' }}</p>
   </header>
 
   <!-- Type Navigation Tabs -->
   <div class="tabs" role="tablist" style="margin-bottom:24px;overflow-x:auto;padding-bottom:8px">
-    <a class="tab on" href="/collections/all">all glasses</a>
-    <a class="tab" href="/collections/tumblers">tumblers</a>
-    <a class="tab" href="/collections/mugs">mugs</a>
-    <a class="tab" href="/collections/espresso-tea">espresso + tea</a>
-    <a class="tab" href="/collections/cocktail-glasses">cocktail glasses</a>
-    <a class="tab" href="/collections/sets-and-accessories">sets & extras</a>
-    <a class="tab" href="/pages/build-a-set">build a set</a>
+    <a class="tab {% if collection.handle == 'all' or collection.handle == blank %}on{% endif %}" href="/collections/all">All Glasses</a>
+    <a class="tab {% if collection.handle == 'tumblers' %}on{% endif %}" href="/collections/tumblers">Tumblers</a>
+    <a class="tab {% if collection.handle == 'mugs' %}on{% endif %}" href="/collections/mugs">Mugs</a>
+    <a class="tab {% if collection.handle == 'espresso-tea' %}on{% endif %}" href="/collections/espresso-tea">Espresso + Tea</a>
+    <a class="tab {% if collection.handle == 'cocktail-glasses' %}on{% endif %}" href="/collections/cocktail-glasses">Cocktail Glasses</a>
+    <a class="tab" href="/pages/build-a-set">Build a Set ($99)</a>
   </div>
 
   <!-- Filters & Sort Bar -->
   <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:24px;border-bottom:2px solid var(--ink);padding-bottom:16px">
     <!-- Filter Chips -->
     <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
-      <span style="font:700 13px var(--f-head)">filter:</span>
-      <button class="chip" type="button" data-filter="under30">under $30</button>
+      <span style="font:700 13px var(--f-head)">Filter:</span>
+      <button class="chip" type="button" data-filter="under30">Under $30</button>
       <button class="chip" type="button" data-filter="30to39">$30 to $39</button>
       <button class="chip" type="button" data-filter="40plus">$40+</button>
-      <button class="chip" type="button" data-filter="blue">blue</button>
-      <button class="chip" type="button" data-filter="berry">berry</button>
-      <button class="chip" type="button" data-filter="lime">lime</button>
+      <button class="chip" type="button" data-filter="blue">Blue</button>
+      <button class="chip" type="button" data-filter="berry">Berry</button>
+      <button class="chip" type="button" data-filter="lime">Lime</button>
     </div>
 
     <!-- Count & Sort -->
     <div style="display:flex;align-items:center;gap:16px">
-      <span class="mono" style="font-size:14px;color:var(--muted)">19 glasses</span>
+      <span class="mono" style="font-size:14px;color:var(--muted)">{% if collection.products.size > 0 %}{{ collection.products.size }} Glasses{% else %}Available Glasses{% endif %}</span>
       <select class="btn sm" style="font-size:13px;padding:0 12px;background:#fff">
-        <option value="featured">sort: featured</option>
-        <option value="price-asc">price: low to high</option>
-        <option value="price-desc">price: high to low</option>
-        <option value="newest">newest first</option>
+        <option value="featured">Sort: Featured</option>
+        <option value="price-asc">Price: Low to High</option>
+        <option value="price-desc">Price: High to Low</option>
+        <option value="newest">Newest First</option>
       </select>
     </div>
   </div>
@@ -46,22 +45,22 @@
     <!-- Product 1 -->
     <article class="pcard" data-handle="cherry-bomb">
       <a class="pmedia" href="/products/cherry-bomb" style="--bg:#ffe1e8" tabindex="-1">
-        <span class="badge b-pink">new</span>
+        <span class="badge b-pink">New</span>
         <img class="pcard-img" src="{{ 'cherry-bomb--blush.png' | asset_url }}" alt="cherry bomb tumbler" width="240" height="300" loading="lazy">
       </a>
-      <button class="heart" type="button" aria-label="save to wishlist" data-wishlist="cherry-bomb">
+      <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="cherry-bomb">
         <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
       </button>
       <div class="pinfo">
-        <a class="pname" href="/products/cherry-bomb">cherry bomb tumbler</a>
-        <span class="pmeta">in blush</span>
+        <a class="pname" href="/products/cherry-bomb">Cherry Bomb Tumbler</a>
+        <span class="pmeta">In Blush</span>
         <div class="prow"><span class="price">$36</span></div>
         <div class="pfoot">
-          <div class="sw" role="group" aria-label="colors">
+          <div class="sw" role="group" aria-label="Colors">
             <button class="swb on" style="--c:#ef426f" data-color="blush" data-img="{{ 'cherry-bomb--blush.png' | asset_url }}" data-bg="#ffe1e8" aria-label="blush" aria-pressed="true"></button>
             <button class="swb" style="--c:#ffffff" data-color="clear cherry" data-img="{{ 'cherry-bomb--clear-cherry.png' | asset_url }}" data-bg="#f2f1f0" aria-label="clear cherry" aria-pressed="false"></button>
           </div>
-          <button class="qadd" type="button" data-add="cherry-bomb">add to bag</button>
+          <button class="qadd" type="button" data-add="cherry-bomb">Add to Bag</button>
         </div>
       </div>
     </article>
@@ -69,24 +68,24 @@
     <!-- Product 2 -->
     <article class="pcard" data-handle="the-wobble">
       <a class="pmedia" href="/products/the-wobble" style="--bg:#dfe8ff" tabindex="-1">
-        <span class="badge b-lime">hero design</span>
+        <span class="badge b-lime">Hero Design</span>
         <img class="pcard-img" src="{{ 'the-wobble--electric-blue.png' | asset_url }}" alt="the wobble tumbler" width="240" height="300" loading="lazy">
       </a>
-      <button class="heart" type="button" aria-label="save to wishlist" data-wishlist="the-wobble">
+      <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="the-wobble">
         <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
       </button>
       <div class="pinfo">
-        <a class="pname" href="/products/the-wobble">the wobble tumbler</a>
-        <span class="pmeta">in electric blue</span>
+        <a class="pname" href="/products/the-wobble">The Wobble Tumbler</a>
+        <span class="pmeta">In Electric Blue</span>
         <div class="prow"><span class="price">$36</span></div>
         <div class="pfoot">
-          <div class="sw" role="group" aria-label="colors">
+          <div class="sw" role="group" aria-label="Colors">
             <button class="swb on" style="--c:#2765fa" data-color="electric blue" data-img="{{ 'the-wobble--electric-blue.png' | asset_url }}" data-bg="#dfe8ff" aria-label="electric blue" aria-pressed="true"></button>
             <button class="swb" style="--c:#ffffff" data-color="clear" data-img="{{ 'the-wobble--clear.png' | asset_url }}" data-bg="#f2f1f0" aria-label="clear" aria-pressed="false"></button>
             <button class="swb" style="--c:#eaef29" data-color="lime soda" data-img="{{ 'the-wobble--lime-soda.png' | asset_url }}" data-bg="#f8fac4" aria-label="lime soda" aria-pressed="false"></button>
             <button class="swb" style="--c:#ef426f" data-color="berry" data-img="{{ 'the-wobble--berry.png' | asset_url }}" data-bg="#ffe1e8" aria-label="berry" aria-pressed="false"></button>
           </div>
-          <button class="qadd" type="button" data-add="the-wobble">add to bag</button>
+          <button class="qadd" type="button" data-add="the-wobble">Add to Bag</button>
         </div>
       </div>
     </article>
@@ -94,18 +93,18 @@
     <!-- Product 3 -->
     <article class="pcard" data-handle="heart-eyes-mug">
       <a class="pmedia" href="/products/heart-eyes-mug" style="--bg:#ffe1e8" tabindex="-1">
-        <span class="badge b-pink">hero design</span>
+        <span class="badge b-pink">Hero Design</span>
         <img class="pcard-img" src="{{ 'heart-eyes-mug--berry-crush.png' | asset_url }}" alt="heart eyes mug" width="240" height="300" loading="lazy">
       </a>
-      <button class="heart" type="button" aria-label="save to wishlist" data-wishlist="heart-eyes-mug">
+      <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="heart-eyes-mug">
         <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
       </button>
       <div class="pinfo">
-        <a class="pname" href="/products/heart-eyes-mug">heart eyes mug</a>
-        <span class="pmeta">in berry crush</span>
+        <a class="pname" href="/products/heart-eyes-mug">Heart Eyes Mug</a>
+        <span class="pmeta">In Berry Crush</span>
         <div class="prow"><span class="price">$34</span></div>
         <div class="pfoot">
-          <button class="qadd full" type="button" data-add="heart-eyes-mug">add to bag</button>
+          <button class="qadd full" type="button" data-add="heart-eyes-mug">Add to Bag</button>
         </div>
       </div>
     </article>
@@ -113,22 +112,22 @@
     <!-- Product 4 -->
     <article class="pcard" data-handle="starstruck-coupe">
       <a class="pmedia" href="/products/starstruck-coupe" style="--bg:#dfe8ff" tabindex="-1">
-        <span class="badge b-blue">staff pick</span>
+        <span class="badge b-blue">Staff Pick</span>
         <img class="pcard-img" src="{{ 'starstruck-coupe--deep-blue.png' | asset_url }}" alt="starstruck coupe" width="240" height="300" loading="lazy">
       </a>
-      <button class="heart" type="button" aria-label="save to wishlist" data-wishlist="starstruck-coupe">
+      <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="starstruck-coupe">
         <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
       </button>
       <div class="pinfo">
-        <a class="pname" href="/products/starstruck-coupe">starstruck coupe</a>
-        <span class="pmeta">in deep blue</span>
+        <a class="pname" href="/products/starstruck-coupe">Starstruck Coupe</a>
+        <span class="pmeta">In Deep Blue</span>
         <div class="prow"><span class="price">$38</span></div>
         <div class="pfoot">
-          <div class="sw" role="group" aria-label="colors">
+          <div class="sw" role="group" aria-label="Colors">
             <button class="swb on" style="--c:#2765fa" data-color="deep blue" data-img="{{ 'starstruck-coupe--deep-blue.png' | asset_url }}" data-bg="#dfe8ff" aria-label="deep blue" aria-pressed="true"></button>
             <button class="swb" style="--c:#0a0a0a" data-color="midnight" data-img="{{ 'starstruck-coupe--midnight.png' | asset_url }}" data-bg="#f2f1f0" aria-label="midnight" aria-pressed="false"></button>
           </div>
-          <button class="qadd" type="button" data-add="starstruck-coupe">add to bag</button>
+          <button class="qadd" type="button" data-add="starstruck-coupe">Add to Bag</button>
         </div>
       </div>
     </article>
@@ -136,22 +135,22 @@
     <!-- Product 5 -->
     <article class="pcard" data-handle="lemon-drop">
       <a class="pmedia" href="/products/lemon-drop" style="--bg:#f8fac4" tabindex="-1">
-        <span class="badge b-lime">hero design</span>
+        <span class="badge b-lime">Hero Design</span>
         <img class="pcard-img" src="{{ 'lemon-drop--sunny.png' | asset_url }}" alt="lemon drop tumbler" width="240" height="300" loading="lazy">
       </a>
-      <button class="heart" type="button" aria-label="save to wishlist" data-wishlist="lemon-drop">
+      <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="lemon-drop">
         <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
       </button>
       <div class="pinfo">
-        <a class="pname" href="/products/lemon-drop">lemon drop tumbler</a>
-        <span class="pmeta">in sunny</span>
+        <a class="pname" href="/products/lemon-drop">Lemon Drop Tumbler</a>
+        <span class="pmeta">In Sunny</span>
         <div class="prow"><span class="price">$34</span></div>
         <div class="pfoot">
-          <div class="sw" role="group" aria-label="colors">
+          <div class="sw" role="group" aria-label="Colors">
             <button class="swb on" style="--c:#eaef29" data-color="sunny" data-img="{{ 'lemon-drop--sunny.png' | asset_url }}" data-bg="#f8fac4" aria-label="sunny" aria-pressed="true"></button>
             <button class="swb" style="--c:#ffffff" data-color="clear zest" data-img="{{ 'lemon-drop--clear-zest.png' | asset_url }}" data-bg="#f2f1f0" aria-label="clear zest" aria-pressed="false"></button>
           </div>
-          <button class="qadd" type="button" data-add="lemon-drop">add to bag</button>
+          <button class="qadd" type="button" data-add="lemon-drop">Add to Bag</button>
         </div>
       </div>
     </article>
@@ -159,18 +158,18 @@
     <!-- Product 6 -->
     <article class="pcard" data-handle="cortado-glasses-set">
       <a class="pmedia" href="/products/cortado-glasses-set" style="--bg:#f2f1f0" tabindex="-1">
-        <span class="badge b-lime">pair pack</span>
+        <span class="badge b-lime">Pair Pack</span>
         <img class="pcard-img" src="{{ 'cortado-glasses-set--clear.png' | asset_url }}" alt="cortado glasses pair" width="240" height="300" loading="lazy">
       </a>
-      <button class="heart" type="button" aria-label="save to wishlist" data-wishlist="cortado-glasses-set">
+      <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="cortado-glasses-set">
         <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
       </button>
       <div class="pinfo">
-        <a class="pname" href="/products/cortado-glasses-set">cortado glasses pair</a>
-        <span class="pmeta">in clear</span>
+        <a class="pname" href="/products/cortado-glasses-set">Cortado Glasses Pair</a>
+        <span class="pmeta">In Clear</span>
         <div class="prow"><span class="price">$26</span></div>
         <div class="pfoot">
-          <button class="qadd full" type="button" data-add="cortado-glasses-set">add to bag</button>
+          <button class="qadd full" type="button" data-add="cortado-glasses-set">Add to Bag</button>
         </div>
       </div>
     </article>

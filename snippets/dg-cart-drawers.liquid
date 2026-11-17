@@ -16,19 +16,19 @@
       <img id="dgAddedImg" src="{{ 'cherry-bomb--blush.png' | asset_url }}" alt="Added Glass" width="56" height="70" style="border-radius:4px;flex-shrink:0;object-fit:contain">
       <div style="flex:1;min-width:0">
         <h4 id="dgAddedTitle" style="font:700 15px var(--f-head);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Cherry Bomb Tumbler</h4>
-        <span class="pmeta" id="dgAddedMeta" style="font-size:13px;color:var(--muted)">In Blush · Pair (Qty 2)</span>
-        <div class="price" id="dgAddedPrice" style="font-weight:700;margin-top:4px;font-size:16px">$66</div>
+        <span class="pmeta" id="dgAddedMeta" style="font-size:13px;color:var(--muted)">In Blush · Pair (Qty 1)</span>
+        <div class="price" id="dgAddedPrice" style="font-weight:700;margin-top:4px;font-size:16px">$36</div>
       </div>
     </div>
 
     <!-- Free Shipping Meter -->
     <div style="background:#fff;border:2px solid var(--ink);border-radius:var(--r);padding:14px;margin-bottom:18px;box-sizing:border-box">
       <div style="display:flex;justify-content:space-between;font-size:13px;font-weight:700;margin-bottom:8px">
-        <span id="dgShipMeterText">Add $9 more for Free US Shipping</span>
+        <span id="dgShipMeterText">Add $39 more for Free US Shipping</span>
         <span class="mono" id="dgShipGoal">$75</span>
       </div>
       <div style="height:8px;background:var(--cloud);border:1.5px solid var(--ink);border-radius:999px;overflow:hidden">
-        <div id="dgShipBar" style="height:100%;width:88%;background:var(--blue);transition:width .3s ease"></div>
+        <div id="dgShipBar" style="height:100%;width:48%;background:var(--blue);transition:width .3s ease"></div>
       </div>
     </div>
 
@@ -71,7 +71,7 @@
 <!-- 2. Full Slideout Bag Drawer -->
 <aside class="drawer dg-drawer" id="dgCartDrawer" aria-label="Your Bag" aria-hidden="true" style="z-index:9999">
   <div class="dhead">
-    <h3>Your Bag (<span id="dgCartItemsCount">2</span>)</h3>
+    <h3>Your Bag (<span id="dgCartItemsCount">{{ cart.item_count | default: 0 }}</span>)</h3>
     <button class="close" id="dgCloseCart" aria-label="Close bag">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
@@ -79,71 +79,84 @@
 
   <div class="dbody">
     <!-- Free Shipping Meter -->
-    <div style="background:var(--cloud);border:2px solid var(--ink);border-radius:var(--r);padding:14px;margin-bottom:16px;box-sizing:border-box">
+    <div id="dgShippingMeterBox" style="background:var(--cloud);border:2px solid var(--ink);border-radius:var(--r);padding:14px;margin-bottom:16px;box-sizing:border-box;{% if cart.item_count == 0 %}display:none;{% endif %}">
       <div style="display:flex;justify-content:space-between;font-size:13px;font-weight:700;margin-bottom:8px">
-        <span id="dgBagShipText">Free US Shipping Unlocked! 🎉</span>
+        <span id="dgBagShipText">Add $75 for Free US Shipping</span>
         <span class="mono">$75</span>
       </div>
       <div style="height:8px;background:#fff;border:1.5px solid var(--ink);border-radius:999px;overflow:hidden">
-        <div style="height:100%;width:100%;background:var(--blue)"></div>
+        <div id="dgBagShipBar" style="height:100%;width:0%;background:var(--blue);transition:width .3s ease"></div>
       </div>
     </div>
 
-    <!-- Cart Items List -->
-    <div id="dgCartItemsList" style="display:flex;flex-direction:column;gap:14px;margin-bottom:20px;width:100%">
-      <div style="display:flex;gap:12px;align-items:center;border-bottom:1.5px solid var(--hair);padding-bottom:14px;padding-right:10px;width:100%;min-width:0;box-sizing:border-box">
-        <img src="{{ 'cherry-bomb--blush.png' | asset_url }}" alt="Item" width="56" height="70" style="border-radius:4px;border:1.5px solid var(--rule);flex-shrink:0;object-fit:contain">
-        <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:3px">
-          <h4 style="font:700 15px var(--f-head);margin:0;line-height:1.25">Cherry Bomb Tumbler</h4>
-          <span style="font-size:13px;color:var(--muted)">Blush · Pair (8% Off)</span>
-          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:6px;width:100%">
-            <div style="display:inline-flex;border:1.5px solid var(--ink);border-radius:4px;overflow:hidden;flex-shrink:0">
-              <button type="button" style="padding:2px 8px;font-weight:700" aria-label="Decrease quantity">-</button>
-              <span class="mono" style="padding:2px 8px;font-size:13px;background:var(--cloud)">2</span>
-              <button type="button" style="padding:2px 8px;font-weight:700" aria-label="Increase quantity">+</button>
+    <!-- Empty Bag State (Shown by default when no items exist) -->
+    <div id="dgEmptyBagState" style="text-align:center;padding:48px 16px 28px;display:{% if cart.item_count == 0 %}flex{% else %}none{% endif %};flex-direction:column;align-items:center;gap:12px;margin:auto 0">
+      <div style="width:64px;height:64px;border-radius:999px;background:var(--cloud);border:2px solid var(--ink);display:grid;place-items:center;font-size:28px">🍸</div>
+      <h4 style="font:400 24px/1.1 var(--f-display);margin:4px 0 0">Your Bag Is Empty</h4>
+      <p style="font-size:14px;color:var(--muted);max-width:260px;line-height:1.45;margin:0 0 8px">Looks like you haven't picked a glass yet. Let's fix that.</p>
+      <a class="btn btn-blue" href="/collections/all" style="padding:0 24px;min-height:46px">Shop All Glasses</a>
+    </div>
+
+    <!-- Cart Items List (Dynamically populated) -->
+    <div id="dgCartItemsList" style="display:{% if cart.item_count > 0 %}flex{% else %}none{% endif %};flex-direction:column;gap:14px;margin-bottom:20px;width:100%">
+      {% for item in cart.items %}
+        <div class="cart-item-row" data-id="{{ item.key }}" style="display:flex;gap:12px;align-items:center;border-bottom:1.5px solid var(--hair);padding-bottom:14px;padding-right:10px;width:100%;min-width:0;box-sizing:border-box">
+          <img src="{{ item.image | image_url: width: 120 }}" alt="{{ item.title | escape }}" width="56" height="70" style="border-radius:4px;border:1.5px solid var(--rule);flex-shrink:0;object-fit:contain">
+          <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:3px">
+            <h4 style="font:700 15px var(--f-head);margin:0;line-height:1.25">{{ item.product.title }}</h4>
+            <span style="font-size:13px;color:var(--muted)">{{ item.variant.title }}</span>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:6px;width:100%">
+              <div style="display:inline-flex;border:1.5px solid var(--ink);border-radius:4px;overflow:hidden;flex-shrink:0">
+                <button type="button" class="dg-qty-minus" data-key="{{ item.key }}" style="padding:2px 8px;font-weight:700" aria-label="Decrease quantity">-</button>
+                <span class="mono" style="padding:2px 8px;font-size:13px;background:var(--cloud)">{{ item.quantity }}</span>
+                <button type="button" class="dg-qty-plus" data-key="{{ item.key }}" style="padding:2px 8px;font-weight:700" aria-label="Increase quantity">+</button>
+              </div>
+              <span class="price" style="font-weight:700;font-size:16px;flex-shrink:0;white-space:nowrap;margin-left:auto;padding-right:8px">{{ item.final_line_price | money }}</span>
             </div>
-            <span class="price" style="font-weight:700;font-size:16px;flex-shrink:0;white-space:nowrap;margin-left:auto;padding-right:8px">$66</span>
           </div>
         </div>
-      </div>
+      {% endfor %}
     </div>
 
-    <!-- Gift Box & Note Checkbox -->
-    <div style="background:#fff;border:2px solid var(--ink);border-radius:var(--r);padding:14px;margin-bottom:16px;box-sizing:border-box">
-      <label style="display:flex;gap:10px;align-items:center;cursor:pointer;font-weight:700;font-size:13.5px;line-height:1.3">
-        <input type="checkbox" id="dgGiftBoxToggle" style="width:18px;height:18px;accent-color:var(--blue);flex-shrink:0">
-        <span>Add Gift Box + Handwritten Note ($9)</span>
-      </label>
-      <div id="dgGiftNoteArea" style="display:none;margin-top:10px">
-        <textarea placeholder="Write your note (max 160 characters)" maxlength="160" style="width:100%;height:60px;border:1.5px solid var(--ink);border-radius:4px;padding:8px;font-size:13px;resize:none;box-sizing:border-box"></textarea>
+    <!-- Active Cart Modules (Only visible when items in cart) -->
+    <div id="dgCartFooterModules" style="display:{% if cart.item_count > 0 %}block{% else %}none{% endif %};">
+      <!-- Gift Box & Note Checkbox -->
+      <div style="background:#fff;border:2px solid var(--ink);border-radius:var(--r);padding:14px;margin-bottom:16px;box-sizing:border-box">
+        <label style="display:flex;gap:10px;align-items:center;cursor:pointer;font-weight:700;font-size:13.5px;line-height:1.3">
+          <input type="checkbox" id="dgGiftBoxToggle" style="width:18px;height:18px;accent-color:var(--blue);flex-shrink:0">
+          <span>Add Gift Box + Handwritten Note ($9)</span>
+        </label>
+        <div id="dgGiftNoteArea" style="display:none;margin-top:10px">
+          <textarea placeholder="Write your note (max 160 characters)" maxlength="160" style="width:100%;height:60px;border:1.5px solid var(--ink);border-radius:4px;padding:8px;font-size:13px;resize:none;box-sizing:border-box"></textarea>
+        </div>
       </div>
-    </div>
 
-    <!-- Discount Code Input -->
-    <div style="display:flex;gap:8px;margin-bottom:18px;width:100%;box-sizing:border-box">
-      <input type="text" placeholder="Discount code (e.g. SIPSIP10)" style="flex:1;min-width:0;width:100%;border:2px solid var(--ink);border-radius:var(--r);padding:0 12px;min-height:42px;font:500 13px var(--f-mono);box-sizing:border-box">
-      <button class="btn btn-ink sm" type="button" style="min-height:42px;flex-shrink:0;padding:0 16px">Apply</button>
-    </div>
+      <!-- Discount Code Input -->
+      <div style="display:flex;gap:8px;margin-bottom:18px;width:100%;box-sizing:border-box">
+        <input type="text" placeholder="Discount code (e.g. SIPSIP10)" style="flex:1;min-width:0;width:100%;border:2px solid var(--ink);border-radius:var(--r);padding:0 12px;min-height:42px;font:500 13px var(--f-mono);box-sizing:border-box">
+        <button class="btn btn-ink sm" type="button" style="min-height:42px;flex-shrink:0;padding:0 16px">Apply</button>
+      </div>
 
-    <!-- Totals -->
-    <div style="border-top:2px solid var(--ink);padding-top:16px;margin-bottom:18px;box-sizing:border-box">
-      <div style="display:flex;justify-content:space-between;margin-bottom:6px;font-size:14px">
-        <span>Subtotal</span>
-        <span class="price">$72.00</span>
+      <!-- Totals -->
+      <div style="border-top:2px solid var(--ink);padding-top:16px;margin-bottom:18px;box-sizing:border-box">
+        <div style="display:flex;justify-content:space-between;margin-bottom:6px;font-size:14px">
+          <span>Subtotal</span>
+          <span class="price" id="dgSubtotalPrice">{{ cart.total_price | money | default: '$0.00' }}</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:6px;font-size:14px">
+          <span>Shipping</span>
+          <span id="dgShippingLabel" style="color:var(--berry);font-weight:700">Calculated at Checkout</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:18px;font-weight:700;margin-top:10px;border-top:1px dashed var(--rule);padding-top:10px">
+          <span>Estimated Total</span>
+          <span class="price" id="dgTotalPrice">{{ cart.total_price | money | default: '$0.00' }}</span>
+        </div>
+        <p style="font-size:12px;color:var(--muted);margin-top:4px">Sales tax calculated at checkout</p>
       </div>
-      <div style="display:flex;justify-content:space-between;margin-bottom:6px;font-size:14px">
-        <span>Shipping</span>
-        <span style="color:var(--berry);font-weight:700">Free</span>
-      </div>
-      <div style="display:flex;justify-content:space-between;font-size:18px;font-weight:700;margin-top:10px;border-top:1px dashed var(--rule);padding-top:10px">
-        <span>Estimated Total</span>
-        <span class="price">$72.00</span>
-      </div>
-      <p style="font-size:12px;color:var(--muted);margin-top:4px">Sales tax calculated at checkout</p>
-    </div>
 
-    <a class="btn btn-blue full" href="/checkout" style="min-height:50px;font-size:16px;box-sizing:border-box">Checkout Securely</a>
-    <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:8px">Or 4 interest-free payments of $18 with Shop Pay</p>
+      <a class="btn btn-blue full" href="/checkout" style="min-height:50px;font-size:16px;box-sizing:border-box">Checkout Securely</a>
+      <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:8px">Free US shipping on all orders over $75</p>
+    </div>
   </div>
 </aside>
 
@@ -159,6 +172,20 @@ document.addEventListener('DOMContentLoaded', function() {
   const giftToggle = document.getElementById('dgGiftBoxToggle');
   const giftNote = document.getElementById('dgGiftNoteArea');
 
+  const emptyState = document.getElementById('dgEmptyBagState');
+  const cartList = document.getElementById('dgCartItemsList');
+  const cartModules = document.getElementById('dgCartFooterModules');
+  const cartCountEl = document.getElementById('dgCartItemsCount');
+  const headerCountEl = document.getElementById('dgBagCount');
+  const shipMeterBox = document.getElementById('dgShippingMeterBox');
+
+  // In-memory / interactive cart state
+  let cartState = {
+    items: [],
+    item_count: {{ cart.item_count | default: 0 }},
+    total_price: {{ cart.total_price | default: 0 }}
+  };
+
   function closeAllDrawers() {
     if (addedDrawer) addedDrawer.classList.remove('open');
     if (cartDrawer) cartDrawer.classList.remove('open');
@@ -167,6 +194,97 @@ document.addEventListener('DOMContentLoaded', function() {
     if (scrim) scrim.classList.remove('open');
   }
 
+  function updateCartUI() {
+    const count = cartState.items.reduce((sum, item) => sum + item.qty, 0);
+    const total = cartState.items.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+    if (cartCountEl) cartCountEl.textContent = count;
+    if (headerCountEl) {
+      headerCountEl.textContent = count < 10 ? '0' + count : count;
+    }
+
+    if (count === 0) {
+      if (emptyState) emptyState.style.display = 'flex';
+      if (cartList) cartList.style.display = 'none';
+      if (cartModules) cartModules.style.display = 'none';
+      if (shipMeterBox) shipMeterBox.style.display = 'none';
+    } else {
+      if (emptyState) emptyState.style.display = 'none';
+      if (cartList) {
+        cartList.style.display = 'flex';
+        renderCartItems();
+      }
+      if (cartModules) cartModules.style.display = 'block';
+      if (shipMeterBox) shipMeterBox.style.display = 'block';
+
+      // Shipping meter
+      const threshold = 75;
+      const meterText = document.getElementById('dgBagShipText');
+      const meterBar = document.getElementById('dgBagShipBar');
+      if (total >= threshold) {
+        if (meterText) meterText.textContent = 'Free US Shipping Unlocked! 🎉';
+        if (meterBar) meterBar.style.width = '100%';
+      } else {
+        const remaining = (threshold - total).toFixed(2);
+        if (meterText) meterText.textContent = `Add $${remaining} more for Free US Shipping`;
+        if (meterBar) meterBar.style.width = Math.min(100, Math.round((total / threshold) * 100)) + '%';
+      }
+
+      const subtotalEl = document.getElementById('dgSubtotalPrice');
+      const totalEl = document.getElementById('dgTotalPrice');
+      if (subtotalEl) subtotalEl.textContent = `$${total.toFixed(2)}`;
+      if (totalEl) totalEl.textContent = `$${total.toFixed(2)}`;
+    }
+  }
+
+  function renderCartItems() {
+    if (!cartList) return;
+    cartList.innerHTML = '';
+    cartState.items.forEach(function(item, idx) {
+      const row = document.createElement('div');
+      row.className = 'cart-item-row';
+      row.style.cssText = 'display:flex;gap:12px;align-items:center;border-bottom:1.5px solid var(--hair);padding-bottom:14px;padding-right:10px;width:100%;min-width:0;box-sizing:border-box';
+      row.innerHTML = `
+        <img src="${item.img}" alt="${item.title}" width="56" height="70" style="border-radius:4px;border:1.5px solid var(--rule);flex-shrink:0;object-fit:contain">
+        <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:3px">
+          <h4 style="font:700 15px var(--f-head);margin:0;line-height:1.25">${item.title}</h4>
+          <span style="font-size:13px;color:var(--muted)">${item.variant || 'Standard'}</span>
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:6px;width:100%">
+            <div style="display:inline-flex;border:1.5px solid var(--ink);border-radius:4px;overflow:hidden;flex-shrink:0">
+              <button type="button" class="dg-minus-btn" data-idx="${idx}" style="padding:2px 8px;font-weight:700" aria-label="Decrease quantity">-</button>
+              <span class="mono" style="padding:2px 8px;font-size:13px;background:var(--cloud)">${item.qty}</span>
+              <button type="button" class="dg-plus-btn" data-idx="${idx}" style="padding:2px 8px;font-weight:700" aria-label="Increase quantity">+</button>
+            </div>
+            <span class="price" style="font-weight:700;font-size:16px;flex-shrink:0;white-space:nowrap;margin-left:auto;padding-right:8px">$${(item.price * item.qty).toFixed(2)}</span>
+          </div>
+        </div>
+      `;
+      cartList.appendChild(row);
+    });
+
+    // Add listeners to +/-
+    cartList.querySelectorAll('.dg-minus-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const i = parseInt(btn.getAttribute('data-idx'));
+        if (cartState.items[i].qty > 1) {
+          cartState.items[i].qty -= 1;
+        } else {
+          cartState.items.splice(i, 1);
+        }
+        updateCartUI();
+      });
+    });
+
+    cartList.querySelectorAll('.dg-plus-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const i = parseInt(btn.getAttribute('data-idx'));
+        cartState.items[i].qty += 1;
+        updateCartUI();
+      });
+    });
+  }
+
+  // Open Bag
   if (bagBtn) {
     bagBtn.addEventListener('click', function() {
       closeAllDrawers();
@@ -186,10 +304,56 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Quick add trigger across all cards
+  // Quick add trigger across cards
   document.querySelectorAll('[data-add]').forEach(function(btn) {
     btn.addEventListener('click', function(e) {
       e.preventDefault();
+      const card = btn.closest('.pcard') || btn.closest('article');
+      let title = 'Cherry Bomb Tumbler';
+      let price = 36;
+      let img = "{{ 'cherry-bomb--blush.png' | asset_url }}";
+      let color = 'Blush';
+
+      if (card) {
+        const tEl = card.querySelector('.pname') || card.querySelector('h3') || card.querySelector('h4');
+        if (tEl) title = tEl.textContent.trim();
+        const pEl = card.querySelector('.price');
+        if (pEl) {
+          const num = parseFloat(pEl.textContent.replace(/[^0-9.]/g, ''));
+          if (!isNaN(num)) price = num;
+        }
+        const imgEl = card.querySelector('.pcard-img') || card.querySelector('img');
+        if (imgEl) img = imgEl.src;
+        const swEl = card.querySelector('.swb.on');
+        if (swEl && swEl.getAttribute('data-color')) color = swEl.getAttribute('data-color');
+      }
+
+      // Add to in-memory items
+      const existing = cartState.items.find(it => it.title === title && it.variant === color);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cartState.items.push({
+          title: title,
+          price: price,
+          img: img,
+          variant: color,
+          qty: 1
+        });
+      }
+
+      // Update added drawer preview
+      const addTitle = document.getElementById('dgAddedTitle');
+      const addMeta = document.getElementById('dgAddedMeta');
+      const addPrice = document.getElementById('dgAddedPrice');
+      const addImg = document.getElementById('dgAddedImg');
+      if (addTitle) addTitle.textContent = title;
+      if (addMeta) addMeta.textContent = `In ${color} · Pair (Qty 1)`;
+      if (addPrice) addPrice.textContent = `$${price.toFixed(2)}`;
+      if (addImg) addImg.src = img;
+
+      updateCartUI();
+
       closeAllDrawers();
       if (addedDrawer) addedDrawer.classList.add('open');
       if (scrim) scrim.classList.add('open');
@@ -201,5 +365,8 @@ document.addEventListener('DOMContentLoaded', function() {
       giftNote.style.display = giftToggle.checked ? 'block' : 'none';
     });
   }
+
+  // Initial UI sync
+  updateCartUI();
 });
 </script>

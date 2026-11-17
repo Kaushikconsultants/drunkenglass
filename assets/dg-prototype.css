@@ -296,20 +296,23 @@ ul{margin:0;padding:0;list-style:none}
 .code b{font:700 22px var(--f-mono);letter-spacing:.06em}
 .fine{font-size:13px;opacity:.85;margin-top:10px}
 
-/* footer */
-.foot{background:var(--ink);color:var(--cloud);padding:56px 0 28px;overflow:hidden}
-.foot-grid{display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:28px}
-.foot h4{font:700 14px var(--f-head);color:var(--lime);margin-bottom:12px}
-.foot li a,.foot li button{display:inline-block;padding:4px 0;text-decoration:none;font-size:15px;text-align:left}
-.foot li a:hover,.foot li button:hover{text-decoration:underline}
-.foot .blurb{font-size:15px;max-width:34ch;color:#cfcbc6}
-.pay{display:flex;gap:6px;flex-wrap:wrap;margin-top:16px}
-.pay span{border:1.5px solid #4a4744;border-radius:4px;padding:3px 8px;font:700 11px var(--f-mono);color:#e7e4df}
-.giant{font:400 clamp(30px,9.2vw,138px)/.95 var(--f-display);color:var(--blue);margin:44px 0 18px;white-space:nowrap;letter-spacing:-.02em;display:flex;gap:.12em}
-.giant span{display:inline-block}
-.giant span:nth-child(1){transform:rotate(-3deg)}
-.giant span:nth-child(2){transform:rotate(2deg);color:var(--berry)}
-.legal{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:#a8a39d;border-top:1px solid #333;padding-top:18px}
+/* ---------- modern responsive footer ---------- */
+.ftr{background:var(--paper);border-top:2px solid var(--ink);padding:clamp(40px,6vw,64px) 0 32px;color:var(--ink)}
+.ftr-head{margin-bottom:36px;border-bottom:2px solid var(--ink);padding-bottom:24px;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.ftr-wordmark{display:flex;align-items:center;gap:10px;font:400 clamp(36px,6.5vw,78px)/0.95 var(--f-display);letter-spacing:-.02em}
+.ftr-wordmark .d{color:var(--blue);display:inline-block;transform:rotate(-2deg)}
+.ftr-wordmark .g{color:var(--berry);display:inline-block;transform:rotate(2deg)}
+.ftr-sparkle{width:clamp(22px,3.5vw,36px);height:clamp(22px,3.5vw,36px);color:var(--berry);margin-left:4px}
+.ftr-tagline{font:500 14px/1.4 var(--f-body);color:var(--muted);max-width:320px;margin:0}
+.ftr-cols{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(20px,3vw,36px);margin-bottom:40px}
+.ftr-col h4{font:700 13px/1 var(--f-head);text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:0 0 14px}
+.ftr-col ul{display:flex;flex-direction:column;gap:9px}
+.ftr-col a{font:500 14px/1.35 var(--f-body);color:var(--muted);text-decoration:none;transition:color .15s,transform .15s;display:inline-block}
+.ftr-col a:hover{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+.ftr-bot{border-top:2px solid var(--ink);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+.ftr-copy{font:500 13px var(--f-body);color:var(--muted);margin:0}
+.ftr-chips{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.ftr-chips .chip{height:28px;padding:0 10px;font-size:11.5px}
 
 /* ---------- shop ---------- */
 .page-head{padding:clamp(28px,4vw,48px) 0 20px}
@@ -1032,5 +1035,61 @@ aside.drawer.open,.dg-drawer.open,.drawer.open{transform:none}
   .dbody::-webkit-scrollbar-thumb {
     background: rgba(10, 10, 10, 0.3) !important;
     border-radius: 999px !important;
+  }
+
+  /* 14. Footer Mobile 2-Column Clean Grid */
+  .ftr {
+    padding: 28px 0 20px !important;
+  }
+  .ftr-head {
+    margin-bottom: 22px !important;
+    padding-bottom: 16px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+  }
+  .ftr-wordmark {
+    font-size: clamp(30px, 9vw, 42px) !important;
+    gap: 8px !important;
+  }
+  .ftr-sparkle {
+    width: 22px !important;
+    height: 22px !important;
+  }
+  .ftr-tagline {
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+  }
+  .ftr-cols {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 22px 14px !important;
+    margin-bottom: 24px !important;
+  }
+  .ftr-col-wide {
+    grid-column: 1 / -1 !important;
+    border-top: 1.5px dashed var(--rule) !important;
+    padding-top: 14px !important;
+  }
+  .ftr-col-wide ul {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 6px 14px !important;
+  }
+  .ftr-col h4 {
+    font-size: 12px !important;
+    margin-bottom: 10px !important;
+  }
+  .ftr-col a {
+    font-size: 13.5px !important;
+    padding: 3px 0 !important;
+  }
+  .ftr-bot {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    padding-top: 16px !important;
+  }
+  .ftr-copy {
+    font-size: 12px !important;
   }
 }
