@@ -2,7 +2,7 @@
 <div class="scrim" id="dgScrim"></div>
 
 <!-- 1. Added-To-Bag Drawer -->
-<aside class="drawer" id="dgAddedDrawer" aria-label="Added to Bag" aria-hidden="true" style="z-index:999">
+<aside class="drawer dg-drawer" id="dgAddedDrawer" aria-label="Added to Bag" aria-hidden="true" style="z-index:9999">
   <div class="dhead">
     <h3>Added to Your Bag</h3>
     <button class="close" id="dgCloseAdded" aria-label="Close drawer">
@@ -69,7 +69,7 @@
 </aside>
 
 <!-- 2. Full Slideout Bag Drawer -->
-<aside class="drawer" id="dgCartDrawer" aria-label="Your Bag" aria-hidden="true" style="z-index:999">
+<aside class="drawer dg-drawer" id="dgCartDrawer" aria-label="Your Bag" aria-hidden="true" style="z-index:9999">
   <div class="dhead">
     <h3>Your Bag (<span id="dgCartItemsCount">2</span>)</h3>
     <button class="close" id="dgCloseCart" aria-label="Close bag">
@@ -91,7 +91,7 @@
 
     <!-- Cart Items List -->
     <div id="dgCartItemsList" style="display:flex;flex-direction:column;gap:14px;margin-bottom:20px;width:100%">
-      <div style="display:flex;gap:12px;align-items:center;border-bottom:1.5px solid var(--hair);padding-bottom:14px;width:100%;min-width:0;box-sizing:border-box">
+      <div style="display:flex;gap:12px;align-items:center;border-bottom:1.5px solid var(--hair);padding-bottom:14px;padding-right:10px;width:100%;min-width:0;box-sizing:border-box">
         <img src="{{ 'cherry-bomb--blush.png' | asset_url }}" alt="Item" width="56" height="70" style="border-radius:4px;border:1.5px solid var(--rule);flex-shrink:0;object-fit:contain">
         <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:3px">
           <h4 style="font:700 15px var(--f-head);margin:0;line-height:1.25">Cherry Bomb Tumbler</h4>
@@ -102,7 +102,7 @@
               <span class="mono" style="padding:2px 8px;font-size:13px;background:var(--cloud)">2</span>
               <button type="button" style="padding:2px 8px;font-weight:700" aria-label="Increase quantity">+</button>
             </div>
-            <span class="price" style="font-weight:700;font-size:16px;flex-shrink:0;white-space:nowrap;margin-left:auto">$66</span>
+            <span class="price" style="font-weight:700;font-size:16px;flex-shrink:0;white-space:nowrap;margin-left:auto;padding-right:8px">$66</span>
           </div>
         </div>
       </div>
