@@ -81,17 +81,17 @@
         reveal.className = 'price-reveal on';
         
         const demoData = [
-          { name: 'Wine / Crystal', r: 1190, b50: 820, b200: 710 },
-          { name: 'Rocks / Crystal', r: 990, b50: 680, b200: 590 },
-          { name: 'Tumbler / Boro', r: 740, b50: 420, b200: 360 }
+          { name: 'Wine / Crystal', r: 38, b50: 28, b200: 24 },
+          { name: 'Rocks / Crystal', r: 32, b50: 24, b200: 20 },
+          { name: 'Tumbler / Boro', r: 28, b50: 20, b200: 18 }
         ];
         
         tbody.innerHTML = demoData.map(d => `
           <tr>
             <td>${d.name}</td>
-            <td>₹${d.r}</td>
-            <td class="p">₹${d.b50}</td>
-            <td class="p">₹${d.b200}</td>
+            <td>$${d.r}</td>
+            <td class="p">$${d.b50}</td>
+            <td class="p">$${d.b200}</td>
           </tr>
         `).join('');
       });
@@ -130,8 +130,7 @@
     {
       "type": "url",
       "id": "button_link",
-      "label": "Button link",
-      "default": "shopify:\/\/pages\/contact"
+      "label": "Button link"
     }
   ],
   "presets": [
