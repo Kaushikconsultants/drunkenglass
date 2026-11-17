@@ -63,9 +63,9 @@
             <a class="pname" href="{{ product.url }}">{{ product.title }}</a>
             <span class="pmeta">SKU: {{ product.variants.first.sku }} · B2B Grade</span>
             <div class="prow">
-              <span class="price">{{ product.price | money }}</span>
+              <span class="price">${{ product.price | divided_by: 100.0 | round }}</span>
               {% if product.compare_at_price > product.price %}
-                <span class="strike" style="font-size:13px;color:var(--muted);text-decoration:line-through;margin-left:6px">{{ product.compare_at_price | money }}</span>
+                <span class="strike" style="font-size:13px;color:var(--muted);text-decoration:line-through;margin-left:6px">${{ product.compare_at_price | divided_by: 100.0 | round }}</span>
               {% endif %}
             </div>
             <div class="pfoot">
@@ -84,7 +84,7 @@
         <div class="pinfo">
           <a class="pname" href="/products/r3-vintage-borosilicate-cocktail-coupe-280ml-r3co240">R3 Cocktail Coupe 280ml</a>
           <span class="pmeta">SKU: R3CO240 · 280 ml</span>
-          <div class="prow"><span class="price">₹327</span><span class="strike" style="font-size:13px;color:var(--muted);text-decoration:line-through;margin-left:6px">MRP ₹1,304</span></div>
+          <div class="prow"><span class="price">$38</span><span class="strike" style="font-size:13px;color:var(--muted);text-decoration:line-through;margin-left:6px">MRP $68</span></div>
           <div class="pfoot"><button class="qadd full" type="button">Add to Bag</button></div>
         </div>
       </article>
@@ -97,7 +97,7 @@
         <div class="pinfo">
           <a class="pname" href="/products/r3-fluted-borosilicate-tumbler-glass-380ml-r3tu113">R3 Fluted Tumbler 380ml</a>
           <span class="pmeta">SKU: R3TU113 · 380 ml</span>
-          <div class="prow"><span class="price">₹132</span><span class="strike" style="font-size:13px;color:var(--muted);text-decoration:line-through;margin-left:6px">MRP ₹532</span></div>
+          <div class="prow"><span class="price">$32</span><span class="strike" style="font-size:13px;color:var(--muted);text-decoration:line-through;margin-left:6px">MRP $54</span></div>
           <div class="pfoot"><button class="qadd full" type="button">Add to Bag</button></div>
         </div>
       </article>
@@ -110,7 +110,7 @@
         <div class="pinfo">
           <a class="pname" href="/products/r3-classic-borosilicate-coffee-mug-350ml-r3tc117">R3 Coffee Mug 350ml</a>
           <span class="pmeta">SKU: R3TC117 · 350 ml</span>
-          <div class="prow"><span class="price">₹272</span><span class="strike" style="font-size:13px;color:var(--muted);text-decoration:line-through;margin-left:6px">MRP ₹1,088</span></div>
+          <div class="prow"><span class="price">$28</span><span class="strike" style="font-size:13px;color:var(--muted);text-decoration:line-through;margin-left:6px">MRP $48</span></div>
           <div class="pfoot"><button class="qadd full" type="button">Add to Bag</button></div>
         </div>
       </article>
@@ -123,7 +123,7 @@
         <div class="pinfo">
           <a class="pname" href="/products/r3-insulated-double-wall-borosilicate-glass-270ml-r3dg107">R3 Double Wall 270ml</a>
           <span class="pmeta">SKU: R3DG107 · 270 ml</span>
-          <div class="prow"><span class="price">₹231</span><span class="strike" style="font-size:13px;color:var(--muted);text-decoration:line-through;margin-left:6px">MRP ₹499</span></div>
+          <div class="prow"><span class="price">$34</span><span class="strike" style="font-size:13px;color:var(--muted);text-decoration:line-through;margin-left:6px">MRP $58</span></div>
           <div class="pfoot"><button class="qadd full" type="button">Add to Bag</button></div>
         </div>
       </article>
