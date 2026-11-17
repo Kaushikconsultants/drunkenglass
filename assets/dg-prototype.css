@@ -693,3 +693,316 @@ ul{margin:0;padding:0;list-style:none}
 .amt[aria-checked="true"]{border-color:var(--ink);background:var(--lime-t);box-shadow:3px 3px 0 var(--ink)}
 @media (max-width:960px){.gc-grid{grid-template-columns:1fr}.gc-preview{position:static;min-height:0}}
 
+
+
+/* ==========================================================================
+   COMPREHENSIVE MOBILE VIEW OPTIMIZATIONS (Smartphones 320px - 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* 1. Global Touch & Viewport Layout */
+  :root {
+    --gut: 16px;
+  }
+  .wrap {
+    padding-inline: 16px;
+  }
+  .sec {
+    padding-block: 36px;
+  }
+  .sec-head {
+    margin-bottom: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .sec-head .link {
+    align-self: flex-start;
+  }
+  .h2 {
+    font-size: clamp(26px, 7vw, 36px);
+    line-height: 1.1;
+  }
+  .sub {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  /* 2. Announcement Bar Mobile */
+  .ann {
+    min-height: 38px;
+    padding: 6px 12px;
+  }
+  .ann-msg {
+    font-size: 12px;
+    line-height: 1.35;
+    text-align: center;
+  }
+
+  /* 3. Header & Navigation Mobile */
+  .hdr {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .hdr-in {
+    height: 58px;
+    padding-inline: 12px;
+  }
+  .logo {
+    font-size: 20px;
+  }
+  .menu-btn, .searchbtn, .bagbtn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* 4. Hero Section Mobile Optimization */
+  .hero {
+    padding-top: 16px;
+    padding-bottom: 32px;
+    gap: 24px;
+  }
+  .hero-pill {
+    font-size: 12.5px;
+    padding: 6px 12px;
+    margin-bottom: 14px;
+  }
+  .tipsy {
+    font: 400 clamp(32px, 8.5vw, 44px)/1.04 var(--f-display) !important;
+    letter-spacing: -0.01em;
+    margin-bottom: 16px;
+  }
+  .hero-sub {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  .hero-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .hero-cta .btn {
+    width: 100%;
+    min-height: 48px;
+    justify-content: center;
+    font-size: 16px;
+  }
+  .hero-trust {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    font-size: 13px;
+  }
+  .hero-trust li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .lens {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    aspect-ratio: 1;
+    border-radius: var(--r);
+    box-shadow: 5px 5px 0 var(--ink);
+  }
+
+  /* 5. Vibe Chips Scrolling Mobile */
+  .vibes {
+    padding: 8px 16px 16px;
+    gap: 8px;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+  .vibes .chip {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    min-height: 38px;
+    font-size: 13px;
+    padding: 0 14px;
+  }
+
+  /* 6. Product Rail Carousel Mobile */
+  .rail {
+    grid-auto-columns: 80% !important;
+    gap: 14px !important;
+    padding: 8px 16px 20px !important;
+    margin-inline: -16px !important;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+  .pcard {
+    scroll-snap-align: start;
+  }
+  .pmedia {
+    aspect-ratio: 1;
+  }
+  .pmedia img {
+    max-height: 180px;
+    width: auto;
+  }
+  .pinfo {
+    padding: 12px;
+  }
+  .pname {
+    font-size: 16px;
+    line-height: 1.3;
+  }
+  .pfoot {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+    margin-top: 10px;
+  }
+  .pfoot .sw {
+    justify-content: flex-start;
+  }
+  .swb {
+    width: 26px;
+    height: 26px;
+  }
+  .qadd {
+    width: 100% !important;
+    min-height: 42px;
+    justify-content: center;
+  }
+
+  /* 7. Categories Mobile */
+  .cats {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+  .cats .cat:last-child {
+    grid-column: 1 / -1 !important;
+  }
+  .cat .art {
+    height: 110px !important;
+  }
+  .cat .art img {
+    max-height: 90px;
+    width: auto;
+  }
+  .cat .lab {
+    padding: 10px !important;
+  }
+  .cat .lab b {
+    font-size: 15px;
+  }
+  .cat .lab small {
+    font-size: 11.5px;
+    line-height: 1.3;
+  }
+
+  /* 8. Collection Bento Mobile */
+  .bento {
+    grid-template-columns: 1fr !important;
+    grid-auto-rows: auto !important;
+    gap: 14px !important;
+  }
+  .era {
+    min-height: 130px !important;
+    padding: 18px 16px !important;
+    display: grid !important;
+    grid-template-columns: 1fr auto !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+  .era.big, .era.wide {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+  .era b {
+    font-size: 20px;
+    margin-bottom: 4px;
+    display: block;
+  }
+  .era p {
+    font-size: 13px;
+    line-height: 1.35;
+    margin-bottom: 8px;
+    max-width: 240px;
+  }
+  .era .count {
+    position: static !important;
+    display: inline-block !important;
+  }
+  .era .art {
+    position: static !important;
+  }
+  .era .art img {
+    max-height: 85px;
+    width: auto;
+  }
+
+  /* 9. Quiz Mobile */
+  .quiz {
+    box-shadow: 5px 5px 0 var(--ink) !important;
+  }
+  .quiz-l {
+    padding: 20px 16px !important;
+  }
+  .quiz-r {
+    padding: 20px 16px !important;
+  }
+  .quiz-q {
+    font-size: 18px !important;
+  }
+  .quiz-opt {
+    min-height: 52px;
+    padding: 12px;
+    text-align: left;
+    display: block;
+  }
+  .quiz-opt span {
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .quiz-opt small {
+    font-size: 12px;
+    margin-top: 2px;
+  }
+
+  /* 10. Build A Set Mobile */
+  .build-grid-wrap {
+    grid-template-columns: 1fr !important;
+  }
+  .tray {
+    position: sticky !important;
+    bottom: 0 !important;
+    top: auto !important;
+    z-index: 40 !important;
+    box-shadow: 0 -4px 16px rgba(0,0,0,0.12), 0 -2px 0 var(--ink) !important;
+    border-radius: var(--r) var(--r) 0 0 !important;
+    margin-inline: -16px !important;
+    padding: 16px !important;
+  }
+  .tray .slots {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 8px !important;
+  }
+
+  /* 11. Story Rows Mobile */
+  #dg-story-rows .sec-head + div {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* 12. Gifting Tiles Mobile */
+  #dg-gifting-tiles .sec-head + div {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  /* 13. Drawers on Mobile (Full Width Edge-to-Edge) */
+  .drawer {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .dbody {
+    padding: 16px !important;
+    padding-bottom: calc(24px + env(safe-area-inset-bottom, 16px)) !important;
+  }
+}

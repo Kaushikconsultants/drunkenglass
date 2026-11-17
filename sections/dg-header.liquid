@@ -1,35 +1,35 @@
 <header class="hdr" id="dg-header">
   <div class="wrap hdr-in">
     <div class="nav-l" style="display:flex;align-items:center;gap:8px">
-      <button class="ibtn menu-btn" id="dgMenuBtn" aria-label="open menu">
+      <button class="ibtn menu-btn" id="dgMenuBtn" aria-label="Open menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
       </button>
       <nav class="nav" aria-label="main">
-        <a href="{{ routes.all_products_collection_url | default: '/collections/all' }}">shop all</a>
+        <a href="{{ routes.all_products_collection_url | default: '/collections/all' }}">Shop All</a>
         <button id="dgMegaTrigger" type="button" aria-expanded="false" aria-controls="dgMega">
-          collections 
+          Collections 
           <svg width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg>
         </button>
-        <a href="/pages/build-a-set">build a set</a>
-        <a href="/pages/gifting">gifting</a>
-        <a href="/pages/our-story">our story</a>
+        <a href="/pages/build-a-set">Build a Set</a>
+        <a href="/pages/gifting">Gifting</a>
+        <a href="/pages/our-story">Our Story</a>
       </nav>
     </div>
 
-    <a class="logo" href="/" aria-label="drunken glass home">
+    <a class="logo" href="/" aria-label="Drunken Glass Home">
       <span class="d">drunken</span> 
       <span class="g">glass</span>
       <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 1c1 7 4 10 11 11-7 1-10 4-11 11-1-7-4-10-11-11 7-1 10-4 11-11z"/></svg>
     </a>
 
     <div class="util">
-      <button class="searchbtn" id="dgSearchTrigger" type="button" aria-label="search">
+      <button class="searchbtn" id="dgSearchTrigger" type="button" aria-label="Search">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.6-4.6"/></svg>
-        <span class="t">search glasses</span>
+        <span class="t">Search glasses...</span>
       </button>
 
       {%- if shop.customer_accounts_enabled -%}
-        <a class="ibtn hide-m" href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" aria-label="account">
+        <a class="ibtn hide-m" href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" aria-label="Account">
           {%- if customer -%}
             <span class="mono" style="font-size:14px;font-weight:700">{{ customer.first_name | slice: 0 | upcase }}</span>
           {%- else -%}
@@ -38,16 +38,16 @@
         </a>
       {%- endif -%}
 
-      <a class="ibtn hide-m" href="/pages/wishlist" aria-label="wishlist">
+      <a class="ibtn hide-m" href="/pages/wishlist" aria-label="Wishlist">
         <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
         <span class="dot" id="dgWishCount" style="display:none;"></span>
       </a>
 
-      <button class="bagbtn" id="dgBagBtn" type="button" aria-label="open bag">
+      <button class="bagbtn" id="dgBagBtn" type="button" aria-label="Open bag">
         <svg class="bi" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round">
           <path d="M5 8h14l-1 13H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/>
         </svg>
-        <span class="lbl">bag</span> 
+        <span class="lbl">Bag</span> 
         <span class="mono" id="dgBagCount">{{ cart.item_count | default: 0 | prepend: '00' | slice: -2, 2 }}</span>
       </button>
     </div>
@@ -57,85 +57,85 @@
   <div class="mega" id="dgMega">
     <div class="mega-in">
       <div>
-        <h4>collections</h4>
+        <h4>Collections</h4>
         <div class="mega-cols">
           <a class="mcol" href="/collections/fruit-club" style="--bg:#ffe1e8">
-            <img src="{{ 'cherry-bomb--blush.png' | asset_url }}" alt="fruit club" width="48" height="48" loading="lazy">
-            <span>fruit club</span>
+            <img src="{{ 'cherry-bomb--blush.png' | asset_url }}" alt="Fruit Club" width="48" height="48" loading="lazy">
+            <span>Fruit Club</span>
           </a>
           <a class="mcol" href="/collections/heart-eyes" style="--bg:#ffe1e8">
-            <img src="{{ 'heart-eyes-mug--berry-crush.png' | asset_url }}" alt="heart eyes" width="48" height="48" loading="lazy">
-            <span>heart eyes</span>
+            <img src="{{ 'heart-eyes-mug--berry-crush.png' | asset_url }}" alt="Heart Eyes" width="48" height="48" loading="lazy">
+            <span>Heart Eyes</span>
           </a>
           <a class="mcol" href="/collections/golden-hour" style="--bg:#f8fac4">
-            <img src="{{ 'lemon-drop--sunny.png' | asset_url }}" alt="golden hour" width="48" height="48" loading="lazy">
-            <span>golden hour</span>
+            <img src="{{ 'lemon-drop--sunny.png' | asset_url }}" alt="Golden Hour" width="48" height="48" loading="lazy">
+            <span>Golden Hour</span>
           </a>
           <a class="mcol" href="/collections/the-wobble" style="--bg:#dfe8ff">
-            <img src="{{ 'the-wobble--electric-blue.png' | asset_url }}" alt="wobble" width="48" height="48" loading="lazy">
-            <span>the wobble</span>
+            <img src="{{ 'the-wobble--electric-blue.png' | asset_url }}" alt="The Wobble" width="48" height="48" loading="lazy">
+            <span>The Wobble</span>
           </a>
           <a class="mcol" href="/collections/cafe-club" style="--bg:#f2f1f0">
-            <img src="{{ 'coffee-break-cup--berry-polka.png' | asset_url }}" alt="café club" width="48" height="48" loading="lazy">
-            <span>café club</span>
+            <img src="{{ 'coffee-break-cup--berry-polka.png' | asset_url }}" alt="Café Club" width="48" height="48" loading="lazy">
+            <span>Café Club</span>
           </a>
           <a class="mcol" href="/collections/after-hours" style="--bg:#dfe8ff">
-            <img src="{{ 'starstruck-coupe--deep-blue.png' | asset_url }}" alt="after hours" width="48" height="48" loading="lazy">
-            <span>after hours</span>
+            <img src="{{ 'starstruck-coupe--deep-blue.png' | asset_url }}" alt="After Hours" width="48" height="48" loading="lazy">
+            <span>After Hours</span>
           </a>
           <a class="mcol" href="/collections/y2k-bloom" style="--bg:#ffe1e8">
-            <img src="{{ 'daisy-days--blue-daisy.png' | asset_url }}" alt="y2k bloom" width="48" height="48" loading="lazy">
-            <span>y2k bloom</span>
+            <img src="{{ 'daisy-days--blue-daisy.png' | asset_url }}" alt="Y2K Bloom" width="48" height="48" loading="lazy">
+            <span>Y2K Bloom</span>
           </a>
           <a class="mcol" href="/collections/all" style="--bg:#ffffff;justify-content:center">
-            <span style="font:400 22px var(--f-display)">see all</span>
+            <span style="font:400 22px var(--f-display)">See All</span>
           </a>
         </div>
       </div>
       <div class="mega-list">
-        <h4>shop by type</h4>
-        <a href="/collections/tumblers">tumblers</a>
-        <a href="/collections/mugs">mugs</a>
-        <a href="/collections/espresso-tea">espresso + tea</a>
-        <a href="/collections/cocktail-glasses">cocktail glasses</a>
-        <a href="/collections/sets-and-accessories">sets & accessories</a>
-        <a href="/pages/build-a-set">build a set</a>
+        <h4>Shop By Type</h4>
+        <a href="/collections/tumblers">Tumblers</a>
+        <a href="/collections/mugs">Mugs</a>
+        <a href="/collections/espresso-tea">Espresso + Tea</a>
+        <a href="/collections/cocktail-glasses">Cocktail Glasses</a>
+        <a href="/collections/sets-and-accessories">Sets & Accessories</a>
+        <a href="/pages/build-a-set">Build a Set</a>
       </div>
       <a class="mega-promo" href="/pages/quiz">
-        <b>which glass are you?</b>
-        <span>3 questions. one perfect glass. zero commitment issues.</span>
-        <span class="btn btn-lime sm" style="align-self:flex-start">take the quiz</span>
+        <b>Which Glass Are You?</b>
+        <span>3 quick questions. One perfect glass. Zero commitment issues.</span>
+        <span class="btn btn-lime sm" style="align-self:flex-start">Take the Quiz</span>
       </a>
     </div>
   </div>
 </header>
 
 <!-- Mobile Menu Drawer -->
-<aside class="drawer left" id="dgMobileMenu" aria-label="menu" aria-hidden="true">
+<aside class="drawer left" id="dgMobileMenu" aria-label="Menu" aria-hidden="true">
   <div class="dhead">
-    <h3>menu</h3>
-    <button class="close" id="dgCloseMenu" aria-label="close menu">
+    <h3>Menu</h3>
+    <button class="close" id="dgCloseMenu" aria-label="Close menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
   </div>
   <div class="dbody">
     <nav class="mnav" aria-label="mobile">
-      <a href="/collections/all">shop all</a>
-      <a href="/pages/build-a-set">build a set</a>
-      <a href="/pages/gifting">gifting</a>
-      <a href="/products/digital-gift-card">gift cards</a>
-      <a href="/pages/quiz">which glass are you?</a>
-      <a href="/pages/our-story">our story</a>
+      <a href="/collections/all">Shop All</a>
+      <a href="/pages/build-a-set">Build a Set</a>
+      <a href="/pages/gifting">Gifting</a>
+      <a href="/products/digital-gift-card">Gift Cards</a>
+      <a href="/pages/quiz">Which Glass Are You?</a>
+      <a href="/pages/our-story">Our Story</a>
     </nav>
-    <p class="lbl" style="margin:16px 0 8px">collections</p>
+    <p class="lbl" style="margin:16px 0 8px">Collections</p>
     <div class="mnav-cols">
-      <a class="mcol" href="/collections/fruit-club" style="--bg:#ffe1e8"><span>fruit club</span></a>
-      <a class="mcol" href="/collections/heart-eyes" style="--bg:#ffe1e8"><span>heart eyes</span></a>
-      <a class="mcol" href="/collections/golden-hour" style="--bg:#f8fac4"><span>golden hour</span></a>
-      <a class="mcol" href="/collections/the-wobble" style="--bg:#dfe8ff"><span>the wobble</span></a>
-      <a class="mcol" href="/collections/cafe-club" style="--bg:#f2f1f0"><span>café club</span></a>
-      <a class="mcol" href="/collections/after-hours" style="--bg:#dfe8ff"><span>after hours</span></a>
-      <a class="mcol" href="/collections/y2k-bloom" style="--bg:#ffe1e8"><span>y2k bloom</span></a>
+      <a class="mcol" href="/collections/fruit-club" style="--bg:#ffe1e8"><span>Fruit Club</span></a>
+      <a class="mcol" href="/collections/heart-eyes" style="--bg:#ffe1e8"><span>Heart Eyes</span></a>
+      <a class="mcol" href="/collections/golden-hour" style="--bg:#f8fac4"><span>Golden Hour</span></a>
+      <a class="mcol" href="/collections/the-wobble" style="--bg:#dfe8ff"><span>The Wobble</span></a>
+      <a class="mcol" href="/collections/cafe-club" style="--bg:#f2f1f0"><span>Café Club</span></a>
+      <a class="mcol" href="/collections/after-hours" style="--bg:#dfe8ff"><span>After Hours</span></a>
+      <a class="mcol" href="/collections/y2k-bloom" style="--bg:#ffe1e8"><span>Y2K Bloom</span></a>
     </div>
   </div>
 </aside>

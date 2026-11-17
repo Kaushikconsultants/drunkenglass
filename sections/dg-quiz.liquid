@@ -1,8 +1,8 @@
 <section class="sec wrap" id="dg-quiz">
   <div class="quiz" id="quizBox">
     <div class="quiz-l">
-      <h2 class="h2">{{ section.settings.heading | default: 'which glass are you?' }}</h2>
-      <p class="sub">{{ section.settings.subheading | default: '3 questions. one perfect glass. zero commitment issues.' }}</p>
+      <h2 class="h2">{{ section.settings.heading | default: 'Which Glass Are You?' }}</h2>
+      <p class="sub">{{ section.settings.subheading | default: '3 quick questions. One perfect glass. Zero commitment issues.' }}</p>
       
       <div class="quiz-progress" style="margin-top:20px;height:6px;background:var(--rule);border-radius:3px;overflow:hidden;max-width:320px">
         <div id="quizProgressBar" style="height:100%;width:33%;background:var(--blue);transition:width .25s ease"></div>
@@ -12,69 +12,69 @@
     <div class="quiz-r" id="quizContent">
       <!-- Step 1 -->
       <div class="quiz-step" data-step="1">
-        <p class="quiz-q" style="font:700 20px var(--f-head);margin-bottom:16px">1. what’s in your glass at 4pm?</p>
+        <p class="quiz-q" style="font:700 20px var(--f-head);margin-bottom:16px">1. What’s in your glass at 4 PM?</p>
         <div class="quiz-opts" style="display:grid;gap:12px">
           <button class="quiz-opt btn" type="button" data-scores='{"cortado-glasses-set":3,"coffee-break-cup":2,"heart-eyes-mug":1}'>
-            <span>a chai latte, obviously</span>
-            <small style="display:block;opacity:.7;font-weight:400">extra cinnamon, extra gossip</small>
+            <span>A Chai Latte, Obviously</span>
+            <small style="display:block;opacity:.7;font-weight:400">Extra cinnamon, extra gossip</small>
           </button>
           <button class="quiz-opt btn" type="button" data-scores='{"cherry-bomb":2,"the-wobble":2,"daisy-days":1}'>
-            <span>iced coffee, extra ice</span>
-            <small style="display:block;opacity:.7;font-weight:400">the oat milk is non-negotiable</small>
+            <span>Iced Coffee, Extra Ice</span>
+            <small style="display:block;opacity:.7;font-weight:400">The oat milk is non-negotiable</small>
           </button>
           <button class="quiz-opt btn" type="button" data-scores='{"crush-coupe":2,"starstruck-coupe":2,"after-hours-rocks":1}'>
-            <span>a mocktail with a tiny umbrella</span>
-            <small style="display:block;opacity:.7;font-weight:400">it’s 5pm somewhere</small>
+            <span>A Mocktail with a Tiny Umbrella</span>
+            <small style="display:block;opacity:.7;font-weight:400">It’s 5 PM somewhere</small>
           </button>
           <button class="quiz-opt btn" type="button" data-scores='{"lemon-drop":3,"cloud-nine-mug":2}'>
-            <span>matcha, or anything green</span>
-            <small style="display:block;opacity:.7;font-weight:400">your gut health is thriving</small>
+            <span>Matcha, or Anything Green</span>
+            <small style="display:block;opacity:.7;font-weight:400">Your gut health is thriving</small>
           </button>
         </div>
       </div>
 
       <!-- Step 2 -->
       <div class="quiz-step" data-step="2" style="display:none">
-        <p class="quiz-q" style="font:700 20px var(--f-head);margin-bottom:16px">2. pick a saturday plan</p>
+        <p class="quiz-q" style="font:700 20px var(--f-head);margin-bottom:16px">2. Pick a Saturday plan</p>
         <div class="quiz-opts" style="display:grid;gap:12px">
           <button class="quiz-opt btn" type="button" data-scores='{"heart-eyes-mug":3,"cloud-nine-mug":2}'>
-            <span>farmer's market & flowers</span>
-            <small style="display:block;opacity:.7;font-weight:400">tote bag full of sourdough</small>
+            <span>Farmer's Market & Fresh Flowers</span>
+            <small style="display:block;opacity:.7;font-weight:400">Tote bag full of sourdough</small>
           </button>
           <button class="quiz-opt btn" type="button" data-scores='{"starstruck-coupe":3,"crush-coupe":2}'>
-            <span>dinner party that goes till 2am</span>
-            <small style="display:block;opacity:.7;font-weight:400">candlelight and natural wine</small>
+            <span>Dinner Party That Goes Till 2 AM</span>
+            <small style="display:block;opacity:.7;font-weight:400">Candlelight and natural wine</small>
           </button>
           <button class="quiz-opt btn" type="button" data-scores='{"the-wobble":3,"cherry-bomb":2}'>
-            <span>browsing a vintage record store</span>
-            <small style="display:block;opacity:.7;font-weight:400">dopamine dressing in full effect</small>
+            <span>Browsing a Vintage Record Store</span>
+            <small style="display:block;opacity:.7;font-weight:400">Dopamine dressing in full effect</small>
           </button>
           <button class="quiz-opt btn" type="button" data-scores='{"cortado-glasses-set":3,"coffee-break-cup":2}'>
-            <span>couch, book, phone on do-not-disturb</span>
-            <small style="display:block;opacity:.7;font-weight:400">unreachable in the best way</small>
+            <span>Couch, Good Book, Phone on Do-Not-Disturb</span>
+            <small style="display:block;opacity:.7;font-weight:400">Unreachable in the best way</small>
           </button>
         </div>
       </div>
 
       <!-- Step 3 -->
       <div class="quiz-step" data-step="3" style="display:none">
-        <p class="quiz-q" style="font:700 20px var(--f-head);margin-bottom:16px">3. your aesthetic in one word</p>
+        <p class="quiz-q" style="font:700 20px var(--f-head);margin-bottom:16px">3. Your aesthetic in one word</p>
         <div class="quiz-opts" style="display:grid;gap:12px">
           <button class="quiz-opt btn" type="button" data-scores='{"cherry-bomb":3,"daisy-days":2}'>
-            <span>playful & nostalgic</span>
-            <small style="display:block;opacity:.7;font-weight:400">y2k bubbles & primary brights</small>
+            <span>Playful & Nostalgic</span>
+            <small style="display:block;opacity:.7;font-weight:400">Y2K bubbles & primary brights</small>
           </button>
           <button class="quiz-opt btn" type="button" data-scores='{"the-wobble":3,"lemon-drop":2}'>
-            <span>architectural & wavy</span>
-            <small style="display:block;opacity:.7;font-weight:400">clean lines with an unexpected twist</small>
+            <span>Architectural & Wavy</span>
+            <small style="display:block;opacity:.7;font-weight:400">Clean lines with an unexpected twist</small>
           </button>
           <button class="quiz-opt btn" type="button" data-scores='{"heart-eyes-mug":3,"cloud-nine-mug":2}'>
-            <span>soft romantic</span>
-            <small style="display:block;opacity:.7;font-weight:400">pastels, curves and sweet treats</small>
+            <span>Soft Romantic</span>
+            <small style="display:block;opacity:.7;font-weight:400">Pastels, curves and sweet treats</small>
           </button>
           <button class="quiz-opt btn" type="button" data-scores='{"starstruck-coupe":3,"after-hours-rocks":2}'>
-            <span>moody & minimal</span>
-            <small style="display:block;opacity:.7;font-weight:400">smoked tones and high drama</small>
+            <span>Moody & Minimal</span>
+            <small style="display:block;opacity:.7;font-weight:400">Smoked tones and high drama</small>
           </button>
         </div>
       </div>
@@ -82,16 +82,16 @@
       <!-- Result Card -->
       <div class="quiz-res" id="quizResultCard" style="display:none">
         <div class="pcard" style="background:#fff;border:2px solid var(--ink);border-radius:var(--r);box-shadow:var(--sh);padding:20px;text-align:center">
-          <span class="badge b-lime" style="position:static;display:inline-block;margin-bottom:12px">your soulmate glass</span>
-          <img id="resImg" src="{{ 'cherry-bomb--blush.png' | asset_url }}" alt="result glass" width="200" height="240" style="margin:0 auto 16px;display:block">
-          <h3 id="resTitle" style="font:700 24px var(--f-head);margin-bottom:6px">cherry bomb tumbler</h3>
-          <p id="resSub" style="color:var(--muted);font-size:14px;margin-bottom:16px">for sweet sips and dopamine mornings.</p>
+          <span class="badge b-lime" style="position:static;display:inline-block;margin-bottom:12px">Your Soulmate Glass</span>
+          <img id="resImg" src="{{ 'cherry-bomb--blush.png' | asset_url }}" alt="Result Glass" width="200" height="240" style="margin:0 auto 16px;display:block">
+          <h3 id="resTitle" style="font:700 24px var(--f-head);margin-bottom:6px">Cherry Bomb Tumbler</h3>
+          <p id="resSub" style="color:var(--muted);font-size:14px;margin-bottom:16px">For sweet sips and dopamine mornings.</p>
           <div class="prow" style="justify-content:center;margin-bottom:20px">
             <span class="price" id="resPrice" style="font-size:24px">$36</span>
           </div>
           <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
-            <a class="btn btn-blue" id="resLink" href="/products/cherry-bomb">see details</a>
-            <button class="btn btn-lime" id="resRetake" type="button">retake quiz</button>
+            <a class="btn btn-blue" id="resLink" href="/products/cherry-bomb">See Details</a>
+            <button class="btn btn-lime" id="resRetake" type="button">Retake Quiz</button>
           </div>
         </div>
       </div>
@@ -118,12 +118,12 @@ document.addEventListener('DOMContentLoaded', function() {
   const scores = {};
 
   const productData = {
-    'cherry-bomb': { title: 'cherry bomb tumbler', price: '$36', sub: 'strawberries & cherries for your everyday iced coffee.', img: '{{ "cherry-bomb--blush.png" | asset_url }}', url: '/products/cherry-bomb' },
-    'the-wobble': { title: 'the wobble tumbler', price: '$36', sub: 'wavy curves and electric color for restless hands.', img: '{{ "the-wobble--electric-blue.png" | asset_url }}', url: '/products/the-wobble' },
-    'heart-eyes-mug': { title: 'heart eyes mug', price: '$34', sub: 'for hot matcha and slow romantic mornings.', img: '{{ "heart-eyes-mug--berry-crush.png" | asset_url }}', url: '/products/heart-eyes-mug' },
-    'starstruck-coupe': { title: 'starstruck coupe', price: '$38', sub: 'midnight glass for cocktails that look expensive.', img: '{{ "starstruck-coupe--deep-blue.png" | asset_url }}', url: '/products/starstruck-coupe' },
-    'cortado-glasses-set': { title: 'cortado glasses pair', price: '$26', sub: 'authentic hand-blown borosilicate cortado glasses.', img: '{{ "cortado-glasses-set--clear.png" | asset_url }}', url: '/products/cortado-glasses-set' },
-    'lemon-drop': { title: 'lemon drop tumbler', price: '$34', sub: 'bright citrus vibes that look like golden hour.', img: '{{ "lemon-drop--sunny.png" | asset_url }}', url: '/products/lemon-drop' }
+    'cherry-bomb': { title: 'Cherry Bomb Tumbler', price: '$36', sub: 'Strawberries & cherries for your everyday iced coffee.', img: '{{ "cherry-bomb--blush.png" | asset_url }}', url: '/products/cherry-bomb' },
+    'the-wobble': { title: 'The Wobble Tumbler', price: '$36', sub: 'Wavy curves and electric color for restless hands.', img: '{{ "the-wobble--electric-blue.png" | asset_url }}', url: '/products/the-wobble' },
+    'heart-eyes-mug': { title: 'Heart Eyes Mug', price: '$34', sub: 'For hot matcha and slow romantic mornings.', img: '{{ "heart-eyes-mug--berry-crush.png" | asset_url }}', url: '/products/heart-eyes-mug' },
+    'starstruck-coupe': { title: 'Starstruck Coupe', price: '$38', sub: 'Midnight glass for cocktails that look expensive.', img: '{{ "starstruck-coupe--deep-blue.png" | asset_url }}', url: '/products/starstruck-coupe' },
+    'cortado-glasses-set': { title: 'Cortado Glasses Pair', price: '$26', sub: 'Authentic hand-blown borosilicate cortado glasses.', img: '{{ "cortado-glasses-set--clear.png" | asset_url }}', url: '/products/cortado-glasses-set' },
+    'lemon-drop': { title: 'Lemon Drop Tumbler', price: '$34', sub: 'Bright citrus vibes that look like golden hour.', img: '{{ "lemon-drop--sunny.png" | asset_url }}', url: '/products/lemon-drop' }
   };
 
   box.querySelectorAll('.quiz-opt').forEach(function(btn) {
@@ -182,13 +182,13 @@ document.addEventListener('DOMContentLoaded', function() {
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "which glass are you?"
+      "default": "Which Glass Are You?"
     },
     {
       "type": "text",
       "id": "subheading",
       "label": "Subheading",
-      "default": "3 questions. one perfect glass. zero commitment issues."
+      "default": "3 quick questions. One perfect glass. Zero commitment issues."
     }
   ],
   "presets": [

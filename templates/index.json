@@ -15,57 +15,57 @@
     "categories": {
       "type": "dg-categories",
       "settings": {
-        "heading": "what are you drinking?",
-        "subheading": "five shapes of happy. pick your poison (it’s cold coffee, relax)."
+        "heading": "What Are You Drinking?",
+        "subheading": "Five shapes of happy. Pick your poison (it’s cold coffee, relax)."
       }
     },
     "product_rail": {
       "type": "dg-product-rail",
       "settings": {
-        "heading": "fresh out the furnace",
-        "subheading": "tap a color dot to try it on. yes, like a filter."
+        "heading": "Fresh Out The Furnace",
+        "subheading": "Tap a color dot to try it on. Yes, just like a filter."
       }
     },
     "collection_bento": {
       "type": "dg-collection-bento",
       "settings": {
-        "heading": "pick your era",
-        "subheading": "seven collections, one rule: no boring glasses."
+        "heading": "Pick Your Era",
+        "subheading": "Seven collections, one golden rule: No boring glasses."
       }
     },
     "quiz": {
       "type": "dg-quiz",
       "settings": {
-        "heading": "which glass are you?",
-        "subheading": "3 questions. one perfect glass. zero commitment issues."
+        "heading": "Which Glass Are You?",
+        "subheading": "3 quick questions. One perfect glass. Zero commitment issues."
       }
     },
     "build_a_set_teaser": {
       "type": "dg-build-a-set-teaser",
       "settings": {
-        "heading": "build a set: any 4 for $99",
-        "subheading": "mix and match your four favorite glasses and save up to $45. we’ll pack them together in our signature gift box."
+        "heading": "Build A Set: Any 4 For $99",
+        "subheading": "Mix and match your four favorite glasses and save up to $45. We’ll pack them together in our signature gift box."
       }
     },
     "story_rows": {
       "type": "dg-story-rows",
       "settings": {
-        "heading": "from furnace to your shelf",
-        "subheading": "how a drunken glass gets made. no shortcuts, no thin fragile glass."
+        "heading": "From Furnace To Your Shelf",
+        "subheading": "How a Drunken Glass gets made. Hand-blown craftsmanship, no thin fragile glass."
       }
     },
     "gifting_tiles": {
       "type": "dg-gifting-tiles",
       "settings": {
-        "heading": "gifting, sorted",
-        "subheading": "for the person who already has three Stanley cups they don’t need."
+        "heading": "Gifting, Sorted",
+        "subheading": "For the person who already has three Stanley cups they don’t need."
       }
     },
     "sip_club": {
       "type": "dg-sip-club",
       "settings": {
-        "heading": "welcome to the sip club",
-        "subheading": "10% off your first order, plus drop alerts before we post to instagram. no spam, we hate it too."
+        "heading": "Welcome To The Sip Club",
+        "subheading": "Get 10% off your first order, plus drop alerts before we post to Instagram. No spam ever."
       }
     }
   },
