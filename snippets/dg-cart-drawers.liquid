@@ -1,39 +1,64 @@
 <!-- Background Scrim -->
 <div class="scrim" id="dgScrim"></div>
 
-<!-- 1. Added-To-Bag Drawer -->
-<aside class="drawer dg-drawer" id="dgAddedDrawer" aria-label="Added to Bag" aria-hidden="true" style="z-index:9999">
+<!-- Unified Slideout Bag Drawer -->
+<aside class="drawer dg-drawer" id="dgCartDrawer" aria-label="Your Bag" aria-hidden="true" style="z-index:9999">
   <div class="dhead">
-    <h3>Added to Your Bag</h3>
-    <button class="close" id="dgCloseAdded" aria-label="Close drawer">
+    <h3>Your Bag (<span id="dgCartItemsCount">{{ cart.item_count | default: 0 }}</span>)</h3>
+    <button class="close" id="dgCloseCart" aria-label="Close bag">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
   </div>
 
   <div class="dbody">
-    <!-- Item added preview -->
-    <div id="dgAddedItemBox" style="display:flex;gap:12px;align-items:center;padding:12px;background:var(--cloud);border:2px solid var(--ink);border-radius:var(--r);margin-bottom:16px;min-width:0;width:100%;box-sizing:border-box">
-      <img id="dgAddedImg" src="{{ 'r3-r3tu113.webp' | asset_url }}" alt="Added Glass" width="56" height="70" style="border-radius:4px;flex-shrink:0;object-fit:contain">
-      <div style="flex:1;min-width:0">
-        <h4 id="dgAddedTitle" style="font:700 15px var(--f-head);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">R3 Fluted Tumbler Glass</h4>
-        <span class="pmeta" id="dgAddedMeta" style="font-size:13px;color:var(--muted)">SKU: R3TU113 · 380 ml</span>
-        <div class="price" id="dgAddedPrice" style="font-weight:700;margin-top:4px;font-size:16px">$32</div>
-      </div>
+    <!-- Just Added Confirmation Banner (Appears dynamically upon adding an item) -->
+    <div id="dgJustAddedBanner" style="display:none;background:var(--lime);border:2px solid var(--ink);border-radius:var(--r);padding:10px 14px;margin-bottom:14px;font:700 13.5px var(--f-head);align-items:center;gap:8px;box-shadow:2px 2px 0 var(--ink)">
+      <span style="font-size:16px">✓</span>
+      <span id="dgJustAddedText">Added to your bag!</span>
     </div>
 
     <!-- Free Shipping Meter -->
-    <div style="background:#fff;border:2px solid var(--ink);border-radius:var(--r);padding:14px;margin-bottom:18px;box-sizing:border-box">
+    <div id="dgShippingMeterBox" style="background:var(--cloud);border:2px solid var(--ink);border-radius:var(--r);padding:14px;margin-bottom:16px;box-sizing:border-box;{% if cart.item_count == 0 %}display:none;{% endif %}">
       <div style="display:flex;justify-content:space-between;font-size:13px;font-weight:700;margin-bottom:8px">
-        <span id="dgShipMeterText">Add $43 more for Free US Shipping</span>
-        <span class="mono" id="dgShipGoal">$75</span>
+        <span id="dgBagShipText">Add $75 for Free US Shipping</span>
+        <span class="mono">$75</span>
       </div>
-      <div style="height:8px;background:var(--cloud);border:1.5px solid var(--ink);border-radius:999px;overflow:hidden">
-        <div id="dgShipBar" style="height:100%;width:48%;background:var(--blue);transition:width .3s ease"></div>
+      <div style="height:8px;background:#fff;border:1.5px solid var(--ink);border-radius:999px;overflow:hidden">
+        <div id="dgBagShipBar" style="height:100%;width:0%;background:var(--blue);transition:width .3s ease"></div>
       </div>
     </div>
 
-    <!-- Goes well with cross-sells -->
-    <div style="margin-bottom:20px">
+    <!-- Empty Bag State (Shown when no items exist) -->
+    <div id="dgEmptyBagState" style="text-align:center;padding:48px 16px 28px;display:{% if cart.item_count == 0 %}flex{% else %}none{% endif %};flex-direction:column;align-items:center;gap:12px;margin:auto 0">
+      <div style="width:64px;height:64px;border-radius:999px;background:var(--cloud);border:2px solid var(--ink);display:grid;place-items:center;font-size:28px">🍸</div>
+      <h4 style="font:400 24px/1.1 var(--f-display);margin:4px 0 0">Your Bag Is Empty</h4>
+      <p style="font-size:14px;color:var(--muted);max-width:260px;line-height:1.45;margin:0 0 8px">Looks like you haven't picked a glass yet. Let's fix that.</p>
+      <a class="btn btn-blue" href="/collections/all" style="padding:0 24px;min-height:46px">Shop All Glasses</a>
+    </div>
+
+    <!-- ALL Cart Items List (Dynamically populated from live Shopify Cart API) -->
+    <div id="dgCartItemsList" style="display:{% if cart.item_count > 0 %}flex{% else %}none{% endif %};flex-direction:column;gap:14px;margin-bottom:18px;width:100%">
+      {% for item in cart.items %}
+        <div class="cart-item-row" data-key="{{ item.key }}" style="display:flex;gap:12px;align-items:center;border-bottom:1.5px solid var(--hair);padding-bottom:14px;padding-right:10px;width:100%;min-width:0;box-sizing:border-box">
+          <img src="{{ item.image | image_url: width: 120 }}" alt="{{ item.title | escape }}" width="56" height="70" style="border-radius:4px;border:1.5px solid var(--rule);flex-shrink:0;object-fit:contain">
+          <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:3px">
+            <h4 style="font:700 15px var(--f-head);margin:0;line-height:1.25">{{ item.product.title }}</h4>
+            <span style="font-size:13px;color:var(--muted)">{{ item.variant.title }}</span>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:6px;width:100%">
+              <div style="display:inline-flex;border:1.5px solid var(--ink);border-radius:4px;overflow:hidden;flex-shrink:0">
+                <button type="button" class="dg-line-qty" data-key="{{ item.key }}" data-qty="{{ item.quantity | minus: 1 }}" style="padding:2px 8px;font-weight:700;cursor:pointer" aria-label="Decrease quantity">-</button>
+                <span class="mono" style="padding:2px 8px;font-size:13px;background:var(--cloud)">{{ item.quantity }}</span>
+                <button type="button" class="dg-line-qty" data-key="{{ item.key }}" data-qty="{{ item.quantity | plus: 1 }}" style="padding:2px 8px;font-weight:700;cursor:pointer" aria-label="Increase quantity">+</button>
+              </div>
+              <span class="price" style="font-weight:700;font-size:16px;flex-shrink:0;white-space:nowrap;margin-left:auto;padding-right:8px">${{ item.final_line_price | divided_by: 100.0 | round }}</span>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- Goes Well With Cross-Sells (Visible inside full bag) -->
+    <div id="dgCartCrossSells" style="margin-top:4px;margin-bottom:18px;border-top:1.5px solid var(--hair);padding-top:14px;{% if cart.item_count == 0 %}display:none;{% endif %}">
       <p class="lbl" style="font:700 13px var(--f-head);margin-bottom:10px">Goes Well With</p>
       <div style="display:grid;gap:10px">
         <div style="display:flex;align-items:center;justify-content:space-between;padding:10px;border:2px solid var(--rule);border-radius:var(--r);background:#fff;box-sizing:border-box">
@@ -58,64 +83,6 @@
           <button class="btn btn-lime sm dg-quick-add" type="button" data-variant-id="68123652259949" data-title="R3 Cocktail Coupe 280ml" data-price="38" data-sku="R3CO240" data-img="{{ 'r3-r3co240.webp' | asset_url }}" style="padding:0 12px;min-height:34px;font-size:13px;flex-shrink:0;cursor:pointer">+ Add</button>
         </div>
       </div>
-    </div>
-
-    <!-- Actions -->
-    <div style="display:flex;gap:10px;margin-top:auto">
-      <button class="btn full" id="dgGoToBag" type="button" style="background:#fff;cursor:pointer">View Bag</button>
-      <a class="btn btn-blue full" href="/checkout">Checkout</a>
-    </div>
-  </div>
-</aside>
-
-<!-- 2. Full Slideout Bag Drawer -->
-<aside class="drawer dg-drawer" id="dgCartDrawer" aria-label="Your Bag" aria-hidden="true" style="z-index:9999">
-  <div class="dhead">
-    <h3>Your Bag (<span id="dgCartItemsCount">{{ cart.item_count | default: 0 }}</span>)</h3>
-    <button class="close" id="dgCloseCart" aria-label="Close bag">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-    </button>
-  </div>
-
-  <div class="dbody">
-    <!-- Free Shipping Meter -->
-    <div id="dgShippingMeterBox" style="background:var(--cloud);border:2px solid var(--ink);border-radius:var(--r);padding:14px;margin-bottom:16px;box-sizing:border-box;{% if cart.item_count == 0 %}display:none;{% endif %}">
-      <div style="display:flex;justify-content:space-between;font-size:13px;font-weight:700;margin-bottom:8px">
-        <span id="dgBagShipText">Add $75 for Free US Shipping</span>
-        <span class="mono">$75</span>
-      </div>
-      <div style="height:8px;background:#fff;border:1.5px solid var(--ink);border-radius:999px;overflow:hidden">
-        <div id="dgBagShipBar" style="height:100%;width:0%;background:var(--blue);transition:width .3s ease"></div>
-      </div>
-    </div>
-
-    <!-- Empty Bag State (Shown when no items exist) -->
-    <div id="dgEmptyBagState" style="text-align:center;padding:48px 16px 28px;display:{% if cart.item_count == 0 %}flex{% else %}none{% endif %};flex-direction:column;align-items:center;gap:12px;margin:auto 0">
-      <div style="width:64px;height:64px;border-radius:999px;background:var(--cloud);border:2px solid var(--ink);display:grid;place-items:center;font-size:28px">🍸</div>
-      <h4 style="font:400 24px/1.1 var(--f-display);margin:4px 0 0">Your Bag Is Empty</h4>
-      <p style="font-size:14px;color:var(--muted);max-width:260px;line-height:1.45;margin:0 0 8px">Looks like you haven't picked a glass yet. Let's fix that.</p>
-      <a class="btn btn-blue" href="/collections/all" style="padding:0 24px;min-height:46px">Shop All Glasses</a>
-    </div>
-
-    <!-- Cart Items List (Dynamically populated from Shopify Cart API) -->
-    <div id="dgCartItemsList" style="display:{% if cart.item_count > 0 %}flex{% else %}none{% endif %};flex-direction:column;gap:14px;margin-bottom:20px;width:100%">
-      {% for item in cart.items %}
-        <div class="cart-item-row" data-key="{{ item.key }}" style="display:flex;gap:12px;align-items:center;border-bottom:1.5px solid var(--hair);padding-bottom:14px;padding-right:10px;width:100%;min-width:0;box-sizing:border-box">
-          <img src="{{ item.image | image_url: width: 120 }}" alt="{{ item.title | escape }}" width="56" height="70" style="border-radius:4px;border:1.5px solid var(--rule);flex-shrink:0;object-fit:contain">
-          <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:3px">
-            <h4 style="font:700 15px var(--f-head);margin:0;line-height:1.25">{{ item.product.title }}</h4>
-            <span style="font-size:13px;color:var(--muted)">{{ item.variant.title }}</span>
-            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:6px;width:100%">
-              <div style="display:inline-flex;border:1.5px solid var(--ink);border-radius:4px;overflow:hidden;flex-shrink:0">
-                <button type="button" class="dg-line-qty" data-key="{{ item.key }}" data-qty="{{ item.quantity | minus: 1 }}" style="padding:2px 8px;font-weight:700;cursor:pointer" aria-label="Decrease quantity">-</button>
-                <span class="mono" style="padding:2px 8px;font-size:13px;background:var(--cloud)">{{ item.quantity }}</span>
-                <button type="button" class="dg-line-qty" data-key="{{ item.key }}" data-qty="{{ item.quantity | plus: 1 }}" style="padding:2px 8px;font-weight:700;cursor:pointer" aria-label="Increase quantity">+</button>
-              </div>
-              <span class="price" style="font-weight:700;font-size:16px;flex-shrink:0;white-space:nowrap;margin-left:auto;padding-right:8px">${{ item.final_line_price | divided_by: 100.0 | round }}</span>
-            </div>
-          </div>
-        </div>
-      {% endfor %}
     </div>
 
     <!-- Active Cart Modules (Visible when items in cart) -->
@@ -210,24 +177,21 @@
   };
 
   const scrim = document.getElementById('dgScrim');
-  const addedDrawer = document.getElementById('dgAddedDrawer');
   const cartDrawer = document.getElementById('dgCartDrawer');
   const bagBtn = document.getElementById('dgBagBtn');
-  const closeAdded = document.getElementById('dgCloseAdded');
   const closeCart = document.getElementById('dgCloseCart');
-  const goToBag = document.getElementById('dgGoToBag');
   const giftToggle = document.getElementById('dgGiftBoxToggle');
   const giftNote = document.getElementById('dgGiftNoteArea');
 
   const emptyState = document.getElementById('dgEmptyBagState');
   const cartList = document.getElementById('dgCartItemsList');
   const cartModules = document.getElementById('dgCartFooterModules');
+  const cartCrossSells = document.getElementById('dgCartCrossSells');
   const cartCountEl = document.getElementById('dgCartItemsCount');
   const headerCountEl = document.getElementById('dgBagCount');
   const shipMeterBox = document.getElementById('dgShippingMeterBox');
 
   function closeAllDrawers() {
-    if (addedDrawer) addedDrawer.classList.remove('open');
     if (cartDrawer) cartDrawer.classList.remove('open');
     const mMenu = document.getElementById('dgMobileMenu');
     if (mMenu) mMenu.classList.remove('open');
@@ -240,7 +204,7 @@
   }
 
   // Refresh cart state directly from Shopify's live /cart.js
-  window.dgRefreshCart = function(openAddedDrawer) {
+  window.dgRefreshCart = function(openDrawer, justAddedTitle) {
     return fetch('/cart.js')
       .then(res => res.json())
       .then(cart => {
@@ -258,32 +222,28 @@
           if (cartList) cartList.style.display = 'none';
           if (cartModules) cartModules.style.display = 'none';
           if (shipMeterBox) shipMeterBox.style.display = 'none';
+          if (cartCrossSells) cartCrossSells.style.display = 'none';
         } else {
           if (emptyState) emptyState.style.display = 'none';
           if (cartModules) cartModules.style.display = 'block';
           if (shipMeterBox) shipMeterBox.style.display = 'block';
+          if (cartCrossSells) cartCrossSells.style.display = 'block';
 
           // Free US Shipping calculation ($75 threshold)
           const threshold = 75;
           const bagShipText = document.getElementById('dgBagShipText');
           const bagShipBar = document.getElementById('dgBagShipBar');
-          const addedShipText = document.getElementById('dgShipMeterText');
-          const addedShipBar = document.getElementById('dgShipBar');
 
           if (totalDollars >= threshold) {
             const unlockedMsg = 'Free US Shipping Unlocked! 🎉';
             if (bagShipText) bagShipText.textContent = unlockedMsg;
             if (bagShipBar) bagShipBar.style.width = '100%';
-            if (addedShipText) addedShipText.textContent = unlockedMsg;
-            if (addedShipBar) addedShipBar.style.width = '100%';
           } else {
             const remaining = Math.round(threshold - totalDollars);
             const neededMsg = `Add $${remaining} more for Free US Shipping`;
             const pct = Math.min(100, Math.round((totalDollars / threshold) * 100)) + '%';
             if (bagShipText) bagShipText.textContent = neededMsg;
             if (bagShipBar) bagShipBar.style.width = pct;
-            if (addedShipText) addedShipText.textContent = neededMsg;
-            if (addedShipBar) addedShipBar.style.width = pct;
           }
 
           const subtotalEl = document.getElementById('dgSubtotalPrice');
@@ -291,7 +251,7 @@
           if (subtotalEl) subtotalEl.textContent = formatUSD(totalCents);
           if (totalEl) totalEl.textContent = formatUSD(totalCents);
 
-          // Render cart line items
+          // Render ALL cart line items dynamically
           if (cartList) {
             cartList.style.display = 'flex';
             cartList.innerHTML = '';
@@ -325,9 +285,26 @@
           }
         }
 
-        if (openAddedDrawer) {
+        // Just Added banner feedback
+        if (justAddedTitle) {
+          const banner = document.getElementById('dgJustAddedBanner');
+          const bannerText = document.getElementById('dgJustAddedText');
+          if (banner && bannerText) {
+            bannerText.textContent = `✓ Added "${justAddedTitle}" to your bag!`;
+            banner.style.display = 'flex';
+            setTimeout(() => {
+              if (banner) banner.style.display = 'none';
+            }, 3500);
+          }
+        }
+
+        if (openDrawer) {
           closeAllDrawers();
-          if (addedDrawer) addedDrawer.classList.add('open');
+          if (cartDrawer) {
+            cartDrawer.classList.add('open');
+            const dbody = cartDrawer.querySelector('.dbody');
+            if (dbody) dbody.scrollTop = 0;
+          }
           if (scrim) scrim.classList.add('open');
         }
         return cart;
@@ -382,27 +359,11 @@
         }, 1600);
       }
 
-      // Update Added drawer preview box
       const addedItem = (data.items && data.items.length > 0) ? data.items[0] : data;
-      const addTitle = document.getElementById('dgAddedTitle');
-      const addMeta = document.getElementById('dgAddedMeta');
-      const addPrice = document.getElementById('dgAddedPrice');
-      const addImg = document.getElementById('dgAddedImg');
+      const itemName = (metadata && metadata.title) ? metadata.title : (addedItem && addedItem.title ? addedItem.title : 'Item');
 
-      if (metadata && metadata.title && addTitle) addTitle.textContent = metadata.title;
-      else if (addedItem && addedItem.title && addTitle) addTitle.textContent = addedItem.title;
-
-      if (metadata && metadata.sku && addMeta) addMeta.textContent = `SKU: ${metadata.sku} · B2B Grade`;
-      else if (addMeta) addMeta.textContent = 'Handcrafted Borosilicate Glass';
-
-      if (metadata && metadata.price && addPrice) addPrice.textContent = metadata.price.startsWith('$') ? metadata.price : `$${metadata.price}`;
-      else if (addedItem && addedItem.price && addPrice) addPrice.textContent = formatUSD(addedItem.price);
-
-      if (metadata && metadata.img && addImg) addImg.src = metadata.img;
-      else if (addedItem && addedItem.image && addImg) addImg.src = addedItem.image;
-
-      // Sync and open the Added Drawer
-      window.dgRefreshCart(true);
+      // Open Slideout Bag Drawer displaying ALL items in the cart
+      window.dgRefreshCart(true, itemName);
     })
     .catch(err => {
       console.error('Error in dgAddToCart:', err);
@@ -528,17 +489,8 @@
     });
   }
 
-  if (closeAdded) closeAdded.addEventListener('click', closeAllDrawers);
   if (closeCart) closeCart.addEventListener('click', closeAllDrawers);
   if (scrim) scrim.addEventListener('click', closeAllDrawers);
-
-  if (goToBag) {
-    goToBag.addEventListener('click', function() {
-      if (addedDrawer) addedDrawer.classList.remove('open');
-      if (cartDrawer) cartDrawer.classList.add('open');
-      window.dgRefreshCart(false);
-    });
-  }
 
   if (giftToggle && giftNote) {
     giftToggle.addEventListener('change', function() {
