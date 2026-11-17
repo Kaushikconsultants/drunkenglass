@@ -304,33 +304,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Add to cart form AJAX handler
   const form = document.getElementById('dgAddToCartForm');
+  const buyBtn = document.getElementById('dgBuyBtn');
   if (form) {
     form.addEventListener('submit', function(e) {
       e.preventDefault();
-      const variantId = document.getElementById('dgVariantId').value;
+      const variantId = document.getElementById('dgVariantId')?.value || '{{ product.variants.first.id }}';
       const quantity = parseInt(qtyInput ? qtyInput.value : 1, 10);
+      const title = "{{ product.title | escape }}";
+      const price = buyTotal ? buyTotal.textContent : formatUSD(unitPrice);
+      const img = "{% if product.featured_image %}{{ product.featured_image | image_url: width: 360 }}{% else %}{{ 'r3-r3co240.webp' | asset_url }}{% endif %}";
+      const sku = "{{ product.variants.first.sku }}";
 
-      fetch('/cart/add.js', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ items: [{ id: variantId, quantity: quantity }] })
-      })
-      .then(res => res.json())
-      .then(data => {
-        const drawer = document.getElementById('dgAddedDrawer') || document.getElementById('dgCartDrawer');
-        const scrim = document.getElementById('dgScrim');
-        if (drawer) drawer.classList.add('open');
-        if (scrim) scrim.classList.add('open');
-
-        const addedTitle = document.getElementById('dgAddedTitle');
-        if (addedTitle) addedTitle.textContent = "{{ product.title }}";
-        const addedPrice = document.getElementById('dgAddedPrice');
-        if (addedPrice) addedPrice.textContent = buyTotal ? buyTotal.textContent : formatUSD(unitPrice);
-      })
-      .catch(err => {
-        console.error('Cart add error:', err);
+      if (window.dgAddToCart) {
+        window.dgAddToCart(variantId, quantity, { title, price, img, sku }, buyBtn);
+      } else {
         form.submit();
-      });
+      }
     });
   }
 });

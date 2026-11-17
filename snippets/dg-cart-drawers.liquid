@@ -44,7 +44,7 @@
               <span class="price" style="font-size:13px">$34</span>
             </div>
           </div>
-          <button class="btn btn-lime sm" type="button" style="padding:0 12px;min-height:34px;font-size:13px;flex-shrink:0">+ Add</button>
+          <button class="btn btn-lime sm dg-quick-add" type="button" data-variant-id="68123651440749" data-title="R3 Double Wall 270ml" data-price="34" data-sku="R3DG107" data-img="{{ 'r3-r3dg107.webp' | asset_url }}" style="padding:0 12px;min-height:34px;font-size:13px;flex-shrink:0;cursor:pointer">+ Add</button>
         </div>
 
         <div style="display:flex;align-items:center;justify-content:space-between;padding:10px;border:2px solid var(--rule);border-radius:var(--r);background:#fff;box-sizing:border-box">
@@ -55,14 +55,14 @@
               <span class="price" style="font-size:13px">$38</span>
             </div>
           </div>
-          <button class="btn btn-lime sm" type="button" style="padding:0 12px;min-height:34px;font-size:13px;flex-shrink:0">+ Add</button>
+          <button class="btn btn-lime sm dg-quick-add" type="button" data-variant-id="68123652259949" data-title="R3 Cocktail Coupe 280ml" data-price="38" data-sku="R3CO240" data-img="{{ 'r3-r3co240.webp' | asset_url }}" style="padding:0 12px;min-height:34px;font-size:13px;flex-shrink:0;cursor:pointer">+ Add</button>
         </div>
       </div>
     </div>
 
     <!-- Actions -->
     <div style="display:flex;gap:10px;margin-top:auto">
-      <button class="btn full" id="dgGoToBag" type="button" style="background:#fff">View Bag</button>
+      <button class="btn full" id="dgGoToBag" type="button" style="background:#fff;cursor:pointer">View Bag</button>
       <a class="btn btn-blue full" href="/checkout">Checkout</a>
     </div>
   </div>
@@ -89,7 +89,7 @@
       </div>
     </div>
 
-    <!-- Empty Bag State (Shown by default when no items exist) -->
+    <!-- Empty Bag State (Shown when no items exist) -->
     <div id="dgEmptyBagState" style="text-align:center;padding:48px 16px 28px;display:{% if cart.item_count == 0 %}flex{% else %}none{% endif %};flex-direction:column;align-items:center;gap:12px;margin:auto 0">
       <div style="width:64px;height:64px;border-radius:999px;background:var(--cloud);border:2px solid var(--ink);display:grid;place-items:center;font-size:28px">🍸</div>
       <h4 style="font:400 24px/1.1 var(--f-display);margin:4px 0 0">Your Bag Is Empty</h4>
@@ -97,28 +97,28 @@
       <a class="btn btn-blue" href="/collections/all" style="padding:0 24px;min-height:46px">Shop All Glasses</a>
     </div>
 
-    <!-- Cart Items List (Dynamically populated) -->
+    <!-- Cart Items List (Dynamically populated from Shopify Cart API) -->
     <div id="dgCartItemsList" style="display:{% if cart.item_count > 0 %}flex{% else %}none{% endif %};flex-direction:column;gap:14px;margin-bottom:20px;width:100%">
       {% for item in cart.items %}
-        <div class="cart-item-row" data-id="{{ item.key }}" style="display:flex;gap:12px;align-items:center;border-bottom:1.5px solid var(--hair);padding-bottom:14px;padding-right:10px;width:100%;min-width:0;box-sizing:border-box">
+        <div class="cart-item-row" data-key="{{ item.key }}" style="display:flex;gap:12px;align-items:center;border-bottom:1.5px solid var(--hair);padding-bottom:14px;padding-right:10px;width:100%;min-width:0;box-sizing:border-box">
           <img src="{{ item.image | image_url: width: 120 }}" alt="{{ item.title | escape }}" width="56" height="70" style="border-radius:4px;border:1.5px solid var(--rule);flex-shrink:0;object-fit:contain">
           <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:3px">
             <h4 style="font:700 15px var(--f-head);margin:0;line-height:1.25">{{ item.product.title }}</h4>
             <span style="font-size:13px;color:var(--muted)">{{ item.variant.title }}</span>
             <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:6px;width:100%">
               <div style="display:inline-flex;border:1.5px solid var(--ink);border-radius:4px;overflow:hidden;flex-shrink:0">
-                <button type="button" class="dg-qty-minus" data-key="{{ item.key }}" style="padding:2px 8px;font-weight:700" aria-label="Decrease quantity">-</button>
+                <button type="button" class="dg-line-qty" data-key="{{ item.key }}" data-qty="{{ item.quantity | minus: 1 }}" style="padding:2px 8px;font-weight:700;cursor:pointer" aria-label="Decrease quantity">-</button>
                 <span class="mono" style="padding:2px 8px;font-size:13px;background:var(--cloud)">{{ item.quantity }}</span>
-                <button type="button" class="dg-qty-plus" data-key="{{ item.key }}" style="padding:2px 8px;font-weight:700" aria-label="Increase quantity">+</button>
+                <button type="button" class="dg-line-qty" data-key="{{ item.key }}" data-qty="{{ item.quantity | plus: 1 }}" style="padding:2px 8px;font-weight:700;cursor:pointer" aria-label="Increase quantity">+</button>
               </div>
-              <span class="price" style="font-weight:700;font-size:16px;flex-shrink:0;white-space:nowrap;margin-left:auto;padding-right:8px">{{ item.final_line_price | money }}</span>
+              <span class="price" style="font-weight:700;font-size:16px;flex-shrink:0;white-space:nowrap;margin-left:auto;padding-right:8px">${{ item.final_line_price | divided_by: 100.0 | round }}</span>
             </div>
           </div>
         </div>
       {% endfor %}
     </div>
 
-    <!-- Active Cart Modules (Only visible when items in cart) -->
+    <!-- Active Cart Modules (Visible when items in cart) -->
     <div id="dgCartFooterModules" style="display:{% if cart.item_count > 0 %}block{% else %}none{% endif %};">
       <!-- Gift Box & Note Checkbox -->
       <div style="background:#fff;border:2px solid var(--ink);border-radius:var(--r);padding:14px;margin-bottom:16px;box-sizing:border-box">
@@ -141,7 +141,7 @@
       <div style="border-top:2px solid var(--ink);padding-top:16px;margin-bottom:18px;box-sizing:border-box">
         <div style="display:flex;justify-content:space-between;margin-bottom:6px;font-size:14px">
           <span>Subtotal</span>
-          <span class="price" id="dgSubtotalPrice">{{ cart.total_price | money | default: '$0.00' }}</span>
+          <span class="price" id="dgSubtotalPrice">${{ cart.total_price | divided_by: 100.0 | round }}</span>
         </div>
         <div style="display:flex;justify-content:space-between;margin-bottom:6px;font-size:14px">
           <span>Shipping</span>
@@ -149,7 +149,7 @@
         </div>
         <div style="display:flex;justify-content:space-between;font-size:18px;font-weight:700;margin-top:10px;border-top:1px dashed var(--rule);padding-top:10px">
           <span>Estimated Total</span>
-          <span class="price" id="dgTotalPrice">{{ cart.total_price | money | default: '$0.00' }}</span>
+          <span class="price" id="dgTotalPrice">${{ cart.total_price | divided_by: 100.0 | round }}</span>
         </div>
         <p style="font-size:12px;color:var(--muted);margin-top:4px">Sales tax calculated at checkout</p>
       </div>
@@ -161,7 +161,54 @@
 </aside>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+(function() {
+  // Comprehensive mapping of R3 handles and SKUs to exact Shopify Variant IDs
+  const R3_VARIANTS_MAP = {
+    // SKUs (lowercase)
+    'r3co240': '68123652259949',
+    'r3tu113': '68123650687085',
+    'r3tc117': '68123629453421',
+    'r3dg107': '68123651440749',
+    'r3wg147': '68123652063341',
+    'r3tu128': '68123651833965',
+    'r3wg237': '68123651932269',
+    'r3co151': '68123651473517',
+    'r3dg130': '68123647541357',
+    'r3dg120': '68123648491629',
+    'r3co111': '68123639054445',
+    'r3wg145': '68123651276909',
+    'r3co102': '68123649179757',
+    'r3tc123': '68123635581037',
+    'r3tu201': '68123646656621',
+    'r3dg119': '68123640954989',
+    'r3tu116': '68123652784237',
+    'r3tc127': '68123643838573',
+    'r3tc125': '68123645870189',
+    'r3wg189': '68123637219437',
+    // Handles
+    'r3-vintage-borosilicate-cocktail-coupe-280ml-r3co240': '68123652259949',
+    'r3-fluted-borosilicate-tumbler-glass-380ml-r3tu113': '68123650687085',
+    'r3-350ml-coffee-tea-cups-mugs-r3tc117': '68123629453421',
+    'r3-classic-borosilicate-coffee-mug-350ml-r3tc117': '68123629453421',
+    'r3-insulated-double-wall-borosilicate-glass-270ml-r3dg107': '68123651440749',
+    'r3-bistro-borosilicate-wine-glass-430ml-r3wg147': '68123652063341',
+    'r3-highball-borosilicate-tumbler-glass-420ml-r3tu128': '68123651833965',
+    'r3-stemmed-borosilicate-wine-glass-360ml-r3wg237': '68123651932269',
+    'r3-wide-rim-borosilicate-cocktail-glass-400ml-r3co151': '68123651473517',
+    'r3-curved-double-wall-borosilicate-glass-250ml-r3dg120': '68123648491629',
+    'r3-rounded-double-wall-borosilicate-glass-250ml-r3dg119': '68123640954989',
+    'r3-tall-double-wall-borosilicate-glass-310ml-r3dg130': '68123647541357',
+    'r3-fluted-borosilicate-cocktail-glass-300ml-r3co111': '68123639054445',
+    'r3-martini-borosilicate-cocktail-glass-340ml-r3co102': '68123649179757',
+    'r3-balloon-borosilicate-wine-glass-430ml-r3wg189': '68123637219437',
+    'r3-grand-borosilicate-wine-glass-450ml-r3wg145': '68123651276909',
+    'r3-bistro-borosilicate-tea-cup-300ml-r3tc125': '68123645870189',
+    'r3-tea-espresso-borosilicate-cup-320ml-r3tc127': '68123643838573',
+    'r3-minimalist-borosilicate-mug-350ml-r3tc123': '68123635581037',
+    'r3-modern-borosilicate-tumbler-370ml-r3tu201': '68123646656621',
+    'r3-stackable-borosilicate-tumbler-360ml-r3tu116': '68123652784237'
+  };
+
   const scrim = document.getElementById('dgScrim');
   const addedDrawer = document.getElementById('dgAddedDrawer');
   const cartDrawer = document.getElementById('dgCartDrawer');
@@ -179,13 +226,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const headerCountEl = document.getElementById('dgBagCount');
   const shipMeterBox = document.getElementById('dgShippingMeterBox');
 
-  // In-memory / interactive cart state
-  let cartState = {
-    items: [],
-    item_count: {{ cart.item_count | default: 0 }},
-    total_price: {{ cart.total_price | default: 0 }}
-  };
-
   function closeAllDrawers() {
     if (addedDrawer) addedDrawer.classList.remove('open');
     if (cartDrawer) cartDrawer.classList.remove('open');
@@ -194,102 +234,297 @@ document.addEventListener('DOMContentLoaded', function() {
     if (scrim) scrim.classList.remove('open');
   }
 
-  function updateCartUI() {
-    const count = cartState.items.reduce((sum, item) => sum + item.qty, 0);
-    const total = cartState.items.reduce((sum, item) => sum + (item.price * item.qty), 0);
-
-    if (cartCountEl) cartCountEl.textContent = count;
-    if (headerCountEl) {
-      headerCountEl.textContent = count < 10 ? '0' + count : count;
-    }
-
-    if (count === 0) {
-      if (emptyState) emptyState.style.display = 'flex';
-      if (cartList) cartList.style.display = 'none';
-      if (cartModules) cartModules.style.display = 'none';
-      if (shipMeterBox) shipMeterBox.style.display = 'none';
-    } else {
-      if (emptyState) emptyState.style.display = 'none';
-      if (cartList) {
-        cartList.style.display = 'flex';
-        renderCartItems();
-      }
-      if (cartModules) cartModules.style.display = 'block';
-      if (shipMeterBox) shipMeterBox.style.display = 'block';
-
-      // Shipping meter
-      const threshold = 75;
-      const meterText = document.getElementById('dgBagShipText');
-      const meterBar = document.getElementById('dgBagShipBar');
-      if (total >= threshold) {
-        if (meterText) meterText.textContent = 'Free US Shipping Unlocked! 🎉';
-        if (meterBar) meterBar.style.width = '100%';
-      } else {
-        const remaining = (threshold - total).toFixed(2);
-        if (meterText) meterText.textContent = `Add $${remaining} more for Free US Shipping`;
-        if (meterBar) meterBar.style.width = Math.min(100, Math.round((total / threshold) * 100)) + '%';
-      }
-
-      const subtotalEl = document.getElementById('dgSubtotalPrice');
-      const totalEl = document.getElementById('dgTotalPrice');
-      if (subtotalEl) subtotalEl.textContent = `$${total.toFixed(2)}`;
-      if (totalEl) totalEl.textContent = `$${total.toFixed(2)}`;
-    }
+  function formatUSD(cents) {
+    const dollars = cents / 100;
+    return '$' + Math.round(dollars);
   }
 
-  function renderCartItems() {
-    if (!cartList) return;
-    cartList.innerHTML = '';
-    cartState.items.forEach(function(item, idx) {
-      const row = document.createElement('div');
-      row.className = 'cart-item-row';
-      row.style.cssText = 'display:flex;gap:12px;align-items:center;border-bottom:1.5px solid var(--hair);padding-bottom:14px;padding-right:10px;width:100%;min-width:0;box-sizing:border-box';
-      row.innerHTML = `
-        <img src="${item.img}" alt="${item.title}" width="56" height="70" style="border-radius:4px;border:1.5px solid var(--rule);flex-shrink:0;object-fit:contain">
-        <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:3px">
-          <h4 style="font:700 15px var(--f-head);margin:0;line-height:1.25">${item.title}</h4>
-          <span style="font-size:13px;color:var(--muted)">${item.variant || 'Standard'}</span>
-          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:6px;width:100%">
-            <div style="display:inline-flex;border:1.5px solid var(--ink);border-radius:4px;overflow:hidden;flex-shrink:0">
-              <button type="button" class="dg-minus-btn" data-idx="${idx}" style="padding:2px 8px;font-weight:700" aria-label="Decrease quantity">-</button>
-              <span class="mono" style="padding:2px 8px;font-size:13px;background:var(--cloud)">${item.qty}</span>
-              <button type="button" class="dg-plus-btn" data-idx="${idx}" style="padding:2px 8px;font-weight:700" aria-label="Increase quantity">+</button>
-            </div>
-            <span class="price" style="font-weight:700;font-size:16px;flex-shrink:0;white-space:nowrap;margin-left:auto;padding-right:8px">$${(item.price * item.qty).toFixed(2)}</span>
-          </div>
-        </div>
-      `;
-      cartList.appendChild(row);
-    });
+  // Refresh cart state directly from Shopify's live /cart.js
+  window.dgRefreshCart = function(openAddedDrawer) {
+    return fetch('/cart.js')
+      .then(res => res.json())
+      .then(cart => {
+        const count = cart.item_count || 0;
+        const totalCents = cart.total_price || 0;
+        const totalDollars = totalCents / 100;
 
-    // Add listeners to +/-
-    cartList.querySelectorAll('.dg-minus-btn').forEach(btn => {
-      btn.addEventListener('click', function() {
-        const i = parseInt(btn.getAttribute('data-idx'));
-        if (cartState.items[i].qty > 1) {
-          cartState.items[i].qty -= 1;
-        } else {
-          cartState.items.splice(i, 1);
+        if (cartCountEl) cartCountEl.textContent = count;
+        if (headerCountEl) {
+          headerCountEl.textContent = count < 10 ? '0' + count : count;
         }
-        updateCartUI();
-      });
-    });
 
-    cartList.querySelectorAll('.dg-plus-btn').forEach(btn => {
-      btn.addEventListener('click', function() {
-        const i = parseInt(btn.getAttribute('data-idx'));
-        cartState.items[i].qty += 1;
-        updateCartUI();
-      });
-    });
-  }
+        if (count === 0) {
+          if (emptyState) emptyState.style.display = 'flex';
+          if (cartList) cartList.style.display = 'none';
+          if (cartModules) cartModules.style.display = 'none';
+          if (shipMeterBox) shipMeterBox.style.display = 'none';
+        } else {
+          if (emptyState) emptyState.style.display = 'none';
+          if (cartModules) cartModules.style.display = 'block';
+          if (shipMeterBox) shipMeterBox.style.display = 'block';
 
-  // Open Bag
+          // Free US Shipping calculation ($75 threshold)
+          const threshold = 75;
+          const bagShipText = document.getElementById('dgBagShipText');
+          const bagShipBar = document.getElementById('dgBagShipBar');
+          const addedShipText = document.getElementById('dgShipMeterText');
+          const addedShipBar = document.getElementById('dgShipBar');
+
+          if (totalDollars >= threshold) {
+            const unlockedMsg = 'Free US Shipping Unlocked! 🎉';
+            if (bagShipText) bagShipText.textContent = unlockedMsg;
+            if (bagShipBar) bagShipBar.style.width = '100%';
+            if (addedShipText) addedShipText.textContent = unlockedMsg;
+            if (addedShipBar) addedShipBar.style.width = '100%';
+          } else {
+            const remaining = Math.round(threshold - totalDollars);
+            const neededMsg = `Add $${remaining} more for Free US Shipping`;
+            const pct = Math.min(100, Math.round((totalDollars / threshold) * 100)) + '%';
+            if (bagShipText) bagShipText.textContent = neededMsg;
+            if (bagShipBar) bagShipBar.style.width = pct;
+            if (addedShipText) addedShipText.textContent = neededMsg;
+            if (addedShipBar) addedShipBar.style.width = pct;
+          }
+
+          const subtotalEl = document.getElementById('dgSubtotalPrice');
+          const totalEl = document.getElementById('dgTotalPrice');
+          if (subtotalEl) subtotalEl.textContent = formatUSD(totalCents);
+          if (totalEl) totalEl.textContent = formatUSD(totalCents);
+
+          // Render cart line items
+          if (cartList) {
+            cartList.style.display = 'flex';
+            cartList.innerHTML = '';
+            cart.items.forEach(function(item) {
+              const row = document.createElement('div');
+              row.className = 'cart-item-row';
+              row.setAttribute('data-key', item.key);
+              row.style.cssText = 'display:flex;gap:12px;align-items:center;border-bottom:1.5px solid var(--hair);padding-bottom:14px;padding-right:10px;width:100%;min-width:0;box-sizing:border-box';
+              
+              const imgUrl = item.image ? item.image : "{{ 'r3-r3tu113.webp' | asset_url }}";
+              const linePrice = formatUSD(item.final_line_price);
+              const variantName = (item.variant_title && item.variant_title !== 'Default Title') ? item.variant_title : 'Standard';
+
+              row.innerHTML = `
+                <img src="${imgUrl}" alt="${item.product_title}" width="56" height="70" style="border-radius:4px;border:1.5px solid var(--rule);flex-shrink:0;object-fit:contain">
+                <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:3px">
+                  <h4 style="font:700 15px var(--f-head);margin:0;line-height:1.25">${item.product_title}</h4>
+                  <span style="font-size:13px;color:var(--muted)">${variantName}</span>
+                  <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:6px;width:100%">
+                    <div style="display:inline-flex;border:1.5px solid var(--ink);border-radius:4px;overflow:hidden;flex-shrink:0">
+                      <button type="button" class="dg-qty-mod" data-key="${item.key}" data-qty="${item.quantity - 1}" style="padding:2px 8px;font-weight:700;cursor:pointer" aria-label="Decrease quantity">-</button>
+                      <span class="mono" style="padding:2px 8px;font-size:13px;background:var(--cloud)">${item.quantity}</span>
+                      <button type="button" class="dg-qty-mod" data-key="${item.key}" data-qty="${item.quantity + 1}" style="padding:2px 8px;font-weight:700;cursor:pointer" aria-label="Increase quantity">+</button>
+                    </div>
+                    <span class="price" style="font-weight:700;font-size:16px;flex-shrink:0;white-space:nowrap;margin-left:auto;padding-right:8px">${linePrice}</span>
+                  </div>
+                </div>
+              `;
+              cartList.appendChild(row);
+            });
+          }
+        }
+
+        if (openAddedDrawer) {
+          closeAllDrawers();
+          if (addedDrawer) addedDrawer.classList.add('open');
+          if (scrim) scrim.classList.add('open');
+        }
+        return cart;
+      })
+      .catch(err => {
+        console.error('Error fetching Shopify cart:', err);
+      });
+  };
+
+  // Add Item to Shopify live cart via /cart/add.js
+  window.dgAddToCart = function(variantId, quantity, metadata, triggerBtn) {
+    if (!variantId) {
+      console.warn('dgAddToCart: No variantId provided.');
+      return;
+    }
+
+    let origText = '';
+    if (triggerBtn) {
+      origText = triggerBtn.textContent;
+      triggerBtn.dataset.originalText = origText;
+      triggerBtn.disabled = true;
+      triggerBtn.textContent = 'Adding...';
+    }
+
+    const payload = {
+      items: [
+        {
+          id: variantId,
+          quantity: quantity || 1
+        }
+      ]
+    };
+
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    })
+    .then(res => {
+      if (!res.ok) throw new Error('Network error adding to cart: ' + res.status);
+      return res.json();
+    })
+    .then(data => {
+      if (triggerBtn) {
+        triggerBtn.textContent = '✓ Added';
+        setTimeout(() => {
+          triggerBtn.disabled = false;
+          triggerBtn.textContent = triggerBtn.dataset.originalText || origText || 'Add to Bag';
+        }, 1600);
+      }
+
+      // Update Added drawer preview box
+      const addedItem = (data.items && data.items.length > 0) ? data.items[0] : data;
+      const addTitle = document.getElementById('dgAddedTitle');
+      const addMeta = document.getElementById('dgAddedMeta');
+      const addPrice = document.getElementById('dgAddedPrice');
+      const addImg = document.getElementById('dgAddedImg');
+
+      if (metadata && metadata.title && addTitle) addTitle.textContent = metadata.title;
+      else if (addedItem && addedItem.title && addTitle) addTitle.textContent = addedItem.title;
+
+      if (metadata && metadata.sku && addMeta) addMeta.textContent = `SKU: ${metadata.sku} · B2B Grade`;
+      else if (addMeta) addMeta.textContent = 'Handcrafted Borosilicate Glass';
+
+      if (metadata && metadata.price && addPrice) addPrice.textContent = metadata.price.startsWith('$') ? metadata.price : `$${metadata.price}`;
+      else if (addedItem && addedItem.price && addPrice) addPrice.textContent = formatUSD(addedItem.price);
+
+      if (metadata && metadata.img && addImg) addImg.src = metadata.img;
+      else if (addedItem && addedItem.image && addImg) addImg.src = addedItem.image;
+
+      // Sync and open the Added Drawer
+      window.dgRefreshCart(true);
+    })
+    .catch(err => {
+      console.error('Error in dgAddToCart:', err);
+      if (triggerBtn) {
+        triggerBtn.disabled = false;
+        triggerBtn.textContent = triggerBtn.dataset.originalText || 'Add to Bag';
+      }
+      alert('Unable to add item to bag. Please try again.');
+    });
+  };
+
+  // Update item quantity via /cart/change.js
+  window.dgUpdateQty = function(lineKey, newQty) {
+    fetch('/cart/change.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        id: lineKey,
+        quantity: parseInt(newQty, 10)
+      })
+    })
+    .then(res => res.json())
+    .then(() => {
+      window.dgRefreshCart(false);
+    })
+    .catch(err => {
+      console.error('Error changing item quantity:', err);
+    });
+  };
+
+  // Global delegated click handler for all Add buttons across the theme
+  document.addEventListener('click', function(e) {
+    // 1. Line item quantity adjustment (+/-)
+    const qtyBtn = e.target.closest('.dg-qty-mod, .dg-line-qty, .dg-qty-minus, .dg-qty-plus');
+    if (qtyBtn) {
+      e.preventDefault();
+      const key = qtyBtn.getAttribute('data-key');
+      const targetQty = qtyBtn.getAttribute('data-qty');
+      if (key && targetQty !== null) {
+        window.dgUpdateQty(key, targetQty);
+      }
+      return;
+    }
+
+    // 2. Add-to-bag triggers (.dg-quick-add, [data-add], .qadd, .dg-cross-add, etc.)
+    const addBtn = e.target.closest('.dg-quick-add, [data-add], .qadd, .dg-cross-add, .dg-add-btn');
+    if (addBtn) {
+      e.preventDefault();
+      
+      let variantId = addBtn.getAttribute('data-variant-id');
+      const addVal = addBtn.getAttribute('data-add');
+      const card = addBtn.closest('.pcard, article, .item, div');
+
+      // Check direct attribute or mapped SKU / handle
+      if (!variantId && addVal) {
+        if (/^\d+$/.test(addVal)) {
+          variantId = addVal;
+        } else if (R3_VARIANTS_MAP[addVal.toLowerCase()]) {
+          variantId = R3_VARIANTS_MAP[addVal.toLowerCase()];
+        }
+      }
+
+      // Check card handle or href
+      if (!variantId && card) {
+        const handle = card.getAttribute('data-handle');
+        if (handle && R3_VARIANTS_MAP[handle]) {
+          variantId = R3_VARIANTS_MAP[handle];
+        } else {
+          const link = card.querySelector('a[href*="/products/"]');
+          if (link) {
+            const h = link.getAttribute('href').split('/products/')[1]?.split('?')[0];
+            if (h && R3_VARIANTS_MAP[h]) variantId = R3_VARIANTS_MAP[h];
+          }
+        }
+      }
+
+      // Fallback default variant (R3 Cocktail Coupe) if completely unmatched
+      if (!variantId) {
+        variantId = '68123652259949';
+      }
+
+      // Metadata extraction
+      let title = addBtn.getAttribute('data-title');
+      let price = addBtn.getAttribute('data-price');
+      let img = addBtn.getAttribute('data-img');
+      let sku = addBtn.getAttribute('data-sku');
+
+      if (card) {
+        if (!title) {
+          const tEl = card.querySelector('.pname') || card.querySelector('h3') || card.querySelector('h4') || card.querySelector('b');
+          if (tEl) title = tEl.textContent.trim();
+        }
+        if (!price) {
+          const pEl = card.querySelector('.price');
+          if (pEl) price = pEl.textContent.trim();
+        }
+        if (!img) {
+          const imgEl = card.querySelector('.pcard-img') || card.querySelector('img');
+          if (imgEl) img = imgEl.src;
+        }
+        if (!sku) {
+          const metaEl = card.querySelector('.pmeta');
+          if (metaEl) sku = metaEl.textContent.trim();
+        }
+      }
+
+      window.dgAddToCart(variantId, 1, { title, price, img, sku }, addBtn);
+      return;
+    }
+  });
+
+  // Open full Cart Bag drawer
   if (bagBtn) {
-    bagBtn.addEventListener('click', function() {
+    bagBtn.addEventListener('click', function(e) {
+      e.preventDefault();
       closeAllDrawers();
       if (cartDrawer) cartDrawer.classList.add('open');
       if (scrim) scrim.classList.add('open');
+      window.dgRefreshCart(false);
     });
   }
 
@@ -301,64 +536,9 @@ document.addEventListener('DOMContentLoaded', function() {
     goToBag.addEventListener('click', function() {
       if (addedDrawer) addedDrawer.classList.remove('open');
       if (cartDrawer) cartDrawer.classList.add('open');
+      window.dgRefreshCart(false);
     });
   }
-
-  // Quick add trigger across cards
-  document.querySelectorAll('[data-add]').forEach(function(btn) {
-    btn.addEventListener('click', function(e) {
-      e.preventDefault();
-      const card = btn.closest('.pcard') || btn.closest('article');
-      let title = 'R3 Borosilicate Glass';
-      let price = 132;
-      let img = "{{ 'r3-r3tu113.webp' | asset_url }}";
-      let color = 'Clear';
-
-      if (card) {
-        const tEl = card.querySelector('.pname') || card.querySelector('h3') || card.querySelector('h4');
-        if (tEl) title = tEl.textContent.trim();
-        const pEl = card.querySelector('.price');
-        if (pEl) {
-          const num = parseFloat(pEl.textContent.replace(/[^0-9.]/g, ''));
-          if (!isNaN(num)) price = num;
-        }
-        const imgEl = card.querySelector('.pcard-img') || card.querySelector('img');
-        if (imgEl) img = imgEl.src;
-        const swEl = card.querySelector('.swb.on');
-        if (swEl && swEl.getAttribute('data-color')) color = swEl.getAttribute('data-color');
-      }
-
-      // Add to in-memory items
-      const existing = cartState.items.find(it => it.title === title && it.variant === color);
-      if (existing) {
-        existing.qty += 1;
-      } else {
-        cartState.items.push({
-          title: title,
-          price: price,
-          img: img,
-          variant: color,
-          qty: 1
-        });
-      }
-
-      // Update added drawer preview
-      const addTitle = document.getElementById('dgAddedTitle');
-      const addMeta = document.getElementById('dgAddedMeta');
-      const addPrice = document.getElementById('dgAddedPrice');
-      const addImg = document.getElementById('dgAddedImg');
-      if (addTitle) addTitle.textContent = title;
-      if (addMeta) addMeta.textContent = `In ${color} · Pair (Qty 1)`;
-      if (addPrice) addPrice.textContent = `$${price.toFixed(2)}`;
-      if (addImg) addImg.src = img;
-
-      updateCartUI();
-
-      closeAllDrawers();
-      if (addedDrawer) addedDrawer.classList.add('open');
-      if (scrim) scrim.classList.add('open');
-    });
-  });
 
   if (giftToggle && giftNote) {
     giftToggle.addEventListener('change', function() {
@@ -366,7 +546,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Initial UI sync
-  updateCartUI();
-});
+  // Initial silent background sync of cart count and state
+  window.dgRefreshCart(false);
+})();
 </script>

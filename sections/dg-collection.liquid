@@ -20,21 +20,21 @@
     <!-- Filter Chips -->
     <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
       <span style="font:700 13px var(--f-head)">Filter:</span>
-      <button class="chip" type="button" data-filter="under200">Under ₹200</button>
-      <button class="chip" type="button" data-filter="under300">Under ₹300</button>
-      <button class="chip" type="button" data-filter="all">All Items</button>
+      <button class="chip on" type="button" data-filter="all">All Items</button>
+      <button class="chip" type="button" data-filter="under30">Under $30</button>
+      <button class="chip" type="button" data-filter="under35">Under $35</button>
     </div>
 
     <!-- Count & Sort -->
     <div style="display:flex;align-items:center;gap:16px">
-      <span class="mono" style="font-size:14px;color:var(--muted)">
+      <span class="mono" id="dgProductCount" style="font-size:14px;color:var(--muted)">
         {% if collection.products.size > 0 %}
           {{ collection.products.size }} Products Available
         {% else %}
           R3 Exports Catalog
         {% endif %}
       </span>
-      <select class="btn sm" style="font-size:13px;padding:0 12px;background:#fff">
+      <select id="dgSortSelect" class="btn sm" style="font-size:13px;padding:0 12px;background:#fff;cursor:pointer">
         <option value="featured">Sort: Featured</option>
         <option value="price-asc">Price: Low to High</option>
         <option value="price-desc">Price: High to Low</option>
@@ -44,10 +44,10 @@
   </div>
 
   <!-- Product Grid -->
-  <div class="grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px">
+  <div class="grid" id="dgProductGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px">
     {% if collection.products.size > 0 %}
       {% for product in collection.products %}
-        <article class="pcard" data-handle="{{ product.handle }}">
+        <article class="pcard" data-handle="{{ product.handle }}" data-price="{{ product.price | divided_by: 100.0 | round }}">
           <a class="pmedia" href="{{ product.url }}" style="--bg:#f8fac4" tabindex="-1">
             <span class="badge b-lime">{{ product.type | default: 'Borosilicate' }}</span>
             {% if product.featured_image %}
@@ -69,14 +69,14 @@
               {% endif %}
             </div>
             <div class="pfoot">
-              <button class="qadd full" type="button" data-add="{{ product.variants.first.id }}">Add to Bag</button>
+              <button class="qadd dg-add-btn full" type="button" data-variant-id="{{ product.variants.first.id }}" data-title="{{ product.title | escape }}" data-price="{{ product.price | divided_by: 100.0 | round }}" data-sku="{{ product.variants.first.sku }}" data-img="{% if product.featured_image %}{{ product.featured_image | image_url: width: 360 }}{% else %}{{ 'r3-r3tu113.webp' | asset_url }}{% endif %}">Add to Bag</button>
             </div>
           </div>
         </article>
       {% endfor %}
     {% else %}
       <!-- Fallback Real R3 Exports Products Cards -->
-      <article class="pcard" data-handle="r3-vintage-borosilicate-cocktail-coupe-280ml-r3co240">
+      <article class="pcard" data-handle="r3-vintage-borosilicate-cocktail-coupe-280ml-r3co240" data-price="38">
         <a class="pmedia" href="/products/r3-vintage-borosilicate-cocktail-coupe-280ml-r3co240" style="--bg:#dfe8ff" tabindex="-1">
           <span class="badge b-blue">Cocktail Coupe</span>
           <img class="pcard-img" src="{{ 'r3-r3co240.webp' | asset_url }}" alt="R3 Vintage Borosilicate Cocktail Coupe 280ml" width="240" height="300" loading="lazy" style="object-fit:contain">
@@ -85,11 +85,13 @@
           <a class="pname" href="/products/r3-vintage-borosilicate-cocktail-coupe-280ml-r3co240">R3 Cocktail Coupe 280ml</a>
           <span class="pmeta">SKU: R3CO240 · 280 ml</span>
           <div class="prow"><span class="price">$38</span><span class="strike" style="font-size:13px;color:var(--muted);text-decoration:line-through;margin-left:6px">MRP $68</span></div>
-          <div class="pfoot"><button class="qadd full" type="button">Add to Bag</button></div>
+          <div class="pfoot">
+            <button class="qadd dg-add-btn full" type="button" data-variant-id="68123652259949" data-title="R3 Cocktail Coupe 280ml" data-price="38" data-sku="R3CO240" data-img="{{ 'r3-r3co240.webp' | asset_url }}">Add to Bag</button>
+          </div>
         </div>
       </article>
 
-      <article class="pcard" data-handle="r3-fluted-borosilicate-tumbler-glass-380ml-r3tu113">
+      <article class="pcard" data-handle="r3-fluted-borosilicate-tumbler-glass-380ml-r3tu113" data-price="32">
         <a class="pmedia" href="/products/r3-fluted-borosilicate-tumbler-glass-380ml-r3tu113" style="--bg:#f8fac4" tabindex="-1">
           <span class="badge b-lime">Tumbler Glass</span>
           <img class="pcard-img" src="{{ 'r3-r3tu113.webp' | asset_url }}" alt="R3 Fluted Borosilicate Tumbler Glass 380ml" width="240" height="300" loading="lazy" style="object-fit:contain">
@@ -98,11 +100,13 @@
           <a class="pname" href="/products/r3-fluted-borosilicate-tumbler-glass-380ml-r3tu113">R3 Fluted Tumbler 380ml</a>
           <span class="pmeta">SKU: R3TU113 · 380 ml</span>
           <div class="prow"><span class="price">$32</span><span class="strike" style="font-size:13px;color:var(--muted);text-decoration:line-through;margin-left:6px">MRP $54</span></div>
-          <div class="pfoot"><button class="qadd full" type="button">Add to Bag</button></div>
+          <div class="pfoot">
+            <button class="qadd dg-add-btn full" type="button" data-variant-id="68123650687085" data-title="R3 Fluted Tumbler 380ml" data-price="32" data-sku="R3TU113" data-img="{{ 'r3-r3tu113.webp' | asset_url }}">Add to Bag</button>
+          </div>
         </div>
       </article>
 
-      <article class="pcard" data-handle="r3-classic-borosilicate-coffee-mug-350ml-r3tc117">
+      <article class="pcard" data-handle="r3-classic-borosilicate-coffee-mug-350ml-r3tc117" data-price="28">
         <a class="pmedia" href="/products/r3-classic-borosilicate-coffee-mug-350ml-r3tc117" style="--bg:#ffe1e8" tabindex="-1">
           <span class="badge b-pink">Coffee Mug</span>
           <img class="pcard-img" src="{{ 'r3-r3tc117.webp' | asset_url }}" alt="R3 Classic Borosilicate Coffee Mug 350ml" width="240" height="300" loading="lazy" style="object-fit:contain">
@@ -111,11 +115,13 @@
           <a class="pname" href="/products/r3-classic-borosilicate-coffee-mug-350ml-r3tc117">R3 Coffee Mug 350ml</a>
           <span class="pmeta">SKU: R3TC117 · 350 ml</span>
           <div class="prow"><span class="price">$28</span><span class="strike" style="font-size:13px;color:var(--muted);text-decoration:line-through;margin-left:6px">MRP $48</span></div>
-          <div class="pfoot"><button class="qadd full" type="button">Add to Bag</button></div>
+          <div class="pfoot">
+            <button class="qadd dg-add-btn full" type="button" data-variant-id="68123629453421" data-title="R3 Coffee Mug 350ml" data-price="28" data-sku="R3TC117" data-img="{{ 'r3-r3tc117.webp' | asset_url }}">Add to Bag</button>
+          </div>
         </div>
       </article>
 
-      <article class="pcard" data-handle="r3-insulated-double-wall-borosilicate-glass-270ml-r3dg107">
+      <article class="pcard" data-handle="r3-insulated-double-wall-borosilicate-glass-270ml-r3dg107" data-price="34">
         <a class="pmedia" href="/products/r3-insulated-double-wall-borosilicate-glass-270ml-r3dg107" style="--bg:#f2f1f0" tabindex="-1">
           <span class="badge b-lime">Double Wall</span>
           <img class="pcard-img" src="{{ 'r3-r3dg107.webp' | asset_url }}" alt="R3 Insulated Double Wall Borosilicate Glass 270ml" width="240" height="300" loading="lazy" style="object-fit:contain">
@@ -124,7 +130,9 @@
           <a class="pname" href="/products/r3-insulated-double-wall-borosilicate-glass-270ml-r3dg107">R3 Double Wall 270ml</a>
           <span class="pmeta">SKU: R3DG107 · 270 ml</span>
           <div class="prow"><span class="price">$34</span><span class="strike" style="font-size:13px;color:var(--muted);text-decoration:line-through;margin-left:6px">MRP $58</span></div>
-          <div class="pfoot"><button class="qadd full" type="button">Add to Bag</button></div>
+          <div class="pfoot">
+            <button class="qadd dg-add-btn full" type="button" data-variant-id="68123651440749" data-title="R3 Double Wall 270ml" data-price="34" data-sku="R3DG107" data-img="{{ 'r3-r3dg107.webp' | asset_url }}">Add to Bag</button>
+          </div>
         </div>
       </article>
     {% endif %}
@@ -133,11 +141,68 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('#dg-collection .chip').forEach(function(chip) {
+  // Price filter chips
+  const chips = document.querySelectorAll('#dg-collection .chip');
+  const cards = document.querySelectorAll('#dg-collection .pcard');
+  const countEl = document.getElementById('dgProductCount');
+
+  chips.forEach(function(chip) {
     chip.addEventListener('click', function() {
-      chip.classList.toggle('on');
+      chips.forEach(c => c.classList.remove('on'));
+      chip.classList.add('on');
+      const filter = chip.getAttribute('data-filter');
+
+      let visible = 0;
+      cards.forEach(function(card) {
+        let price = parseFloat(card.getAttribute('data-price'));
+        if (isNaN(price)) {
+          const pText = card.querySelector('.price')?.textContent || '';
+          price = parseFloat(pText.replace(/[^0-9.]/g, ''));
+        }
+
+        if (filter === 'under30') {
+          if (price <= 30) {
+            card.style.display = '';
+            visible++;
+          } else {
+            card.style.display = 'none';
+          }
+        } else if (filter === 'under35') {
+          if (price <= 35) {
+            card.style.display = '';
+            visible++;
+          } else {
+            card.style.display = 'none';
+          }
+        } else {
+          card.style.display = '';
+          visible++;
+        }
+      });
+
+      if (countEl) {
+        countEl.textContent = `${visible} Products Available`;
+      }
     });
   });
+
+  // Client-side sort
+  const sortSelect = document.getElementById('dgSortSelect');
+  const grid = document.getElementById('dgProductGrid');
+  if (sortSelect && grid) {
+    sortSelect.addEventListener('change', function() {
+      const mode = sortSelect.value;
+      const cardArr = Array.from(cards);
+
+      if (mode === 'price-asc') {
+        cardArr.sort((a, b) => parseFloat(a.dataset.price || 0) - parseFloat(b.dataset.price || 0));
+      } else if (mode === 'price-desc') {
+        cardArr.sort((a, b) => parseFloat(b.dataset.price || 0) - parseFloat(a.dataset.price || 0));
+      }
+
+      cardArr.forEach(c => grid.appendChild(c));
+    });
+  }
 });
 </script>
 
