@@ -1,28 +1,33 @@
 # Copy deck: Drunken Glass US store
 
+**US content rules:** American English and spelling (color, cozy, mom), US sizes (whole fl oz, inches, °F), dollars, US occasions (friendsgiving, secret santa, white elephant, stocking stuffers). Sales copy leads with design; country of origin (india) appears only in product specs and the FAQ. Keep it there: it's required for imports. Never imply "made in USA".
+
 Voice: all lowercase, US spelling, short and dry. Product names, descriptions, collection lines and quiz copy are in `04-data/`. This file covers everything else. Text in [brackets] is dynamic.
 
 ---
 
 ## Global
+- **Home SEO title:** drunken glass | designer glassware that dresses like a fashion drop
+- **Home SEO description:** designer borosilicate glassware: tumblers, mugs, espresso glasses and cocktail coupes, made in our own furnace and shipped across the US.
+- **Product SEO:** title "[product] | Drunken Glass", description = product line (in products.csv)
 - **Announcement bar:** free US shipping on orders over $75 ✦ first order? use SIPSIP10 for 10% off
-- **Search placeholder:** try strawberry, heart mug, chai
+- **Search placeholder:** try strawberry, heart mug, cortado
 - **Search empty headings:** trending searches · your recent searches · popular right now
-- **Search no results:** no glass called “[query]” yet. / try “tumbler”, “heart” or “chai”. or tell us what you want and we might just make it.
+- **Search no results:** no glass called “[query]” yet. / try “tumbler”, “heart” or “mug”. or tell us what you want and we might just make it.
 - **Toasts:** saved to wishlist (view) · removed from wishlist · removed from bag · SIPSIP10 applied · review posted · signed out · new code sent · your set is full. remove one to swap · set complete. add it to your bag
 - **Chat card:** chat with us / questions about a glass, a gift or a bulk order? we reply within one business day. / buttons: track my order · read the faq
 - **Sip club pop-up:** first sip's on us / 10% off your first order when you join the sip club. / get my code
-- **Footer blurb:** designer borosilicate glassware from our own furnace in india. built for iced coffee, hot chai and showing off a little.
-- **Footer legal:** © 2026 drunken glass. designed and made in india.
+- **Footer blurb:** designer borosilicate glassware from our own furnace. built for iced coffee, hot cocoa and showing off a little.
+- **Footer legal:** © 2026 drunken glass. all rights reserved.
 
 ## Home
 - **Hero pill:** new · the holiday gift shop is open → /pages/gifting
 - **Hero headline:** your drink deserves a better outfit.
-- **Hero sub:** designer borosilicate glasses shaped like strawberries, hearts, waves and sunsets. made in our own furnace in india and built for hot coffee and iced everything.
+- **Hero sub:** designer borosilicate glasses shaped like strawberries, hearts, waves and sunsets. made in our own furnace and built for hot coffee and iced everything.
 - **Hero buttons:** shop all glasses · find my glass
 - **Hero trust:** hot + cold safe · 15 years of glassmaking · free US shipping over $75
 - **Hero glass tag (desktop):** move your cursor over the glass · **(touch):** it sways on its own. like after two drinks.
-- **Spinning badge text (static):** borosilicate ✦ hot + cold safe ✦ made in india ✦
+- **Spinning badge text (static):** borosilicate ✦ hot + cold safe ✦ made to show off ✦
 - **Vibe chips label:** shop by vibe → slow mornings · desk flex · date night · hosting season · gift-ready · under $30
 - **Marquee:** iced latte ✦ cold brew ✦ chai latte ✦ matcha ✦ lemonade ✦ mocktails ✦ hot cocoa ✦
 - **Categories:** what are you drinking? / five shapes of happy. pick your poison (it’s cold coffee, relax). / see all glasses / tiles show "from $[lowest price]"
@@ -36,11 +41,11 @@ Voice: all lowercase, US spelling, short and dry. Product names, descriptions, c
 
 ## Story rows (home shows the first two; the story page shows all three)
 1. **15 years at the furnace:** two brothers, one furnace, zero boring glasses. / we’re rahul and amit. for about 15 years our furnace has made borosilicate glassware for other brands, mostly for export. drunken glass is the first time our own name goes on the glass. / facts: 15 yrs making glass · 1 own furnace · 7 collections
-2. **why borosilicate:** boiling chai at 9am. iced coffee at 3pm. same glass. / borosilicate glass handles sudden temperature changes far better than regular soda-lime glass. it’s lighter, crystal clear and doesn’t hold on to smells. lab-glass science, dressed for brunch.
+2. **why borosilicate:** hot coffee at 9am. iced coffee at 3pm. same glass. / borosilicate glass handles sudden temperature changes far better than regular soda-lime glass. it’s lighter, crystal clear and doesn’t hold on to smells. lab-glass science, dressed for brunch.
 3. **design first, always:** glassware that dresses like a fashion drop. / strawberries, hearts, gradients, wobbles. we design in collections, the way sneaker and fashion brands do, so your shelf looks curated instead of collected.
 
 ## Our story page
-- **Head:** we’ve been playing with fire for 15 years / drunken glass is designed and made in india by the people who run the furnace.
+- **Head:** we’ve been playing with fire for 15 years / drunken glass is designed and made by the people who run the furnace.
 - **Process (numbered):** from furnace to your shelf / how a drunken glass gets made.
   1. melt: sand and boron go into our furnace at around 2,900°F (1,600°C).
   2. shape: molten glass becomes strawberries, hearts, waves and whatever we dream up next.
@@ -48,12 +53,12 @@ Voice: all lowercase, US spelling, short and dry. Product names, descriptions, c
   4. finish: colors, prints and rims get their final polish.
   5. check: we inspect for chips, cracks and wonky bits.
   6. pack: bubble-wrapped like it’s headed to a museum.
-- **CTA band:** seen enough? go shopping. / seven collections of tumblers, coffee cups, teacups and cocktail glasses. / shop all glasses
+- **CTA band:** seen enough? go shopping. / seven collections of tumblers, mugs, espresso glasses and cocktail coupes. / shop all glasses
 
 ## Shop / collection
 - **Default title:** shop all / every glass we make, in every color we make it. tap the dots to switch colors.
 - **Type, collection or vibe title:** the type name and blurb, or the collection name and line, or the vibe name + "glasses that match the mood."
-- **Tabs:** all glasses · tumblers · coffee cups · teacups · cocktail glasses · sets · extras
+- **Tabs:** all glasses · tumblers · mugs · espresso + tea · cocktail glasses · sets · extras
 - **Filter groups:** type · collection · color (pink + berry, electric blue, lime + amber, clear, midnight) · price (any price, under $30, $30 to $39, $40 and up) · vibe
 - **Count:** [n] glasses · **Sort:** sort: featured · price: low to high · price: high to low · newest first
 - **Buttons:** filters ([n]) · clear all filters · show [n] glasses
@@ -78,7 +83,7 @@ Voice: all lowercase, US spelling, short and dry. Product names, descriptions, c
 - **Meter:** add $[x] more for free US shipping / free US shipping unlocked
 - **Delivery:** estimated delivery · enter zip code · check / estimated delivery to [zip]: [date] to [date]. free returns within 30 days. / error: enter a 5-digit US zip code.
 - **Trust:** free breakage replacement · 30-day returns · secure checkout
-- **Accordion "about this glass":** [description] + made from borosilicate glass in our own furnace in india, so it’s light, clear and happy with hot coffee or iced everything. every color is designed as part of the [collection] collection, so it plays nicely with its shelf mates.
+- **Accordion "about this glass":** [description] + made from borosilicate glass in our own furnace, so it’s light, clear and happy with hot coffee or iced everything. every color is designed as part of the [collection] collection, so it plays nicely with its shelf mates.
 - **Accordion "specs":** capacity · height · in the box · material · works with (hot and cold drinks) · dishwasher safe · microwave safe · country of origin (india) · importer
 - **Accordion "how do i take care of my glass?":**
   1. rinse with warm water before the first use.

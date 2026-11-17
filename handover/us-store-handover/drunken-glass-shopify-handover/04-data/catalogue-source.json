@@ -193,7 +193,7 @@
     {
       "id": "heart-eyes-mug",
       "name": "heart eyes mug",
-      "cat": "coffee-cups",
+      "cat": "mugs",
       "col": "heart-eyes",
       "shape": "heart",
       "price": 34,
@@ -203,7 +203,7 @@
       "vibes": [
         "date",
         "gift",
-        "chai"
+        "mornings"
       ],
       "line": "a heart-shaped mug for people who say “i’m fine” and mean it this time.",
       "cw": [
@@ -536,7 +536,7 @@
     {
       "id": "wobble-mug",
       "name": "wobble mug",
-      "cat": "coffee-cups",
+      "cat": "mugs",
       "col": "wobble",
       "shape": "mug",
       "price": 32,
@@ -544,7 +544,7 @@
       "h": 10,
       "vibes": [
         "wfh",
-        "chai"
+        "mornings"
       ],
       "line": "wavy lines for the days your brain is also wavy.",
       "cw": [
@@ -597,21 +597,21 @@
       ]
     },
     {
-      "id": "cutting-chai-set",
-      "name": "street chai glasses, set of 2",
-      "cat": "teacups",
-      "col": "chai-club",
-      "shape": "chai",
+      "id": "cortado-glasses-set",
+      "name": "cortado glasses, set of 2",
+      "cat": "espresso-tea",
+      "col": "cafe-club",
+      "shape": "cortado",
       "multi": 2,
       "price": 24,
       "ml": 120,
       "h": 8,
       "badge": "staff pick",
       "vibes": [
-        "chai",
+        "mornings",
         "gift"
       ],
-      "line": "the little glass from india’s roadside chai stalls, remade in borosilicate so it takes boiling chai without drama.",
+      "line": "the little ribbed glass for cortados, espresso shots and chai lattes. borosilicate, so it takes a fresh pull without drama.",
       "cw": [
         {
           "n": "clear",
@@ -633,19 +633,19 @@
       "packs": null
     },
     {
-      "id": "chai-pe-charcha",
-      "name": "chai break cup",
-      "cat": "teacups",
-      "col": "chai-club",
+      "id": "coffee-break-cup",
+      "name": "coffee break cup",
+      "cat": "espresso-tea",
+      "col": "cafe-club",
       "shape": "mug",
       "price": 26,
       "ml": 200,
       "h": 9,
       "vibes": [
-        "chai",
+        "mornings",
         "wfh"
       ],
-      "line": "for long chai breaks and even longer gossip.",
+      "line": "for long coffee breaks and even longer gossip.",
       "cw": [
         {
           "n": "berry polka",
@@ -698,7 +698,7 @@
     {
       "id": "cloud-nine-mug",
       "name": "cloud nine mug",
-      "cat": "coffee-cups",
+      "cat": "mugs",
       "col": "y2k-bloom",
       "shape": "mug",
       "price": 32,
@@ -708,7 +708,7 @@
       "isNew": true,
       "vibes": [
         "wfh",
-        "chai",
+        "mornings",
         "gift"
       ],
       "line": "puffy clouds on a sky-blue mug. mondays, handled.",
@@ -957,8 +957,8 @@
       ]
     },
     {
-      "id": "blue-moon-coupe",
-      "name": "blue moon coupe",
+      "id": "starstruck-coupe",
+      "name": "starstruck coupe",
       "cat": "cocktail",
       "col": "after-hours",
       "shape": "coupe",
@@ -969,10 +969,10 @@
         "date",
         "party"
       ],
-      "line": "once in a blue moon you deserve a fancy glass. that moon is tonight.",
+      "line": "gold stars on a cocktail coupe. for the nights you deserve something fancy.",
       "cw": [
         {
-          "n": "blue moon",
+          "n": "deep blue",
           "t": "#2765fa",
           "a": 0.5,
           "pat": "stars",
@@ -1285,17 +1285,17 @@
       "bg": "#f8fac4"
     },
     {
-      "id": "coffee-cups",
-      "name": "coffee cups",
+      "id": "mugs",
+      "name": "mugs",
       "blurb": "for the 9am call you joined on mute",
       "rep": "heart-eyes-mug",
       "bg": "#ffe1e8"
     },
     {
-      "id": "teacups",
-      "name": "teacups",
-      "blurb": "chai, matcha and slow mornings",
-      "rep": "cutting-chai-set",
+      "id": "espresso-tea",
+      "name": "espresso + tea",
+      "blurb": "cortados, chai lattes and slow mornings",
+      "rep": "cortado-glasses-set",
       "bg": "#f2f1f0"
     },
     {
@@ -1354,9 +1354,9 @@
       "tint": "#dfe8ff"
     },
     {
-      "id": "chai-club",
-      "name": "chai club",
-      "line": "cutting chai, but make it collectible.",
+      "id": "cafe-club",
+      "name": "café club",
+      "line": "cortados, cappuccinos and slow sunday mornings.",
       "bg": "#f2f1f0",
       "fg": "#0a0a0a",
       "tint": "#f2f1f0"
@@ -1380,7 +1380,7 @@
   ],
   "VIBES": [
     {
-      "id": "chai",
+      "id": "mornings",
       "name": "slow mornings"
     },
     {
@@ -1412,8 +1412,8 @@
           "a chai latte, obviously",
           "extra cinnamon, extra gossip",
           {
-            "cutting-chai-set": 3,
-            "chai-pe-charcha": 2,
+            "cortado-glasses-set": 3,
+            "coffee-break-cup": 2,
             "heart-eyes-mug": 1
           }
         ],
@@ -1432,7 +1432,7 @@
           "it’s 5pm somewhere",
           {
             "crush-coupe": 2,
-            "blue-moon-coupe": 2,
+            "starstruck-coupe": 2,
             "after-hours-rocks": 1
           }
         ],
@@ -1465,7 +1465,7 @@
           {
             "cloud-nine-mug": 3,
             "heart-eyes-mug": 2,
-            "chai-pe-charcha": 1
+            "coffee-break-cup": 1
           }
         ],
         [
@@ -1512,10 +1512,10 @@
         ],
         [
           "earthy",
-          "warm tones and cosy corners",
+          "warm tones and cozy corners",
           {
             "golden-hour-tumbler": 3,
-            "cutting-chai-set": 1
+            "cortado-glasses-set": 1
           }
         ],
         [
@@ -1523,7 +1523,7 @@
           "black, stars, late nights",
           {
             "after-hours-rocks": 3,
-            "blue-moon-coupe": 2
+            "starstruck-coupe": 2
           }
         ]
       ]
@@ -1561,17 +1561,41 @@
         "date-night-duo",
         "crush-coupe",
         "heart-eyes-mug",
-        "blue-moon-coupe"
+        "starstruck-coupe"
       ]
     },
     "parents": {
       "t": "for mom and dad",
       "s": "pretty, practical and actually used every morning.",
       "ids": [
-        "cutting-chai-set",
-        "chai-pe-charcha",
+        "cortado-glasses-set",
+        "coffee-break-cup",
         "golden-hour-tumbler",
         "cloud-nine-mug"
+      ]
+    },
+    "stocking": {
+      "t": "stocking stuffers under $30",
+      "s": "small, cute and very wrappable.",
+      "ids": [
+        "cortado-glasses-set",
+        "coffee-break-cup",
+        "cherry-bomb",
+        "daisy-days",
+        "glass-straws",
+        "coaster-set"
+      ]
+    },
+    "under50": {
+      "t": "gifts under $50",
+      "s": "they look expensive. they aren’t.",
+      "ids": [
+        "golden-hour-tumbler",
+        "strawberry-fields",
+        "the-wobble",
+        "crush-coupe",
+        "starstruck-coupe",
+        "heart-eyes-mug"
       ]
     },
     "office": {
@@ -1590,6 +1614,10 @@
     [
       "how long does shipping take?",
       "orders ship within 1 to 2 business days. every product page shows a delivery estimate for your zip code, and tracking lands in your inbox the moment it ships."
+    ],
+    [
+      "where are your glasses made?",
+      "in our own borosilicate furnace in india, where we’ve made glassware for about 15 years. designed by us, made by us, shipped to you."
     ],
     [
       "how much is shipping?",

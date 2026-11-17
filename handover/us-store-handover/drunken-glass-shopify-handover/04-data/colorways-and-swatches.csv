@@ -20,10 +20,10 @@ the-wobble,lime soda,DG-TW-THE-LIMES,#eaef29,#f2f1f0,07-assets/png/products/the-
 the-wobble,clear,DG-TW-THE-CLEAR,#ffffff,#f8fac4,07-assets/png/products/the-wobble--clear.png
 wobble-mug,blue wave,DG-WM-WOB-BLUEW,"radial-gradient(circle,#2765fa 0 34%,#ffffff 37%)",#dfe8ff,07-assets/png/products/wobble-mug--blue-wave.png
 wobble-mug,berry wave,DG-WM-WOB-BERRY,"radial-gradient(circle,#ef426f 0 34%,#ffffff 37%)",#ffe1e8,07-assets/png/products/wobble-mug--berry-wave.png
-cutting-chai-set,clear,DG-CCS-CUT-CLEAR,#ffffff,#f2f1f0,07-assets/png/products/cutting-chai-set--clear.png
-cutting-chai-set,amber,DG-CCS-CUT-AMBER,#f4a83a,#f8fac4,07-assets/png/products/cutting-chai-set--amber.png
-chai-pe-charcha,berry polka,DG-CPC-CHA-BERRY,"radial-gradient(circle,#ef426f 0 34%,#ffffff 37%)",#ffe1e8,07-assets/png/products/chai-pe-charcha--berry-polka.png
-chai-pe-charcha,blue polka,DG-CPC-CHA-BLUEP,"radial-gradient(circle,#2765fa 0 34%,#ffffff 37%)",#dfe8ff,07-assets/png/products/chai-pe-charcha--blue-polka.png
+cortado-glasses-set,clear,DG-CGS-COR-CLEAR,#ffffff,#f2f1f0,07-assets/png/products/cortado-glasses-set--clear.png
+cortado-glasses-set,amber,DG-CGS-COR-AMBER,#f4a83a,#f8fac4,07-assets/png/products/cortado-glasses-set--amber.png
+coffee-break-cup,berry polka,DG-CBC-COF-BERRY,"radial-gradient(circle,#ef426f 0 34%,#ffffff 37%)",#ffe1e8,07-assets/png/products/coffee-break-cup--berry-polka.png
+coffee-break-cup,blue polka,DG-CBC-COF-BLUEP,"radial-gradient(circle,#2765fa 0 34%,#ffffff 37%)",#dfe8ff,07-assets/png/products/coffee-break-cup--blue-polka.png
 cloud-nine-mug,sky,DG-CNM-CLO-SKY,#2765fa,#dfe8ff,07-assets/png/products/cloud-nine-mug--sky.png
 cloud-nine-mug,pink sky,DG-CNM-CLO-PINKS,#ef426f,#ffe1e8,07-assets/png/products/cloud-nine-mug--pink-sky.png
 daisy-days,lime daisy,DG-DD-DAI-LIMED,#eaef29,#f8fac4,07-assets/png/products/daisy-days--lime-daisy.png
@@ -33,8 +33,8 @@ checkmate,berry check,DG-C-CHE-BERRY,"radial-gradient(circle,#ef426f 0 34%,#ffff
 checkmate,lime check,DG-C-CHE-LIMEC,"radial-gradient(circle,#eaef29 0 34%,#ffffff 37%)",#f2f1f0,07-assets/png/products/checkmate--lime-check.png
 bubble-pop,pink pop,DG-BP-BUB-PINKP,#ffb3c6,#ffe1e8,07-assets/png/products/bubble-pop--pink-pop.png
 bubble-pop,blue pop,DG-BP-BUB-BLUEP,#2765fa,#dfe8ff,07-assets/png/products/bubble-pop--blue-pop.png
-blue-moon-coupe,blue moon,DG-BMC-BLU-BLUEM,#2765fa,#dfe8ff,07-assets/png/products/blue-moon-coupe--blue-moon.png
-blue-moon-coupe,midnight,DG-BMC-BLU-MIDNI,#0a0a0a,#f2f1f0,07-assets/png/products/blue-moon-coupe--midnight.png
+starstruck-coupe,deep blue,DG-SC-STA-DEEPB,#2765fa,#dfe8ff,07-assets/png/products/starstruck-coupe--deep-blue.png
+starstruck-coupe,midnight,DG-SC-STA-MIDNI,#0a0a0a,#f2f1f0,07-assets/png/products/starstruck-coupe--midnight.png
 after-hours-rocks,midnight,DG-AHR-AFT-MIDNI,#0a0a0a,#dfe8ff,07-assets/png/products/after-hours-rocks--midnight.png
 after-hours-rocks,smoke,DG-AHR-AFT-SMOKE,#6b6b6b,#f2f1f0,07-assets/png/products/after-hours-rocks--smoke.png
 pour-decisions-set,(single variant),DG-PDS-POU,"conic-gradient(#ef426f 0 25%,#eaef29 0 50%,#2765fa 0 75%,#f4a83a 0)",#f8fac4,07-assets/png/products/pour-decisions-set.png

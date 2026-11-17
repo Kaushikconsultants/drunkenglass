@@ -9,8 +9,8 @@
           "label": "a chai latte, obviously",
           "sub": "extra cinnamon, extra gossip",
           "points": {
-            "cutting-chai-set": 3,
-            "chai-pe-charcha": 2,
+            "cortado-glasses-set": 3,
+            "coffee-break-cup": 2,
             "heart-eyes-mug": 1
           }
         },
@@ -29,7 +29,7 @@
           "sub": "it’s 5pm somewhere",
           "points": {
             "crush-coupe": 2,
-            "blue-moon-coupe": 2,
+            "starstruck-coupe": 2,
             "after-hours-rocks": 1
           }
         },
@@ -62,7 +62,7 @@
           "points": {
             "cloud-nine-mug": 3,
             "heart-eyes-mug": 2,
-            "chai-pe-charcha": 1
+            "coffee-break-cup": 1
           }
         },
         {
@@ -109,10 +109,10 @@
         },
         {
           "label": "earthy",
-          "sub": "warm tones and cosy corners",
+          "sub": "warm tones and cozy corners",
           "points": {
             "golden-hour-tumbler": 3,
-            "cutting-chai-set": 1
+            "cortado-glasses-set": 1
           }
         },
         {
@@ -120,7 +120,7 @@
           "sub": "black, stars, late nights",
           "points": {
             "after-hours-rocks": 3,
-            "blue-moon-coupe": 2
+            "starstruck-coupe": 2
           }
         }
       ]

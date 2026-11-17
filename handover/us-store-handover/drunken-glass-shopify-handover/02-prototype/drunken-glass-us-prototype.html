@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Drunken Glass US Storefront</title>
-<meta name="description" content="designer borosilicate glassware: tumblers, coffee cups, teacups and cocktail glasses, made in our own furnace in india and shipped across the US.">
+<meta name="description" content="designer borosilicate glassware: tumblers, mugs, espresso glasses and cocktail coupes, made in our own furnace and shipped across the US.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Shrikhand&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -796,8 +796,8 @@ const IC = {
 /* ---------- catalogue (sample data: names, prices and capacities to be confirmed) ---------- */
 const CATS = [
   { id: 'tumblers', name: 'tumblers', blurb: 'iced coffee, cold brew, lemonade', rep: 'golden-hour-tumbler', bg: '#f8fac4' },
-  { id: 'coffee-cups', name: 'coffee cups', blurb: 'for the 9am call you joined on mute', rep: 'heart-eyes-mug', bg: '#ffe1e8' },
-  { id: 'teacups', name: 'teacups', blurb: 'chai, matcha and slow mornings', rep: 'cutting-chai-set', bg: '#f2f1f0' },
+  { id: 'mugs', name: 'mugs', blurb: 'for the 9am call you joined on mute', rep: 'heart-eyes-mug', bg: '#ffe1e8' },
+  { id: 'espresso-tea', name: 'espresso + tea', blurb: 'cortados, chai lattes and slow mornings', rep: 'cortado-glasses-set', bg: '#f2f1f0' },
   { id: 'cocktail', name: 'cocktail glasses', blurb: 'mocktails count. we don’t judge', rep: 'crush-coupe', bg: '#dfe8ff' },
   { id: 'sets', name: 'sets', blurb: 'pairs and party packs', rep: 'pour-decisions-set', bg: '#eaef29' },
   { id: 'extras', name: 'extras', blurb: 'straws, lids, coasters and brushes', rep: 'glass-straws', bg: '#f2f1f0' }
@@ -807,12 +807,12 @@ const COLS = [
   { id: 'heart-eyes', name: 'heart eyes', line: 'for hopeless romantics and situationship survivors.', bg: '#ffe1e8', fg: INK, tint: '#ffe1e8' },
   { id: 'golden-hour', name: 'golden hour', line: 'gradients that look like 6:47pm feels.', bg: '#eaef29', fg: INK, tint: '#f8fac4' },
   { id: 'wobble', name: 'wobble', line: 'wavy glasses that look a little tipsy. on purpose.', bg: '#2765fa', fg: '#fff', tint: '#dfe8ff' },
-  { id: 'chai-club', name: 'chai club', line: 'cutting chai, but make it collectible.', bg: '#f2f1f0', fg: INK, tint: '#f2f1f0' },
+  { id: 'cafe-club', name: 'café club', line: 'cortados, cappuccinos and slow sunday mornings.', bg: '#f2f1f0', fg: INK, tint: '#f2f1f0' },
   { id: 'after-hours', name: 'after hours', line: 'midnight blues and starry coupes.', bg: INK, fg: '#fff', tint: '#dfe8ff' },
   { id: 'y2k-bloom', name: 'y2k bloom', line: 'daisies, checks and clouds. 2003 called, we picked up.', bg: '#dfe8ff', fg: INK, tint: '#f8fac4' }
 ];
 const VIBES = [
-  { id: 'chai', name: 'slow mornings' }, { id: 'wfh', name: 'desk flex' }, { id: 'date', name: 'date night' },
+  { id: 'mornings', name: 'slow mornings' }, { id: 'wfh', name: 'desk flex' }, { id: 'date', name: 'date night' },
   { id: 'party', name: 'hosting season' }, { id: 'gift', name: 'gift-ready' }, { id: 'under30', name: 'under $30' }
 ];
 const P = [
@@ -825,7 +825,7 @@ const P = [
   { id: 'lemon-drop', name: 'lemon drop can glass', cat: 'tumblers', col: 'fruit-club', shape: 'can', price: 28, ml: 500, h: 13, vibes: ['wfh', 'party'],
     line: 'lemonade, but it has a personality now.',
     cw: [{ n: 'sunny', t: '#eaef29', a: .4, pat: 'lemons', pc: '#eaef29', bg: '#f8fac4' }, { n: 'clear zest', t: '#ffffff', a: .35, pat: 'lemons', pc: '#eaef29', bg: '#dfe8ff' }] },
-  { id: 'heart-eyes-mug', name: 'heart eyes mug', cat: 'coffee-cups', col: 'heart-eyes', shape: 'heart', price: 34, ml: 350, h: 11, badge: 'gift pick', vibes: ['date', 'gift', 'chai'],
+  { id: 'heart-eyes-mug', name: 'heart eyes mug', cat: 'mugs', col: 'heart-eyes', shape: 'heart', price: 34, ml: 350, h: 11, badge: 'gift pick', vibes: ['date', 'gift', 'mornings'],
     line: 'a heart-shaped mug for people who say “i’m fine” and mean it this time.',
     cw: [{ n: 'bubblegum', t: '#ffb3c6', a: .65, bg: '#ffe1e8' }, { n: 'berry crush', t: '#ef426f', a: .55, bg: '#f2f1f0' }, { n: 'clear crush', t: '#ffffff', a: .35, pat: 'hearts', pc: '#ef426f', bg: '#dfe8ff' }] },
   { id: 'crush-coupe', name: 'crush coupe', cat: 'cocktail', col: 'heart-eyes', shape: 'coupe', price: 38, ml: 220, h: 15, badge: 'new', isNew: true, vibes: ['date', 'party'],
@@ -840,16 +840,16 @@ const P = [
   { id: 'the-wobble', name: 'the wobble tumbler', cat: 'tumblers', col: 'wobble', shape: 'wavy', price: 36, ml: 380, h: 14, badge: 'staff pick', vibes: ['wfh', 'party', 'gift'],
     line: 'our most drunken-looking glass. the wobble is on purpose. the spills are on you.',
     cw: [{ n: 'electric blue', t: '#2765fa', a: .55, bg: '#dfe8ff' }, { n: 'berry', t: '#ef426f', a: .55, bg: '#ffe1e8' }, { n: 'lime soda', t: '#eaef29', a: .6, bg: '#f2f1f0' }, { n: 'clear', t: '#ffffff', a: .35, bg: '#f8fac4' }] },
-  { id: 'wobble-mug', name: 'wobble mug', cat: 'coffee-cups', col: 'wobble', shape: 'mug', price: 32, ml: 330, h: 10, vibes: ['wfh', 'chai'],
+  { id: 'wobble-mug', name: 'wobble mug', cat: 'mugs', col: 'wobble', shape: 'mug', price: 32, ml: 330, h: 10, vibes: ['wfh', 'mornings'],
     line: 'wavy lines for the days your brain is also wavy.',
     cw: [{ n: 'blue wave', t: '#ffffff', a: .35, pat: 'waves', pc: '#2765fa', bg: '#dfe8ff' }, { n: 'berry wave', t: '#ffffff', a: .35, pat: 'waves', pc: '#ef426f', bg: '#ffe1e8' }] },
-  { id: 'cutting-chai-set', name: 'street chai glasses, set of 2', cat: 'teacups', col: 'chai-club', shape: 'chai', multi: 2, price: 24, ml: 120, h: 8, badge: 'staff pick', vibes: ['chai', 'gift'],
-    line: 'the little glass from india’s roadside chai stalls, remade in borosilicate so it takes boiling chai without drama.',
+  { id: 'cortado-glasses-set', name: 'cortado glasses, set of 2', cat: 'espresso-tea', col: 'cafe-club', shape: 'cortado', multi: 2, price: 24, ml: 120, h: 8, badge: 'staff pick', vibes: ['mornings', 'gift'],
+    line: 'the little ribbed glass for cortados, espresso shots and chai lattes. borosilicate, so it takes a fresh pull without drama.',
     cw: [{ n: 'clear', t: '#ffffff', a: .35, bg: '#f2f1f0' }, { n: 'amber', t: '#f4a83a', a: .45, bg: '#f8fac4' }] },
-  { id: 'chai-pe-charcha', name: 'chai break cup', cat: 'teacups', col: 'chai-club', shape: 'mug', price: 26, ml: 200, h: 9, vibes: ['chai', 'wfh'],
-    line: 'for long chai breaks and even longer gossip.',
+  { id: 'coffee-break-cup', name: 'coffee break cup', cat: 'espresso-tea', col: 'cafe-club', shape: 'mug', price: 26, ml: 200, h: 9, vibes: ['mornings', 'wfh'],
+    line: 'for long coffee breaks and even longer gossip.',
     cw: [{ n: 'berry polka', t: '#ffffff', a: .35, pat: 'dots', pc: '#ef426f', bg: '#ffe1e8' }, { n: 'blue polka', t: '#ffffff', a: .35, pat: 'dots', pc: '#2765fa', bg: '#dfe8ff' }] },
-  { id: 'cloud-nine-mug', name: 'cloud nine mug', cat: 'coffee-cups', col: 'y2k-bloom', shape: 'mug', price: 32, ml: 330, h: 10, badge: 'new', isNew: true, vibes: ['wfh', 'chai', 'gift'],
+  { id: 'cloud-nine-mug', name: 'cloud nine mug', cat: 'mugs', col: 'y2k-bloom', shape: 'mug', price: 32, ml: 330, h: 10, badge: 'new', isNew: true, vibes: ['wfh', 'mornings', 'gift'],
     line: 'puffy clouds on a sky-blue mug. mondays, handled.',
     cw: [{ n: 'sky', t: '#2765fa', a: .35, pat: 'clouds', bg: '#dfe8ff' }, { n: 'pink sky', t: '#ef426f', a: .3, pat: 'clouds', bg: '#ffe1e8' }] },
   { id: 'daisy-days', name: 'daisy days can glass', cat: 'tumblers', col: 'y2k-bloom', shape: 'can', price: 28, ml: 500, h: 13, badge: 'new', isNew: true, vibes: ['wfh', 'gift'],
@@ -861,9 +861,9 @@ const P = [
   { id: 'bubble-pop', name: 'bubble pop glass', cat: 'tumblers', col: 'y2k-bloom', shape: 'bubble', price: 30, ml: 420, h: 12, vibes: ['party'],
     line: 'round, bouncy, polka-dotted. bubble tea’s dream house.',
     cw: [{ n: 'pink pop', t: '#ffb3c6', a: .45, pat: 'dots', pc: '#ffffff', bg: '#ffe1e8' }, { n: 'blue pop', t: '#2765fa', a: .4, pat: 'dots', pc: '#ffffff', bg: '#dfe8ff' }] },
-  { id: 'blue-moon-coupe', name: 'blue moon coupe', cat: 'cocktail', col: 'after-hours', shape: 'coupe', price: 38, ml: 220, h: 15, vibes: ['date', 'party'],
-    line: 'once in a blue moon you deserve a fancy glass. that moon is tonight.',
-    cw: [{ n: 'blue moon', t: '#2765fa', a: .5, pat: 'stars', pc: '#eaef29', bg: '#dfe8ff' }, { n: 'midnight', t: INK, a: .55, pat: 'stars', pc: '#eaef29', bg: '#f2f1f0' }] },
+  { id: 'starstruck-coupe', name: 'starstruck coupe', cat: 'cocktail', col: 'after-hours', shape: 'coupe', price: 38, ml: 220, h: 15, vibes: ['date', 'party'],
+    line: 'gold stars on a cocktail coupe. for the nights you deserve something fancy.',
+    cw: [{ n: 'deep blue', t: '#2765fa', a: .5, pat: 'stars', pc: '#eaef29', bg: '#dfe8ff' }, { n: 'midnight', t: INK, a: .55, pat: 'stars', pc: '#eaef29', bg: '#f2f1f0' }] },
   { id: 'after-hours-rocks', name: 'after hours rocks glass', cat: 'cocktail', col: 'after-hours', shape: 'rocks', price: 36, ml: 300, h: 9, badge: 'new', isNew: true, vibes: ['party', 'date'],
     line: 'heavy base, starry night. for mocktails, whiskey or just ice and vibes.',
     cw: [{ n: 'midnight', t: INK, a: .5, pat: 'stars', pc: '#eaef29', bg: '#dfe8ff' }, { n: 'smoke', t: '#6b6b6b', a: .4, pat: 'stars', pc: '#ffffff', bg: '#f2f1f0' }] },
@@ -889,7 +889,7 @@ const P = [
 const byId = id => P.find(p => p.id === id);
 const colOf = id => COLS.find(c => c.id === id);
 const catOf = id => CATS.find(c => c.id === id);
-const DRINK = { tumblers: { c: '#f4a83a', ice: true }, 'coffee-cups': { c: '#6b3f22', hot: true }, teacups: { c: '#c47a35', hot: true }, cocktail: { c: '#ff6f91', ice: true }, sets: { c: '#f4a83a', ice: true } };
+const DRINK = { tumblers: { c: '#f4a83a', ice: true }, mugs: { c: '#6b3f22', hot: true }, 'espresso-tea': { c: '#c47a35', hot: true }, cocktail: { c: '#ff6f91', ice: true }, sets: { c: '#f4a83a', ice: true } };
 
 const FAM = { berry: ['#ef426f', '#ffb3c6', '#ff8fab'], blue: ['#2765fa'], sunny: ['#eaef29', '#f4a83a'], clear: ['#ffffff'], midnight: [INK, '#6b6b6b'] };
 const FAMN = { berry: 'pink + berry', blue: 'electric blue', sunny: 'lime + amber', clear: 'clear', midnight: 'midnight' };
@@ -911,7 +911,7 @@ const SH = {
   strawberry: { d: 'M42 74 C38 140 70 204 100 238 C130 204 162 140 158 74 Z', top: 74, bottom: 238, hl: [58, 96, 74], crown: true },
   heart: { d: 'M100 236 C52 204 30 166 30 128 C30 96 52 76 76 76 C88 76 96 82 100 92 C104 82 112 76 124 76 C148 76 170 96 170 128 C170 166 148 204 100 236 Z', top: 80, hl: [46, 110, 54], handle: 'M164 112 C198 110 198 180 146 186' },
   mug: { d: 'M54 84 L146 84 L141 220 Q139 236 123 236 L77 236 Q61 236 59 220 Z', rim: [100, 84, 46, 8], top: 84, hl: [66, 100, 100], handle: 'M143 112 C182 110 184 184 139 186' },
-  chai: { d: 'M64 116 L136 116 L129 230 Q128 236 121 236 L79 236 Q72 236 71 230 Z', rim: [100, 116, 36, 6], top: 116, hl: [74, 128, 84], ribs: true },
+  cortado: { d: 'M64 116 L136 116 L129 230 Q128 236 121 236 L79 236 Q72 236 71 230 Z', rim: [100, 116, 36, 6], top: 116, hl: [74, 128, 84], ribs: true },
   coupe: { d: 'M38 92 Q40 150 100 154 Q160 150 162 92 Z', rim: [100, 92, 62, 10], top: 92, bottom: 154, hl: [52, 100, 30], stem: true },
   wavy: { d: 'M52 46 C40 82 66 104 54 142 C44 178 64 202 62 228 Q62 236 70 236 L130 236 Q138 236 138 228 C136 202 156 178 146 142 C134 104 160 82 148 46 Z', rim: [100, 46, 48, 8], top: 46, hl: [64, 64, 140] },
   bubble: { d: 'M66 62 C30 100 30 198 72 230 Q78 236 86 236 L114 236 Q122 236 128 230 C170 198 170 100 134 62 Z', rim: [100, 62, 34, 6], top: 62, hl: [50, 96, 104] }
@@ -1077,7 +1077,7 @@ function marquee() {
   return `<div class="mqx" aria-hidden="true"><div class="mq"><div class="mq-track">${a}${a}</div></div></div>`;
 }
 function spinBadge() {
-  return `<svg class="spin" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="spinP" d="M60 60m-43 0a43 43 0 1 1 86 0a43 43 0 1 1-86 0"/></defs><circle cx="60" cy="60" r="58" fill="#eaef29" stroke="#0a0a0a" stroke-width="2.5"/><text font-family="Space Grotesk, sans-serif" font-weight="700" font-size="10.6" letter-spacing=".6" fill="#0a0a0a"><textPath href="#spinP">borosilicate ✦ hot + cold safe ✦ made in india ✦</textPath></text><path d="M60 42c1.3 10 4.6 13.4 15 15-10.4 1.6-13.7 5-15 15-1.3-10-4.6-13.4-15-15 10.4-1.6 13.7-5 15-15z" fill="#ef426f" stroke="#0a0a0a" stroke-width="2"/></svg>`;
+  return `<svg class="spin" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="spinP" d="M60 60m-43 0a43 43 0 1 1 86 0a43 43 0 1 1-86 0"/></defs><circle cx="60" cy="60" r="58" fill="#eaef29" stroke="#0a0a0a" stroke-width="2.5"/><text font-family="Space Grotesk, sans-serif" font-weight="700" font-size="10.6" letter-spacing=".6" fill="#0a0a0a"><textPath href="#spinP">borosilicate ✦ hot + cold safe ✦ made to show off ✦</textPath></text><path d="M60 42c1.3 10 4.6 13.4 15 15-10.4 1.6-13.7 5-15 15-1.3-10-4.6-13.4-15-15 10.4-1.6 13.7-5 15-15z" fill="#ef426f" stroke="#0a0a0a" stroke-width="2"/></svg>`;
 }
 function lensSVG() {
   const can = SH.can.d;
@@ -1164,7 +1164,7 @@ function artFurnace() {
   <path d="M410 300c1 7 3.5 9.5 11 11-7.5 1-10 3.5-11 11-1-7.5-3.5-10-11-11 7.5-1.5 10-4 11-11z" fill="#fff" stroke="#0a0a0a" stroke-width="2"/></svg>`;
 }
 function artHotCold() {
-  const hot = glass('chai', { t: '#ffffff', a: .35 }, { liquid: { c: '#c47a35', hot: true, level: .7 } });
+  const hot = glass('cortado', { t: '#ffffff', a: .35 }, { liquid: { c: '#c47a35', hot: true, level: .7 } });
   const cold = glass('can', { t: '#ffffff', a: .35 }, { liquid: { c: '#2765fa', ice: true, level: .7 }, strawC: '#eaef29' });
   return `<svg viewBox="0 0 500 400" aria-hidden="true"><rect width="250" height="400" fill="#ef426f"/><rect x="250" width="250" height="400" fill="#2765fa"/><line x1="250" y1="0" x2="250" y2="400" stroke="#0a0a0a" stroke-width="4"/>
   ${nest(hot, 25, 70, 200, 260)}${nest(cold, 275, 70, 200, 260)}
@@ -1192,13 +1192,13 @@ function viewHome() {
   const words = ['your', 'drink', 'deserves', 'a better', 'outfit.'];
   const rot = [-3, 2, -1.5, 2.5, -2];
   const gifts = [['host', 'for the host', 'friendsgiving and dinner parties', 'pour-decisions-set', '#f8fac4'], ['bestie', 'for the bestie', 'loud colors, inside jokes', 'strawberry-fields', '#ffe1e8'], ['couple', 'for the couple', 'date night, sorted', 'date-night-duo', '#dfe8ff'], ['gc', 'digital gift cards', 'delivered by email, instantly', 'gc', '#dfe8ff']];
-  const shelf = [['cherry-bomb', 0, '#ffe1e8'], ['golden-hour-tumbler', 1, '#dfe8ff'], ['heart-eyes-mug', 2, '#f8fac4'], ['the-wobble', 2, '#f2f1f0'], ['blue-moon-coupe', 0, '#ffe1e8'], ['bubble-pop', 1, '#f8fac4']];
+  const shelf = [['cherry-bomb', 0, '#ffe1e8'], ['golden-hour-tumbler', 1, '#dfe8ff'], ['heart-eyes-mug', 2, '#f8fac4'], ['the-wobble', 2, '#f2f1f0'], ['starstruck-coupe', 0, '#ffe1e8'], ['bubble-pop', 1, '#f8fac4']];
   return `
   <section class="wrap hero">
     <div class="hero-copy">
       <a class="hero-pill" href="#gifting"><i>new</i> the holiday gift shop is open</a>
       <h1 class="tipsy">${words.map((w, i) => `<span style="--r:${rot[i]}deg;--i:${i}">${w}</span>`).join(' ')}</h1>
-      <p class="hero-sub">designer borosilicate glasses shaped like strawberries, hearts, waves and sunsets. made in our own furnace in india and built for hot coffee and iced everything.</p>
+      <p class="hero-sub">designer borosilicate glasses shaped like strawberries, hearts, waves and sunsets. made in our own furnace and built for hot coffee and iced everything.</p>
       <div class="hero-cta"><a class="btn btn-blue" href="#shop">shop all glasses</a><a class="btn btn-lime" href="#quiz">find my glass</a></div>
       <ul class="hero-trust"><li>${IC.flame}hot + cold safe</li><li>${IC.spark}15 years of glassmaking</li><li>${IC.truck}free US shipping over $75</li></ul>
     </div>
@@ -1246,7 +1246,7 @@ function railTabs() { return [['new', 'new in'], ['hero', 'hero designs'], ['und
 function storyRows(n) {
   const rows = [
     { tag: '15 years at the furnace', h: 'two brothers, one furnace, zero boring glasses.', p: 'we’re rahul and amit. for about 15 years our furnace has made borosilicate glassware for other brands, mostly for export. drunken glass is the first time our own name goes on the glass.', art: artFurnace(), bg: '#ef426f', facts: [['15 yrs', 'making glass'], ['1', 'own furnace'], ['7', 'collections']] },
-    { tag: 'why borosilicate', h: 'boiling chai at 9am. iced coffee at 3pm. same glass.', p: 'borosilicate glass handles sudden temperature changes far better than regular soda-lime glass. it’s lighter, crystal clear and doesn’t hold on to smells. lab-glass science, dressed for brunch.', art: artHotCold(), bg: '#2765fa', facts: [] },
+    { tag: 'why borosilicate', h: 'hot coffee at 9am. iced coffee at 3pm. same glass.', p: 'borosilicate glass handles sudden temperature changes far better than regular soda-lime glass. it’s lighter, crystal clear and doesn’t hold on to smells. lab-glass science, dressed for brunch.', art: artHotCold(), bg: '#2765fa', facts: [] },
     { tag: 'design first, always', h: 'glassware that dresses like a fashion drop.', p: 'strawberries, hearts, gradients, wobbles. we design in collections, the way sneaker and fashion brands do, so your shelf looks curated instead of collected.', art: artDesign(), bg: '#eaef29', facts: [] }
   ].slice(0, n);
   return rows.map((r, i) => `<div class="story ${i % 2 ? 'flip' : ''}"><div class="story-art" style="--bg:${r.bg}">${r.art}</div><div class="story-txt"><span class="tag">${r.tag}</span><h3>${r.h}</h3><p>${r.p}</p>${r.facts.length ? `<div class="facts">${r.facts.map(([b, s]) => `<div class="fact"><b>${b}</b><small>${s}</small></div>`).join('')}</div>` : ''}</div></div>`).join('');
@@ -1262,20 +1262,20 @@ const clubCode = () => `<div class="code"><span>your code</span><b>SIPSIP10</b><
 /* quiz */
 const QZ = [
   { q: 'what’s in your glass at 4pm?', o: [
-    ['a chai latte, obviously', 'extra cinnamon, extra gossip', { 'cutting-chai-set': 3, 'chai-pe-charcha': 2, 'heart-eyes-mug': 1 }],
+    ['a chai latte, obviously', 'extra cinnamon, extra gossip', { 'cortado-glasses-set': 3, 'coffee-break-cup': 2, 'heart-eyes-mug': 1 }],
     ['iced coffee, extra ice', 'the oat milk is non-negotiable', { 'cherry-bomb': 2, 'the-wobble': 2, 'daisy-days': 1, 'golden-hour-tumbler': 1 }],
-    ['a mocktail with a tiny umbrella', 'it’s 5pm somewhere', { 'crush-coupe': 2, 'blue-moon-coupe': 2, 'after-hours-rocks': 1 }],
+    ['a mocktail with a tiny umbrella', 'it’s 5pm somewhere', { 'crush-coupe': 2, 'starstruck-coupe': 2, 'after-hours-rocks': 1 }],
     ['matcha, or anything green', 'your gut health is thriving', { 'golden-hour-tumbler': 2, 'lemon-drop': 2, 'daisy-days': 1 }]] },
   { q: 'pick a saturday plan', o: [
     ['brunch with the besties', 'photos first, food later', { 'strawberry-fields': 3, 'crush-coupe': 1, 'sunset-can': 1 }],
-    ['bed rot and a comfort show', 'episode 4, watched for the 9th time', { 'cloud-nine-mug': 3, 'heart-eyes-mug': 2, 'chai-pe-charcha': 1 }],
+    ['bed rot and a comfort show', 'episode 4, watched for the 9th time', { 'cloud-nine-mug': 3, 'heart-eyes-mug': 2, 'coffee-break-cup': 1 }],
     ['house party, you’re on aux', 'the playlist runs 3 hours', { 'the-wobble': 2, 'checkmate': 2, 'bubble-pop': 2, 'pour-decisions-set': 2 }],
     ['sunset walk, phone on dnd', 'golden hour is your love language', { 'golden-hour-tumbler': 3, 'sunset-can': 2 }]] },
   { q: 'your aesthetic in one word', o: [
     ['soft', 'pink, bows, hearts, repeat', { 'heart-eyes-mug': 2, 'strawberry-fields': 2, 'crush-coupe': 1 }],
     ['loud', 'more color is more better', { 'the-wobble': 2, 'bubble-pop': 2, 'checkmate': 1, 'cherry-bomb': 1 }],
-    ['earthy', 'warm tones and cosy corners', { 'golden-hour-tumbler': 3, 'cutting-chai-set': 1 }],
-    ['moody', 'black, stars, late nights', { 'after-hours-rocks': 3, 'blue-moon-coupe': 2 }]] }
+    ['earthy', 'warm tones and cozy corners', { 'golden-hour-tumbler': 3, 'cortado-glasses-set': 1 }],
+    ['moody', 'black, stars, late nights', { 'after-hours-rocks': 3, 'starstruck-coupe': 2 }]] }
 ];
 function quizResult() {
   const sc = {};
@@ -1418,7 +1418,7 @@ function buyTotal(p) {
   if (S.pdp.gift && !S.wrap.on) t += WRAP;
   return t;
 }
-const oz = ml => (ml / 29.574).toFixed(1).replace(/\.0$/, '');
+const oz = ml => Math.round(ml / 29.574);
 const inch = cm => (cm / 2.54).toFixed(1).replace(/\.0$/, '');
 const pay4 = t => fmt(Math.ceil(t * 25) / 100);
 const careVal = (v, yes, no) => v === true ? yes : v === false ? no : '<span class="ph">result after testing</span>';
@@ -1521,7 +1521,7 @@ function viewProduct(p) {
       <div><p class="lbl">estimated delivery</p><form class="pin" data-form="pin" novalidate><label class="field"><input id="pinIn" inputmode="numeric" maxlength="5" placeholder="enter zip code" aria-label="zip code" autocomplete="postal-code"></label><button class="btn sm" type="submit" style="min-height:46px">check</button></form><p class="pinout" id="pinOut" style="margin-top:8px"></p></div>
       <ul class="trust3"><li>${IC.shield}free breakage replacement</li><li>${IC.ret}30-day returns</li><li>${IC.lock}secure checkout</li></ul>
       <div>
-        <details class="acc" open><summary>about this ${isAcc ? 'piece' : 'glass'}</summary><div class="body"><p>${p.line}</p>${isAcc ? '' : `<p>made from borosilicate glass in our own furnace in india, so it’s light, clear and happy with hot coffee or iced everything. every color is designed as part of the ${colOf(p.col).name} collection, so it plays nicely with its shelf mates.</p>`}</div></details>
+        <details class="acc" open><summary>about this ${isAcc ? 'piece' : 'glass'}</summary><div class="body"><p>${p.line}</p>${isAcc ? '' : `<p>made from borosilicate glass in our own furnace, so it’s light, clear and happy with hot coffee or iced everything. every color is designed as part of the ${colOf(p.col).name} collection, so it plays nicely with its shelf mates.</p>`}</div></details>
         <details class="acc"><summary>specs</summary><div class="body"><dl class="specs">${specs}</dl></div></details>
         ${isAcc ? '' : '<details class="acc"><summary>how do i take care of my glass?</summary><div class="body"><ol><li>rinse with warm water before the first use.</li><li>dishwasher-safe designs go on the top rack. printed designs last longest with a soft sponge and mild soap. skip steel wool.</li><li>borosilicate is tough, not invincible: no direct flame or stovetop.</li><li>dry upside down and give it some breathing room on the shelf.</li></ol></div></details>'}
         <details class="acc"><summary>shipping, returns and breakage</summary><div class="body"><p>ships in 1 to 2 business days, packed like it’s going to a museum. free US shipping over $75, otherwise $6.95.</p><p>arrived broken? email us a photo within 7 days and we’ll send a free replacement. unused pieces can be returned within 30 days.</p></div></details>
@@ -1606,8 +1606,10 @@ function viewGiftCards() {
 const GIFT = {
   host: { t: 'for the host', s: 'friendsgiving, dinner parties and housewarmings. bring something better than a candle.', ids: ['pour-decisions-set', 'golden-hour-tumbler', 'crush-coupe', 'coaster-set', 'after-hours-rocks', 'checkmate'] },
   bestie: { t: 'for the bestie', s: 'loud colors, cute shapes, zero chance they already own it.', ids: ['strawberry-fields', 'daisy-days', 'the-wobble', 'cherry-bomb', 'bubble-pop', 'heart-eyes-mug'] },
-  couple: { t: 'for the couple', s: 'anniversaries, engagements and “just because”.', ids: ['date-night-duo', 'crush-coupe', 'heart-eyes-mug', 'blue-moon-coupe'] },
-  parents: { t: 'for mom and dad', s: 'pretty, practical and actually used every morning.', ids: ['cutting-chai-set', 'chai-pe-charcha', 'golden-hour-tumbler', 'cloud-nine-mug'] },
+  couple: { t: 'for the couple', s: 'anniversaries, engagements and “just because”.', ids: ['date-night-duo', 'crush-coupe', 'heart-eyes-mug', 'starstruck-coupe'] },
+  parents: { t: 'for mom and dad', s: 'pretty, practical and actually used every morning.', ids: ['cortado-glasses-set', 'coffee-break-cup', 'golden-hour-tumbler', 'cloud-nine-mug'] },
+  stocking: { t: 'stocking stuffers under $30', s: 'small, cute and very wrappable.', ids: ['cortado-glasses-set', 'coffee-break-cup', 'cherry-bomb', 'daisy-days', 'glass-straws', 'coaster-set'] },
+  under50: { t: 'gifts under $50', s: 'they look expensive. they aren’t.', ids: ['golden-hour-tumbler', 'strawberry-fields', 'the-wobble', 'crush-coupe', 'starstruck-coupe', 'heart-eyes-mug'] },
   office: { t: 'for the office', s: 'secret santa and white elephant picks under $35, plus bulk orders for the whole team.', ids: ['cherry-bomb', 'daisy-days', 'lemon-drop', 'cloud-nine-mug', 'glass-straws'] }
 };
 function viewGifting() {
@@ -1637,11 +1639,11 @@ function bulkForm() {
 /* story */
 function viewStory() {
   const steps = [['melt', 'sand and boron go into our furnace at around 2,900°F (1,600°C).'], ['shape', 'molten glass becomes strawberries, hearts, waves and whatever we dream up next.'], ['anneal', 'each piece cools slowly at around 1,040°F (560°C) so it doesn’t crack later.'], ['finish', 'colors, prints and rims get their final polish.'], ['check', 'we inspect for chips, cracks and wonky bits.'], ['pack', 'bubble-wrapped like it’s headed to a museum.']];
-  return `<div class="wrap">${crumbs(['our story'])}<header class="page-head"><h1 class="h2">we’ve been playing with fire for 15 years</h1><p class="sub">drunken glass is designed and made in india by the people who run the furnace.</p></header>
+  return `<div class="wrap">${crumbs(['our story'])}<header class="page-head"><h1 class="h2">we’ve been playing with fire for 15 years</h1><p class="sub">drunken glass is designed and made by the people who run the furnace.</p></header>
   <div style="padding:20px 0 60px">${storyRows(3)}</div>
   <section class="sec" style="padding-top:0"><div class="sec-head"><div><h2 class="h2" style="font-size:clamp(30px,3.6vw,46px)">from furnace to your shelf</h2><p class="sub">how a drunken glass gets made.</p></div></div>
   <ol class="steps">${steps.map(([b, s]) => `<li class="step"><b>${b}</b><small>${s}</small></li>`).join('')}</ol></section>
-  <section class="sec" style="padding-top:0"><div class="setband story-cta"><div><h2 class="h2" style="font-size:clamp(30px,3.6vw,46px)">seen enough? go shopping.</h2><p class="sub" style="color:var(--ink)">seven collections of tumblers, coffee cups, teacups and cocktail glasses.</p></div><a class="btn btn-ink" href="#shop">shop all glasses</a></div></section></div>`;
+  <section class="sec" style="padding-top:0"><div class="setband story-cta"><div><h2 class="h2" style="font-size:clamp(30px,3.6vw,46px)">seen enough? go shopping.</h2><p class="sub" style="color:var(--ink)">seven collections of tumblers, mugs, espresso glasses and cocktail coupes.</p></div><a class="btn btn-ink" href="#shop">shop all glasses</a></div></section></div>`;
 }
 
 /* wishlist */
@@ -1661,6 +1663,7 @@ function viewTrack() {
 /* help */
 const FAQ = [
   ['how long does shipping take?', 'orders ship within 1 to 2 business days. every product page shows a delivery estimate for your zip code, and tracking lands in your inbox the moment it ships.'],
+  ['where are your glasses made?', 'in our own borosilicate furnace in india, where we’ve made glassware for about 15 years. designed by us, made by us, shipped to you.'],
   ['how much is shipping?', 'free on US orders over $75. below that it’s a flat $6.95.'],
   ['what if my glass arrives broken?', 'email us a photo within 7 days of delivery and we’ll send a free replacement. no forms, no fuss.'],
   ['can i pour hot coffee or tea?', 'yes. borosilicate handles sudden temperature changes much better than regular glass, so hot coffee and iced drinks are both fine. keep it away from direct flame and stovetops.'],
@@ -1762,7 +1765,7 @@ function renderCart() {
   if (!S.cart.length) {
     body = `<div class="empty" style="border:0;padding:30px 0">${glass('wavy', { t: '#ffffff', a: .35 })}<b>your bag is emptier than a glass at 2am</b><p class="note">add something cute. we’ll wait.</p><a class="btn btn-blue" href="#shop" data-act="closeall">start shopping</a></div>`;
   } else {
-    const up = ['coaster-set', 'glass-straws', 'cutting-chai-set', 'glass-brush'].map(byId).find(p => !inCart(p.id));
+    const up = ['coaster-set', 'glass-straws', 'cortado-glasses-set', 'glass-brush'].map(byId).find(p => !inCart(p.id));
     body = (t.merch ? meterHTML(t.merch - t.disc) : '')
       + S.cart.map(l => lineHTML(l)).join('')
       + (up ? `<div class="upsell"><div class="art" style="--bg:${up.cw[0].bg}">${pGlass(up)}</div><div><b style="font:700 14px var(--f-head);display:block">add a little something?</b><small class="note">${up.name}, ${fmt(up.price)}</small></div><button class="qadd" data-act="upsell" data-id="${up.id}">add</button></div>` : '')
@@ -1833,9 +1836,9 @@ function openMenu() {
   <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px"><button class="chip" data-act="account">${S.user ? 'my account' : 'sign in'}</button><a class="chip" href="#wishlist" data-act="closeall">wishlist (${S.wish.length})</a><a class="chip" href="#track" data-act="closeall">track order</a><a class="chip" href="#help" data-act="closeall">help</a></div></div>`;
   openPanel('#mmenu');
 }
-const TREND = ['strawberry', 'heart mug', 'chai', 'can glass', 'gift set', 'coupe'];
+const TREND = ['strawberry', 'heart mug', 'cortado', 'can glass', 'gift set', 'coupe'];
 function openSearch() {
-  $('#search').innerHTML = `<div class="ss-in"><form class="ss-bar" data-form="search" role="search"><label class="field"><span>${IC.search}</span><input id="sq" type="search" placeholder="try strawberry, heart mug, chai" autocomplete="off" aria-label="search glasses"></label><button class="close" type="button" data-act="closeall" aria-label="close search" style="width:56px;height:56px">${IC.close}</button></form><div id="ssBody"></div></div>`;
+  $('#search').innerHTML = `<div class="ss-in"><form class="ss-bar" data-form="search" role="search"><label class="field"><span>${IC.search}</span><input id="sq" type="search" placeholder="try strawberry, heart mug, cortado" autocomplete="off" aria-label="search glasses"></label><button class="close" type="button" data-act="closeall" aria-label="close search" style="width:56px;height:56px">${IC.close}</button></form><div id="ssBody"></div></div>`;
   renderSearch('');
   openPanel('#search');
   setTimeout(() => $('#sq').focus(), 80);
@@ -1850,10 +1853,10 @@ function renderSearch(q) {
   if (!q.trim()) {
     h = `<div><p class="lbl">trending searches</p><div style="display:flex;gap:8px;flex-wrap:wrap">${TREND.map(t => `<button class="chip" data-act="sterm" data-q="${t}">${t}</button>`).join('')}</div></div>
     ${S.recentQ.length ? `<div><p class="lbl">your recent searches</p><div style="display:flex;gap:8px;flex-wrap:wrap">${S.recentQ.map(t => `<button class="chip" data-act="sterm" data-q="${esc(t)}">${esc(t)}</button>`).join('')}</div></div>` : ''}
-    <div><p class="lbl">popular right now</p><div class="ss-res">${['strawberry-fields', 'golden-hour-tumbler', 'heart-eyes-mug', 'cutting-chai-set'].map(id => item(byId(id))).join('')}</div></div>`;
+    <div><p class="lbl">popular right now</p><div class="ss-res">${['strawberry-fields', 'golden-hour-tumbler', 'heart-eyes-mug', 'cortado-glasses-set'].map(id => item(byId(id))).join('')}</div></div>`;
   } else {
     const r = searchList(q);
-    h = r.length ? `<p class="lbl">${r.length} ${r.length === 1 ? 'match' : 'matches'}</p><div class="ss-res">${r.map(item).join('')}</div>` : `<p style="font:700 18px var(--f-head)">no glass called “${esc(q)}” yet.</p><p class="note">try “tumbler”, “heart” or “chai”. or tell us what you want and we might just make it.</p>`;
+    h = r.length ? `<p class="lbl">${r.length} ${r.length === 1 ? 'match' : 'matches'}</p><div class="ss-res">${r.map(item).join('')}</div>` : `<p style="font:700 18px var(--f-head)">no glass called “${esc(q)}” yet.</p><p class="note">try “tumbler”, “heart” or “mug”. or tell us what you want and we might just make it.</p>`;
   }
   $('#ssBody').innerHTML = h;
 }
@@ -2069,14 +2072,14 @@ function setAcct() { const b = $('#acctBtn'); if (S.user) { b.innerHTML = `<span
 /* ---------- footer + announcement ---------- */
 function buildFooter() {
   $('#foot').innerHTML = `<div class="wrap"><div class="foot-grid">
-    <div><p class="blurb">designer borosilicate glassware from our own furnace in india. built for iced coffee, hot chai and showing off a little.</p><div class="pay" aria-label="payment methods"><span>VISA</span><span>MASTERCARD</span><span>AMEX</span><span>DISCOVER</span><span>APPLE PAY</span><span>GOOGLE PAY</span><span>SHOP PAY</span><span>PAYPAL</span></div></div>
+    <div><p class="blurb">designer borosilicate glassware from our own furnace. built for iced coffee, hot cocoa and showing off a little.</p><div class="pay" aria-label="payment methods"><span>VISA</span><span>MASTERCARD</span><span>AMEX</span><span>DISCOVER</span><span>APPLE PAY</span><span>GOOGLE PAY</span><span>SHOP PAY</span><span>PAYPAL</span></div></div>
     <div><h4>shop</h4><ul>${CATS.map(c => `<li><a href="#shop-${c.id}">${c.name}</a></li>`).join('')}<li><a href="#build-a-set">build a set</a></li></ul></div>
     <div><h4>help</h4><ul><li><a href="#track">track my order</a></li><li><a href="#help">faq</a></li><li><button data-act="ptab" data-k="shipping">shipping</button></li><li><button data-act="ptab" data-k="returns">returns and breakage</button></li><li><a href="#help">contact us</a></li></ul></div>
     <div><h4>brand</h4><ul><li><a href="#story">our story</a></li><li><a href="#gifting">gifting</a></li><li><a href="#gift-cards">gift cards</a></li><li><a href="#gifting" data-act="gtab" data-k="office">bulk and corporate</a></li><li><a href="#club">sip club</a></li><li><a href="#quiz">which glass are you?</a></li></ul></div>
     <div><h4>account</h4><ul><li><button data-act="account">sign in / my account</button></li><li><a href="#wishlist">wishlist</a></li><li><button data-act="ptab" data-k="privacy">privacy</button></li><li><button data-act="ptab" data-k="terms">terms</button></li><li><button data-act="ptab" data-k="access">accessibility</button></li><li><button data-act="ptab" data-k="privacy">do not sell or share my personal information</button></li></ul></div>
   </div>
   <div class="giant" aria-hidden="true"><span>drunken</span><span>glass</span></div>
-  <div class="legal"><span>© 2026 drunken glass. designed and made in india.</span><span>legal entity and US contact address: <span class="ph">to be added before launch</span></span></div></div>`;
+  <div class="legal"><span>© 2026 drunken glass. all rights reserved.</span><span>legal entity and US contact address: <span class="ph">to be added before launch</span></span></div></div>`;
 }
 const ANN = ['free US shipping on orders over <b>$75</b> &nbsp;✦&nbsp; first order? use <b>SIPSIP10</b> for 10% off'];
 let annI = 0, annPause = false;

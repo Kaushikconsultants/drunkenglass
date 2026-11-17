@@ -11,7 +11,7 @@ If this spec and the prototype disagree, follow this spec. If Shopify works diff
 
 ## 1. What we're building
 
-A D2C store for designer borosilicate glassware: tumblers, coffee cups, teacups, cocktail glasses, sets and small add-ons. The brand is design-led and Gen Z in tone (all lowercase copy, bold colors, ink outlines). The store has two jobs:
+A D2C store for designer borosilicate glassware: tumblers, mugs, espresso + tea glasses, cocktail glasses, sets and small add-ons. All content is written for a US audience (section 11). The brand is design-led and Gen Z in tone (all lowercase copy, bold colors, ink outlines). The store has two jobs:
 
 1. **Make people want the glass**: big visuals, collections that feel like fashion drops, a quiz and gifting.
 2. **Raise order value**: pack sizes, add-ons, "complete the set" bundles, build-a-set, a free-shipping goal and gift cards.
@@ -88,9 +88,9 @@ Screens for each are in `03-screens/desktop`, `03-screens/mobile` and `03-screen
 
 | Tag | Meaning |
 |---|---|
-| `collection:<handle>` | drop collection (fruit-club, heart-eyes, golden-hour, wobble, chai-club, after-hours, y2k-bloom) |
-| `vibe:<id>` | shop-by-vibe chips (chai, wfh, date, party, gift) |
-| `shape:<shape>` | glass shape (can, tumbler, strawberry, heart, mug, chai, coupe, wavy, bubble, rocks), used to match add-ons |
+| `collection:<handle>` | drop collection (fruit-club, heart-eyes, golden-hour, wobble, cafe-club, after-hours, y2k-bloom) |
+| `vibe:<id>` | shop-by-vibe chips (mornings, wfh, date, party, gift) |
+| `shape:<shape>` | glass shape (can, tumbler, strawberry, heart, mug, cortado, coupe, wavy, bubble, rocks), used to match add-ons |
 | `addon` | shows in "finish it off" rows |
 | `fits:<shape>` / `fits:all` | which glass shapes an add-on fits |
 | `build-a-set` | eligible for "any 4 for $99" (glasses priced $26–$38) |
@@ -122,7 +122,7 @@ Static text, no rotation: "free US shipping on orders over $75 ✦ first order? 
 
 ### 6.3 Predictive search overlay
 - Opens as a top sheet. Use the Predictive Search API (`/search/suggest.json`) for products.
-- Empty state: trending terms (theme setting list: strawberry, heart mug, chai, can glass, gift set, coupe), recent searches (localStorage, last 5) and 4 "popular right now" products.
+- Empty state: trending terms (theme setting list: strawberry, heart mug, cortado, can glass, gift set, coupe), recent searches (localStorage, last 5) and 4 "popular right now" products.
 - Pressing Enter with exactly one result goes straight to that product.
 
 ### 6.4 Product card
@@ -181,7 +181,7 @@ k. **Trust row**: free breakage replacement · 30-day returns · secure checkout
 
 l. **Accordions**:
    - about this glass
-   - specs: capacity as `fl oz (ml)` where fl oz = ml ÷ 29.574 to 1 decimal; height in inches = cm ÷ 2.54 to 1 decimal; in the box; material; works with; dishwasher; microwave; country of origin; US importer
+   - specs: capacity as `fl oz (ml)` where fl oz = ml ÷ 29.574 rounded to a whole number, like US labels; height in inches = cm ÷ 2.54 to 1 decimal; in the box; material; works with; dishwasher; microwave; country of origin; US importer
    - how do i take care of my glass?
    - shipping, returns and breakage
 
@@ -205,7 +205,7 @@ Opens after **every** add (card, product page, quiz, bundle, build-a-set, gift c
 ### 6.9 Bag drawer
 - Free-shipping meter.
 - Lines with quantity stepper and remove. Gift cards have no stepper.
-- One upsell row: the first item not already in the cart from coaster set → glass straws → street chai glasses → brush.
+- One upsell row: the first item not already in the cart from coaster set → glass straws → cortado glasses → brush.
 - Gift box + note checkbox. It adds or removes the gift box product and shows a note field (max 160 characters, saved as cart attribute "Gift note").
 - Discount code field. Apply in the cart if the theme supports it, otherwise send the code to checkout. Error copy is in the copy deck.
 - Totals: subtotal, discount, shipping (free / $6.95), gift box, "sales tax: at checkout", estimated total.
@@ -224,7 +224,7 @@ Opens after **every** add (card, product page, quiz, bundle, build-a-set, gift c
 - No data is collected.
 
 ### 6.12 Gifting page
-- Tabs (from `gifting-tabs.json`): for the host / bestie / couple / mom and dad / office, plus a link chip to gift cards.
+- Tabs (from `gifting-tabs.json`): for the host / bestie / couple / mom and dad / stocking stuffers under $30 / gifts under $50 / office, plus a link chip to gift cards.
 - Info cards: gift box + note, ships straight to them, take the quiz.
 - The **office tab** adds a bulk/corporate form (Shopify contact form): name, company, work email, quantity band, message. It's tagged `bulk-inquiry` and sent to the sales inbox.
 
@@ -353,6 +353,8 @@ Every app adds scripts. Check Lighthouse before and after each install.
 - `05-content/copy-deck.md`: every page's copy, microcopy, empty states and error messages.
 - `05-content/faq.md` and `05-content/policies.md`.
 - Voice: all lowercase (brand names in product copy too), US spelling, short sentences, dry and clever. No fake reviews, testimonials or follower counts anywhere.
+- **US theme:** dollars, whole fl oz, inches, °F, zip codes, US occasions (friendsgiving, secret santa, white elephant, stocking stuffers). Product and collection names are American café/bar language (cortado glasses, coffee break cup, café club, starstruck coupe).
+- **Country of origin:** sales copy leads with design and doesn't mention india. Origin stays in the product specs (`custom.country_of_origin`) and the FAQ ("where are your glasses made?"). Keep it there, as it's required for imports, and never imply "made in USA".
 
 ---
 

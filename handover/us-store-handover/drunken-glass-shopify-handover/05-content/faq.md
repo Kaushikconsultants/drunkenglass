@@ -5,6 +5,9 @@ Load as metaobjects (`faq_entry`: question, answer) or section blocks. Add FAQ J
 ## how long does shipping take?
 orders ship within 1 to 2 business days. every product page shows a delivery estimate for your zip code, and tracking lands in your inbox the moment it ships.
 
+## where are your glasses made?
+in our own borosilicate furnace in india, where we’ve made glassware for about 15 years. designed by us, made by us, shipped to you.
+
 ## how much is shipping?
 free on US orders over $75. below that it’s a flat $6.95.
 

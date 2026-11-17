@@ -56,16 +56,16 @@
       ]
     },
     {
-      "handle": "chai-club",
-      "title": "chai club",
-      "description": "cutting chai, but make it collectible.",
+      "handle": "cafe-club",
+      "title": "café club",
+      "description": "cortados, cappuccinos and slow sunday mornings.",
       "tile_background": "#f2f1f0",
       "tile_text_color": "#0a0a0a",
       "menu_tint": "#f2f1f0",
-      "rule": "product tag is equal to collection:chai-club",
+      "rule": "product tag is equal to collection:cafe-club",
       "products": [
-        "cutting-chai-set",
-        "chai-pe-charcha"
+        "cortado-glasses-set",
+        "coffee-break-cup"
       ]
     },
     {
@@ -77,7 +77,7 @@
       "menu_tint": "#dfe8ff",
       "rule": "product tag is equal to collection:after-hours",
       "products": [
-        "blue-moon-coupe",
+        "starstruck-coupe",
         "after-hours-rocks"
       ]
     },
@@ -107,20 +107,20 @@
       "tile_product": "golden-hour-tumbler"
     },
     {
-      "handle": "coffee-cups",
-      "title": "coffee cups",
+      "handle": "mugs",
+      "title": "mugs",
       "description": "for the 9am call you joined on mute",
       "tile_background": "#ffe1e8",
-      "rule": "product type is equal to Coffee Cups",
+      "rule": "product type is equal to Mugs",
       "tile_product": "heart-eyes-mug"
     },
     {
-      "handle": "teacups",
-      "title": "teacups",
-      "description": "chai, matcha and slow mornings",
+      "handle": "espresso-tea",
+      "title": "espresso + tea",
+      "description": "cortados, chai lattes and slow mornings",
       "tile_background": "#f2f1f0",
-      "rule": "product type is equal to Teacups",
-      "tile_product": "cutting-chai-set"
+      "rule": "product type is equal to Espresso + Tea",
+      "tile_product": "cortado-glasses-set"
     },
     {
       "handle": "cocktail",
@@ -149,9 +149,9 @@
   ],
   "vibe_collections": [
     {
-      "handle": "vibe-chai",
+      "handle": "vibe-mornings",
       "title": "slow mornings",
-      "rule": "product tag is equal to vibe:chai"
+      "rule": "product tag is equal to vibe:mornings"
     },
     {
       "handle": "vibe-wfh",

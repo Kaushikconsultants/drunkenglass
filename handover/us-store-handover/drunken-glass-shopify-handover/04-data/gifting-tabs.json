@@ -33,7 +33,7 @@
       "date-night-duo",
       "crush-coupe",
       "heart-eyes-mug",
-      "blue-moon-coupe"
+      "starstruck-coupe"
     ]
   },
   {
@@ -41,10 +41,36 @@
     "title": "for mom and dad",
     "intro": "pretty, practical and actually used every morning.",
     "products": [
-      "cutting-chai-set",
-      "chai-pe-charcha",
+      "cortado-glasses-set",
+      "coffee-break-cup",
       "golden-hour-tumbler",
       "cloud-nine-mug"
+    ]
+  },
+  {
+    "tab": "stocking",
+    "title": "stocking stuffers under $30",
+    "intro": "small, cute and very wrappable.",
+    "products": [
+      "cortado-glasses-set",
+      "coffee-break-cup",
+      "cherry-bomb",
+      "daisy-days",
+      "glass-straws",
+      "coaster-set"
+    ]
+  },
+  {
+    "tab": "under50",
+    "title": "gifts under $50",
+    "intro": "they look expensive. they aren’t.",
+    "products": [
+      "golden-hour-tumbler",
+      "strawberry-fields",
+      "the-wobble",
+      "crush-coupe",
+      "starstruck-coupe",
+      "heart-eyes-mug"
     ]
   },
   {
