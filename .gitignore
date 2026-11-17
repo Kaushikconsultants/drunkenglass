@@ -1,0 +1,21 @@
+# Environment variables and API keys
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.token
+credentials.json
+secrets.json
+
+# Scratch & Temporary files
+scratch/
+scratch_*.txt
+*.log
+
+# Dependencies & OS files
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
