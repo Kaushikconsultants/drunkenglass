@@ -83,14 +83,14 @@
       <div class="quiz-res" id="quizResultCard" style="display:none">
         <div class="pcard" style="background:#fff;border:2px solid var(--ink);border-radius:var(--r);box-shadow:var(--sh);padding:20px;text-align:center">
           <span class="badge b-lime" style="position:static;display:inline-block;margin-bottom:12px">Your Soulmate Glass</span>
-          <img id="resImg" src="{{ 'cherry-bomb--blush.png' | asset_url }}" alt="Result Glass" width="200" height="240" style="margin:0 auto 16px;display:block">
-          <h3 id="resTitle" style="font:700 24px var(--f-head);margin-bottom:6px">Cherry Bomb Tumbler</h3>
-          <p id="resSub" style="color:var(--muted);font-size:14px;margin-bottom:16px">For sweet sips and dopamine mornings.</p>
+          <img id="resImg" src="{{ 'r3-r3co240.webp' | asset_url }}" alt="Result Glass" width="200" height="240" style="margin:0 auto 16px;display:block;object-fit:contain">
+          <h3 id="resTitle" style="font:700 24px var(--f-head);margin-bottom:6px">R3 Cocktail Coupe 280ml</h3>
+          <p id="resSub" style="color:var(--muted);font-size:14px;margin-bottom:16px">Handcrafted Borosilicate Glassware by R3 Exports.</p>
           <div class="prow" style="justify-content:center;margin-bottom:20px">
-            <span class="price" id="resPrice" style="font-size:24px">$36</span>
+            <span class="price" id="resPrice" style="font-size:24px">₹327</span>
           </div>
           <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
-            <a class="btn btn-blue" id="resLink" href="/products/cherry-bomb">See Details</a>
+            <a class="btn btn-blue" id="resLink" href="/products/r3-vintage-borosilicate-cocktail-coupe-280ml-r3co240">See Details</a>
             <button class="btn btn-lime" id="resRetake" type="button">Retake Quiz</button>
           </div>
         </div>
@@ -118,12 +118,12 @@ document.addEventListener('DOMContentLoaded', function() {
   const scores = {};
 
   const productData = {
-    'cherry-bomb': { title: 'Cherry Bomb Tumbler', price: '$36', sub: 'Strawberries & cherries for your everyday iced coffee.', img: '{{ "cherry-bomb--blush.png" | asset_url }}', url: '/products/cherry-bomb' },
-    'the-wobble': { title: 'The Wobble Tumbler', price: '$36', sub: 'Wavy curves and electric color for restless hands.', img: '{{ "the-wobble--electric-blue.png" | asset_url }}', url: '/products/the-wobble' },
-    'heart-eyes-mug': { title: 'Heart Eyes Mug', price: '$34', sub: 'For hot matcha and slow romantic mornings.', img: '{{ "heart-eyes-mug--berry-crush.png" | asset_url }}', url: '/products/heart-eyes-mug' },
-    'starstruck-coupe': { title: 'Starstruck Coupe', price: '$38', sub: 'Midnight glass for cocktails that look expensive.', img: '{{ "starstruck-coupe--deep-blue.png" | asset_url }}', url: '/products/starstruck-coupe' },
-    'cortado-glasses-set': { title: 'Cortado Glasses Pair', price: '$26', sub: 'Authentic hand-blown borosilicate cortado glasses.', img: '{{ "cortado-glasses-set--clear.png" | asset_url }}', url: '/products/cortado-glasses-set' },
-    'lemon-drop': { title: 'Lemon Drop Tumbler', price: '$34', sub: 'Bright citrus vibes that look like golden hour.', img: '{{ "lemon-drop--sunny.png" | asset_url }}', url: '/products/lemon-drop' }
+    'cherry-bomb': { title: 'R3 Cocktail Coupe 280ml', price: '₹327', sub: 'Handcrafted Borosilicate Glassware by R3 Exports.', img: '{{ "r3-r3co240.webp" | asset_url }}', url: '/products/r3-vintage-borosilicate-cocktail-coupe-280ml-r3co240' },
+    'the-wobble': { title: 'R3 Fluted Tumbler 380ml', price: '₹132', sub: '100% Thermal Shock Resistant Borosilicate Glass.', img: '{{ "r3-r3tu113.webp" | asset_url }}', url: '/products/r3-fluted-borosilicate-tumbler-glass-380ml-r3tu113' },
+    'heart-eyes-mug': { title: 'R3 Classic Coffee Mug 350ml', price: '₹272', sub: 'Safe for boiling espresso and chai latte.', img: '{{ "r3-r3tc117.webp" | asset_url }}', url: '/products/r3-classic-borosilicate-coffee-mug-350ml-r3tc117' },
+    'starstruck-coupe': { title: 'R3 Stemmed Wine Glass 360ml', price: '₹248', sub: 'Ultra-fine stem with balloon bowl.', img: '{{ "r3-r3wg237.webp" | asset_url }}', url: '/products/r3-stemmed-borosilicate-wine-glass-360ml-r3wg237' },
+    'cortado-glasses-set': { title: 'R3 Double Wall Glass 270ml', price: '₹231', sub: 'Thermal insulated, cool to touch exterior.', img: '{{ "r3-r3dg107.webp" | asset_url }}', url: '/products/r3-insulated-double-wall-borosilicate-glass-270ml-r3dg107' },
+    'lemon-drop': { title: 'R3 Highball Tumbler 420ml', price: '₹85', sub: 'High clarity everyday borosilicate tumbler.', img: '{{ "r3-r3tu128.webp" | asset_url }}', url: '/products/r3-highball-borosilicate-tumbler-glass-420ml-r3tu128' }
   };
 
   box.querySelectorAll('.quiz-opt').forEach(function(btn) {
