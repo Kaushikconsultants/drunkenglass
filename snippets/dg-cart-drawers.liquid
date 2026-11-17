@@ -13,19 +13,19 @@
   <div class="dbody">
     <!-- Item added preview -->
     <div id="dgAddedItemBox" style="display:flex;gap:12px;align-items:center;padding:12px;background:var(--cloud);border:2px solid var(--ink);border-radius:var(--r);margin-bottom:16px;min-width:0;width:100%;box-sizing:border-box">
-      <img id="dgAddedImg" src="{{ 'cherry-bomb--blush.png' | asset_url }}" alt="Added Glass" width="56" height="70" style="border-radius:4px;flex-shrink:0;object-fit:contain">
+      <img id="dgAddedImg" src="{{ 'r3-r3tu113.webp' | asset_url }}" alt="Added Glass" width="56" height="70" style="border-radius:4px;flex-shrink:0;object-fit:contain">
       <div style="flex:1;min-width:0">
-        <h4 id="dgAddedTitle" style="font:700 15px var(--f-head);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Cherry Bomb Tumbler</h4>
-        <span class="pmeta" id="dgAddedMeta" style="font-size:13px;color:var(--muted)">In Blush · Pair (Qty 1)</span>
-        <div class="price" id="dgAddedPrice" style="font-weight:700;margin-top:4px;font-size:16px">$36</div>
+        <h4 id="dgAddedTitle" style="font:700 15px var(--f-head);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">R3 Fluted Tumbler Glass</h4>
+        <span class="pmeta" id="dgAddedMeta" style="font-size:13px;color:var(--muted)">SKU: R3TU113 · 380 ml</span>
+        <div class="price" id="dgAddedPrice" style="font-weight:700;margin-top:4px;font-size:16px">₹132</div>
       </div>
     </div>
 
     <!-- Free Shipping Meter -->
     <div style="background:#fff;border:2px solid var(--ink);border-radius:var(--r);padding:14px;margin-bottom:18px;box-sizing:border-box">
       <div style="display:flex;justify-content:space-between;font-size:13px;font-weight:700;margin-bottom:8px">
-        <span id="dgShipMeterText">Add $39 more for Free US Shipping</span>
-        <span class="mono" id="dgShipGoal">$75</span>
+        <span id="dgShipMeterText">Add ₹500 more for Free Shipping</span>
+        <span class="mono" id="dgShipGoal">₹999</span>
       </div>
       <div style="height:8px;background:var(--cloud);border:1.5px solid var(--ink);border-radius:999px;overflow:hidden">
         <div id="dgShipBar" style="height:100%;width:48%;background:var(--blue);transition:width .3s ease"></div>
@@ -38,10 +38,10 @@
       <div style="display:grid;gap:10px">
         <div style="display:flex;align-items:center;justify-content:space-between;padding:10px;border:2px solid var(--rule);border-radius:var(--r);background:#fff;box-sizing:border-box">
           <div style="display:flex;align-items:center;gap:10px;min-width:0">
-            <img src="{{ 'bamboo-lid.png' | asset_url }}" alt="Bamboo Lid" width="40" height="40" style="flex-shrink:0">
+            <img src="{{ 'r3-r3dg107.webp' | asset_url }}" alt="R3 Double Wall" width="40" height="40" style="flex-shrink:0;object-fit:contain">
             <div style="min-width:0">
-              <b style="font-size:13px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Bamboo Lid + Straw</b>
-              <span class="price" style="font-size:13px">$8</span>
+              <b style="font-size:13px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">R3 Double Wall 270ml</b>
+              <span class="price" style="font-size:13px">₹231</span>
             </div>
           </div>
           <button class="btn btn-lime sm" type="button" style="padding:0 12px;min-height:34px;font-size:13px;flex-shrink:0">+ Add</button>
@@ -49,10 +49,10 @@
 
         <div style="display:flex;align-items:center;justify-content:space-between;padding:10px;border:2px solid var(--rule);border-radius:var(--r);background:#fff;box-sizing:border-box">
           <div style="display:flex;align-items:center;gap:10px;min-width:0">
-            <img src="{{ 'coaster-set.png' | asset_url }}" alt="Coaster Set" width="40" height="40" style="flex-shrink:0">
+            <img src="{{ 'r3-r3co240.webp' | asset_url }}" alt="R3 Cocktail Coupe" width="40" height="40" style="flex-shrink:0;object-fit:contain">
             <div style="min-width:0">
-              <b style="font-size:13px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Silicone Coasters (4)</b>
-              <span class="price" style="font-size:13px">$16</span>
+              <b style="font-size:13px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">R3 Cocktail Coupe 280ml</b>
+              <span class="price" style="font-size:13px">₹327</span>
             </div>
           </div>
           <button class="btn btn-lime sm" type="button" style="padding:0 12px;min-height:34px;font-size:13px;flex-shrink:0">+ Add</button>
@@ -81,8 +81,8 @@
     <!-- Free Shipping Meter -->
     <div id="dgShippingMeterBox" style="background:var(--cloud);border:2px solid var(--ink);border-radius:var(--r);padding:14px;margin-bottom:16px;box-sizing:border-box;{% if cart.item_count == 0 %}display:none;{% endif %}">
       <div style="display:flex;justify-content:space-between;font-size:13px;font-weight:700;margin-bottom:8px">
-        <span id="dgBagShipText">Add $75 for Free US Shipping</span>
-        <span class="mono">$75</span>
+        <span id="dgBagShipText">Add ₹999 for Free Shipping</span>
+        <span class="mono">₹999</span>
       </div>
       <div style="height:8px;background:#fff;border:1.5px solid var(--ink);border-radius:999px;overflow:hidden">
         <div id="dgBagShipBar" style="height:100%;width:0%;background:var(--blue);transition:width .3s ease"></div>
@@ -309,10 +309,10 @@ document.addEventListener('DOMContentLoaded', function() {
     btn.addEventListener('click', function(e) {
       e.preventDefault();
       const card = btn.closest('.pcard') || btn.closest('article');
-      let title = 'Cherry Bomb Tumbler';
-      let price = 36;
-      let img = "{{ 'cherry-bomb--blush.png' | asset_url }}";
-      let color = 'Blush';
+      let title = 'R3 Borosilicate Glass';
+      let price = 132;
+      let img = "{{ 'r3-r3tu113.webp' | asset_url }}";
+      let color = 'Clear';
 
       if (card) {
         const tEl = card.querySelector('.pname') || card.querySelector('h3') || card.querySelector('h4');

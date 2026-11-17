@@ -3,189 +3,279 @@
     <div class="sec-head">
       <div>
         <h2 class="h2">{{ section.settings.heading | default: 'Fresh Out The Furnace' }}</h2>
-        <p class="sub">{{ section.settings.subheading | default: 'Tap a color dot to try it on. Yes, just like a filter.' }}</p>
+        <p class="sub">{{ section.settings.subheading | default: 'Direct from R3 Exports Agra furnace. 100% Thermal Shock Borosilicate Glassware.' }}</p>
       </div>
       <div class="tabs" role="tablist" id="dgRailTabs">
         <button class="tab on" role="tab" aria-selected="true" data-tab="new">New In</button>
         <button class="tab" role="tab" aria-selected="false" data-tab="hero">Hero Designs</button>
-        <button class="tab" role="tab" aria-selected="false" data-tab="under30">Under $30</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="under200">Under ₹200</button>
       </div>
     </div>
 
-    <!-- Tab 1: New in -->
+    <!-- Tab 1: New In -->
     <div class="rail active" id="rail-new" role="tabpanel">
-      <!-- Card 1: Cherry Bomb -->
-      <article class="pcard" data-handle="cherry-bomb">
-        <a class="pmedia" href="/products/cherry-bomb" style="--bg:#ffe1e8" tabindex="-1">
-          <span class="badge b-pink">New</span>
-          <img class="pcard-img" src="{{ 'cherry-bomb--blush.png' | asset_url }}" alt="Cherry Bomb Tumbler" width="220" height="280" loading="lazy">
+      <!-- Card 1: R3CO240 Cocktail Coupe -->
+      <article class="pcard" data-handle="r3-vintage-borosilicate-cocktail-coupe-280ml-r3co240">
+        <a class="pmedia" href="/products/r3-vintage-borosilicate-cocktail-coupe-280ml-r3co240" style="--bg:#dfe8ff" tabindex="-1">
+          <span class="badge b-blue">New In</span>
+          <img class="pcard-img" src="{{ 'r3-r3co240.webp' | asset_url }}" alt="R3 Vintage Borosilicate Cocktail Coupe 280ml" width="220" height="280" loading="lazy">
         </a>
-        <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="cherry-bomb">
+        <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="r3co240">
           <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
         </button>
         <div class="pinfo">
-          <a class="pname" href="/products/cherry-bomb">Cherry Bomb Tumbler</a>
-          <span class="pmeta">In Blush</span>
-          <div class="prow"><span class="price">$36</span></div>
+          <a class="pname" href="/products/r3-vintage-borosilicate-cocktail-coupe-280ml-r3co240">R3 Cocktail Coupe 280ml</a>
+          <span class="pmeta">SKU: R3CO240 · Borosilicate</span>
+          <div class="prow">
+            <span class="price">₹327</span>
+            <span class="strike" style="font-size:13px;color:var(--muted);text-decoration:line-through;margin-left:6px">MRP ₹1,304</span>
+          </div>
           <div class="pfoot">
-            <div class="sw" role="group" aria-label="Colors">
-              <button class="swb on" style="--c:#ef426f" data-color="Blush" data-img="{{ 'cherry-bomb--blush.png' | asset_url }}" data-bg="#ffe1e8" aria-label="Blush" aria-pressed="true"></button>
-              <button class="swb" style="--c:#ffffff" data-color="Clear Cherry" data-img="{{ 'cherry-bomb--clear-cherry.png' | asset_url }}" data-bg="#f2f1f0" aria-label="Clear Cherry" aria-pressed="false"></button>
-            </div>
-            <button class="qadd" type="button" data-add="cherry-bomb">Add to Bag</button>
+            <span style="font-size:12px;font-weight:700;color:var(--ink)">280 ml</span>
+            <button class="qadd" type="button" data-add="r3co240">Add to Bag</button>
           </div>
         </div>
       </article>
 
-      <!-- Card 2: The Wobble -->
-      <article class="pcard" data-handle="the-wobble">
-        <a class="pmedia" href="/products/the-wobble" style="--bg:#dfe8ff" tabindex="-1">
-          <span class="badge b-lime">Hero Design</span>
-          <img class="pcard-img" src="{{ 'the-wobble--electric-blue.png' | asset_url }}" alt="The Wobble Tumbler" width="220" height="280" loading="lazy">
+      <!-- Card 2: R3TU113 Fluted Tumbler -->
+      <article class="pcard" data-handle="r3-fluted-borosilicate-tumbler-glass-380ml-r3tu113">
+        <a class="pmedia" href="/products/r3-fluted-borosilicate-tumbler-glass-380ml-r3tu113" style="--bg:#f8fac4" tabindex="-1">
+          <span class="badge b-lime">Bestseller</span>
+          <img class="pcard-img" src="{{ 'r3-r3tu113.webp' | asset_url }}" alt="R3 Fluted Borosilicate Tumbler Glass 380ml" width="220" height="280" loading="lazy">
         </a>
-        <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="the-wobble">
+        <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="r3tu113">
           <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
         </button>
         <div class="pinfo">
-          <a class="pname" href="/products/the-wobble">The Wobble Tumbler</a>
-          <span class="pmeta">In Electric Blue</span>
-          <div class="prow"><span class="price">$36</span></div>
+          <a class="pname" href="/products/r3-fluted-borosilicate-tumbler-glass-380ml-r3tu113">R3 Fluted Tumbler 380ml</a>
+          <span class="pmeta">SKU: R3TU113 · Fluted Texture</span>
+          <div class="prow">
+            <span class="price">₹132</span>
+            <span class="strike" style="font-size:13px;color:var(--muted);text-decoration:line-through;margin-left:6px">MRP ₹532</span>
+          </div>
           <div class="pfoot">
-            <div class="sw" role="group" aria-label="Colors">
-              <button class="swb on" style="--c:#2765fa" data-color="Electric Blue" data-img="{{ 'the-wobble--electric-blue.png' | asset_url }}" data-bg="#dfe8ff" aria-label="Electric Blue" aria-pressed="true"></button>
-              <button class="swb" style="--c:#ffffff" data-color="Clear" data-img="{{ 'the-wobble--clear.png' | asset_url }}" data-bg="#f2f1f0" aria-label="Clear" aria-pressed="false"></button>
-              <button class="swb" style="--c:#eaef29" data-color="Lime Soda" data-img="{{ 'the-wobble--lime-soda.png' | asset_url }}" data-bg="#f8fac4" aria-label="Lime Soda" aria-pressed="false"></button>
-              <button class="swb" style="--c:#ef426f" data-color="Berry" data-img="{{ 'the-wobble--berry.png' | asset_url }}" data-bg="#ffe1e8" aria-label="Berry" aria-pressed="false"></button>
-            </div>
-            <button class="qadd" type="button" data-add="the-wobble">Add to Bag</button>
+            <span style="font-size:12px;font-weight:700;color:var(--ink)">380 ml</span>
+            <button class="qadd" type="button" data-add="r3tu113">Add to Bag</button>
           </div>
         </div>
       </article>
 
-      <!-- Card 3: Cloud Nine Mug -->
-      <article class="pcard" data-handle="cloud-nine-mug">
-        <a class="pmedia" href="/products/cloud-nine-mug" style="--bg:#dfe8ff" tabindex="-1">
-          <span class="badge b-pink">New</span>
-          <img class="pcard-img" src="{{ 'cloud-nine-mug--sky.png' | asset_url }}" alt="Cloud Nine Mug" width="220" height="280" loading="lazy">
+      <!-- Card 3: R3TC117 Classic Mug -->
+      <article class="pcard" data-handle="r3-classic-borosilicate-coffee-mug-350ml-r3tc117">
+        <a class="pmedia" href="/products/r3-classic-borosilicate-coffee-mug-350ml-r3tc117" style="--bg:#ffe1e8" tabindex="-1">
+          <span class="badge b-pink">Staff Pick</span>
+          <img class="pcard-img" src="{{ 'r3-r3tc117.webp' | asset_url }}" alt="R3 Classic Borosilicate Coffee Mug 350ml" width="220" height="280" loading="lazy">
         </a>
-        <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="cloud-nine-mug">
+        <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="r3tc117">
           <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
         </button>
         <div class="pinfo">
-          <a class="pname" href="/products/cloud-nine-mug">Cloud Nine Mug</a>
-          <span class="pmeta">In Sky</span>
-          <div class="prow"><span class="price">$32</span></div>
+          <a class="pname" href="/products/r3-classic-borosilicate-coffee-mug-350ml-r3tc117">R3 Coffee Mug 350ml</a>
+          <span class="pmeta">SKU: R3TC117 · Heat Resistant</span>
+          <div class="prow">
+            <span class="price">₹272</span>
+            <span class="strike" style="font-size:13px;color:var(--muted);text-decoration:line-through;margin-left:6px">MRP ₹1,088</span>
+          </div>
           <div class="pfoot">
-            <div class="sw" role="group" aria-label="Colors">
-              <button class="swb on" style="--c:#2765fa" data-color="Sky" data-img="{{ 'cloud-nine-mug--sky.png' | asset_url }}" data-bg="#dfe8ff" aria-label="Sky" aria-pressed="true"></button>
-              <button class="swb" style="--c:#ef426f" data-color="Pink Sky" data-img="{{ 'cloud-nine-mug--pink-sky.png' | asset_url }}" data-bg="#ffe1e8" aria-label="Pink Sky" aria-pressed="false"></button>
-            </div>
-            <button class="qadd" type="button" data-add="cloud-nine-mug">Add to Bag</button>
+            <span style="font-size:12px;font-weight:700;color:var(--ink)">350 ml</span>
+            <button class="qadd" type="button" data-add="r3tc117">Add to Bag</button>
           </div>
         </div>
       </article>
 
-      <!-- Card 4: Starstruck Coupe -->
-      <article class="pcard" data-handle="starstruck-coupe">
-        <a class="pmedia" href="/products/starstruck-coupe" style="--bg:#dfe8ff" tabindex="-1">
-          <span class="badge b-blue">Staff Pick</span>
-          <img class="pcard-img" src="{{ 'starstruck-coupe--deep-blue.png' | asset_url }}" alt="Starstruck Coupe" width="220" height="280" loading="lazy">
+      <!-- Card 4: R3DG107 Double Wall Glass -->
+      <article class="pcard" data-handle="r3-insulated-double-wall-borosilicate-glass-270ml-r3dg107">
+        <a class="pmedia" href="/products/r3-insulated-double-wall-borosilicate-glass-270ml-r3dg107" style="--bg:#f2f1f0" tabindex="-1">
+          <span class="badge b-lime">Thermal Safe</span>
+          <img class="pcard-img" src="{{ 'r3-r3dg107.webp' | asset_url }}" alt="R3 Insulated Double Wall Borosilicate Glass 270ml" width="220" height="280" loading="lazy">
         </a>
-        <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="starstruck-coupe">
+        <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="r3dg107">
           <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
         </button>
         <div class="pinfo">
-          <a class="pname" href="/products/starstruck-coupe">Starstruck Coupe</a>
-          <span class="pmeta">In Deep Blue</span>
-          <div class="prow"><span class="price">$38</span></div>
+          <a class="pname" href="/products/r3-insulated-double-wall-borosilicate-glass-270ml-r3dg107">R3 Double Wall 270ml</a>
+          <span class="pmeta">SKU: R3DG107 · Insulated</span>
+          <div class="prow">
+            <span class="price">₹231</span>
+            <span class="strike" style="font-size:13px;color:var(--muted);text-decoration:line-through;margin-left:6px">MRP ₹499</span>
+          </div>
           <div class="pfoot">
-            <div class="sw" role="group" aria-label="Colors">
-              <button class="swb on" style="--c:#2765fa" data-color="Deep Blue" data-img="{{ 'starstruck-coupe--deep-blue.png' | asset_url }}" data-bg="#dfe8ff" aria-label="Deep Blue" aria-pressed="true"></button>
-              <button class="swb" style="--c:#0a0a0a" data-color="Midnight" data-img="{{ 'starstruck-coupe--midnight.png' | asset_url }}" data-bg="#f2f1f0" aria-label="Midnight" aria-pressed="false"></button>
-            </div>
-            <button class="qadd" type="button" data-add="starstruck-coupe">Add to Bag</button>
+            <span style="font-size:12px;font-weight:700;color:var(--ink)">270 ml</span>
+            <button class="qadd" type="button" data-add="r3dg107">Add to Bag</button>
           </div>
         </div>
       </article>
     </div>
 
-    <!-- Tab 2: Hero designs -->
+    <!-- Tab 2: Hero Designs -->
     <div class="rail" id="rail-hero" role="tabpanel" style="display:none">
-      <!-- Card: Heart Eyes Mug -->
-      <article class="pcard" data-handle="heart-eyes-mug">
-        <a class="pmedia" href="/products/heart-eyes-mug" style="--bg:#ffe1e8" tabindex="-1">
+      <!-- Card: R3WG237 Stemmed Wine Glass -->
+      <article class="pcard" data-handle="r3-stemmed-borosilicate-wine-glass-360ml-r3wg237">
+        <a class="pmedia" href="/products/r3-stemmed-borosilicate-wine-glass-360ml-r3wg237" style="--bg:#dfe8ff" tabindex="-1">
           <span class="badge b-pink">Hero Design</span>
-          <img class="pcard-img" src="{{ 'heart-eyes-mug--berry-crush.png' | asset_url }}" alt="Heart Eyes Mug" width="220" height="280" loading="lazy">
+          <img class="pcard-img" src="{{ 'r3-r3wg237.webp' | asset_url }}" alt="R3 Stemmed Borosilicate Wine Glass 360ml" width="220" height="280" loading="lazy">
         </a>
-        <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="heart-eyes-mug">
+        <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="r3wg237">
           <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
         </button>
         <div class="pinfo">
-          <a class="pname" href="/products/heart-eyes-mug">Heart Eyes Mug</a>
-          <span class="pmeta">In Berry Crush</span>
-          <div class="prow"><span class="price">$34</span></div>
+          <a class="pname" href="/products/r3-stemmed-borosilicate-wine-glass-360ml-r3wg237">R3 Stemmed Wine Glass 360ml</a>
+          <span class="pmeta">SKU: R3WG237 · Ultra Fine Stem</span>
+          <div class="prow">
+            <span class="price">₹248</span>
+            <span class="strike" style="font-size:13px;color:var(--muted);text-decoration:line-through;margin-left:6px">MRP ₹1,100</span>
+          </div>
           <div class="pfoot">
-            <button class="qadd full" type="button" data-add="heart-eyes-mug">Add to Bag</button>
+            <span style="font-size:12px;font-weight:700;color:var(--ink)">360 ml</span>
+            <button class="qadd full" type="button" data-add="r3wg237">Add to Bag</button>
           </div>
         </div>
       </article>
 
-      <!-- Card: Lemon Drop Tumbler -->
-      <article class="pcard" data-handle="lemon-drop">
-        <a class="pmedia" href="/products/lemon-drop" style="--bg:#f8fac4" tabindex="-1">
-          <span class="badge b-lime">Hero Design</span>
-          <img class="pcard-img" src="{{ 'lemon-drop--sunny.png' | asset_url }}" alt="Lemon Drop Tumbler" width="220" height="280" loading="lazy">
+      <!-- Card: R3TU128 Highball Tumbler -->
+      <article class="pcard" data-handle="r3-highball-borosilicate-tumbler-glass-420ml-r3tu128">
+        <a class="pmedia" href="/products/r3-highball-borosilicate-tumbler-glass-420ml-r3tu128" style="--bg:#f8fac4" tabindex="-1">
+          <span class="badge b-lime">Top Value</span>
+          <img class="pcard-img" src="{{ 'r3-r3tu128.webp' | asset_url }}" alt="R3 Highball Borosilicate Tumbler Glass 420ml" width="220" height="280" loading="lazy">
         </a>
-        <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="lemon-drop">
+        <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="r3tu128">
           <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
         </button>
         <div class="pinfo">
-          <a class="pname" href="/products/lemon-drop">Lemon Drop Tumbler</a>
-          <span class="pmeta">In Sunny</span>
-          <div class="prow"><span class="price">$34</span></div>
+          <a class="pname" href="/products/r3-highball-borosilicate-tumbler-glass-420ml-r3tu128">R3 Highball Tumbler 420ml</a>
+          <span class="pmeta">SKU: R3TU128 · Crystal Clarity</span>
+          <div class="prow">
+            <span class="price">₹85</span>
+            <span class="strike" style="font-size:13px;color:var(--muted);text-decoration:line-through;margin-left:6px">MRP ₹340</span>
+          </div>
           <div class="pfoot">
-            <button class="qadd full" type="button" data-add="lemon-drop">Add to Bag</button>
+            <span style="font-size:12px;font-weight:700;color:var(--ink)">420 ml</span>
+            <button class="qadd full" type="button" data-add="r3tu128">Add to Bag</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card: R3CO151 Wide Rim Coupe -->
+      <article class="pcard" data-handle="r3-wide-rim-borosilicate-cocktail-glass-400ml-r3co151">
+        <a class="pmedia" href="/products/r3-wide-rim-borosilicate-cocktail-glass-400ml-r3co151" style="--bg:#ffe1e8" tabindex="-1">
+          <span class="badge b-pink">Cocktail Club</span>
+          <img class="pcard-img" src="{{ 'r3-r3co151.webp' | asset_url }}" alt="R3 Wide-Rim Borosilicate Cocktail Glass 400ml" width="220" height="280" loading="lazy">
+        </a>
+        <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="r3co151">
+          <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
+        </button>
+        <div class="pinfo">
+          <a class="pname" href="/products/r3-wide-rim-borosilicate-cocktail-glass-400ml-r3co151">R3 Wide-Rim Coupe 400ml</a>
+          <span class="pmeta">SKU: R3CO151 · Bar Quality</span>
+          <div class="prow">
+            <span class="price">₹165</span>
+            <span class="strike" style="font-size:13px;color:var(--muted);text-decoration:line-through;margin-left:6px">MRP ₹792</span>
+          </div>
+          <div class="pfoot">
+            <span style="font-size:12px;font-weight:700;color:var(--ink)">400 ml</span>
+            <button class="qadd full" type="button" data-add="r3co151">Add to Bag</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card: R3DG130 Tall Double Wall Glass -->
+      <article class="pcard" data-handle="r3-tall-double-wall-borosilicate-glass-310ml-r3dg130">
+        <a class="pmedia" href="/products/r3-tall-double-wall-borosilicate-glass-310ml-r3dg130" style="--bg:#dfe8ff" tabindex="-1">
+          <span class="badge b-blue">Double Wall</span>
+          <img class="pcard-img" src="{{ 'r3-r3dg130.webp' | asset_url }}" alt="R3 Tall Double Wall Borosilicate Glass 310ml" width="220" height="280" loading="lazy">
+        </a>
+        <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="r3dg130">
+          <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
+        </button>
+        <div class="pinfo">
+          <a class="pname" href="/products/r3-tall-double-wall-borosilicate-glass-310ml-r3dg130">R3 Tall Double Wall 310ml</a>
+          <span class="pmeta">SKU: R3DG130 · Insulated</span>
+          <div class="prow">
+            <span class="price">₹231</span>
+            <span class="strike" style="font-size:13px;color:var(--muted);text-decoration:line-through;margin-left:6px">MRP ₹924</span>
+          </div>
+          <div class="pfoot">
+            <span style="font-size:12px;font-weight:700;color:var(--ink)">310 ml</span>
+            <button class="qadd full" type="button" data-add="r3dg130">Add to Bag</button>
           </div>
         </div>
       </article>
     </div>
 
-    <!-- Tab 3: Under $30 -->
-    <div class="rail" id="rail-under30" role="tabpanel" style="display:none">
-      <!-- Card: Cortado Glasses Set -->
-      <article class="pcard" data-handle="cortado-glasses-set">
-        <a class="pmedia" href="/products/cortado-glasses-set" style="--bg:#f2f1f0" tabindex="-1">
-          <span class="badge b-lime">Under $30</span>
-          <img class="pcard-img" src="{{ 'cortado-glasses-set--clear.png' | asset_url }}" alt="Cortado Glasses Set" width="220" height="280" loading="lazy">
+    <!-- Tab 3: Under ₹200 -->
+    <div class="rail" id="rail-under200" role="tabpanel" style="display:none">
+      <!-- Card: R3TU128 -->
+      <article class="pcard" data-handle="r3-highball-borosilicate-tumbler-glass-420ml-r3tu128">
+        <a class="pmedia" href="/products/r3-highball-borosilicate-tumbler-glass-420ml-r3tu128" style="--bg:#f8fac4" tabindex="-1">
+          <span class="badge b-lime">Under ₹200</span>
+          <img class="pcard-img" src="{{ 'r3-r3tu128.webp' | asset_url }}" alt="R3 Highball Borosilicate Tumbler Glass 420ml" width="220" height="280" loading="lazy">
         </a>
-        <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="cortado-glasses-set">
+        <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="r3tu128">
           <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
         </button>
         <div class="pinfo">
-          <a class="pname" href="/products/cortado-glasses-set">Cortado Glasses Pair</a>
-          <span class="pmeta">In Clear</span>
-          <div class="prow"><span class="price">$26</span></div>
+          <a class="pname" href="/products/r3-highball-borosilicate-tumbler-glass-420ml-r3tu128">R3 Highball Tumbler 420ml</a>
+          <span class="pmeta">SKU: R3TU128 · 420 ml</span>
+          <div class="prow"><span class="price">₹85</span></div>
           <div class="pfoot">
-            <button class="qadd full" type="button" data-add="cortado-glasses-set">Add to Bag</button>
+            <button class="qadd full" type="button" data-add="r3tu128">Add to Bag</button>
           </div>
         </div>
       </article>
 
-      <!-- Card: Coaster Set -->
-      <article class="pcard" data-handle="coaster-set">
-        <a class="pmedia" href="/products/coaster-set" style="--bg:#ffe1e8" tabindex="-1">
-          <span class="badge b-pink">Essential</span>
-          <img class="pcard-img" src="{{ 'coaster-set.png' | asset_url }}" alt="Coaster Set" width="220" height="280" loading="lazy">
+      <!-- Card: R3TU113 -->
+      <article class="pcard" data-handle="r3-fluted-borosilicate-tumbler-glass-380ml-r3tu113">
+        <a class="pmedia" href="/products/r3-fluted-borosilicate-tumbler-glass-380ml-r3tu113" style="--bg:#f2f1f0" tabindex="-1">
+          <span class="badge b-lime">Under ₹200</span>
+          <img class="pcard-img" src="{{ 'r3-r3tu113.webp' | asset_url }}" alt="R3 Fluted Borosilicate Tumbler Glass 380ml" width="220" height="280" loading="lazy">
         </a>
-        <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="coaster-set">
+        <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="r3tu113">
           <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
         </button>
         <div class="pinfo">
-          <a class="pname" href="/products/coaster-set">Silicone Coaster Set (4)</a>
-          <span class="pmeta">In Multi</span>
-          <div class="prow"><span class="price">$16</span></div>
+          <a class="pname" href="/products/r3-fluted-borosilicate-tumbler-glass-380ml-r3tu113">R3 Fluted Tumbler 380ml</a>
+          <span class="pmeta">SKU: R3TU113 · 380 ml</span>
+          <div class="prow"><span class="price">₹132</span></div>
           <div class="pfoot">
-            <button class="qadd full" type="button" data-add="coaster-set">Add to Bag</button>
+            <button class="qadd full" type="button" data-add="r3tu113">Add to Bag</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card: R3WG145 -->
+      <article class="pcard" data-handle="r3-grand-borosilicate-wine-glass-450ml-r3wg145">
+        <a class="pmedia" href="/products/r3-grand-borosilicate-wine-glass-450ml-r3wg145" style="--bg:#dfe8ff" tabindex="-1">
+          <span class="badge b-blue">Under ₹200</span>
+          <img class="pcard-img" src="{{ 'r3-r3wg145.webp' | asset_url }}" alt="R3 Grand Borosilicate Wine Glass 450ml" width="220" height="280" loading="lazy">
+        </a>
+        <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="r3wg145">
+          <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
+        </button>
+        <div class="pinfo">
+          <a class="pname" href="/products/r3-grand-borosilicate-wine-glass-450ml-r3wg145">R3 Grand Wine Glass 450ml</a>
+          <span class="pmeta">SKU: R3WG145 · 450 ml</span>
+          <div class="prow"><span class="price">₹165</span></div>
+          <div class="pfoot">
+            <button class="qadd full" type="button" data-add="r3wg145">Add to Bag</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card: R3TC127 -->
+      <article class="pcard" data-handle="r3-tea-espresso-borosilicate-cup-320ml-r3tc127">
+        <a class="pmedia" href="/products/r3-tea-espresso-borosilicate-cup-320ml-r3tc127" style="--bg:#ffe1e8" tabindex="-1">
+          <span class="badge b-pink">Under ₹200</span>
+          <img class="pcard-img" src="{{ 'r3-r3tc127.webp' | asset_url }}" alt="R3 Tea & Espresso Borosilicate Cup 320ml" width="220" height="280" loading="lazy">
+        </a>
+        <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="r3tc127">
+          <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
+        </button>
+        <div class="pinfo">
+          <a class="pname" href="/products/r3-tea-espresso-borosilicate-cup-320ml-r3tc127">R3 Tea Cup 320ml</a>
+          <span class="pmeta">SKU: R3TC127 · 320 ml</span>
+          <div class="prow"><span class="price">₹182</span></div>
+          <div class="pfoot">
+            <button class="qadd full" type="button" data-add="r3tc127">Add to Bag</button>
           </div>
         </div>
       </article>
@@ -199,7 +289,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const rails = {
     new: document.getElementById('rail-new'),
     hero: document.getElementById('rail-hero'),
-    under30: document.getElementById('rail-under30')
+    under200: document.getElementById('rail-under200')
   };
 
   tabs.forEach(function(tab) {
@@ -219,30 +309,6 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   });
-
-  // Swatch switcher logic
-  document.querySelectorAll('.swb').forEach(function(swb) {
-    swb.addEventListener('click', function(e) {
-      e.stopPropagation();
-      const parentCard = swb.closest('.pcard');
-      if (!parentCard) return;
-
-      parentCard.querySelectorAll('.swb').forEach(b => {
-        b.classList.remove('on');
-        b.setAttribute('aria-pressed', 'false');
-      });
-      swb.classList.add('on');
-      swb.setAttribute('aria-pressed', 'true');
-
-      const img = parentCard.querySelector('.pcard-img');
-      const media = parentCard.querySelector('.pmedia');
-      const meta = parentCard.querySelector('.pmeta');
-
-      if (img && swb.dataset.img) img.src = swb.dataset.img;
-      if (media && swb.dataset.bg) media.style.setProperty('--bg', swb.dataset.bg);
-      if (meta && swb.dataset.color) meta.textContent = 'In ' + swb.dataset.color;
-    });
-  });
 });
 </script>
 
@@ -260,7 +326,7 @@ document.addEventListener('DOMContentLoaded', function() {
       "type": "text",
       "id": "subheading",
       "label": "Subheading",
-      "default": "Tap a color dot to try it on. Yes, just like a filter."
+      "default": "Direct from R3 Exports Agra furnace. 100% Thermal Shock Borosilicate Glassware."
     }
   ],
   "presets": [

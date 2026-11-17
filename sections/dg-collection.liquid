@@ -2,17 +2,17 @@
   <!-- Page Header -->
   <header class="page-head" style="margin-bottom:24px">
     <h1 class="h2" id="dgShopTitle">{{ collection.title | default: 'Shop All Glasses' }}</h1>
-    <p class="sub" id="dgShopSub">{{ collection.description | default: 'Every glass we make, in every color we make it. Tap the dots to switch colors.' }}</p>
+    <p class="sub" id="dgShopSub">{{ collection.description | default: 'Handcrafted Borosilicate Glassware from R3 Exports (Agra Furnace). Thermal shock resistant (-20°C to 150°C).' }}</p>
   </header>
 
   <!-- Type Navigation Tabs -->
   <div class="tabs" role="tablist" style="margin-bottom:24px;overflow-x:auto;padding-bottom:8px">
     <a class="tab {% if collection.handle == 'all' or collection.handle == blank %}on{% endif %}" href="/collections/all">All Glasses</a>
     <a class="tab {% if collection.handle == 'tumblers' %}on{% endif %}" href="/collections/tumblers">Tumblers</a>
-    <a class="tab {% if collection.handle == 'mugs' %}on{% endif %}" href="/collections/mugs">Mugs</a>
-    <a class="tab {% if collection.handle == 'espresso-tea' %}on{% endif %}" href="/collections/espresso-tea">Espresso + Tea</a>
+    <a class="tab {% if collection.handle == 'mugs' %}on{% endif %}" href="/collections/mugs">Mugs & Cups</a>
+    <a class="tab {% if collection.handle == 'double-glass' %}on{% endif %}" href="/collections/double-glass">Double Wall</a>
     <a class="tab {% if collection.handle == 'cocktail-glasses' %}on{% endif %}" href="/collections/cocktail-glasses">Cocktail Glasses</a>
-    <a class="tab" href="/pages/build-a-set">Build a Set ($99)</a>
+    <a class="tab {% if collection.handle == 'wine-glasses' %}on{% endif %}" href="/collections/wine-glasses">Wine Glasses</a>
   </div>
 
   <!-- Filters & Sort Bar -->
@@ -20,17 +20,20 @@
     <!-- Filter Chips -->
     <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
       <span style="font:700 13px var(--f-head)">Filter:</span>
-      <button class="chip" type="button" data-filter="under30">Under $30</button>
-      <button class="chip" type="button" data-filter="30to39">$30 to $39</button>
-      <button class="chip" type="button" data-filter="40plus">$40+</button>
-      <button class="chip" type="button" data-filter="blue">Blue</button>
-      <button class="chip" type="button" data-filter="berry">Berry</button>
-      <button class="chip" type="button" data-filter="lime">Lime</button>
+      <button class="chip" type="button" data-filter="under200">Under ₹200</button>
+      <button class="chip" type="button" data-filter="under300">Under ₹300</button>
+      <button class="chip" type="button" data-filter="all">All Items</button>
     </div>
 
     <!-- Count & Sort -->
     <div style="display:flex;align-items:center;gap:16px">
-      <span class="mono" style="font-size:14px;color:var(--muted)">{% if collection.products.size > 0 %}{{ collection.products.size }} Glasses{% else %}Available Glasses{% endif %}</span>
+      <span class="mono" style="font-size:14px;color:var(--muted)">
+        {% if collection.products.size > 0 %}
+          {{ collection.products.size }} Products Available
+        {% else %}
+          R3 Exports Catalog
+        {% endif %}
+      </span>
       <select class="btn sm" style="font-size:13px;padding:0 12px;background:#fff">
         <option value="featured">Sort: Featured</option>
         <option value="price-asc">Price: Low to High</option>
@@ -42,167 +45,94 @@
 
   <!-- Product Grid -->
   <div class="grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px">
-    <!-- Product 1 -->
-    <article class="pcard" data-handle="cherry-bomb">
-      <a class="pmedia" href="/products/cherry-bomb" style="--bg:#ffe1e8" tabindex="-1">
-        <span class="badge b-pink">New</span>
-        <img class="pcard-img" src="{{ 'cherry-bomb--blush.png' | asset_url }}" alt="cherry bomb tumbler" width="240" height="300" loading="lazy">
-      </a>
-      <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="cherry-bomb">
-        <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
-      </button>
-      <div class="pinfo">
-        <a class="pname" href="/products/cherry-bomb">Cherry Bomb Tumbler</a>
-        <span class="pmeta">In Blush</span>
-        <div class="prow"><span class="price">$36</span></div>
-        <div class="pfoot">
-          <div class="sw" role="group" aria-label="Colors">
-            <button class="swb on" style="--c:#ef426f" data-color="blush" data-img="{{ 'cherry-bomb--blush.png' | asset_url }}" data-bg="#ffe1e8" aria-label="blush" aria-pressed="true"></button>
-            <button class="swb" style="--c:#ffffff" data-color="clear cherry" data-img="{{ 'cherry-bomb--clear-cherry.png' | asset_url }}" data-bg="#f2f1f0" aria-label="clear cherry" aria-pressed="false"></button>
+    {% if collection.products.size > 0 %}
+      {% for product in collection.products %}
+        <article class="pcard" data-handle="{{ product.handle }}">
+          <a class="pmedia" href="{{ product.url }}" style="--bg:#f8fac4" tabindex="-1">
+            <span class="badge b-lime">{{ product.type | default: 'Borosilicate' }}</span>
+            {% if product.featured_image %}
+              <img class="pcard-img" src="{{ product.featured_image | image_url: width: 360 }}" alt="{{ product.title | escape }}" width="240" height="300" loading="lazy" style="object-fit:contain">
+            {% else %}
+              <img class="pcard-img" src="{{ 'r3-r3tu113.webp' | asset_url }}" alt="{{ product.title | escape }}" width="240" height="300" loading="lazy" style="object-fit:contain">
+            {% endif %}
+          </a>
+          <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="{{ product.handle }}">
+            <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
+          </button>
+          <div class="pinfo">
+            <a class="pname" href="{{ product.url }}">{{ product.title }}</a>
+            <span class="pmeta">SKU: {{ product.variants.first.sku }} · B2B Grade</span>
+            <div class="prow">
+              <span class="price">{{ product.price | money }}</span>
+              {% if product.compare_at_price > product.price %}
+                <span class="strike" style="font-size:13px;color:var(--muted);text-decoration:line-through;margin-left:6px">{{ product.compare_at_price | money }}</span>
+              {% endif %}
+            </div>
+            <div class="pfoot">
+              <button class="qadd full" type="button" data-add="{{ product.variants.first.id }}">Add to Bag</button>
+            </div>
           </div>
-          <button class="qadd" type="button" data-add="cherry-bomb">Add to Bag</button>
+        </article>
+      {% endfor %}
+    {% else %}
+      <!-- Fallback Real R3 Exports Products Cards -->
+      <article class="pcard" data-handle="r3-vintage-borosilicate-cocktail-coupe-280ml-r3co240">
+        <a class="pmedia" href="/products/r3-vintage-borosilicate-cocktail-coupe-280ml-r3co240" style="--bg:#dfe8ff" tabindex="-1">
+          <span class="badge b-blue">Cocktail Coupe</span>
+          <img class="pcard-img" src="{{ 'r3-r3co240.webp' | asset_url }}" alt="R3 Vintage Borosilicate Cocktail Coupe 280ml" width="240" height="300" loading="lazy" style="object-fit:contain">
+        </a>
+        <div class="pinfo">
+          <a class="pname" href="/products/r3-vintage-borosilicate-cocktail-coupe-280ml-r3co240">R3 Cocktail Coupe 280ml</a>
+          <span class="pmeta">SKU: R3CO240 · 280 ml</span>
+          <div class="prow"><span class="price">₹327</span><span class="strike" style="font-size:13px;color:var(--muted);text-decoration:line-through;margin-left:6px">MRP ₹1,304</span></div>
+          <div class="pfoot"><button class="qadd full" type="button">Add to Bag</button></div>
         </div>
-      </div>
-    </article>
+      </article>
 
-    <!-- Product 2 -->
-    <article class="pcard" data-handle="the-wobble">
-      <a class="pmedia" href="/products/the-wobble" style="--bg:#dfe8ff" tabindex="-1">
-        <span class="badge b-lime">Hero Design</span>
-        <img class="pcard-img" src="{{ 'the-wobble--electric-blue.png' | asset_url }}" alt="the wobble tumbler" width="240" height="300" loading="lazy">
-      </a>
-      <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="the-wobble">
-        <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
-      </button>
-      <div class="pinfo">
-        <a class="pname" href="/products/the-wobble">The Wobble Tumbler</a>
-        <span class="pmeta">In Electric Blue</span>
-        <div class="prow"><span class="price">$36</span></div>
-        <div class="pfoot">
-          <div class="sw" role="group" aria-label="Colors">
-            <button class="swb on" style="--c:#2765fa" data-color="electric blue" data-img="{{ 'the-wobble--electric-blue.png' | asset_url }}" data-bg="#dfe8ff" aria-label="electric blue" aria-pressed="true"></button>
-            <button class="swb" style="--c:#ffffff" data-color="clear" data-img="{{ 'the-wobble--clear.png' | asset_url }}" data-bg="#f2f1f0" aria-label="clear" aria-pressed="false"></button>
-            <button class="swb" style="--c:#eaef29" data-color="lime soda" data-img="{{ 'the-wobble--lime-soda.png' | asset_url }}" data-bg="#f8fac4" aria-label="lime soda" aria-pressed="false"></button>
-            <button class="swb" style="--c:#ef426f" data-color="berry" data-img="{{ 'the-wobble--berry.png' | asset_url }}" data-bg="#ffe1e8" aria-label="berry" aria-pressed="false"></button>
-          </div>
-          <button class="qadd" type="button" data-add="the-wobble">Add to Bag</button>
+      <article class="pcard" data-handle="r3-fluted-borosilicate-tumbler-glass-380ml-r3tu113">
+        <a class="pmedia" href="/products/r3-fluted-borosilicate-tumbler-glass-380ml-r3tu113" style="--bg:#f8fac4" tabindex="-1">
+          <span class="badge b-lime">Tumbler Glass</span>
+          <img class="pcard-img" src="{{ 'r3-r3tu113.webp' | asset_url }}" alt="R3 Fluted Borosilicate Tumbler Glass 380ml" width="240" height="300" loading="lazy" style="object-fit:contain">
+        </a>
+        <div class="pinfo">
+          <a class="pname" href="/products/r3-fluted-borosilicate-tumbler-glass-380ml-r3tu113">R3 Fluted Tumbler 380ml</a>
+          <span class="pmeta">SKU: R3TU113 · 380 ml</span>
+          <div class="prow"><span class="price">₹132</span><span class="strike" style="font-size:13px;color:var(--muted);text-decoration:line-through;margin-left:6px">MRP ₹532</span></div>
+          <div class="pfoot"><button class="qadd full" type="button">Add to Bag</button></div>
         </div>
-      </div>
-    </article>
+      </article>
 
-    <!-- Product 3 -->
-    <article class="pcard" data-handle="heart-eyes-mug">
-      <a class="pmedia" href="/products/heart-eyes-mug" style="--bg:#ffe1e8" tabindex="-1">
-        <span class="badge b-pink">Hero Design</span>
-        <img class="pcard-img" src="{{ 'heart-eyes-mug--berry-crush.png' | asset_url }}" alt="heart eyes mug" width="240" height="300" loading="lazy">
-      </a>
-      <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="heart-eyes-mug">
-        <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
-      </button>
-      <div class="pinfo">
-        <a class="pname" href="/products/heart-eyes-mug">Heart Eyes Mug</a>
-        <span class="pmeta">In Berry Crush</span>
-        <div class="prow"><span class="price">$34</span></div>
-        <div class="pfoot">
-          <button class="qadd full" type="button" data-add="heart-eyes-mug">Add to Bag</button>
+      <article class="pcard" data-handle="r3-classic-borosilicate-coffee-mug-350ml-r3tc117">
+        <a class="pmedia" href="/products/r3-classic-borosilicate-coffee-mug-350ml-r3tc117" style="--bg:#ffe1e8" tabindex="-1">
+          <span class="badge b-pink">Coffee Mug</span>
+          <img class="pcard-img" src="{{ 'r3-r3tc117.webp' | asset_url }}" alt="R3 Classic Borosilicate Coffee Mug 350ml" width="240" height="300" loading="lazy" style="object-fit:contain">
+        </a>
+        <div class="pinfo">
+          <a class="pname" href="/products/r3-classic-borosilicate-coffee-mug-350ml-r3tc117">R3 Coffee Mug 350ml</a>
+          <span class="pmeta">SKU: R3TC117 · 350 ml</span>
+          <div class="prow"><span class="price">₹272</span><span class="strike" style="font-size:13px;color:var(--muted);text-decoration:line-through;margin-left:6px">MRP ₹1,088</span></div>
+          <div class="pfoot"><button class="qadd full" type="button">Add to Bag</button></div>
         </div>
-      </div>
-    </article>
+      </article>
 
-    <!-- Product 4 -->
-    <article class="pcard" data-handle="starstruck-coupe">
-      <a class="pmedia" href="/products/starstruck-coupe" style="--bg:#dfe8ff" tabindex="-1">
-        <span class="badge b-blue">Staff Pick</span>
-        <img class="pcard-img" src="{{ 'starstruck-coupe--deep-blue.png' | asset_url }}" alt="starstruck coupe" width="240" height="300" loading="lazy">
-      </a>
-      <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="starstruck-coupe">
-        <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
-      </button>
-      <div class="pinfo">
-        <a class="pname" href="/products/starstruck-coupe">Starstruck Coupe</a>
-        <span class="pmeta">In Deep Blue</span>
-        <div class="prow"><span class="price">$38</span></div>
-        <div class="pfoot">
-          <div class="sw" role="group" aria-label="Colors">
-            <button class="swb on" style="--c:#2765fa" data-color="deep blue" data-img="{{ 'starstruck-coupe--deep-blue.png' | asset_url }}" data-bg="#dfe8ff" aria-label="deep blue" aria-pressed="true"></button>
-            <button class="swb" style="--c:#0a0a0a" data-color="midnight" data-img="{{ 'starstruck-coupe--midnight.png' | asset_url }}" data-bg="#f2f1f0" aria-label="midnight" aria-pressed="false"></button>
-          </div>
-          <button class="qadd" type="button" data-add="starstruck-coupe">Add to Bag</button>
+      <article class="pcard" data-handle="r3-insulated-double-wall-borosilicate-glass-270ml-r3dg107">
+        <a class="pmedia" href="/products/r3-insulated-double-wall-borosilicate-glass-270ml-r3dg107" style="--bg:#f2f1f0" tabindex="-1">
+          <span class="badge b-lime">Double Wall</span>
+          <img class="pcard-img" src="{{ 'r3-r3dg107.webp' | asset_url }}" alt="R3 Insulated Double Wall Borosilicate Glass 270ml" width="240" height="300" loading="lazy" style="object-fit:contain">
+        </a>
+        <div class="pinfo">
+          <a class="pname" href="/products/r3-insulated-double-wall-borosilicate-glass-270ml-r3dg107">R3 Double Wall 270ml</a>
+          <span class="pmeta">SKU: R3DG107 · 270 ml</span>
+          <div class="prow"><span class="price">₹231</span><span class="strike" style="font-size:13px;color:var(--muted);text-decoration:line-through;margin-left:6px">MRP ₹499</span></div>
+          <div class="pfoot"><button class="qadd full" type="button">Add to Bag</button></div>
         </div>
-      </div>
-    </article>
-
-    <!-- Product 5 -->
-    <article class="pcard" data-handle="lemon-drop">
-      <a class="pmedia" href="/products/lemon-drop" style="--bg:#f8fac4" tabindex="-1">
-        <span class="badge b-lime">Hero Design</span>
-        <img class="pcard-img" src="{{ 'lemon-drop--sunny.png' | asset_url }}" alt="lemon drop tumbler" width="240" height="300" loading="lazy">
-      </a>
-      <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="lemon-drop">
-        <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
-      </button>
-      <div class="pinfo">
-        <a class="pname" href="/products/lemon-drop">Lemon Drop Tumbler</a>
-        <span class="pmeta">In Sunny</span>
-        <div class="prow"><span class="price">$34</span></div>
-        <div class="pfoot">
-          <div class="sw" role="group" aria-label="Colors">
-            <button class="swb on" style="--c:#eaef29" data-color="sunny" data-img="{{ 'lemon-drop--sunny.png' | asset_url }}" data-bg="#f8fac4" aria-label="sunny" aria-pressed="true"></button>
-            <button class="swb" style="--c:#ffffff" data-color="clear zest" data-img="{{ 'lemon-drop--clear-zest.png' | asset_url }}" data-bg="#f2f1f0" aria-label="clear zest" aria-pressed="false"></button>
-          </div>
-          <button class="qadd" type="button" data-add="lemon-drop">Add to Bag</button>
-        </div>
-      </div>
-    </article>
-
-    <!-- Product 6 -->
-    <article class="pcard" data-handle="cortado-glasses-set">
-      <a class="pmedia" href="/products/cortado-glasses-set" style="--bg:#f2f1f0" tabindex="-1">
-        <span class="badge b-lime">Pair Pack</span>
-        <img class="pcard-img" src="{{ 'cortado-glasses-set--clear.png' | asset_url }}" alt="cortado glasses pair" width="240" height="300" loading="lazy">
-      </a>
-      <button class="heart" type="button" aria-label="Save to wishlist" data-wishlist="cortado-glasses-set">
-        <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.2-9.3C1.6 7.3 3.8 4 7.3 4c2 0 3.5 1.1 4.7 2.8C13.2 5.1 14.7 4 16.7 4c3.5 0 5.7 3.3 4.5 6.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
-      </button>
-      <div class="pinfo">
-        <a class="pname" href="/products/cortado-glasses-set">Cortado Glasses Pair</a>
-        <span class="pmeta">In Clear</span>
-        <div class="prow"><span class="price">$26</span></div>
-        <div class="pfoot">
-          <button class="qadd full" type="button" data-add="cortado-glasses-set">Add to Bag</button>
-        </div>
-      </div>
-    </article>
+      </article>
+    {% endif %}
   </div>
 </section>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Swatch interactions in collection grid
-  document.querySelectorAll('#dg-collection .swb').forEach(function(swb) {
-    swb.addEventListener('click', function(e) {
-      e.stopPropagation();
-      const parentCard = swb.closest('.pcard');
-      if (!parentCard) return;
-
-      parentCard.querySelectorAll('.swb').forEach(b => {
-        b.classList.remove('on');
-        b.setAttribute('aria-pressed', 'false');
-      });
-      swb.classList.add('on');
-      swb.setAttribute('aria-pressed', 'true');
-
-      const img = parentCard.querySelector('.pcard-img');
-      const media = parentCard.querySelector('.pmedia');
-      const meta = parentCard.querySelector('.pmeta');
-
-      if (img && swb.dataset.img) img.src = swb.dataset.img;
-      if (media && swb.dataset.bg) media.style.setProperty('--bg', swb.dataset.bg);
-      if (meta && swb.dataset.color) meta.textContent = 'in ' + swb.dataset.color;
-    });
-  });
-
-  // Filter chips active toggle
   document.querySelectorAll('#dg-collection .chip').forEach(function(chip) {
     chip.addEventListener('click', function() {
       chip.classList.toggle('on');
